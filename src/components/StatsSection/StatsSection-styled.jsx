@@ -1,0 +1,52 @@
+import styled from "styled-components";
+
+export const Section = styled.section`
+  padding-top: 100px;
+  padding-bottom: 100px;
+  
+  backdrop-filter: blur(10px);
+`;
+
+export const SectionWrap = styled.div`
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  max-width: 1200px;
+`;
+
+export const List = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  gap: 50px;
+`;
+
+export const Item = styled.li`
+  width: 200px;
+  flex-grow: 1;
+  text-align: center;
+`;
+
+export const TitleH3 = styled.h3`
+  font-family: "Manrope";
+  font-size: 50px;
+  font-weight: 900;
+  color: var(--primary-white-color);
+`;
+
+export const SubTitle = styled.p`
+  font-family: "Manrope";
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--primary-white-color);
+`;
+
+export const StatsIconSvg = styled.svg`
+  margin-bottom: 10px;
+  width: 80px;
+  height: 80px;
+  fill: var(--primary-white-color);
+`;

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Section = styled.section`
   background-color: var(--primary-white-color);
-  padding-top: 60px;
+  padding-top: 100px;
   padding-bottom: 100px;
 `;
 
@@ -18,23 +18,22 @@ export const List = styled.ul`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  align-items: baseline;
 
-  gap: 30px;
+  gap: 50px;
 `;
 
 export const Item = styled.li`
-max-width: 500px;
-text-align: center;
+  max-width: 500px;
+  flex-grow: 1;
+  text-align: center;
 `;
 
-
 export const TitleH2 = styled.h2`
-text-align: center;
+  text-align: center;
   margin-bottom: 35px;
   font-family: "Manrope";
   font-size: 35px;
-  font-style: normal;
   font-weight: 700;
   color: var(--primary-black-color);
 `;
@@ -43,7 +42,6 @@ export const TitleH3 = styled.h3`
   margin-bottom: 20px;
   font-family: "Manrope";
   font-size: 20px;
-  font-style: normal;
   font-weight: 500;
   color: var(--primary-black-color);
 `;
@@ -51,7 +49,6 @@ export const TitleH3 = styled.h3`
 export const SubTitle = styled.p`
   font-family: "Manrope";
   font-size: 18px;
-  font-style: normal;
   font-weight: 400;
   color: var(--primary-black-color);
   line-height: 28px;

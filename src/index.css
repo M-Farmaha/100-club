@@ -4,12 +4,13 @@
   --accent-color: #a4ff2dad;
   --accent-hover-color: #a4ff2de9;
 
-  --primary-black-color: #000000;
+  --primary-black-color: #222c44;
+  --secondary-black-color: #000000;
   --primary-white-color: #ffffff;
 }
 
 body {
-  background-color: var(--primary-black-color);
+  background-color: var(--secondary-black-color);
   font-family: 'Manrope', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -62,7 +63,7 @@ input {
 
 ::-webkit-scrollbar-track {
   background: transparent;
-  background: #a4ff2d8c;
+  background: var(--primary-black-color);
 }
 
 ::-webkit-scrollbar-thumb {

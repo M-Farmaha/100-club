@@ -44,7 +44,7 @@ export const NavLinkStyled = styled(NavLink)`
   font-family: "Manrope";
   font-size: 18px;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 900;
   line-height: 24px;
   height: 100%;
   display: flex;
