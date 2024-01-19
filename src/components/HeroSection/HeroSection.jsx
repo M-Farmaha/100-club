@@ -16,7 +16,7 @@ export const HeroSection = () => {
     <>
       <Section>
         <SectionWrap>
-          <Video autoPlay muted loop preload="auto">
+          <Video autoPlay muted loop playsInline preload="auto">
             <source src={BackgroundWebm} type="video/webm" />
             <source src={BackgroundMp4} type="video/mp4" />
           </Video>
@@ -29,9 +29,9 @@ export const HeroSection = () => {
             Львові.
           </SubTitle>
           <SubTitle>
-            У нас грають теніс для будь-яких вікових категорій та рівня навичок
-            а також для дітей. Можна прийняти участь у турнірах: одиночні,
-            парні, сімейні, підняти свій рівень гри на тренуваннях з
+            У нас займаються тенісом гравці будь-якого віку та рівня навичок, а
+            також діти з 4-ох років. Можна взяти участь у турнірах: одиночні,
+            парні, сімейні, покращити свій рівень гри на тренуваннях з
             досвідченими тренерами, або просто весело провести час в колі
             друзів.
           </SubTitle>
