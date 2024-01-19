@@ -46,7 +46,7 @@ export const HomePage = () => {
         <Section>
 
           <SubTitle>
-            Тут буде наступна секція
+            Тут буде наступна секція!!!
           </SubTitle>
 
         </Section>
