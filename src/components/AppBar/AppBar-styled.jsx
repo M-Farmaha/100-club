@@ -25,8 +25,7 @@ export const NavWrap = styled.nav`
   height: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
-  gap: 10px;
+  gap: 24px;
 `;
 
 export const NavList = styled.ul`
@@ -56,21 +55,11 @@ export const NavLinkStyled = styled(NavLink)`
   transition: var(--main-transition);
 
   &:hover {
-    color: var(--accent-color);
+    color: var(--accent-hover-color);
   }
 
   &.active {
-    color: var(--accent-color);
+    color: var(--accent-hover-color);
     cursor: default;
   }
-`;
-
-export const Logo = styled.h1`
-  min-width: 120px;
-  font-family: "Manrope";
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 24px;
-  color: var(--primary-black-color);
 `;

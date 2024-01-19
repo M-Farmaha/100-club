@@ -1,9 +1,9 @@
+import { Logo } from "../Logo/Logo";
 import {
   NavItem,
   NavLinkStyled,
   NavList,
   NavWrap,
-  Logo,
   Header,
 } from "./AppBar-styled";
 
@@ -12,7 +12,9 @@ export const AppBar = () => {
     <>
       <Header>
         <NavWrap>
-          <Logo>100 Club</Logo>
+          <NavLinkStyled to="/">
+            <Logo />
+          </NavLinkStyled>
           <NavList>
             <NavItem>
               <NavLinkStyled to="/members">Учасники</NavLinkStyled>
