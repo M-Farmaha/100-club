@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/100-club/static/css/main.c843b92f.css",
+    "main.js": "/100-club/static/js/main.4fb7f480.js",
+    "static/media/tennis.webm": "/100-club/static/media/tennis.f85e945265b06283fce5.webm",
+    "static/media/tennis.mp4": "/100-club/static/media/tennis.232c90c1803e5399d330.mp4",
+    "index.html": "/100-club/index.html",
+    "main.c843b92f.css.map": "/100-club/static/css/main.c843b92f.css.map",
+    "main.4fb7f480.js.map": "/100-club/static/js/main.4fb7f480.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c843b92f.css",
+    "static/js/main.4fb7f480.js"
+  ]
+}
