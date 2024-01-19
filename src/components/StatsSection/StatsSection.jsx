@@ -1,4 +1,3 @@
-import React from "react";
 import {
   StatsIconSvg,
   Item,
@@ -6,10 +5,10 @@ import {
   Section,
   SectionWrap,
   SubTitle,
-  TitleH3,
 } from "./StatsSection-styled";
 
 import sprite from "../../sprite.svg";
+import { AnimatedStat } from "./AnimatedStat";
 
 export const StatsSection = () => {
   return (
@@ -21,7 +20,7 @@ export const StatsSection = () => {
               <StatsIconSvg>
                 <use href={sprite + "#icon-stats-1"}></use>
               </StatsIconSvg>
-              <TitleH3>45</TitleH3>
+              <AnimatedStat number={45} id={"stats-1"} />
               <SubTitle>Турнірів за рік</SubTitle>
             </Item>
 
@@ -29,7 +28,7 @@ export const StatsSection = () => {
               <StatsIconSvg>
                 <use href={sprite + "#icon-stats-2"}></use>
               </StatsIconSvg>
-              <TitleH3>100</TitleH3>
+              <AnimatedStat number={100} id={"stats-2"}/>
               <SubTitle>Гравців у клубі</SubTitle>
             </Item>
 
@@ -37,7 +36,7 @@ export const StatsSection = () => {
               <StatsIconSvg>
                 <use href={sprite + "#icon-stats-3"}></use>
               </StatsIconSvg>
-              <TitleH3>8</TitleH3>
+              <AnimatedStat number={8} id={"stats-3"}/>
               <SubTitle>Років досвіду</SubTitle>
             </Item>
 
@@ -45,7 +44,7 @@ export const StatsSection = () => {
               <StatsIconSvg>
                 <use href={sprite + "#icon-stats-4"}></use>
               </StatsIconSvg>
-              <TitleH3>5</TitleH3>
+              <AnimatedStat number={5} id={"stats-4"}/>
               <SubTitle>Тренерів у клубі</SubTitle>
             </Item>
           </List>

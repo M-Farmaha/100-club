@@ -30,7 +30,7 @@ export const Item = styled.li`
   text-align: center;
 `;
 
-export const TitleH3 = styled.h3`
+export const TitleH3 = styled.div`
   font-family: "Manrope";
   font-size: 50px;
   font-weight: 900;
