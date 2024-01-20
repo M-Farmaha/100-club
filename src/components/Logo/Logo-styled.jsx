@@ -5,19 +5,31 @@ export const LogoSvg = styled.svg`
   height: 80px;
   fill: currentColor;
 
-  animation: rotateAnimation 10s infinite;
+  animation: rotateAnimation 10s infinite ;
 
   @keyframes rotateAnimation {
     0% {
       transform: perspective(200px) rotateY(0deg);
     }
 
-    25% {
-      transform: perspective(200px) rotateY(360deg);
+    5% {
+      transform: perspective(200px) rotateY(90deg);
+    }
+
+    10% {
+      transform: perspective(200px) rotateY(0deg);
+    }
+
+    15% {
+      transform: perspective(200px) rotateY(-90deg);
+    }
+
+    20% {
+      transform: perspective(200px) rotateY(0deg);
     }
 
     100% {
-      transform: perspective(200px) rotateY(360deg);
+      transform: perspective(200px) rotateY(0deg);
     }
   }
 `;
