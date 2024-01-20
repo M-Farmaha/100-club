@@ -5,7 +5,7 @@ export const LogoSvg = styled.svg`
   height: 80px;
   fill: currentColor;
 
-  animation: rotateAnimation 10s infinite ease-in-out;
+  animation: rotateAnimation 10s infinite;
 
   @keyframes rotateAnimation {
     0% {
