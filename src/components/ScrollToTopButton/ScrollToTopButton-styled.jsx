@@ -20,7 +20,7 @@ export const Button = styled.button`
 
   transition: var(--main-transition);
 
-  animation: floatAnimation 3s infinite ease;
+  animation: floatAnimation 3s infinite ease, appearAnimation 1s ease;
   
   @keyframes floatAnimation {
     0% {
@@ -33,6 +33,16 @@ export const Button = styled.button`
       transform: translateY(0);
     }
   }
+
+  @keyframes appearAnimation {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
 
   &:hover {
     background-color: var(--accent-hover-color);
