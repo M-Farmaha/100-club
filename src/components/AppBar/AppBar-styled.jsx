@@ -41,10 +41,11 @@ export const NavItem = styled.li`
 `;
 
 export const NavLinkStyled = styled(NavLink)`
+  position: relative;
   font-family: "Manrope";
   font-size: 18px;
   font-style: normal;
-  font-weight: 900;
+  font-weight: 600;
   line-height: 24px;
   height: 100%;
   display: flex;
@@ -52,14 +53,46 @@ export const NavLinkStyled = styled(NavLink)`
   align-items: center;
   color: var(--primary-black-color);
   text-decoration: none;
+
   transition: var(--main-transition);
+
+  &:not(.logo):after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 5px;
+
+    background-color: var(--accent-hover-color);
+
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: var(--main-transition);
+  }
 
   &:hover {
     color: var(--accent-hover-color);
+
+    &::after {
+      transform: scaleX(1);
+    }
   }
 
   &.active {
     color: var(--accent-hover-color);
     cursor: default;
+
+    &:not(.logo):after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 0px;
+      width: 100%;
+      height: 5px;
+
+      background-color: var(--accent-hover-color);
+      transform: scaleX(1);
+    }
   }
 `;

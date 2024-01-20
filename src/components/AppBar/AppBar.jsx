@@ -12,7 +12,7 @@ export const AppBar = () => {
     <>
       <Header>
         <NavWrap>
-          <NavLinkStyled to="/">
+          <NavLinkStyled to="/" className="logo">
             <Logo />
           </NavLinkStyled>
           <NavList>
