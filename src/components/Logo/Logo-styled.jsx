@@ -20,8 +20,10 @@ const rotateAnimation = keyframes`
 export const LogoWWrap = styled.div`
   width: 80px;
   height: 80px;
-  transform-style: preserve-3d;
   position: relative;
+
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
 `;
 
 export const LogoSvg = styled.svg`
@@ -32,8 +34,8 @@ export const LogoSvg = styled.svg`
   height: 100%;
   position: absolute;
   backface-visibility: inherit;
-  
-  z-index: 999;
+
+  z-index: 999999;
 
   fill: currentColor;
 
