@@ -51,6 +51,9 @@ export const NavItem = styled.li`
 `;
 
 export const NavLinkStyled = styled(NavLink)`
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  
   position: relative;
   font-family: "Manrope";
   font-size: 18px;
