@@ -2,18 +2,15 @@ import styled, { keyframes } from "styled-components";
 
 const rotateAnimation = keyframes`
   0% {
-    -webkit-transform: perspective(200px) rotateY(0deg);
-    transform: perspective(200px) rotateY(0deg);
+    transform: rotate3d(0, 0, 0, 360deg);
   }
 
   25% {
-    -webkit-transform: perspective(200px) rotateY(360deg);
-    transform: perspective(200px) rotateY(360deg);
+    transform: rotate3d(0, 1, 0, 360deg);
   }
 
   100% {
-    -webkit-transform: perspective(200px) rotateY(0deg);
-    transform: perspective(200px) rotateY(360deg);
+    transform: rotate3d(0, 1, 0, 360deg);
   }
 `;
 
@@ -37,7 +34,7 @@ export const LogoSvg = styled.svg`
 
   z-index: 999999;
 
-  fill: red;
+  fill: currentColor;
 
   animation-name: ${rotateAnimation};
   animation-duration: 10s;
