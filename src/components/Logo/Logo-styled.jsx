@@ -18,12 +18,20 @@ const rotateAnimation = keyframes`
 `;
 
 export const LogoWWrap = styled.div`
+  width: 80px;
+  height: 80px;
   transform-style: preserve-3d;
 `;
 
 export const LogoSvg = styled.svg`
-  width: 80px;
-  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: inherit;
+  
   fill: currentColor;
 
   animation-name: ${rotateAnimation};
