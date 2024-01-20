@@ -2,7 +2,7 @@ import styled, { keyframes } from "styled-components";
 
 const rotateAnimation = keyframes`
   0% {
-    transform: rotate3d(0, 1, 0, 0deg);
+    transform: rotate3d(0, 0, 0, 360deg);
   }
 
   25% {
@@ -17,7 +17,6 @@ const rotateAnimation = keyframes`
 export const LogoWWrap = styled.div`
   width: 80px;
   height: 80px;
-
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
 `;
@@ -30,13 +29,11 @@ export const LogoSvg = styled.svg`
   width: 100%;
   height: 100%;
 
-  fill: red;
+  fill: black;
 
   animation-name: ${rotateAnimation};
   animation-duration: 10s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-delay: 1000ms;
-
-  transform: rotate3d(0, 1, 0, 0deg);
 `;
