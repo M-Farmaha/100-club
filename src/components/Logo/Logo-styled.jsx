@@ -8,12 +8,15 @@ export const LogoSvg = styled.svg`
   animation: rotateAnimation 10s infinite ease-in-out;
 
   @keyframes rotateAnimation {
-    0% {
-      transform: perspective(200px) rotateY(-360deg);
-    }
-
-    25% {
-      transform: perspective(200px) rotateY(0deg);
-    }
+  0% {
+    -webkit-transform: perspective(200px) rotateY(-360deg);
+    transform: perspective(200px) rotateY(-360deg);
   }
+
+  25% {
+    -webkit-transform: perspective(200px) rotateY(0deg);
+    transform: perspective(200px) rotateY(0deg);
+  }
+}
+
 `;

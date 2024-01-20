@@ -74,10 +74,8 @@ input {
 ::-webkit-scrollbar-thumb {
   height: 66px;
   background: var(--accent-color);
-  border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--accent-hover-color);
-  border-radius: 9999px;
 }
