@@ -2,7 +2,7 @@ import styled, { keyframes } from "styled-components";
 
 const rotateAnimation = keyframes`
   0% {
-    transform: rotate3d(0, 0, 0, 360deg);
+    transform: rotate3d(0, 0, 0, 0deg);
   }
 
   25% {
