@@ -21,6 +21,7 @@ export const LogoWWrap = styled.div`
   width: 80px;
   height: 80px;
   transform-style: preserve-3d;
+  position: relative;
 `;
 
 export const LogoSvg = styled.svg`
@@ -32,6 +33,8 @@ export const LogoSvg = styled.svg`
   position: absolute;
   backface-visibility: inherit;
   
+  z-index: 999;
+
   fill: currentColor;
 
   animation-name: ${rotateAnimation};
