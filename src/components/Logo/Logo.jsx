@@ -1,5 +1,6 @@
 import { useState } from "react";
-import {  LogoWWrap } from "./Logo-styled";
+import sprite from "../../sprite.svg";
+import { LogoSvg, LogoWWrap } from "./Logo-styled";
 import { useSpring, a } from "@react-spring/web";
 
 export const Logo = () => {
@@ -20,7 +21,9 @@ export const Logo = () => {
         }}
       >
         <LogoWWrap onClick={() => setFlipped((state) => !state)}>
-          <p>1</p>
+          <LogoSvg>
+            <use href={sprite + "#logo-full"}></use>
+          </LogoSvg>
         </LogoWWrap>
       </a.div>
     </>

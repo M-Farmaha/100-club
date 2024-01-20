@@ -11,7 +11,6 @@ import {
 
 import BackgroundWebm from "./tennis.webm";
 import BackgroundMp4 from "./tennis.mp4";
-import { Logo } from "../Logo/Logo";
 
 export const HeroSection = () => {
   return (
@@ -38,8 +37,6 @@ export const HeroSection = () => {
             парних, сімейних; покращити свій рівень гри на тренуваннях з
             досвідченими тренерами або просто весело провести час в колі друзів.
           </SubTitle>
-
-          <Logo/>
 
           <ButtonLink to="/gallery">Перейти до галереї</ButtonLink>
           <ButtonLink to="/members">Переглянути учасників</ButtonLink>
