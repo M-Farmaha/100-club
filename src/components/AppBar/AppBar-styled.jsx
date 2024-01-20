@@ -24,6 +24,9 @@ export const Header = styled.header`
   transition: var(--main-transition);
   display: flex;
   justify-content: center;
+
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
 `;
 
 export const NavWrap = styled.nav`
@@ -36,6 +39,9 @@ export const NavWrap = styled.nav`
   display: flex;
   justify-content: space-between;
   gap: 24px;
+
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
 `;
 
 export const NavList = styled.ul`
@@ -44,10 +50,16 @@ export const NavList = styled.ul`
   gap: 20px;
   justify-content: center;
   align-items: center;
+
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
 `;
 
 export const NavItem = styled.li`
   height: 100%;
+
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
 `;
 
 export const NavLinkStyled = styled(NavLink)`
@@ -63,6 +75,9 @@ export const NavLinkStyled = styled(NavLink)`
   align-items: center;
   color: var(--primary-black-color);
   text-decoration: none;
+
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
 
   transition: var(--main-transition);
 

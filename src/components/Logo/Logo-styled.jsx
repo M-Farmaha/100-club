@@ -37,7 +37,7 @@ export const LogoSvg = styled.svg`
 
   z-index: 999999;
 
-  fill: currentColor;
+  fill: red;
 
   animation-name: ${rotateAnimation};
   animation-duration: 10s;
