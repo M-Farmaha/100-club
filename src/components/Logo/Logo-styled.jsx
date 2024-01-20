@@ -8,6 +8,5 @@ export const LogoWWrap = styled.div`
 export const LogoSvg = styled.svg`
   width: 100%;
   height: 100%;
-
   fill: currentColor;
 `;
