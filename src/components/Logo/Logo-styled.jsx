@@ -19,8 +19,8 @@ export const LogoWWrap = styled.div`
   height: 80px;
   position: relative;
 
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
+  /* -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d; */
 `;
 
 export const LogoSvg = styled.svg`
@@ -30,9 +30,7 @@ export const LogoSvg = styled.svg`
   width: 100%;
   height: 100%;
   position: absolute;
-  backface-visibility: inherit;
-
-  z-index: 999999;
+  /* backface-visibility: inherit; */
 
   fill: currentColor;
 
