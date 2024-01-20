@@ -2,20 +2,30 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const Video = styled.video`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -6;
   opacity: 0.5;
+`;
+
+export const VideoWrap = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -5;
+  background-color: var(--secondary-black-color);
 `;
 
 export const Section = styled.section`
   min-height: 100vh;
-  padding-top: 150px;
-  padding-bottom: 30px;
+  padding-top: 200px;
+  padding-bottom: 100px;
 `;
 
 export const SectionWrap = styled.div`
@@ -31,7 +41,6 @@ export const TitleH1 = styled.h1`
   margin-bottom: 30px;
   font-family: "Manrope";
   font-size: 50px;
-  font-style: normal;
   font-weight: 900;
   color: var(--primary-white-color);
 
@@ -46,7 +55,6 @@ export const SubTitle = styled.p`
   margin-bottom: 30px;
   font-family: "Manrope";
   font-size: 18px;
-  font-style: normal;
   font-weight: 400;
   color: var(--primary-white-color);
   line-height: 28px;

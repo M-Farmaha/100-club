@@ -6,6 +6,7 @@ import {
   SubTitle,
   TitleH1,
   Video,
+  VideoWrap,
 } from "./HeroSection-styled";
 
 import BackgroundWebm from "./tennis.webm";
@@ -16,10 +17,12 @@ export const HeroSection = () => {
     <>
       <Section>
         <SectionWrap>
-          <Video autoPlay muted loop playsInline preload="auto">
-            <source src={BackgroundWebm} type="video/webm" />
-            <source src={BackgroundMp4} type="video/mp4" />
-          </Video>
+          <VideoWrap>
+            <Video autoPlay muted loop playsInline preload="auto">
+              <source src={BackgroundWebm} type="video/webm" />
+              <source src={BackgroundMp4} type="video/mp4" />
+            </Video>
+          </VideoWrap>
 
           <TitleH1>
             Клуб <span>100!</span>
