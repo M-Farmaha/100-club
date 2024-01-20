@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
 export const LogoSvg = styled.svg`
-  overflow: hidden;
-
+  transform-style: preserve-3d;
   width: 80px;
   height: 80px;
   fill: currentColor;
