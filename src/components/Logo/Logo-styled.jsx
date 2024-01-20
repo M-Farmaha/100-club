@@ -1,35 +1,28 @@
 import styled from "styled-components";
 
 export const LogoSvg = styled.svg`
+
   width: 80px;
   height: 80px;
   fill: currentColor;
 
-  animation: rotateAnimation 10s infinite ;
+  animation-name: rotateAnimation;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-delay: 1000ms;
 
   @keyframes rotateAnimation {
     0% {
       transform: perspective(200px) rotateY(0deg);
     }
 
-    5% {
-      transform: perspective(200px) rotateY(90deg);
-    }
-
-    10% {
-      transform: perspective(200px) rotateY(0deg);
-    }
-
-    15% {
-      transform: perspective(200px) rotateY(-90deg);
-    }
-
-    20% {
-      transform: perspective(200px) rotateY(0deg);
+    25% {
+      transform: perspective(200px) rotateY(360deg);
     }
 
     100% {
-      transform: perspective(200px) rotateY(0deg);
+      transform: perspective(200px) rotateY(360deg);
     }
   }
 `;
