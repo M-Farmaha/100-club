@@ -24,4 +24,9 @@ export const LogoSvg = styled.svg`
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-delay: 1000ms;
+
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
 `;
