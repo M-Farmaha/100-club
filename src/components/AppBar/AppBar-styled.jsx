@@ -10,7 +10,17 @@ export const Header = styled.header`
   z-index: 999;
   background-color: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(8px);
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 2px 15px 0px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 15px 0px;
+
+  border-bottom: 1px solid;
+  border-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.5),
+      rgba(6, 86, 91, 0.5),
+      rgba(255, 255, 255, 0.5)
+    )
+    1;
+
   transition: var(--main-transition);
   display: flex;
   justify-content: center;
