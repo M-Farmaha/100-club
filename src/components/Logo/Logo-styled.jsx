@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 export const LogoSvg = styled.svg`
+  overflow: hidden;
+
   width: 80px;
   height: 80px;
   fill: currentColor;
@@ -9,13 +11,11 @@ export const LogoSvg = styled.svg`
 
   @keyframes rotateAnimation {
     0% {
-      -webkit-transform: perspective(200px) rotateY(-360deg) translateZ(0);
-      transform: perspective(200px) rotateY(-360deg) translateZ(0);
+      transform: perspective(200px) rotateY(-360deg);
     }
 
     25% {
-      -webkit-transform: perspective(200px) rotateY(0deg) translateZ(0);
-      transform: perspective(200px) rotateY(0deg) translateZ(0);
+      transform: perspective(200px) rotateY(0deg);
     }
   }
 `;
