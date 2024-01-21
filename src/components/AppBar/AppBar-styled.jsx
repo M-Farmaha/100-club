@@ -8,7 +8,7 @@ export const Header = styled.header`
   left: 0;
   right: 0;
   z-index: 999;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(8px);
   box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 15px 0px;
 
@@ -53,7 +53,7 @@ export const NavItem = styled.li`
 export const NavLinkStyled = styled(NavLink)`
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
-  
+
   position: relative;
   font-family: "Manrope";
   font-size: 18px;
@@ -73,11 +73,11 @@ export const NavLinkStyled = styled(NavLink)`
     content: "";
     display: block;
     position: absolute;
-    bottom: 0px;
+    bottom: -1px;
     width: 100%;
     height: 5px;
 
-    background-color: var(--accent-hover-color);
+    background-color: var(--accent-color);
 
     transform-origin: left;
     transform: scaleX(0);
@@ -85,7 +85,7 @@ export const NavLinkStyled = styled(NavLink)`
   }
 
   &:hover {
-    color: var(--accent-hover-color);
+    color: var(--accent-color);
 
     &::after {
       transform: scaleX(1);
@@ -93,18 +93,18 @@ export const NavLinkStyled = styled(NavLink)`
   }
 
   &.active {
-    color: var(--accent-hover-color);
+    color: var(--accent-color);
     cursor: default;
 
     &:not(.logo):after {
       content: "";
       display: block;
       position: absolute;
-      bottom: 0px;
+      bottom: -1px;
       width: 100%;
       height: 5px;
 
-      background-color: var(--accent-hover-color);
+      background-color: var(--accent-color);
       transform: scaleX(1);
     }
   }
