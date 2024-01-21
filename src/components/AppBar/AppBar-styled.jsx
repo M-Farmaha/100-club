@@ -77,7 +77,7 @@ export const NavLinkStyled = styled(NavLink)`
     width: 100%;
     height: 5px;
 
-    background-color: var(--accent-color);
+    background-color: var(--accent-hover-color);
 
     transform-origin: left;
     transform: scaleX(0);
@@ -85,7 +85,7 @@ export const NavLinkStyled = styled(NavLink)`
   }
 
   &:hover {
-    color: var(--accent-color);
+    color: var(--accent-hover-color);
 
     &::after {
       transform: scaleX(1);

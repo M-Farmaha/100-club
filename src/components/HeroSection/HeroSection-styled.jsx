@@ -61,7 +61,7 @@ export const TitleH1 = styled.h1`
   color: var(--primary-white-color);
 
   & span {
-    color: var(--accent-hover-color);
+    color: var(--accent-color);
     font-weight: 900;
   }
 `;
@@ -87,7 +87,7 @@ export const ButtonLink = styled(Link)`
   justify-content: center;
   align-items: center;
 
-  background-color: var(--accent-color);
+  border: 2px solid var(--accent-hover-color);
   color: var(--primary-white-color);
 
   font-size: 16px;
