@@ -41,9 +41,9 @@ export const NavWrap = styled.nav`
 export const NavList = styled.ul`
   height: 100%;
   display: flex;
-  gap: 20px;
   justify-content: center;
   align-items: center;
+  gap: 20px;
 `;
 
 export const NavItem = styled.li`
@@ -51,13 +51,9 @@ export const NavItem = styled.li`
 `;
 
 export const NavLinkStyled = styled(NavLink)`
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-
   position: relative;
   font-family: "Manrope";
   font-size: 18px;
-  font-style: normal;
   font-weight: 600;
   line-height: 24px;
   height: 100%;
@@ -65,7 +61,7 @@ export const NavLinkStyled = styled(NavLink)`
   justify-content: center;
   align-items: center;
   color: var(--primary-black-color);
-  text-decoration: none;
+
 
   transition: var(--main-transition);
 
@@ -77,7 +73,7 @@ export const NavLinkStyled = styled(NavLink)`
     width: 100%;
     height: 5px;
 
-    background-color: var(--accent-hover-color);
+    background-color: var(--accent-color);
 
     transform-origin: left;
     transform: scaleX(0);
@@ -85,7 +81,7 @@ export const NavLinkStyled = styled(NavLink)`
   }
 
   &:hover {
-    color: var(--accent-hover-color);
+    color: var(--accent-color);
 
     &::after {
       transform: scaleX(1);
