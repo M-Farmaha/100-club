@@ -25,8 +25,6 @@ export const AppBar = () => {
             transform,
             rotateY: "360deg",
             width: "80px",
-            position: "relative",
-            zIndex: "999999"
           }}
         >
           <NavLinkStyled

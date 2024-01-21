@@ -22,9 +22,6 @@ export const Header = styled.header`
     1;
 
   transition: var(--main-transition);
-
-  -webkit-backdrop-filter: blur(8px);
-    backdrop-filter: blur(8px);
 `;
 
 export const NavWrap = styled.nav`
