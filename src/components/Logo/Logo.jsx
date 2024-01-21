@@ -18,6 +18,7 @@ export const Logo = () => {
           rotateY: "360deg",
           width: "80px",
           height: "80px",
+          transformStyle: "preserve-3d",
         }}
       >
         <LogoWWrap onClick={() => setFlipped((state) => !state)}>

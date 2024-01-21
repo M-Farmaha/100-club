@@ -21,7 +21,7 @@ export const VideoFilter = styled.div`
   z-index: -5;
 
   background-color: var(--secondary-black-color);
-  opacity: 0.5;
+  opacity: 0.6;
 `;
 
 export const VideoPoster = styled.div`
@@ -87,7 +87,7 @@ export const ButtonLink = styled(Link)`
   justify-content: center;
   align-items: center;
 
-  border: 2px solid var(--accent-hover-color);
+  background-color: var(--accent-color);
   color: var(--primary-white-color);
 
   font-size: 16px;

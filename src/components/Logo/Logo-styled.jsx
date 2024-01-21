@@ -6,6 +6,9 @@ export const LogoWWrap = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
 `;
 
 export const LogoSvg = styled.svg`
