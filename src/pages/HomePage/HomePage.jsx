@@ -5,9 +5,9 @@ import { StatsSection } from "../../components/StatsSection/StatsSection";
 export const HomePage = () => {
   return (
     <>
-      {/* <HeroSection />
+      <HeroSection />
       <AboutSection />
-      <StatsSection /> */}
+      <StatsSection />
     </>
   );
 };

@@ -3,11 +3,11 @@ import { useSpring, a } from "@react-spring/web";
 
 import { Logo } from "../Logo/Logo";
 import {
-  NavItem,
+  // NavItem,
   NavLinkStyled,
-  NavList,
-  NavWrap,
-  Header,
+  // NavList,
+  // NavWrap,
+  // Header,
 } from "./AppBar-styled";
 
 export const AppBar = () => {
@@ -18,8 +18,8 @@ export const AppBar = () => {
   });
   return (
     <>
-      <Header>
-        <NavWrap>
+      {/* <Header>
+        <NavWrap> */}
           <a.div
             style={{
               transform,
@@ -34,7 +34,7 @@ export const AppBar = () => {
               <Logo />
             </NavLinkStyled>
           </a.div>
-          <NavList>
+          {/* <NavList>
             <NavItem>
               <NavLinkStyled to="/members">Учасники</NavLinkStyled>
             </NavItem>
@@ -44,7 +44,7 @@ export const AppBar = () => {
             </NavItem>
           </NavList>
         </NavWrap>
-      </Header>
+      </Header> */}
     </>
   );
 };
