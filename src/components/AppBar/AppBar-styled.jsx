@@ -24,6 +24,19 @@ export const Header = styled.header`
     1;
 
   transition: var(--main-transition);
+
+  ::before {
+    content: "";
+    position: absolute;
+    background: inherit;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+  }
 `;
 
 export const NavWrap = styled.nav`
@@ -61,7 +74,6 @@ export const NavLinkStyled = styled(NavLink)`
   justify-content: center;
   align-items: center;
   color: var(--primary-black-color);
-
 
   transition: var(--main-transition);
 
