@@ -7,7 +7,7 @@ import {
   NavLinkStyled,
   NavList,
   NavWrap,
-  // Header,
+  Header,
 } from "./AppBar-styled";
 
 export const AppBar = () => {
@@ -18,7 +18,7 @@ export const AppBar = () => {
   });
   return (
     <>
-      {/* <Header> */}
+      <Header>
       <NavWrap>
         <a.div
           style={{
@@ -45,7 +45,7 @@ export const AppBar = () => {
             </NavItem>
           </NavList>
       </NavWrap>
-      {/* </Header> */}
+      </Header>
     </>
   );
 };

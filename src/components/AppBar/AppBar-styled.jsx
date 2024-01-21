@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
 export const Header = styled.header`
-  height: 100px;
+  /* height: 100px;
   position: fixed;
   top: 0;
   left: 0;
@@ -23,7 +23,7 @@ export const Header = styled.header`
 
   transition: var(--main-transition);
   display: flex;
-  justify-content: center;
+  justify-content: center; */
 `;
 
 export const NavWrap = styled.nav`
