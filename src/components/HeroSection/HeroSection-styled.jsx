@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import Poster from "./poster.jpg";
 
 export const Video = styled.video`
   position: fixed;
@@ -9,17 +10,32 @@ export const Video = styled.video`
   height: 100%;
   object-fit: cover;
   z-index: -6;
-  opacity: 0.5;
 `;
 
-export const VideoWrap = styled.div`
+export const VideoFilter = styled.div`
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   z-index: -5;
+
   background-color: var(--secondary-black-color);
+  opacity: 0.5;
+`;
+
+export const VideoPoster = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -7;
+
+  background-image: url(${Poster});
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 `;
 
 export const Section = styled.section`

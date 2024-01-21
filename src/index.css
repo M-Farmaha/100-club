@@ -14,8 +14,8 @@
 }
 
 body {
-  color: var(--primary-black-color);
-  background-color: var(--secondary-white-color);
+  color: var(--secondary-white-color);
+  background-color: var(--primary-black-color);
   font-family: 'Manrope', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
