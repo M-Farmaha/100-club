@@ -6,7 +6,7 @@ import {
   // NavItem,
   NavLinkStyled,
   // NavList,
-  // NavWrap,
+  NavWrap,
   // Header,
 } from "./AppBar-styled";
 
@@ -18,23 +18,24 @@ export const AppBar = () => {
   });
   return (
     <>
-      {/* <Header>
-        <NavWrap> */}
-          <a.div
-            style={{
-              transform,
-              rotateY: "360deg",
-            }}
+      {/* <Header> */}
+      <NavWrap>
+        <a.div
+          style={{
+            transform,
+            rotateY: "360deg",
+            width: "80px",
+          }}
+        >
+          <NavLinkStyled
+            to="/"
+            className="logo"
+            onClick={() => setFlipped((state) => !state)}
           >
-            <NavLinkStyled
-              to="/"
-              className="logo"
-              onClick={() => setFlipped((state) => !state)}
-            >
-              <Logo />
-            </NavLinkStyled>
-          </a.div>
-          {/* <NavList>
+            <Logo />
+          </NavLinkStyled>
+        </a.div>
+        {/* <NavList>
             <NavItem>
               <NavLinkStyled to="/members">Учасники</NavLinkStyled>
             </NavItem>
@@ -42,9 +43,9 @@ export const AppBar = () => {
             <NavItem>
               <NavLinkStyled to="/gallery">Галерея</NavLinkStyled>
             </NavItem>
-          </NavList>
-        </NavWrap>
-      </Header> */}
+          </NavList> */}
+      </NavWrap>
+      {/* </Header> */}
     </>
   );
 };
