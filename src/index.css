@@ -1,8 +1,8 @@
 :root {
   --main-transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-  --accent-color: rgb(85, 150, 0);
-  --accent-hover-color: rgb(120, 211, 0);
+  --accent-color: rgb(105, 150, 0);
+  --accent-hover-color: rgb(151, 211, 0);
 
   --primary-red-color: #ff004c;
 

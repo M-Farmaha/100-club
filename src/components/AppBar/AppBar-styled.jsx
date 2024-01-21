@@ -8,7 +8,9 @@ export const HeaderFilter = styled.div`
   left: 0;
   right: 0;
   z-index: 998;
+
   backdrop-filter: blur(8px);
+  background-color: rgba(255, 255, 255, 0.8);
 `;
 
 export const Header = styled.header`
@@ -22,7 +24,6 @@ export const Header = styled.header`
   display: flex;
   justify-content: center;
 
-  background-color: rgba(255, 255, 255, 0.7);
   box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 15px 0px;
   border-bottom: 1px solid;
   border-image: linear-gradient(
