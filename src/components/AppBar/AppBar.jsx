@@ -3,9 +3,9 @@ import { useSpring, a } from "@react-spring/web";
 
 import { Logo } from "../Logo/Logo";
 import {
-  // NavItem,
+  NavItem,
   NavLinkStyled,
-  // NavList,
+  NavList,
   NavWrap,
   // Header,
 } from "./AppBar-styled";
@@ -35,7 +35,7 @@ export const AppBar = () => {
             <Logo />
           </NavLinkStyled>
         </a.div>
-        {/* <NavList>
+        <NavList>
             <NavItem>
               <NavLinkStyled to="/members">Учасники</NavLinkStyled>
             </NavItem>
@@ -43,7 +43,7 @@ export const AppBar = () => {
             <NavItem>
               <NavLinkStyled to="/gallery">Галерея</NavLinkStyled>
             </NavItem>
-          </NavList> */}
+          </NavList>
       </NavWrap>
       {/* </Header> */}
     </>
