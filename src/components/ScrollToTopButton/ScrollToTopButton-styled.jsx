@@ -2,8 +2,14 @@ import styled from "styled-components";
 
 export const Button = styled.button`
   position: fixed;
-  bottom: 20px;
   right: 20px;
+
+  ${({ buttonScrollBottom }) => {
+    return `
+      bottom: ${buttonScrollBottom}px;
+    `;
+  }}
+
   background-color: var(--accent-color);
   color: var(--primary-white-color);
 
@@ -21,7 +27,7 @@ export const Button = styled.button`
   transition: var(--main-transition);
 
   animation: floatAnimation 3s infinite ease, appearAnimation 1s ease;
-  
+
   @keyframes floatAnimation {
     0% {
       transform: translateY(0);
@@ -35,14 +41,14 @@ export const Button = styled.button`
   }
 
   @keyframes appearAnimation {
-  0% {
-    opacity: 0;
-  }
+    0% {
+      opacity: 0;
+    }
 
-  100% {
-    opacity: 1;
+    100% {
+      opacity: 1;
+    }
   }
-}
 
   &:hover {
     background-color: var(--accent-hover-color);

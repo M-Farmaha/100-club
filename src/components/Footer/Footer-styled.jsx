@@ -11,10 +11,12 @@ const heartbeat = keyframes`
   }
 `;
 
-export const Section = styled.div`
+export const Section = styled.footer`
   background-color: var(--secondary-white-color);
-  padding-top: 30px;
-  padding-bottom: 30px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 `;
 

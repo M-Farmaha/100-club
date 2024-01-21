@@ -5,9 +5,20 @@ import sprite from "../../sprite.svg";
 
 export const ScrollToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [buttonScrollBottom, setButtonScrollBottom] = useState(20);
 
   const handleScroll = () => {
     const scrollTop = window.scrollY;
+    const scrollBottom =
+      document.documentElement.scrollHeight -
+      window.innerHeight -
+      window.scrollY;
+
+    if (scrollBottom < 120) {
+      setButtonScrollBottom(120 - scrollBottom);
+    } else {
+      setButtonScrollBottom(20)
+    }
 
     if (scrollTop > 300) {
       setIsVisible(true);
@@ -33,7 +44,11 @@ export const ScrollToTopButton = () => {
 
   return (
     isVisible && (
-      <Button type="button" onClick={scrollToTop}>
+      <Button
+        type="button"
+        onClick={scrollToTop}
+        buttonScrollBottom={buttonScrollBottom}
+      >
         <ArrowIconSvg>
           <use href={sprite + "#icon-arrow"}></use>
         </ArrowIconSvg>
