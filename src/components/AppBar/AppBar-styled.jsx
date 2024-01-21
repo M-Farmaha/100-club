@@ -5,11 +5,11 @@ export const Header = styled.header`
   display: flex;
   justify-content: center;
   height: 100px;
-  /* position: fixed;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 999; */
+  z-index: 999;
   background-color: rgba(255, 255, 255, 0.8);
   /* backdrop-filter: blur(8px); */
   box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 15px 0px;
