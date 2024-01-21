@@ -14,8 +14,8 @@ export const ScrollToTopButton = () => {
       window.innerHeight -
       window.scrollY;
 
-    if (scrollBottom < 120) {
-      setButtonScrollBottom(120 - scrollBottom);
+    if (scrollBottom < 100) {
+      setButtonScrollBottom(120);
     } else {
       setButtonScrollBottom(20)
     }
