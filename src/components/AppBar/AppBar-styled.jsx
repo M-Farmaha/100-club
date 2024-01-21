@@ -11,6 +11,8 @@ export const Header = styled.header`
   right: 0;
   z-index: 999;
   background-color: rgba(255, 255, 255, 0.8);
+  background: inherit;
+  overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 15px 0px;
   border-bottom: 1px solid;
   border-image: linear-gradient(
