@@ -1,18 +1,28 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
+export const HeaderFilter = styled.div`
+  height: 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 998;
+  backdrop-filter: blur(8px);
+`;
+
 export const Header = styled.header`
-  display: flex;
-  justify-content: center;
   height: 100px;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 999;
-  background-color: rgba(255, 255, 255, 0.8);
-  background: inherit;
-  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+
+  background-color: rgba(255, 255, 255, 0.7);
   box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 15px 0px;
   border-bottom: 1px solid;
   border-image: linear-gradient(
@@ -24,19 +34,6 @@ export const Header = styled.header`
     1;
 
   transition: var(--main-transition);
-
-  ::before {
-    content: "";
-    position: absolute;
-    background: inherit;
-    z-index: 0;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(5px);
-  }
 `;
 
 export const NavWrap = styled.nav`
