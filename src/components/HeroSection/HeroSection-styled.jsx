@@ -20,7 +20,8 @@ export const VideoFilter = styled.div`
   height: 100%;
   z-index: -5;
 
-  background-color: var(--secondary-black-color);
+  background: linear-gradient(to right, var(--secondary-black-color), var(--primary-black-color));
+
   opacity: 0.6;
 `;
 
@@ -40,7 +41,7 @@ export const VideoPoster = styled.div`
 
 export const Section = styled.section`
   min-height: 100vh;
-  padding-top: 200px;
+  padding-top: 100px;
   padding-bottom: 100px;
 `;
 

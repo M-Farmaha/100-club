@@ -14,6 +14,7 @@
 }
 
 body {
+  padding-top: 100px;
   color: var(--primary-black-color);
   background-color: var(--secondary-white-color);
   font-family: 'Manrope', sans-serif;
