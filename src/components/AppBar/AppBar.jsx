@@ -9,7 +9,10 @@ import {
   NavWrap,
   Header,
   HeaderFilter,
+  NavIconSvg,
 } from "./AppBar-styled";
+
+import sprite from "../../sprite.svg";
 
 export const AppBar = () => {
   const [flipped, setFlipped] = useState(false);
@@ -39,11 +42,21 @@ export const AppBar = () => {
           </a.div>
           <NavList>
             <NavItem>
-              <NavLinkStyled to="/members">Учасники</NavLinkStyled>
+              <NavLinkStyled to="/members">
+                <NavIconSvg>
+                  <use href={sprite + "#icon-users"}></use>
+                </NavIconSvg>
+                Учасники
+              </NavLinkStyled>
             </NavItem>
 
             <NavItem>
-              <NavLinkStyled to="/gallery">Галерея</NavLinkStyled>
+              <NavLinkStyled to="/gallery">
+                <NavIconSvg>
+                  <use href={sprite + "#icon-camera"}></use>
+                </NavIconSvg>
+                Галерея
+              </NavLinkStyled>
             </NavItem>
           </NavList>
         </NavWrap>

@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Section = styled.section`
   padding-top: 100px;
   padding-bottom: 100px;
-  
+
   backdrop-filter: blur(10px);
 `;
 
@@ -45,8 +45,14 @@ export const SubTitle = styled.p`
 `;
 
 export const StatsIconSvg = styled.svg`
-  margin-bottom: 10px;
   width: 80px;
   height: 80px;
   fill: var(--primary-white-color);
+  background-color: rgba(45, 219, 42, 0.1);
+
+  border: outset;
+  border-width: 1px;
+  border-radius: 50%;
+
+  margin-bottom: 10px;
 `;

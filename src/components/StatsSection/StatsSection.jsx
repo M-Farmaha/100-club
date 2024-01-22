@@ -28,7 +28,7 @@ export const StatsSection = () => {
               <StatsIconSvg>
                 <use href={sprite + "#icon-stats-2"}></use>
               </StatsIconSvg>
-              <AnimatedStat number={100} id={"stats-2"}/>
+              <AnimatedStat number={100} id={"stats-2"} />
               <SubTitle>Гравців у клубі</SubTitle>
             </Item>
 
@@ -36,7 +36,7 @@ export const StatsSection = () => {
               <StatsIconSvg>
                 <use href={sprite + "#icon-stats-3"}></use>
               </StatsIconSvg>
-              <AnimatedStat number={8} id={"stats-3"}/>
+              <AnimatedStat number={8} id={"stats-3"} />
               <SubTitle>Років досвіду</SubTitle>
             </Item>
 
@@ -44,7 +44,7 @@ export const StatsSection = () => {
               <StatsIconSvg>
                 <use href={sprite + "#icon-stats-4"}></use>
               </StatsIconSvg>
-              <AnimatedStat number={5} id={"stats-4"}/>
+              <AnimatedStat number={5} id={"stats-4"} />
               <SubTitle>Тренерів у клубі</SubTitle>
             </Item>
           </List>

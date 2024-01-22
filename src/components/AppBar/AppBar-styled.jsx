@@ -69,6 +69,7 @@ export const NavLinkStyled = styled(NavLink)`
   line-height: 24px;
   height: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   color: var(--primary-black-color);
@@ -114,4 +115,10 @@ export const NavLinkStyled = styled(NavLink)`
       transform: scaleX(1);
     }
   }
+`;
+
+export const NavIconSvg = styled.svg`
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
 `;
