@@ -71,7 +71,7 @@ export const ImageGallery = () => {
         <ModalOverlayMIU
           open={isModalOpen}
           onClose={closeModal}
-          aria-labelledby="modal-modal-title"
+          aria-labelledby="modal-title"
           aria-describedby="modal-description"
         >
           <ModalWrapMIU>
