@@ -8,7 +8,7 @@ export const Modal = ({ children, closeModal }) => {
     };
 
     window.addEventListener("keydown", handlePressESC);
-    
+
     document.body.classList.add("modal-open");
     document.documentElement.classList.add("modal-open");
     return () => {
@@ -26,7 +26,7 @@ export const Modal = ({ children, closeModal }) => {
   return (
     <>
       <ModalOverlay onClick={handleOverlayClick}>
-        <ModalWrap>{children}</ModalWrap>
+        <ModalWrap onClick={(e) => e.stopPropagation()}>{children}</ModalWrap>
       </ModalOverlay>
     </>
   );

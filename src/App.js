@@ -1,4 +1,4 @@
-import { Route, Routes, Navigate } from "react-router-dom";
+import { Route, Routes, Navigate, BrowserRouter } from "react-router-dom";
 
 import { Layout } from "./Layout/Layout";
 
@@ -13,14 +13,17 @@ import GalleryPage from "./pages/GalleryPage/GalleryPage";
 function App() {
   return (
     <>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<HomePage />} />
-          <Route path="/members" element={<MembersPage />} />
-          <Route path="/gallery" element={<GalleryPage />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Route>
-      </Routes>
+      {" "}
+      <BrowserRouter basename="/100-club">
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<HomePage />} />
+            <Route path="/members" element={<MembersPage />} />
+            <Route path="/gallery" element={<GalleryPage />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Route>
+        </Routes>{" "}
+      </BrowserRouter>
     </>
   );
 }

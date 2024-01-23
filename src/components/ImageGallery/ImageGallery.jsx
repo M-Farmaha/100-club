@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { apiRequest } from "../../Api/ApiRequests";
+import { useNavigate } from "react-router-dom";
 import {
   ImageGalleryImg,
   ImageGalleryItem,
@@ -13,6 +14,8 @@ import { Loader } from "../Loaders/Loaders";
 import { Modal } from "../Modal/Modal";
 
 export const ImageGallery = () => {
+  const navigate = useNavigate();
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
@@ -39,6 +42,7 @@ export const ImageGallery = () => {
 
   const closeModal = () => {
     setIsModalOpen(false);
+    navigate("/gallery");
   };
 
   return (
