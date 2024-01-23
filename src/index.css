@@ -28,8 +28,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
   &.modal-open {
+    height: 100%;
     overflow: hidden;
-    position: fixed;
   }
 
 
@@ -37,6 +37,11 @@ body {
 
 html {
   min-width: 330px;
+
+  &.modal-open {
+    height: 100%;
+    overflow: hidden;
+  }
 }
 
 * {

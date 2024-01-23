@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const Section = styled.section`
   background-color: var(--primary-white-color);
-  padding-top: 24px;
   padding-bottom: 100px;
 `;
 
@@ -36,6 +35,6 @@ export const ImageGalleryImg = styled.img`
 
 export const ImageGalleryModalImg = styled.img`
   max-width: 100vw;
-  max-height: calc(100vh - 48px);
+  max-height: 100vh;
   object-fit: scale-down;
 `;

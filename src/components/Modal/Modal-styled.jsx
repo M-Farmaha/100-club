@@ -58,8 +58,6 @@ export const ModalOverlayMIU = styled(Modal)`
   justify-content: center;
 
   backdrop-filter: blur(10px);
-
-  position: fixed;
 `;
 
 export const ModalWrapMIU = styled(Box)`
