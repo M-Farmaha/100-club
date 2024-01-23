@@ -28,7 +28,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
   &.modal-open {
-
+    height: 100%;
+    overflow: hidden;
   }
 
 }
