@@ -10,13 +10,13 @@ export const ModalOverlay = styled.div`
   height: 100%;
   -webkit-overflow-scrolling: touch;
 
-  overflow-y: auto;
-  
+  overflow: hidden;
+
+  background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
   justify-content: center;
-
 `;
 
 export const ModalWrap = styled.div`
