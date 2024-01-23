@@ -13,17 +13,12 @@ export const Modal = ({ children, closeModal }) => {
     return () => {
       window.removeEventListener("keydown", handlePressESC);
       document.body.classList.remove("modal-open");
-
     };
   }, [closeModal]);
 
-  const handleOverlayClick = (e) => {
-    if (e.target === e.currentTarget) closeModal();
-  };
-
   return (
     <>
-      <ModalOverlay onClick={handleOverlayClick}>
+      <ModalOverlay onClick={closeModal}>
         <ModalWrap onClick={(e) => e.stopPropagation()}>{children}</ModalWrap>
       </ModalOverlay>
     </>
