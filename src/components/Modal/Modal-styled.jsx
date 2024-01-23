@@ -15,9 +15,13 @@ export const ModalOverlay = styled.div`
 `;
 
 export const ModalWrap = styled.div`
-  background-color: var(--primary-white-color);
+  background-color: transparent;
+  color: var(--primary-white-color);
   overflow: hidden;
   box-shadow: var(--box-shadow);
+
+  outline: none;
+  border: none;
 `;
 
 export const ButtonClose = styled.button`

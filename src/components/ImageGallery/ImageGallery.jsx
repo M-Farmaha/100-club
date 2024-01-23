@@ -10,8 +10,7 @@ import {
 } from "./ImageGallery-styled";
 
 import { Loader } from "../Loaders/Loaders";
-
-import { ModalOverlayMIU, ModalWrapMIU } from "../Modal/Modal-styled";
+import { Modal } from "../Modal/Modal";
 
 export const ImageGallery = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -33,16 +32,12 @@ export const ImageGallery = () => {
   }, []);
 
   const openModal = (index) => {
-    document.body.classList.add("modal-open");
-    document.documentElement.classList.add("modal-open");
     setSelectedImageIndex(index);
     setIsModalOpen(true);
     setIsLoading(true);
   };
-  
+
   const closeModal = () => {
-    document.body.classList.remove("modal-open");
-    document.documentElement.classList.remove("modal-open");
     setIsModalOpen(false);
   };
 
@@ -68,21 +63,14 @@ export const ImageGallery = () => {
       )}
 
       {isModalOpen && (
-        <ModalOverlayMIU
-          open={isModalOpen}
-          onClose={closeModal}
-          aria-labelledby="modal-title"
-          aria-describedby="modal-description"
-        >
-          <ModalWrapMIU>
-            {isLoading && <Loader />}
-            <ImageGalleryModalImg
-              src={galleryArray[selectedImageIndex].largeImageURL}
-              alt={galleryArray[selectedImageIndex].tags}
-              onLoad={() => setIsLoading(false)}
-            />
-          </ModalWrapMIU>
-        </ModalOverlayMIU>
+        <Modal closeModal={closeModal}>
+          {isLoading && <Loader />}
+          <ImageGalleryModalImg
+            src={galleryArray[selectedImageIndex].largeImageURL}
+            alt={galleryArray[selectedImageIndex].tags}
+            onLoad={() => setIsLoading(false)}
+          />
+        </Modal>
       )}
     </>
   );
