@@ -10,9 +10,11 @@ import {
 } from "./ImageGallery-styled";
 
 import { Modal } from "../Modal/Modal";
+import { Loader } from "../Loaders/Loaders";
 
 export const ImageGallery = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [galleryArray, setGalleryArray] = useState([]);
 
@@ -32,6 +34,7 @@ export const ImageGallery = () => {
   const openModal = (index) => {
     setSelectedImageIndex(index);
     setIsModalOpen(true);
+    setIsLoading(true);
   };
 
   const closeModal = () => {
@@ -59,11 +62,14 @@ export const ImageGallery = () => {
         </Section>
       )}
 
+      {isLoading && <Loader />}
       {isModalOpen && (
         <Modal closeModal={closeModal}>
+          {isLoading && <Loader />}
           <ImageGalleryModalImg
             src={galleryArray[selectedImageIndex].largeImageURL}
             alt={galleryArray[selectedImageIndex].tags}
+            onLoad={() => setIsLoading(false)}
           />
         </Modal>
       )}

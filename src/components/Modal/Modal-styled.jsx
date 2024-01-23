@@ -6,7 +6,7 @@ export const ModalOverlay = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  /* backdrop-filter: blur(8px); */
+  backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -14,16 +14,41 @@ export const ModalOverlay = styled.div`
 `;
 
 export const ModalWrap = styled.div`
+  position: relative;
   border-radius: 10px;
-  background-color: var(--primary-black-color);
+  background-color: var(--primary-white-color);
   overflow: hidden;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  box-shadow: var(--box-shadow);
 `;
 
-export const ModalImage = styled.img`
-  max-width: 100vw;
-  max-height: calc(100vh - 50px);
-  object-fit: scale-down;
+export const ButtonClose = styled.button`
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--accent-color);
+  color: var(--button-color);
+  box-shadow: var(--box-shadow);
+
+  border: none;
+  border-radius: 50%;
+
+  transition: var(--main-transition);
+
+  &:hover {
+    cursor: pointer;
+    background-color: var(--accent-hover-color);
+  }
+`;
+
+export const CloseIcon = styled.svg`
+  width: 75%;
+  height: 75%;
+  stroke: currentcolor;
 `;

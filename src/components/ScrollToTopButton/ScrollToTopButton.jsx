@@ -9,7 +9,6 @@ export const ScrollToTopButton = () => {
 
   const handleScroll = () => {
     const scrollTop = window.scrollY;
-    console.log(scrollTop);
     const scrollBottom =
       document.documentElement.scrollHeight -
       window.innerHeight -

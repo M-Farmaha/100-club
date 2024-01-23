@@ -11,7 +11,8 @@ export const Button = styled.button`
   }}
 
   background-color: var(--accent-color);
-  color: var(--primary-white-color);
+  color: var(--button-color);
+  box-shadow: var(--box-shadow);
 
   display: flex;
   justify-content: center;
@@ -19,6 +20,7 @@ export const Button = styled.button`
 
   width: 50px;
   height: 50px;
+
   border: none;
   border-radius: 50%;
 

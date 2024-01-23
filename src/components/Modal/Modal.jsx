@@ -1,5 +1,12 @@
 import { useEffect } from "react";
-import { ModalOverlay, ModalWrap } from "./Modal-styled";
+import {
+  ButtonClose,
+  CloseIcon,
+  ModalOverlay,
+  ModalWrap,
+} from "./Modal-styled";
+
+import sprite from "../../sprite.svg";
 
 export const Modal = ({ children, closeModal }) => {
   useEffect(() => {
@@ -8,9 +15,10 @@ export const Modal = ({ children, closeModal }) => {
     };
 
     window.addEventListener("keydown", handlePressESC);
-
+    document.body.classList.add("modal-open");
     return () => {
       window.removeEventListener("keydown", handlePressESC);
+      document.body.classList.remove("modal-open");
     };
   }, [closeModal]);
 
@@ -21,7 +29,14 @@ export const Modal = ({ children, closeModal }) => {
   return (
     <>
       <ModalOverlay onClick={handleOverlayClick}>
-        <ModalWrap>{children}</ModalWrap>
+        <ModalWrap>
+          <ButtonClose type="button" onClick={closeModal}>
+            <CloseIcon>
+              <use href={sprite + "#icon-close"}></use>
+            </CloseIcon>
+          </ButtonClose>
+          {children}
+        </ModalWrap>
       </ModalOverlay>
     </>
   );

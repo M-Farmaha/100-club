@@ -2,27 +2,20 @@ import styled, { keyframes } from "styled-components";
 
 const rotate360 = keyframes`
   from {
-    transform:  perspective(500px) rotateY(0deg);
+    transform: rotate(0deg);
   }
 
   to {
-    transform:  perspective(500px) rotateY(360deg);
+    transform: rotate(360deg);
   }
 `;
 
-export const LoaderOverlay = styled.div`
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: 99999;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
 export const LoaderWWrap = styled.div`
-  color: var(--primary-black-color);
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
   width: 25%;
   height: 25%;
@@ -30,6 +23,7 @@ export const LoaderWWrap = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  color: var(--primary-black-color);
 `;
 
 export const LoaderSvg = styled.svg`
@@ -37,5 +31,5 @@ export const LoaderSvg = styled.svg`
   height: 100%;
   fill: currentColor;
 
-  animation: ${rotate360} 1s linear infinite;
+  animation: ${rotate360} 5s linear infinite;
 `;

@@ -10,7 +10,7 @@ export const HeaderFilter = styled.div`
   z-index: 998;
 
   backdrop-filter: blur(8px);
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.7);
 `;
 
 export const Header = styled.header`

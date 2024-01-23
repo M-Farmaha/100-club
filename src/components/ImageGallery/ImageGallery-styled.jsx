@@ -41,6 +41,6 @@ export const ImageGalleryImg = styled.img`
 
 export const ImageGalleryModalImg = styled.img`
   max-width: 100vw;
-  max-height: calc(100vh - 50px);
+  max-height: calc(100vh - 48px);
   object-fit: scale-down;
 `;

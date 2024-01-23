@@ -20,7 +20,11 @@ export const VideoFilter = styled.div`
   height: 100%;
   z-index: -5;
 
-  background: linear-gradient(to right, var(--secondary-black-color), var(--primary-black-color));
+  background: linear-gradient(
+    to right,
+    var(--secondary-black-color),
+    var(--primary-black-color)
+  );
 
   opacity: 0.6;
 `;
@@ -89,7 +93,8 @@ export const ButtonLink = styled(Link)`
   align-items: center;
 
   background-color: var(--accent-color);
-  color: var(--primary-white-color);
+  color: var(--button-color);
+  box-shadow: var(--box-shadow);
 
   font-size: 16px;
   font-family: "Manrope";
