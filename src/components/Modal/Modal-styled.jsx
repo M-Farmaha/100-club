@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Modal, Box } from "@mui/material";
 
 export const ModalOverlay = styled.div`
   position: fixed;
@@ -14,8 +15,6 @@ export const ModalOverlay = styled.div`
 `;
 
 export const ModalWrap = styled.div`
-  position: relative;
-  border-radius: 10px;
   background-color: var(--primary-white-color);
   overflow: hidden;
   box-shadow: var(--box-shadow);
@@ -25,8 +24,8 @@ export const ButtonClose = styled.button`
   position: absolute;
   top: 16px;
   right: 16px;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
 
   display: flex;
   justify-content: center;
@@ -51,4 +50,22 @@ export const CloseIcon = styled.svg`
   width: 75%;
   height: 75%;
   stroke: currentcolor;
+`;
+
+export const ModalOverlayMIU = styled(Modal)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  backdrop-filter: blur(10px);
+`;
+
+export const ModalWrapMIU = styled(Box)`
+  background-color: var(--primary-white-color);
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+
+  outline: none;
+  border: none;
+  border-radius: 0%;
 `;

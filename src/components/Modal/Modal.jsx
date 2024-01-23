@@ -1,12 +1,5 @@
 import { useEffect } from "react";
-import {
-  ButtonClose,
-  CloseIcon,
-  ModalOverlay,
-  ModalWrap,
-} from "./Modal-styled";
-
-import sprite from "../../sprite.svg";
+import { ModalOverlay, ModalWrap } from "./Modal-styled";
 
 export const Modal = ({ children, closeModal }) => {
   useEffect(() => {
@@ -29,14 +22,7 @@ export const Modal = ({ children, closeModal }) => {
   return (
     <>
       <ModalOverlay onClick={handleOverlayClick}>
-        <ModalWrap>
-          <ButtonClose type="button" onClick={closeModal}>
-            <CloseIcon>
-              <use href={sprite + "#icon-close"}></use>
-            </CloseIcon>
-          </ButtonClose>
-          {children}
-        </ModalWrap>
+        <ModalWrap>{children}</ModalWrap>
       </ModalOverlay>
     </>
   );

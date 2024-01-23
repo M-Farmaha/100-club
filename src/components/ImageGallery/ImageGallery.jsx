@@ -9,8 +9,9 @@ import {
   SectionWrap,
 } from "./ImageGallery-styled";
 
-import { Modal } from "../Modal/Modal";
 import { Loader } from "../Loaders/Loaders";
+
+import { ModalOverlayMIU, ModalWrapMIU } from "../Modal/Modal-styled";
 
 export const ImageGallery = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -62,16 +63,22 @@ export const ImageGallery = () => {
         </Section>
       )}
 
-      {isLoading && <Loader />}
       {isModalOpen && (
-        <Modal closeModal={closeModal}>
-          {isLoading && <Loader />}
-          <ImageGalleryModalImg
-            src={galleryArray[selectedImageIndex].largeImageURL}
-            alt={galleryArray[selectedImageIndex].tags}
-            onLoad={() => setIsLoading(false)}
-          />
-        </Modal>
+        <ModalOverlayMIU
+          open={isModalOpen}
+          onClose={closeModal}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-description"
+        >
+          <ModalWrapMIU>
+            {isLoading && <Loader />}
+            <ImageGalleryModalImg
+              src={galleryArray[selectedImageIndex].largeImageURL}
+              alt={galleryArray[selectedImageIndex].tags}
+              onLoad={() => setIsLoading(false)}
+            />
+          </ModalWrapMIU>
+        </ModalOverlayMIU>
       )}
     </>
   );

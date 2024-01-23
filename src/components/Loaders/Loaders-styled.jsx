@@ -11,7 +11,7 @@ const rotate360 = keyframes`
 `;
 
 export const LoaderWWrap = styled.div`
-
+  z-index: 99999;
   position: absolute;
   top: 50%;
   left: 50%;
