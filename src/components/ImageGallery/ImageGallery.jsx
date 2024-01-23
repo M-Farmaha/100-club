@@ -34,13 +34,15 @@ export const ImageGallery = () => {
 
   const openModal = (index) => {
     document.body.classList.add("modal-open");
+    document.documentElement.classList.add("modal-open");
     setSelectedImageIndex(index);
     setIsModalOpen(true);
     setIsLoading(true);
   };
-
+  
   const closeModal = () => {
     document.body.classList.remove("modal-open");
+    document.documentElement.classList.remove("modal-open");
     setIsModalOpen(false);
   };
 
