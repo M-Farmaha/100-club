@@ -29,6 +29,7 @@ body {
 
   &.modal-open {
     position: relative;
+    height: 100%;
     overflow: hidden;
   }
 
@@ -38,7 +39,7 @@ html {
   min-width: 330px;
 
   &.modal-open {
-    height: 100%;
+    position: relative;
     overflow: hidden;
   }
 }
