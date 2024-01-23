@@ -9,7 +9,7 @@ export const ModalOverlay = styled.div`
   height: 100vh;
   -webkit-overflow-scrolling: touch;
   
-  /* backdrop-filter: blur(10px); */
+  backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
   justify-content: center;
