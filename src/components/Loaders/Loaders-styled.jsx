@@ -23,7 +23,7 @@ export const LoaderWWrap = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--primary-black-color);
+  color: currentColor;
 `;
 
 export const LoaderSvg = styled.svg`

@@ -58,10 +58,13 @@ export const ModalOverlayMIU = styled(Modal)`
   justify-content: center;
 
   backdrop-filter: blur(10px);
+
+  position: fixed;
 `;
 
 export const ModalWrapMIU = styled(Box)`
-  background-color: var(--primary-white-color);
+  background-color: transparent;
+  color: var(--primary-white-color);
   overflow: hidden;
   box-shadow: var(--box-shadow);
 
