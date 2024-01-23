@@ -19,7 +19,6 @@ export const LoaderOverlay = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-
 `;
 
 export const LoaderWWrap = styled.div`

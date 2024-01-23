@@ -10,16 +10,13 @@ export const Layout = () => {
       <AppBar />
 
       <ScrollWrap>
-        <main style={{paddingTop: "100px"}}>
+        <main style={{ paddingTop: "100px" }}>
           <Outlet />
         </main>
 
         <Footer />
         <ScrollToTopButton />
       </ScrollWrap>
-
-
-      
     </>
   );
 };

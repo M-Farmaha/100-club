@@ -18,7 +18,7 @@ export const ScrollToTopButton = () => {
     if (scrollBottom < 100) {
       setButtonScrollBottom(120);
     } else {
-      setButtonScrollBottom(20)
+      setButtonScrollBottom(20);
     }
 
     if (scrollTop > 300) {
