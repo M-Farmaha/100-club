@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { apiRequest } from "../../Api/ApiRequests";
-import { useNavigate } from "react-router-dom";
+
 import {
   ImageGalleryImg,
   ImageGalleryItem,
@@ -14,11 +14,10 @@ import { Loader } from "../Loaders/Loaders";
 import { Modal } from "../Modal/Modal";
 
 export const ImageGallery = () => {
-  const navigate = useNavigate();
-
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+  const [scrollPosition, setScrollPosition] = useState(0);
   const [galleryArray, setGalleryArray] = useState([]);
 
   useEffect(() => {
@@ -38,11 +37,20 @@ export const ImageGallery = () => {
     setSelectedImageIndex(index);
     setIsModalOpen(true);
     setIsLoading(true);
+
+    setScrollPosition(window.scrollY);
+
+    document.body.classList.add("modal-open");
+    document.documentElement.classList.add("modal-open");
   };
 
   const closeModal = () => {
+    document.body.classList.remove("modal-open");
+    document.documentElement.classList.remove("modal-open");
+
     setIsModalOpen(false);
-    navigate("/gallery");
+    console.log(scrollPosition);
+    window.scrollTo(0, scrollPosition);
   };
 
   return (
@@ -67,7 +75,7 @@ export const ImageGallery = () => {
       )}
 
       {isModalOpen && (
-        <Modal closeModal={closeModal}>
+        <Modal closeModal={closeModal} scrollPosition={scrollPosition}>
           {isLoading && <Loader />}
           <ImageGalleryModalImg
             src={galleryArray[selectedImageIndex].largeImageURL}
