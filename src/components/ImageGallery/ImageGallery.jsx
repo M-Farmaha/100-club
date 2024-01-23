@@ -1,20 +1,19 @@
 import { useEffect, useState } from "react";
-// import Modal from "react-modal";
-// import Gallery from "react-image-gallery";
-// import "react-image-gallery/styles/css/image-gallery.css";
 import { apiRequest } from "../../Api/ApiRequests";
 import {
   ImageGalleryImg,
   ImageGalleryItem,
   ImageGalleryList,
+  ImageGalleryModalImg,
   Section,
   SectionWrap,
 } from "./ImageGallery-styled";
 
-export const ImageGallery = () => {
-//   const [modalIsOpen, setModalIsOpen] = useState(false);
-//   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+import { Modal } from "../Modal/Modal";
 
+export const ImageGallery = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [galleryArray, setGalleryArray] = useState([]);
 
   useEffect(() => {
@@ -30,29 +29,28 @@ export const ImageGallery = () => {
     fetchData();
   }, []);
 
-//   const openModal = (index) => {
-//     setSelectedImageIndex(index);
-//     setModalIsOpen(true);
-//   };
+  const openModal = (index) => {
+    setSelectedImageIndex(index);
+    setIsModalOpen(true);
+  };
 
-  //   const closeModal = () => {
-  //     setModalIsOpen(false);
-  //   };
-
-  //   const images = galleryArray.map((item) => ({
-  //     original: item.largeImageURL,
-  //     thumbnail: item.previewURL,
-  //     description: item.tags,
-  //   }));
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
 
   return (
     <>
-      {galleryArray.length && (
+      {galleryArray.length !== 0 && (
         <Section>
           <SectionWrap>
             <ImageGalleryList>
               {galleryArray.map((el, index) => (
-                <ImageGalleryItem key={index}>
+                <ImageGalleryItem
+                  key={index}
+                  onClick={() => {
+                    openModal(index);
+                  }}
+                >
                   <ImageGalleryImg src={el.webformatURL} alt={el.tags} />
                 </ImageGalleryItem>
               ))}
@@ -60,17 +58,15 @@ export const ImageGallery = () => {
           </SectionWrap>
         </Section>
       )}
-      {/* <Modal
-        isOpen={modalIsOpen}
-        onRequestClose={closeModal}
-        contentLabel="Image Gallery Modal"
-      >
-        <Gallery
-          items={images}
-          startIndex={selectedImageIndex}
-          onRequestClose={closeModal}
-        />
-      </Modal> */}
+
+      {isModalOpen && (
+        <Modal closeModal={closeModal}>
+          <ImageGalleryModalImg
+            src={galleryArray[selectedImageIndex].largeImageURL}
+            alt={galleryArray[selectedImageIndex].tags}
+          />
+        </Modal>
+      )}
     </>
   );
 };

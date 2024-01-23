@@ -14,12 +14,15 @@
 }
 
 body {
-  padding-top: 100px;
+
   color: var(--primary-black-color);
   background-color: var(--secondary-white-color);
   font-family: 'Manrope', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  overflow: hidden;
+
 }
 
 html {
@@ -63,8 +66,8 @@ input {
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 5px;
+  height: 5px;
 }
 
 ::-webkit-scrollbar-track {

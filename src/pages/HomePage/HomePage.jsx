@@ -2,7 +2,7 @@ import { AboutSection } from "../../components/AboutSection/AboutSection";
 import { HeroSection } from "../../components/HeroSection/HeroSection";
 import { StatsSection } from "../../components/StatsSection/StatsSection";
 
-export const HomePage = () => {
+const HomePage = () => {
   return (
     <>
       <HeroSection />
@@ -11,3 +11,5 @@ export const HomePage = () => {
     </>
   );
 };
+
+export default HomePage;

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const GalleryPageWrap = styled.div`
+export const ScrollWrap = styled.div`
   height: 100vh;
   overflow-y: scroll;
 `;

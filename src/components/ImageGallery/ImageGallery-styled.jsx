@@ -38,3 +38,9 @@ export const ImageGalleryImg = styled.img`
     cursor: pointer;
   }
 `;
+
+export const ImageGalleryModalImg = styled.img`
+  max-width: 100vw;
+  max-height: calc(100vh - 50px);
+  object-fit: scale-down;
+`;

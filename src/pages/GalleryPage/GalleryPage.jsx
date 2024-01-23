@@ -1,9 +1,14 @@
 import { ImageGallery } from "../../components/ImageGallery/ImageGallery";
+import { GalleryPageWrap } from "./GalleryPage-styled";
 
-export const GalleryPage = () => {
+const GalleryPage = () => {
   return (
     <>
-      <ImageGallery />
+      {/* <GalleryPageWrap> */}
+        <ImageGallery />
+      {/* </GalleryPageWrap> */}
     </>
   );
 };
+
+export default GalleryPage;
