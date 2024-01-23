@@ -7,14 +7,13 @@ export const ModalOverlay = styled.div`
   top: 0;
   width: 100%;
   height: 100vh;
-  overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
 
   z-index: 999999;
 
   background-color: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(10px);
-  
+  /* backdrop-filter: blur(10px); */
+
   display: flex;
   align-items: center;
   justify-content: center;

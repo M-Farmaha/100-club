@@ -8,11 +8,14 @@ export const Modal = ({ children, closeModal }) => {
     };
 
     window.addEventListener("keydown", handlePressESC);
-    document.body.classList.add("modal-open");
 
+    document.body.classList.add("modal-open");
+    document.documentElement.classList.add("modal-open");
     return () => {
       window.removeEventListener("keydown", handlePressESC);
+
       document.body.classList.remove("modal-open");
+      document.documentElement.classList.remove("modal-open");
     };
   }, [closeModal]);
 
