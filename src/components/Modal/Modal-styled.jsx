@@ -3,17 +3,18 @@ import { Modal, Box } from "@mui/material";
 
 export const ModalOverlay = styled.div`
   position: fixed;
-  top: 0;
   left: 0;
-  z-index: 9999999999;
+  top: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
 
-  overflow: hidden;
+  z-index: 999999;
 
   background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(10px);
+  
   display: flex;
   align-items: center;
   justify-content: center;
