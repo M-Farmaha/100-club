@@ -31,10 +31,10 @@ export const ModalWrap = styled.div`
 
 export const ButtonClose = styled.button`
   position: absolute;
-  top: 24px;
-  right: 24px;
-  width: 50px;
-  height: 50px;
+  top: 0px;
+  right: 0px;
+  width: 60px;
+  height: 60px;
 
   display: flex;
   justify-content: center;
@@ -53,8 +53,8 @@ export const ButtonClose = styled.button`
 `;
 
 export const CloseIcon = styled.svg`
-  width: 50%;
-  height: 50%;
+  width: 40%;
+  height: 40%;
   fill: currentcolor;
   filter: drop-shadow(0px 0px 3px rgb(0 0 0 / 0.7));
 `;

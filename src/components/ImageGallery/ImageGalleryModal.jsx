@@ -27,7 +27,7 @@ export const ImageGalleryModal = () => {
             setEl(foundEl);
           }
         } catch (error) {
-          alert(error);
+          console.log(error);
         }
       }
     };
@@ -56,6 +56,7 @@ export const ImageGalleryModal = () => {
           <ImageGalleryModalImg
             src={el?.largeImageURL}
             alt={el?.tags}
+            loading="lazy"
             onLoad={() => setIsLoading(false)}
           />
         </Modal>
