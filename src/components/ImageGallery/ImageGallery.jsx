@@ -1,23 +1,17 @@
 import { useEffect, useState } from "react";
-import { apiRequest } from "../../Api/ApiRequests";
+import { Outlet, useNavigate } from "react-router-dom";
 
+import { apiRequest } from "../../Api/ApiRequests";
 import {
   ImageGalleryImg,
   ImageGalleryItem,
   ImageGalleryList,
-  ImageGalleryModalImg,
   Section,
   SectionWrap,
 } from "./ImageGallery-styled";
 
-import { Loader } from "../Loaders/Loaders";
-import { Modal } from "../Modal/Modal";
-
 export const ImageGallery = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
-  const [scrollPosition, setScrollPosition] = useState(0);
+  const navigate = useNavigate();
   const [galleryArray, setGalleryArray] = useState([]);
 
   useEffect(() => {
@@ -33,24 +27,10 @@ export const ImageGallery = () => {
     fetchData();
   }, []);
 
-  const openModal = (index) => {
-    setSelectedImageIndex(index);
-    setIsModalOpen(true);
-    setIsLoading(true);
-
-    setScrollPosition(window.scrollY);
-
-    document.body.classList.add("modal-open");
-    document.documentElement.classList.add("modal-open");
-  };
-
-  const closeModal = () => {
-    document.body.classList.remove("modal-open");
-    document.documentElement.classList.remove("modal-open");
-
-    setIsModalOpen(false);
-    console.log(scrollPosition);
-    window.scrollTo(0, scrollPosition);
+  const openModal = (el) => {
+    navigate(`modal/${el.id}`, {
+      state: { el, scrollPosition: window.scrollY },
+    });
   };
 
   return (
@@ -60,12 +40,7 @@ export const ImageGallery = () => {
           <SectionWrap>
             <ImageGalleryList>
               {galleryArray.map((el, index) => (
-                <ImageGalleryItem
-                  key={index}
-                  onClick={() => {
-                    openModal(index);
-                  }}
-                >
+                <ImageGalleryItem key={index} onClick={() => openModal(el)}>
                   <ImageGalleryImg src={el.webformatURL} alt={el.tags} />
                 </ImageGalleryItem>
               ))}
@@ -74,16 +49,7 @@ export const ImageGallery = () => {
         </Section>
       )}
 
-      {isModalOpen && (
-        <Modal closeModal={closeModal} scrollPosition={scrollPosition}>
-          {isLoading && <Loader />}
-          <ImageGalleryModalImg
-            src={galleryArray[selectedImageIndex].largeImageURL}
-            alt={galleryArray[selectedImageIndex].tags}
-            onLoad={() => setIsLoading(false)}
-          />
-        </Modal>
-      )}
+      <Outlet />
     </>
   );
 };

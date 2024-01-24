@@ -3,7 +3,7 @@ import { AppBar } from "../components/AppBar/AppBar";
 import { Footer } from "../components/Footer/Footer";
 import { ScrollToTopButton } from "../components/ScrollToTopButton/ScrollToTopButton";
 
-export const Layout = () => {
+const Layout = () => {
   return (
     <>
       <AppBar />
@@ -17,3 +17,5 @@ export const Layout = () => {
     </>
   );
 };
+
+export default Layout;

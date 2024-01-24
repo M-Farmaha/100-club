@@ -11,8 +11,8 @@ export const ModalOverlay = styled.div`
 
   z-index: 999999;
 
-  background-color: rgba(0, 0, 0, 0.5);
-  /* backdrop-filter: blur(10px); */
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
 
   display: flex;
   align-items: center;
@@ -31,34 +31,32 @@ export const ModalWrap = styled.div`
 
 export const ButtonClose = styled.button`
   position: absolute;
-  top: 16px;
-  right: 16px;
-  width: 30px;
-  height: 30px;
+  top: 24px;
+  right: 24px;
+  width: 50px;
+  height: 50px;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  background-color: var(--accent-color);
-  color: var(--button-color);
-  box-shadow: var(--box-shadow);
-
   border: none;
-  border-radius: 50%;
+  background-color: transparent;
+  color: var(--primary-white-color);
 
   transition: var(--main-transition);
 
   &:hover {
     cursor: pointer;
-    background-color: var(--accent-hover-color);
+    color: var(--accent-hover-color);
   }
 `;
 
 export const CloseIcon = styled.svg`
-  width: 75%;
-  height: 75%;
-  stroke: currentcolor;
+  width: 50%;
+  height: 50%;
+  fill: currentcolor;
+  filter: drop-shadow(0px 0px 3px rgb(0 0 0 / 0.7));
 `;
 
 export const ModalOverlayMIU = styled(Modal)`

@@ -29,7 +29,7 @@
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "start": "react-scripts start",
+    "start": "react-scripts start --port=2345",
     "build": "react-scripts build",
     "gh-pages:404": "cp build/index.html build/404.html",
     "test": "react-scripts test",
