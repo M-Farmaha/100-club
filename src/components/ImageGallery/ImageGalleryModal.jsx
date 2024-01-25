@@ -12,7 +12,7 @@ import sprite from "../../sprite.svg";
 import { Loader } from "../Loaders/Loaders";
 import { Modal } from "../Modal/Modal";
 import { Portal } from "../../Routes/Portal/Portal";
-import { apiRequest } from "../../Api/ApiRequests";
+import { apiRequest } from "../../Api/ApiRequest";
 
 export const ImageGalleryModal = () => {
   const { id } = useParams();
@@ -26,24 +26,16 @@ export const ImageGalleryModal = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const { hits } = await apiRequest(1);
-        setGalleryArray(hits);
-        const current = hits.find((obj) => String(obj.id) === String(id));
-        setCurrentImg(current);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
-    fetchData();
-  }, [id]);
-
-  useEffect(() => {
     document.body.classList.add("modal-open");
     document.documentElement.classList.add("modal-open");
   }, []);
+
+  useEffect(() => {
+    const response = apiRequest();
+    const current = response.find((el) => String(el.id) === String(id));
+    setGalleryArray(response);
+    setCurrentImg(current);
+  }, [id]);
 
   const closeModal = () => {
     document.body.classList.remove("modal-open");
@@ -60,7 +52,7 @@ export const ImageGalleryModal = () => {
 
     const prev =
       findCurrentIndex === 0
-        ? galleryArray.length[galleryArray.length - 1]
+        ? galleryArray[galleryArray.length - 1]
         : galleryArray[findCurrentIndex - 1];
 
     const next =
@@ -110,8 +102,8 @@ export const ImageGalleryModal = () => {
 
           {currentImg && (
             <ImageGalleryModalImg
-              src={currentImg?.largeImageURL}
-              alt={currentImg?.tags}
+              src={currentImg?.path}
+              alt={currentImg?.description}
               loading="lazy"
               onLoad={() => setIsLoading(false)}
             />

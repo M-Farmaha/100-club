@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { apiRequest } from "../../Api/ApiRequests";
+import { apiRequest } from "../../Api/ApiRequest";
 import { ImageGalleryItem } from "./ImageGalleryItem";
 
 import { ImageGalleryList, Section, SectionWrap } from "./ImageGallery-styled";
@@ -8,16 +8,8 @@ export const ImageGallery = () => {
   const [galleryArray, setGalleryArray] = useState([]);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const { hits } = await apiRequest(1);
-        setGalleryArray(hits);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
-    fetchData();
+    const response = apiRequest();
+    setGalleryArray(response);
   }, []);
 
   return (
@@ -25,8 +17,8 @@ export const ImageGallery = () => {
       <Section>
         <SectionWrap>
           <ImageGalleryList>
-            {galleryArray?.map((el, index) => (
-              <ImageGalleryItem key={index} el={el}/>
+            {galleryArray?.map((el) => (
+              <ImageGalleryItem key={el.id} el={el} />
             ))}
           </ImageGalleryList>
         </SectionWrap>

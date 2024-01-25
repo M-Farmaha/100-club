@@ -20,8 +20,8 @@ export const ImageGalleryItem = ({ el }) => {
         {isLoading && <Loader />}
         <ImageGalleryImg
           loading="lazy"
-          src={el.webformatURL}
-          alt={el.tags}
+          src={el.path}
+          alt={el.description}
           onLoad={() => setIsLoading(false)}
         />
       </ImageGalleryItemLi>
