@@ -5,7 +5,6 @@ import { ImageGalleryItem } from "./ImageGalleryItem";
 import { ImageGalleryList, Section, SectionWrap } from "./ImageGallery-styled";
 
 export const ImageGallery = () => {
-
   const [galleryArray, setGalleryArray] = useState([]);
 
   useEffect(() => {
@@ -21,15 +20,13 @@ export const ImageGallery = () => {
     fetchData();
   }, []);
 
-
-
   return (
     <>
       <Section>
         <SectionWrap>
           <ImageGalleryList>
             {galleryArray?.map((el, index) => (
-              <ImageGalleryItem key={index} el={el}  />
+              <ImageGalleryItem key={index} el={el} />
             ))}
           </ImageGalleryList>
         </SectionWrap>

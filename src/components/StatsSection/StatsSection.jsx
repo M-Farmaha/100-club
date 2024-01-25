@@ -1,52 +1,28 @@
-import {
-  StatsIconSvg,
-  Item,
-  List,
-  Section,
-  SectionWrap,
-  SubTitle,
-} from "./StatsSection-styled";
+import { List, Section, SectionWrap } from "./StatsSection-styled";
 
-import sprite from "../../sprite.svg";
-import { AnimatedStat } from "./AnimatedStat";
+import { StatItem } from "./StatsItem";
 
 export const StatsSection = () => {
+  const stats = [
+    { name: "Турнірів за рік", count: 45, icon: "icon-stats-1" },
+    { name: "Гравців у клубі", count: 100, icon: "icon-stats-2" },
+    { name: "Років досвіду", count: 8, icon: "icon-stats-3" },
+    { name: "Тренерів у клубі", count: 45, icon: "icon-stats-4" },
+  ];
+
   return (
     <>
       <Section>
         <SectionWrap>
           <List>
-            <Item>
-              <StatsIconSvg>
-                <use href={sprite + "#icon-stats-1"}></use>
-              </StatsIconSvg>
-              <AnimatedStat number={45} id={"stats-1"} />
-              <SubTitle>Турнірів за рік</SubTitle>
-            </Item>
-
-            <Item>
-              <StatsIconSvg>
-                <use href={sprite + "#icon-stats-2"}></use>
-              </StatsIconSvg>
-              <AnimatedStat number={100} id={"stats-2"} />
-              <SubTitle>Гравців у клубі</SubTitle>
-            </Item>
-
-            <Item>
-              <StatsIconSvg>
-                <use href={sprite + "#icon-stats-3"}></use>
-              </StatsIconSvg>
-              <AnimatedStat number={8} id={"stats-3"} />
-              <SubTitle>Років досвіду</SubTitle>
-            </Item>
-
-            <Item>
-              <StatsIconSvg>
-                <use href={sprite + "#icon-stats-4"}></use>
-              </StatsIconSvg>
-              <AnimatedStat number={5} id={"stats-4"} />
-              <SubTitle>Тренерів у клубі</SubTitle>
-            </Item>
+            {stats.map((stat) => (
+              <StatItem
+                key={stat.name}
+                name={stat.name}
+                count={stat.count}
+                icon={stat.icon}
+              />
+            ))}
           </List>
         </SectionWrap>
       </Section>

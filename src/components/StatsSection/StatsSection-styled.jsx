@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const Section = styled.section`
   padding-top: 100px;
   padding-bottom: 100px;
-
   backdrop-filter: blur(10px);
 `;
 
@@ -30,7 +29,7 @@ export const Item = styled.li`
   text-align: center;
 `;
 
-export const TitleH3 = styled.div`
+export const TitleH3 = styled.h3`
   font-family: "Manrope";
   font-size: 50px;
   font-weight: 900;
