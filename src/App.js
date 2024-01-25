@@ -20,7 +20,7 @@ function App() {
               <Route path="modal/:id" element={<ImageGalleryModal />} />
             </Route>
 
-            <Route path="*" element={<Navigate to="/" replace />} />
+            {/* <Route path="*" element={<Navigate to="/" replace />} /> */}
           </Route>
         </Routes>
       </BrowserRouter>

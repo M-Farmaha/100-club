@@ -10,7 +10,7 @@ export const ImageGalleryItem = ({ el }) => {
 
   const openModal = (el) => {
     navigate(`modal/${el.id}`, {
-      state: { el, scrollPosition: window.scrollY },
+      state: { scrollPosition: window.scrollY },
     });
   };
 
@@ -25,8 +25,6 @@ export const ImageGalleryItem = ({ el }) => {
           onLoad={() => setIsLoading(false)}
         />
       </ImageGalleryItemLi>
-
-
     </>
   );
 };

@@ -48,3 +48,35 @@ export const ImageGalleryModalImg = styled.img`
   max-height: 100vh;
   object-fit: scale-down;
 `;
+
+export const NavButton = styled.button`
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 10%;
+  height: 15%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: none;
+  background-color: transparent;
+
+  color: var(--primary-white-color);
+
+  transition: var(--main-transition);
+
+  &:hover {
+    cursor: pointer;
+    color: var(--accent-hover-color);
+  }
+`;
+
+export const NavIcon = styled.svg`
+  width: 80%;
+  height: 80%;
+  fill: currentcolor;
+  filter: drop-shadow(0px 0px 3px rgb(0 0 0 / 0.7));
+`;

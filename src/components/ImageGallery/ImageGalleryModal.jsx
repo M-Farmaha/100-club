@@ -1,7 +1,13 @@
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 
-import { ImageGalleryModalImg } from "./ImageGallery-styled";
+import {
+  ImageGalleryModalImg,
+  NavButton,
+  NavIcon,
+} from "./ImageGallery-styled";
+
+import sprite from "../../sprite.svg";
 
 import { Loader } from "../Loaders/Loaders";
 import { Modal } from "../Modal/Modal";
@@ -13,27 +19,26 @@ export const ImageGalleryModal = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const { state } = location;
-  const [el, setEl] = useState(state?.el);
+
+  const [galleryArray, setGalleryArray] = useState([]);
+  const [currentImg, setCurrentImg] = useState(null);
+
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
-      if (!el) {
-        console.log("вхід на сайт за посиланням");
-        try {
-          const { hits } = await apiRequest(1);
-          if (hits) {
-            const foundEl = hits.find((obj) => String(obj.id) === String(id));
-            setEl(foundEl);
-          }
-        } catch (error) {
-          console.log(error);
-        }
+      try {
+        const { hits } = await apiRequest(1);
+        setGalleryArray(hits);
+        const current = hits.find((obj) => String(obj.id) === String(id));
+        setCurrentImg(current);
+      } catch (error) {
+        console.log(error);
       }
     };
 
     fetchData();
-  }, [id, el]);
+  }, [id]);
 
   useEffect(() => {
     document.body.classList.add("modal-open");
@@ -48,17 +53,69 @@ export const ImageGalleryModal = () => {
     window.scrollTo(0, state?.scrollPosition);
   };
 
+  const changePicture = (e) => {
+    if (galleryArray.length === 0) return;
+
+    const findCurrentIndex = galleryArray.indexOf(currentImg);
+
+    const prev =
+      findCurrentIndex === 0
+        ? galleryArray.length[galleryArray.length - 1]
+        : galleryArray[findCurrentIndex - 1];
+
+    const next =
+      findCurrentIndex === galleryArray.length - 1
+        ? galleryArray[0]
+        : galleryArray[findCurrentIndex + 1];
+
+    if (e.currentTarget.id === "toLeft") {
+      navigate(`/gallery/modal/${prev.id}`);
+    } else {
+      navigate(`/gallery/modal/${next.id}`);
+    }
+
+    setIsLoading(true);
+  };
+
   return (
     <>
       <Portal>
         <Modal closeModal={closeModal}>
-          {isLoading && <Loader />}
-          <ImageGalleryModalImg
-            src={el?.largeImageURL}
-            alt={el?.tags}
-            loading="lazy"
-            onLoad={() => setIsLoading(false)}
-          />
+          {isLoading ? (
+            <Loader />
+          ) : (
+            <>
+              <NavButton
+                type="button"
+                id="toLeft"
+                style={{ left: 0 }}
+                onClick={changePicture}
+              >
+                <NavIcon>
+                  <use href={sprite + "#icon-arrow-left"}></use>
+                </NavIcon>
+              </NavButton>
+              <NavButton
+                type="button"
+                id="toRight"
+                style={{ right: 0 }}
+                onClick={changePicture}
+              >
+                <NavIcon>
+                  <use href={sprite + "#icon-arrow-right"}></use>
+                </NavIcon>
+              </NavButton>
+            </>
+          )}
+
+          {currentImg && (
+            <ImageGalleryModalImg
+              src={currentImg?.largeImageURL}
+              alt={currentImg?.tags}
+              loading="lazy"
+              onLoad={() => setIsLoading(false)}
+            />
+          )}
         </Modal>
       </Portal>
     </>

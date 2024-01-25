@@ -10,8 +10,8 @@ export const ImageGallery = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await apiRequest(1);
-        setGalleryArray(response.hits);
+        const { hits } = await apiRequest(1);
+        setGalleryArray(hits);
       } catch (error) {
         console.log(error);
       }
@@ -26,7 +26,7 @@ export const ImageGallery = () => {
         <SectionWrap>
           <ImageGalleryList>
             {galleryArray?.map((el, index) => (
-              <ImageGalleryItem key={index} el={el} />
+              <ImageGalleryItem key={index} el={el}/>
             ))}
           </ImageGalleryList>
         </SectionWrap>
