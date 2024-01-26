@@ -8,8 +8,9 @@ import {
   NavList,
   NavWrap,
   Header,
-  HeaderFilter,
   NavIconSvg,
+  HeaderBlurFilter,
+  HeaderBaseBG,
 } from "./AppBar-styled";
 
 import sprite from "../../sprite.svg";
@@ -22,7 +23,8 @@ export const AppBar = () => {
   });
   return (
     <>
-      <HeaderFilter />
+      <HeaderBaseBG />
+      <HeaderBlurFilter />
       <Header>
         <NavWrap>
           <a.div

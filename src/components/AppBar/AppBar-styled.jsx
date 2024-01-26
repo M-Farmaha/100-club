@@ -1,16 +1,29 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
-export const HeaderFilter = styled.div`
+export const HeaderBaseBG = styled.div`
   height: 100px;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: -999;
-  
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 1),
+    rgba(18, 31, 64, 1),
+    rgba(0, 0, 0, 1)
+  );
+`;
+
+export const HeaderBlurFilter = styled.div`
+  height: 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 998;
   backdrop-filter: blur(8px);
-  background-color: var(--primary-black-color);
 `;
 
 export const Header = styled.header`
