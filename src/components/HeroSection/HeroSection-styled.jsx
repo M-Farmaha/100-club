@@ -66,7 +66,7 @@ export const TitleH1 = styled.h1`
   color: var(--primary-white-color);
 
   & span {
-    color: var(--accent-color);
+    color: var(--accent-hover-color);
     font-weight: 900;
   }
 `;
@@ -97,7 +97,11 @@ export const ButtonLink = styled(Link)`
   border-radius: 12px;
   padding: 12px;
 
-  background-color: rgba(105, 150, 0, 0.2);
+  background: linear-gradient(
+    to right,
+    var(--primary-yellow-color),
+    var(--accent-color)
+  );
   color: var(--button-color);
   box-shadow: var(--box-shadow);
 
@@ -108,7 +112,11 @@ export const ButtonLink = styled(Link)`
   transition: var(--main-transition);
 
   &:hover {
-    background-color: var(--accent-hover-color);
+    background: linear-gradient(
+    to right,
+    var(--hover-yellow-color),
+    var(--accent-hover-color)
+  );
   }
 `;
 
@@ -122,7 +130,11 @@ export const Button = styled.a`
   border-radius: 12px;
   padding: 12px;
 
-  background-color: rgba(105, 150, 0, 0.2);
+  background: linear-gradient(
+    to right,
+    var(--primary-yellow-color),
+    var(--accent-color)
+  );
   color: var(--button-color);
   box-shadow: var(--box-shadow);
 
@@ -133,7 +145,11 @@ export const Button = styled.a`
   transition: var(--main-transition);
 
   &:hover {
-    background-color: var(--accent-hover-color);
+    background: linear-gradient(
+    to right,
+    var(--hover-yellow-color),
+    var(--accent-hover-color)
+  );
   }
 `;
 

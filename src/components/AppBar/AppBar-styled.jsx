@@ -10,7 +10,7 @@ export const HeaderFilter = styled.div`
   z-index: 998;
 
   backdrop-filter: blur(8px);
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(0, 0, 0, 0.5);
 `;
 
 export const Header = styled.header`
@@ -28,9 +28,9 @@ export const Header = styled.header`
   border-bottom: 1px solid;
   border-image: linear-gradient(
       to right,
-      rgba(255, 255, 255, 0.5),
-      rgba(6, 86, 91, 0.5),
-      rgba(255, 255, 255, 0.5)
+      rgba(0, 0, 0, 0.5),
+      rgba(151, 211, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
     )
     1;
 
@@ -72,7 +72,7 @@ export const NavLinkStyled = styled(NavLink)`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: var(--primary-black-color);
+  color: var(--primary-white-color);
 
   transition: var(--main-transition);
 
@@ -84,7 +84,7 @@ export const NavLinkStyled = styled(NavLink)`
     width: 100%;
     height: 5px;
 
-    background-color: var(--accent-color);
+    background-color: var(--accent-hover-color);
 
     transform-origin: left;
     transform: scaleX(0);
@@ -92,7 +92,7 @@ export const NavLinkStyled = styled(NavLink)`
   }
 
   &:hover {
-    color: var(--accent-color);
+    color: var(--accent-hover-color);
 
     &::after {
       transform: scaleX(1);
@@ -100,7 +100,7 @@ export const NavLinkStyled = styled(NavLink)`
   }
 
   &.active {
-    color: var(--accent-color);
+    color: var(--accent-hover-color);
     cursor: default;
 
     &:not(.logo):after {
@@ -111,7 +111,7 @@ export const NavLinkStyled = styled(NavLink)`
       width: 100%;
       height: 5px;
 
-      background-color: var(--accent-color);
+      background-color: var(--accent-hover-color);
       transform: scaleX(1);
     }
   }
