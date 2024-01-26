@@ -51,7 +51,7 @@ export const ModalImgWrap = styled.div`
 
 export const ImageGalleryModalImg = styled.img`
   max-width: 100vw;
-  max-height: calc(100vw - 80px);
+  max-height: 100vh;
 
   object-fit: scale-down;
 `;
