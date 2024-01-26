@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Section = styled.section`
   background-color: var(--primary-white-color);
   padding-bottom: 100px;
+  margin-top: 100px;
   min-height: 1300px;
 `;
 
@@ -10,6 +11,7 @@ export const SectionWrap = styled.div`
   margin-left: auto;
   margin-right: auto;
   max-width: 1200px;
+  background-color: var(--primary-white-color);
 `;
 
 export const ImageGalleryList = styled.ul`
@@ -44,7 +46,6 @@ export const ImageGalleryImg = styled.img`
 `;
 
 export const ModalImgWrap = styled.div`
-
   width: 100%;
   height: 100%;
 `;

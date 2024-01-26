@@ -45,7 +45,7 @@ export const VideoPoster = styled.div`
 
 export const Section = styled.section`
   min-height: 100vh;
-  padding-top: 50px;
+  padding-top: 150px;
   padding-bottom: 100px;
 `;
 

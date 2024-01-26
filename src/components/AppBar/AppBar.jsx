@@ -10,9 +10,12 @@ import {
   Header,
   HeaderFilter,
   NavIconSvg,
+  Video,
 } from "./AppBar-styled";
 
 import sprite from "../../sprite.svg";
+
+import Stars from "./stars.mp4";
 
 export const AppBar = () => {
   const [flipped, setFlipped] = useState(false);
@@ -23,6 +26,9 @@ export const AppBar = () => {
   return (
     <>
       <HeaderFilter />
+      <Video muted loop playsInline preload="auto" autoPlay>
+        <source src={Stars} type="video/mp4" />
+      </Video>
       <Header>
         <NavWrap>
           <a.div

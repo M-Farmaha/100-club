@@ -7,7 +7,7 @@ const MembersPage = () => {
 
   return (
     <>
-      <p>Members Page</p>
+      <p style={{paddingTop: "100px"}}>Members Page</p>
     </>
   );
 };

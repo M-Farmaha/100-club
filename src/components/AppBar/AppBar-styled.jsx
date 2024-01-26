@@ -1,6 +1,16 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
+export const Video = styled.video`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  z-index: -1;
+`;
+
 export const HeaderFilter = styled.div`
   height: 100px;
   position: fixed;
@@ -10,7 +20,12 @@ export const HeaderFilter = styled.div`
   z-index: 998;
 
   backdrop-filter: blur(8px);
-  background-color: rgba(0, 0, 0, 0.5);
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.8),
+    rgba(24, 43, 90, 0.5),
+    rgba(0, 0, 0, 0.8)
+  );
 `;
 
 export const Header = styled.header`

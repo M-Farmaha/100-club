@@ -8,7 +8,7 @@ const Layout = () => {
     <>
       <AppBar />
 
-      <main style={{ paddingTop: "100px" }}>
+      <main>
         <Outlet />
       </main>
 
