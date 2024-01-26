@@ -113,10 +113,10 @@ export const ButtonLink = styled(Link)`
 
   &:hover {
     background: linear-gradient(
-    to right,
-    var(--hover-yellow-color),
-    var(--accent-hover-color)
-  );
+      to right,
+      var(--hover-yellow-color),
+      var(--accent-hover-color)
+    );
   }
 `;
 
@@ -146,10 +146,10 @@ export const Button = styled.a`
 
   &:hover {
     background: linear-gradient(
-    to right,
-    var(--hover-yellow-color),
-    var(--accent-hover-color)
-  );
+      to right,
+      var(--hover-yellow-color),
+      var(--accent-hover-color)
+    );
   }
 `;
 

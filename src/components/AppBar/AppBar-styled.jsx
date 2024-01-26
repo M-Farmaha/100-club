@@ -1,31 +1,14 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
-export const Video = styled.video`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100px;
-  object-fit: cover;
-  z-index: -1;
-`;
-
 export const HeaderFilter = styled.div`
   height: 100px;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 998;
-
-  backdrop-filter: blur(8px);
-  background: linear-gradient(
-    to right,
-    rgba(0, 0, 0, 0.8),
-    rgba(24, 43, 90, 0.5),
-    rgba(0, 0, 0, 0.8)
-  );
+  z-index: -999;
+  background-color: var(--primary-black-color);
 `;
 
 export const Header = styled.header`
@@ -38,6 +21,14 @@ export const Header = styled.header`
 
   display: flex;
   justify-content: center;
+
+  backdrop-filter: blur(8px);
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.5),
+    rgba(18, 31, 64, 0.5),
+    rgba(0, 0, 0, 0.5)
+  );
 
   box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 15px 0px;
   border-bottom: 1px solid;
