@@ -6,6 +6,7 @@ import { Loader } from "../Loaders/Loaders";
 
 export const ImageGalleryItem = ({ el }) => {
   const navigate = useNavigate();
+
   const [isLoading, setIsLoading] = useState(true);
 
   const openModal = (el) => {

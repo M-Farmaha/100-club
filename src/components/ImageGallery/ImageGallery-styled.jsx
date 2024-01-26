@@ -43,6 +43,12 @@ export const ImageGalleryImg = styled.img`
   }
 `;
 
+export const ModalImgWrap = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+`;
+
 export const ImageGalleryModalImg = styled.img`
   max-width: 100vw;
   max-height: 100vh;
@@ -51,10 +57,11 @@ export const ImageGalleryModalImg = styled.img`
 
 export const NavButton = styled.button`
   position: absolute;
+  z-index: 1;
   top: 50%;
   transform: translateY(-50%);
 
-  width: 10%;
+  width: 60px;
   height: 15%;
 
   display: flex;
@@ -75,8 +82,41 @@ export const NavButton = styled.button`
 `;
 
 export const NavIcon = styled.svg`
-  width: 80%;
-  height: 80%;
+  width: 60%;
+  height: 60%;
   fill: currentcolor;
   filter: drop-shadow(0px 0px 3px rgb(0 0 0 / 0.7));
+`;
+
+export const ImageCount = styled.p`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 5px;
+
+  color: var(--primary-white-color);
+  background-color: var(--primary-black-color);
+  opacity: 0.5;
+  font-family: "Manrope";
+  font-size: 20px;
+`;
+
+export const ImageDescription = styled.p`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  color: var(--primary-white-color);
+  background-color: var(--primary-black-color);
+  opacity: 0.5;
+  font-family: "Manrope";
+  font-size: 20px;
 `;

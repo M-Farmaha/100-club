@@ -2,7 +2,10 @@ import { useEffect, useState } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 
 import {
+  ImageCount,
+  ImageDescription,
   ImageGalleryModalImg,
+  ModalImgWrap,
   NavButton,
   NavIcon,
 } from "./ImageGallery-styled";
@@ -45,6 +48,7 @@ export const ImageGalleryModal = () => {
     window.scrollTo(0, state?.scrollPosition);
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const changePicture = (e) => {
     if (galleryArray.length === 0) return;
 
@@ -60,14 +64,32 @@ export const ImageGalleryModal = () => {
         ? galleryArray[0]
         : galleryArray[findCurrentIndex + 1];
 
-    if (e.currentTarget.id === "toLeft") {
-      navigate(`/gallery/modal/${prev.id}`);
+    if (e.currentTarget.id === "toLeft" || e.code === "ArrowLeft") {
+      navigate(`/gallery/modal/${prev.id}`, {
+        state: { scrollPosition: state?.scrollPosition },
+      });
     } else {
-      navigate(`/gallery/modal/${next.id}`);
+      navigate(`/gallery/modal/${next.id}`, {
+        state: { scrollPosition: state?.scrollPosition },
+      });
     }
 
     setIsLoading(true);
   };
+
+  useEffect(() => {
+    const handleKeyPress = (e) => {
+      if (e.code === "ArrowLeft" || e.code === "ArrowRight") {
+        changePicture(e);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyPress);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyPress);
+    };
+  }, [changePicture]);
 
   return (
     <>
@@ -101,12 +123,19 @@ export const ImageGalleryModal = () => {
           )}
 
           {currentImg && (
-            <ImageGalleryModalImg
-              src={currentImg?.path}
-              alt={currentImg?.description}
-              loading="lazy"
-              onLoad={() => setIsLoading(false)}
-            />
+            <ModalImgWrap>
+              <ImageCount>{`${galleryArray.indexOf(currentImg) + 1} / ${
+                galleryArray.length
+              }`}</ImageCount>
+
+              <ImageDescription>{currentImg?.description}</ImageDescription>
+              <ImageGalleryModalImg
+                src={currentImg?.path}
+                alt={currentImg?.description}
+                loading="lazy"
+                onLoad={() => setIsLoading(false)}
+              />
+            </ModalImgWrap>
           )}
         </Modal>
       </Portal>
