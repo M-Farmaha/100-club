@@ -92,31 +92,28 @@ export const ImageCount = styled.p`
   display: flex;
   justify-content: center;
   align-items: center;
-
+  padding: 5px 10px;
   position: absolute;
   right: 0;
   bottom: 0;
-  padding: 5px;
 
   color: var(--primary-white-color);
-  background-color: var(--primary-black-color);
-  opacity: 0.5;
+  background-color: transparent;
   font-family: "Manrope";
-  font-size: 20px;
+  font-size: 18px;
 `;
 
 export const ImageDescription = styled.p`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 5px;
+  padding: 5px 10px;
   position: absolute;
   left: 0;
   bottom: 0;
 
   color: var(--primary-white-color);
-  background-color: var(--primary-black-color);
-  opacity: 0.5;
+  background-color: transparent;
   font-family: "Manrope";
-  font-size: 20px;
+  font-size: 18px;
 `;
