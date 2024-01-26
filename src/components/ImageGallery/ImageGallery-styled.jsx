@@ -50,10 +50,10 @@ export const ModalImgWrap = styled.div`
 `;
 
 export const ImageGalleryModalImg = styled.img`
-  width: 100%;
-  max-height: calc(100vh - 80px);
+  max-width: 100vw;
+  max-height: calc(100vw - 80px);
 
-  object-fit: contain;
+  object-fit: scale-down;
 `;
 
 export const NavButton = styled.button`
