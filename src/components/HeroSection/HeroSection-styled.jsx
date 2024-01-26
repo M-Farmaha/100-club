@@ -45,7 +45,7 @@ export const VideoPoster = styled.div`
 
 export const Section = styled.section`
   min-height: 100vh;
-  padding-top: 100px;
+  padding-top: 50px;
   padding-bottom: 100px;
 `;
 
@@ -81,22 +81,27 @@ export const SubTitle = styled.p`
   line-height: 28px;
 `;
 
-export const ButtonLink = styled(Link)`
-  height: 50px;
-  border-radius: 12px;
-  padding: 12px;
-  margin-right: 10px;
-  margin-bottom: 10px;
+export const HeroButtonsWrap = styled.div`
+  max-width: 400px;
+`;
 
+export const ButtonLink = styled(Link)`
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  gap: 10px;
 
-  background-color: var(--accent-color);
+  margin-bottom: 10px;
+
+  height: 50px;
+  border-radius: 12px;
+  padding: 12px;
+
+  background-color: rgba(105, 150, 0, 0.2);
   color: var(--button-color);
   box-shadow: var(--box-shadow);
 
-  font-size: 16px;
+  font-size: 15px;
   font-family: "Manrope";
   font-weight: 600;
 
@@ -105,4 +110,35 @@ export const ButtonLink = styled(Link)`
   &:hover {
     background-color: var(--accent-hover-color);
   }
+`;
+
+export const Button = styled.a`
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  height: 50px;
+  border-radius: 12px;
+  padding: 12px;
+
+  background-color: rgba(105, 150, 0, 0.2);
+  color: var(--button-color);
+  box-shadow: var(--box-shadow);
+
+  font-size: 15px;
+  font-family: "Manrope";
+  font-weight: 600;
+
+  transition: var(--main-transition);
+
+  &:hover {
+    background-color: var(--accent-hover-color);
+  }
+`;
+
+export const ButtonIconSvg = styled.svg`
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
 `;

@@ -1,5 +1,8 @@
 import {
+  Button,
+  ButtonIconSvg,
   ButtonLink,
+  HeroButtonsWrap,
   Section,
   SectionWrap,
   SubTitle,
@@ -9,6 +12,7 @@ import {
   VideoPoster,
 } from "./HeroSection-styled";
 
+import sprite from "../../sprite.svg";
 import BackgroundWebm from "./tennis.webm";
 import BackgroundMp4 from "./tennis.mp4";
 
@@ -38,8 +42,31 @@ export const HeroSection = () => {
             досвідченими тренерами або просто весело провести час в колі друзів.
           </SubTitle>
 
-          <ButtonLink to="/gallery">Перейти до галереї</ButtonLink>
-          <ButtonLink to="/members">Переглянути учасників</ButtonLink>
+          <HeroButtonsWrap>
+            <ButtonLink to="/gallery">
+              <ButtonIconSvg>
+                <use href={sprite + "#icon-camera"}></use>
+              </ButtonIconSvg>
+              Перейти до галереї
+            </ButtonLink>
+            <ButtonLink to="/members">
+              <ButtonIconSvg>
+                <use href={sprite + "#icon-users"}></use>
+              </ButtonIconSvg>
+              Переглянути учасників
+            </ButtonLink>
+            <Button
+              href="https://send.monobank.ua/jar/3MpUJRH8gs"
+              rel="noopener noreferrer"
+              target="_blank"
+              aria-label="Посилання на збір коштів у монобанку"
+            >
+              <ButtonIconSvg>
+                <use href={sprite + "#icon-credit-card"}></use>
+              </ButtonIconSvg>
+              Підтримати розвиток проекту
+            </Button>
+          </HeroButtonsWrap>
         </SectionWrap>
       </Section>
     </>

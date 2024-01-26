@@ -23,7 +23,7 @@ export const Footer = () => {
               href="https://github.com/M-Farmaha"
               rel="noopener noreferrer"
               target="_blank"
-              aria-label="Visit Max Farmaha's github profile"
+              aria-label="Відвідати профіль автора у гітхабі"
             >
               Max Farmaha
             </FooterLink>
