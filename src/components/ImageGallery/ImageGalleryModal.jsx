@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 import {
   ImageCount,
@@ -20,20 +20,21 @@ import { apiRequest } from "../../Api/ApiRequest";
 export const ImageGalleryModal = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const location = useLocation();
-  const { state } = location;
 
   const [galleryArray, setGalleryArray] = useState([]);
   const [currentImg, setCurrentImg] = useState(null);
+  const [scrollPosition, setScrollPosition] = useState(0);
 
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     document.body.classList.add("modal-open");
     document.documentElement.classList.add("modal-open");
-  }, []);
 
-  useEffect(() => {
+    const liElement = document.getElementById(id);
+    const rect = liElement.getBoundingClientRect();
+    setScrollPosition(rect.y - rect.height - 100);
+
     const response = apiRequest();
     const current = response.find((el) => String(el.id) === String(id));
     setGalleryArray(response);
@@ -45,7 +46,7 @@ export const ImageGalleryModal = () => {
     document.documentElement.classList.remove("modal-open");
 
     navigate("/gallery");
-    window.scrollTo(0, state?.scrollPosition);
+    window.scrollTo(0, scrollPosition);
   };
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -65,13 +66,9 @@ export const ImageGalleryModal = () => {
         : galleryArray[findCurrentIndex + 1];
 
     if (e.currentTarget.id === "toLeft" || e.code === "ArrowLeft") {
-      navigate(`/gallery/photo/${prev.id}`, {
-        state: { scrollPosition: state?.scrollPosition },
-      });
+      navigate(`/gallery/photo/${prev.id}`);
     } else {
-      navigate(`/gallery/photo/${next.id}`, {
-        state: { scrollPosition: state?.scrollPosition },
-      });
+      navigate(`/gallery/photo/${next.id}`);
     }
 
     setIsLoading(true);

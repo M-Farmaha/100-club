@@ -17,7 +17,7 @@ export const ImageGalleryItem = ({ el }) => {
 
   return (
     <>
-      <ImageGalleryItemLi onClick={() => openModal(el)}>
+      <ImageGalleryItemLi id={el.id} onClick={() => openModal(el)}>
         {isLoading && <Loader />}
         <ImageGalleryImg
           loading="lazy"
