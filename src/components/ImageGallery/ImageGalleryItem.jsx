@@ -10,7 +10,7 @@ export const ImageGalleryItem = ({ el }) => {
   const [isLoading, setIsLoading] = useState(true);
 
   const openModal = (el) => {
-    navigate(`modal/${el.id}`, {
+    navigate(`photo/${el.id}`, {
       state: { scrollPosition: window.scrollY },
     });
   };

@@ -65,11 +65,11 @@ export const ImageGalleryModal = () => {
         : galleryArray[findCurrentIndex + 1];
 
     if (e.currentTarget.id === "toLeft" || e.code === "ArrowLeft") {
-      navigate(`/gallery/modal/${prev.id}`, {
+      navigate(`/gallery/photo/${prev.id}`, {
         state: { scrollPosition: state?.scrollPosition },
       });
     } else {
-      navigate(`/gallery/modal/${next.id}`, {
+      navigate(`/gallery/photo/${next.id}`, {
         state: { scrollPosition: state?.scrollPosition },
       });
     }

@@ -17,7 +17,7 @@ function App() {
             <Route path="members" element={<MembersPage />} />
 
             <Route path="gallery" element={<GalleryPage />}>
-              <Route path="modal/:id" element={<ImageGalleryModal />} />
+              <Route path="photo/:id" element={<ImageGalleryModal />} />
             </Route>
 
             <Route path="*" element={<Navigate to="/" replace />} />
