@@ -32,8 +32,10 @@ export const ImageGalleryModal = () => {
     document.documentElement.classList.add("modal-open");
 
     const liElement = document.getElementById(id);
-    const rect = liElement.getBoundingClientRect();
-    setScrollPosition(rect.y - rect.height - 100);
+    if (liElement) {
+      const rect = liElement.getBoundingClientRect();
+      setScrollPosition(rect.y - rect.height - 100);
+    }
 
     const response = apiRequest();
     const current = response.find((el) => String(el.id) === String(id));
