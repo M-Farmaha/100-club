@@ -44,7 +44,7 @@ export const ImageGalleryImg = styled.img`
 `;
 
 export const ModalImgWrap = styled.div`
-  position: relative;
+
   width: 100%;
   height: 100%;
 `;
@@ -53,7 +53,7 @@ export const ImageGalleryModalImg = styled.img`
   max-height: calc(100vh - 80px);
   object-fit: scale-down;
 
-  @media screen and (min-width: 480px) {
+  @media screen and (min-width: 920px) {
     max-height: 100vh;
   }
 `;
