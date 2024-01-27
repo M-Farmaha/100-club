@@ -1,8 +1,11 @@
 import {
   Address,
-  AddressWrap,
+  BlockWrap,
+  CourtIconSvg,
   IconSvg,
   Link,
+  PhotoImg,
+  PhotoWrap,
   Section,
   SectionWrap,
   Text,
@@ -11,7 +14,8 @@ import {
 
 import sprite from "../../sprite.svg";
 
-import { Logo } from "../Logo/Logo";
+import BossImg from "./img/boss.jpg";
+import TrainerImg from "./img/trainer.jpg";
 
 export const ContactsSection = () => {
   return (
@@ -19,10 +23,12 @@ export const ContactsSection = () => {
       <Section>
         <SectionWrap>
           <TitleH2>Наші контакти:</TitleH2>
-          <AddressWrap>
-            <Logo />
+          <BlockWrap>
+            <CourtIconSvg>
+              <use href={sprite + "#icon-court"}></use>
+            </CourtIconSvg>
             <Address>
-              <Text> Адреса нашого домашнього корту:</Text>
+              <Text>Адреса нашого домашнього корту:</Text>
 
               <Link
                 href="https://maps.app.goo.gl/6N5YkhV3wPf3eLjBA"
@@ -36,7 +42,49 @@ export const ContactsSection = () => {
                 м. Львів, вул. Сяйво, 18
               </Link>
             </Address>
-          </AddressWrap>
+          </BlockWrap>
+
+          <BlockWrap>
+            <PhotoWrap>
+              <PhotoImg src={BossImg} alt="Марина Семенівна" />
+            </PhotoWrap>
+            <Address>
+              <Text>Директор клубу:</Text>
+
+              <Link
+                href="tel:+380975057249"
+                rel="noopener noreferrer"
+                target="_blank"
+                aria-label="Подзвонити"
+              >
+                <IconSvg>
+                  <use href={sprite + "#icon-phone"}></use>
+                </IconSvg>
+                Марина Семенівна
+              </Link>
+            </Address>
+          </BlockWrap>
+
+          <BlockWrap style={{ flexDirection: "row-reverse" }}>
+            <PhotoWrap>
+              <PhotoImg src={TrainerImg} alt="Марина Семенівна" />
+            </PhotoWrap>
+            <Address>
+              <Text>Головний тренер клубу:</Text>
+
+              <Link
+                href="tel:+380960116128"
+                rel="noopener noreferrer"
+                target="_blank"
+                aria-label="Подзвонити"
+              >
+                <IconSvg>
+                  <use href={sprite + "#icon-phone"}></use>
+                </IconSvg>
+                Ігор Осипович
+              </Link>
+            </Address>
+          </BlockWrap>
         </SectionWrap>
       </Section>
     </>

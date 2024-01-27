@@ -4,7 +4,7 @@ export const Section = styled.section`
   background-color: var(--primary-black-color);
   color: var(--primary-white-color);
   padding-top: 80px;
-  padding-bottom: 100px;
+  padding-bottom: 50px;
 `;
 
 export const SectionWrap = styled.div`
@@ -23,12 +23,13 @@ export const TitleH2 = styled.h2`
   font-weight: 600;
 `;
 
-export const AddressWrap = styled.div`
+export const BlockWrap = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 20px;
+  margin-bottom: 50px;
 `;
 
 export const Address = styled.address`
@@ -55,6 +56,7 @@ export const Link = styled.a`
   display: flex;
   justify-content: left;
   align-items: center;
+  gap: 10px;
 
   font-size: 17px;
   font-weight: 400;
@@ -71,8 +73,33 @@ export const Link = styled.a`
   }
 `;
 
+export const CourtIconSvg = styled.svg`
+  width: 80px;
+  height: 80px;
+`;
+
 export const IconSvg = styled.svg`
   fill: currentColor;
-  width: 26px;
-  height: 32px;
+  width: 20px;
+  height: 20px;
+`;
+
+export const PhotoWrap = styled.div`
+  width: 240px;
+  height: 240px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 3px solid var(--primary-white-color);
+  border-radius: 50%;
+  overflow: hidden;
+
+  box-shadow: var(--box-shadow);
+`;
+
+export const PhotoImg = styled.img`
+  width: 100%;
+  height: 100%;
 `;

@@ -1,5 +1,5 @@
 import sprite from "../../sprite.svg";
-import { LogoSvg, LogoWWrap } from "./Logo-styled";
+import { LogoSvg, LogoWWrap, LogoWWrapAlt } from "./Logo-styled";
 
 export const Logo = () => {
   return (
@@ -9,6 +9,18 @@ export const Logo = () => {
           <use href={sprite + "#logo-full"}></use>
         </LogoSvg>
       </LogoWWrap>
+    </>
+  );
+};
+
+export const LogoAlt = () => {
+  return (
+    <>
+      <LogoWWrapAlt>
+        <LogoSvg>
+          <use href={sprite + "#logo-alt"}></use>
+        </LogoSvg>
+      </LogoWWrapAlt>
     </>
   );
 };
