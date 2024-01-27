@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Section = styled.section`
   background-color: var(--primary-white-color);
-  padding-top: 100px;
+  padding-top: 80px;
   padding-bottom: 100px;
 `;
 

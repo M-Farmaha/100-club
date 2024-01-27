@@ -1,5 +1,3 @@
-import React from "react";
-import sprite from "../../sprite.svg";
 import {
   AboutIconSvg,
   Item,
@@ -10,6 +8,8 @@ import {
   TitleH2,
   TitleH3,
 } from "./AboutSection-styled";
+
+import sprite from "../../sprite.svg";
 
 export const AboutSection = () => {
   return (
