@@ -65,7 +65,7 @@ export const NavButton = styled.button`
   top: 50%;
   transform: translateY(-50%);
 
-  width: 60px;
+  width: 50px;
   height: 15%;
 
   display: flex;
@@ -93,31 +93,37 @@ export const NavIcon = styled.svg`
 `;
 
 export const ImageCount = styled.p`
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 5px 10px;
-  position: absolute;
-  right: 0;
-  bottom: 0;
+
+  padding: 0px 10px;
 
   color: var(--primary-white-color);
   background-color: transparent;
-  font-family: "Manrope";
-  font-size: 18px;
+
+  font-size: 20px;
 `;
 
 export const ImageDescription = styled.p`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 5px 10px;
   position: absolute;
   left: 0;
   bottom: 0;
 
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0px 10px;
+
   color: var(--primary-white-color);
   background-color: transparent;
-  font-family: "Manrope";
+
   font-size: 18px;
 `;

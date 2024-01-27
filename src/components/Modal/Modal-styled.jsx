@@ -4,9 +4,9 @@ export const ModalOverlay = styled.div`
   position: fixed;
   left: 0;
   top: 0;
-  width: 100%;
-  height: 100%;
-  -webkit-overflow-scrolling: touch;
+  width: 100vw;
+  height: 100vh;
+  /* -webkit-overflow-scrolling: touch; */
 
   z-index: 999999;
 
@@ -24,7 +24,6 @@ export const ModalWrap = styled.div`
   overflow: hidden;
   box-shadow: var(--box-shadow);
 
-  outline: none;
   border: none;
 `;
 
