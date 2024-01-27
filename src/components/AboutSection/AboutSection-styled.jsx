@@ -32,7 +32,7 @@ export const TitleH2 = styled.h2`
   text-align: center;
   margin-bottom: 35px;
 
-  font-size: 35px;
+  font-size: 28px;
   font-weight: 600;
   
   color: var(--primary-black-color);
