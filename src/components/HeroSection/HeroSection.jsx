@@ -2,7 +2,10 @@ import {
   Button,
   ButtonIconSvg,
   ButtonLink,
+  ButtonWrap,
   HeroButtonsWrap,
+  IconSvg,
+  IconSvgWrap,
   Section,
   SectionWrap,
   SubTitle,
@@ -54,17 +57,24 @@ export const HeroSection = () => {
               </ButtonIconSvg>
               Переглянути учасників
             </ButtonLink>
-            <Button
-              href="https://send.monobank.ua/jar/3MpUJRH8gs"
-              rel="noopener noreferrer"
-              target="_blank"
-              aria-label="Посилання на збір коштів у монобанку"
-            >
-              <ButtonIconSvg>
-                <use href={sprite + "#icon-credit-card"}></use>
-              </ButtonIconSvg>
-              Підтримати розвиток проекту
-            </Button>
+            <ButtonWrap>
+              <Button
+                href="https://send.monobank.ua/jar/3MpUJRH8gs"
+                rel="noopener noreferrer"
+                target="_blank"
+                aria-label="Посилання на збір коштів у монобанку"
+              >
+                <ButtonIconSvg>
+                  <use href={sprite + "#icon-credit-card"}></use>
+                </ButtonIconSvg>
+                Підтримати розвиток проекту
+              </Button>
+              <IconSvgWrap>
+                <IconSvg>
+                  <use href={sprite + "#icon-mono"}></use>
+                </IconSvg>
+              </IconSvgWrap>
+            </ButtonWrap>
           </HeroButtonsWrap>
         </SectionWrap>
       </Section>

@@ -26,12 +26,12 @@ export const ImageGalleryModal = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
 
   const [isLoading, setIsLoading] = useState(true);
+  const liElement = document.getElementById(id);
 
   useEffect(() => {
     document.body.classList.add("modal-open");
     document.documentElement.classList.add("modal-open");
 
-    const liElement = document.getElementById(id);
     if (liElement) {
       const rect = liElement.getBoundingClientRect();
       setScrollPosition(rect.y - rect.height - 100);
@@ -41,7 +41,7 @@ export const ImageGalleryModal = () => {
     const current = response.find((el) => String(el.id) === String(id));
     setGalleryArray(response);
     setCurrentImg(current);
-  }, [id]);
+  }, [id, liElement]);
 
   const closeModal = () => {
     document.body.classList.remove("modal-open");

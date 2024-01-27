@@ -30,8 +30,9 @@ export const SectionWrap = styled.div`
 
 export const FooterText = styled.p`
   color: var(--primary-black-color);
-  font-family: "Manrope";
+
   font-size: 14px;
+  font-weight: 200;
   line-height: 2;
 `;
 

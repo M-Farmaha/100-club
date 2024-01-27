@@ -60,29 +60,34 @@ export const SectionWrap = styled.div`
 export const TitleH1 = styled.h1`
   max-width: 400px;
   margin-bottom: 30px;
-  font-family: "Manrope";
-  font-size: 50px;
-  font-weight: 900;
+
+  font-family: var(--secondary-font);
+  font-size: 80px;
+  font-weight: 800;
+
   color: var(--primary-white-color);
 
   & span {
     color: var(--accent-hover-color);
-    font-weight: 900;
   }
 `;
 
 export const SubTitle = styled.p`
   max-width: 400px;
   margin-bottom: 30px;
-  font-family: "Manrope";
+
   font-size: 18px;
-  font-weight: 400;
-  color: var(--primary-white-color);
+  font-weight: 200;
   line-height: 28px;
+
+  color: var(--primary-white-color);
 `;
 
 export const HeroButtonsWrap = styled.div`
-  max-width: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  max-width: 500px;
 `;
 
 export const ButtonLink = styled(Link)`
@@ -91,32 +96,22 @@ export const ButtonLink = styled(Link)`
   align-items: center;
   gap: 10px;
 
-  margin-bottom: 10px;
-
   height: 50px;
+
   border-radius: 12px;
   padding: 12px;
 
-  background: linear-gradient(
-    to right,
-    var(--primary-yellow-color),
-    var(--accent-color)
-  );
+  background-color: var(--accent-color);
   color: var(--button-color);
   box-shadow: var(--box-shadow);
 
   font-size: 15px;
-  font-family: "Manrope";
   font-weight: 600;
 
   transition: var(--main-transition);
 
   &:hover {
-    background: linear-gradient(
-      to right,
-      var(--hover-yellow-color),
-      var(--accent-hover-color)
-    );
+    background-color: var(--accent-hover-color);
   }
 `;
 
@@ -130,26 +125,18 @@ export const Button = styled.a`
   border-radius: 12px;
   padding: 12px;
 
-  background: linear-gradient(
-    to right,
-    var(--primary-yellow-color),
-    var(--accent-color)
-  );
+  background-color: var(--accent-color);
   color: var(--button-color);
   box-shadow: var(--box-shadow);
 
   font-size: 15px;
-  font-family: "Manrope";
   font-weight: 600;
 
-  transition: var(--main-transition);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  
 
   &:hover {
-    background: linear-gradient(
-      to right,
-      var(--hover-yellow-color),
-      var(--accent-hover-color)
-    );
+    background-color: var(--accent-hover-color);
   }
 `;
 
@@ -157,4 +144,32 @@ export const ButtonIconSvg = styled.svg`
   width: 20px;
   height: 20px;
   fill: currentColor;
+`;
+
+export const ButtonWrap = styled.div`
+  display: flex;
+  justify-content: left;
+  align-items: center;
+`;
+
+export const IconSvgWrap = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  margin-left: 10px;
+  min-width: 40px;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(
+    to bottom,
+    var(--primary-black-color),
+    var(--secondary-black-color)
+  );
+  opacity: 0.8;
+`;
+
+export const IconSvg = styled.svg`
+  width: 100%;
+  height: 100%;
 `;

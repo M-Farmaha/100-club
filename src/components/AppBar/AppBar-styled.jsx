@@ -48,9 +48,9 @@ export const Header = styled.header`
   border-bottom: 1px solid;
   border-image: linear-gradient(
       to right,
-      rgba(0, 0, 0, 0.5),
-      rgba(151, 211, 0, 0.5),
-      rgba(0, 0, 0, 0.5)
+      rgba(0, 0, 0, 0.1),
+      rgba(151, 211, 0, 0.6),
+      rgba(0, 0, 0, 0.1)
     )
     1;
 
@@ -83,15 +83,17 @@ export const NavItem = styled.li`
 
 export const NavLinkStyled = styled(NavLink)`
   position: relative;
-  font-family: "Manrope";
+  height: 100%;
+
   font-size: 18px;
   font-weight: 600;
-  line-height: 24px;
-  height: 100%;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 6px;
+  
   color: var(--primary-white-color);
 
   transition: var(--main-transition);

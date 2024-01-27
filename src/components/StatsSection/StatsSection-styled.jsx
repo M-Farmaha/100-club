@@ -19,7 +19,6 @@ export const List = styled.ul`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-
   gap: 50px;
 `;
 
@@ -30,16 +29,16 @@ export const Item = styled.li`
 `;
 
 export const TitleH3 = styled.h3`
-  font-family: "Manrope";
+
   font-size: 50px;
-  font-weight: 900;
+  font-weight: 800;
   color: var(--primary-white-color);
 `;
 
 export const SubTitle = styled.p`
-  font-family: "Manrope";
+
   font-size: 20px;
-  font-weight: 400;
+  font-weight: 200;
   color: var(--primary-white-color);
 `;
 

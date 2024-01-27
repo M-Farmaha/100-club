@@ -19,7 +19,6 @@ export const List = styled.ul`
   flex-wrap: wrap;
   justify-content: center;
   align-items: baseline;
-
   gap: 50px;
 `;
 
@@ -32,24 +31,25 @@ export const Item = styled.li`
 export const TitleH2 = styled.h2`
   text-align: center;
   margin-bottom: 35px;
-  font-family: "Manrope";
+
   font-size: 35px;
-  font-weight: 700;
+  font-weight: 600;
+  
   color: var(--primary-black-color);
 `;
 
 export const TitleH3 = styled.h3`
   margin-bottom: 20px;
-  font-family: "Manrope";
+
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 400;
   color: var(--primary-black-color);
 `;
 
 export const SubTitle = styled.p`
-  font-family: "Manrope";
+
   font-size: 18px;
-  font-weight: 400;
+  font-weight: 200;
   color: var(--primary-black-color);
   line-height: 28px;
 `;
