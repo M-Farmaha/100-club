@@ -5,7 +5,6 @@ import {
   ImageCount,
   ImageDescription,
   ImageGalleryModalImg,
-  ModalImgWrap,
   NavButton,
   NavIcon,
 } from "./ImageGallery-styled";
@@ -122,7 +121,7 @@ export const ImageGalleryModal = () => {
           )}
 
           {currentImg && (
-            <ModalImgWrap>
+            <>
               <ImageCount>{`${galleryArray.indexOf(currentImg) + 1} / ${
                 galleryArray.length
               }`}</ImageCount>
@@ -134,7 +133,7 @@ export const ImageGalleryModal = () => {
                 loading="lazy"
                 onLoad={() => setIsLoading(false)}
               />
-            </ModalImgWrap>
+            </>
           )}
         </Modal>
       </Portal>
