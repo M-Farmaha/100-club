@@ -3,6 +3,8 @@ import {
   ButtonIconSvg,
   ButtonLink,
   ButtonWrap,
+  Filter,
+  Poster,
   HeroButtonsWrap,
   IconSvg,
   IconSvgWrap,
@@ -10,26 +12,17 @@ import {
   SectionWrap,
   SubTitle,
   TitleH1,
-  // Video,
-  VideoFilter,
-  VideoPoster,
 } from "./HeroSection-styled";
 
 import sprite from "../../sprite.svg";
-// import BackgroundWebm from "./tennis.webm";
-// import BackgroundMp4 from "./tennis.mp4";
 
 export const HeroSection = () => {
   return (
     <>
       <Section>
         <SectionWrap>
-          <VideoFilter />
-          <VideoPoster />
-          {/* <Video muted loop playsInline preload="auto" autoPlay>
-            <source src={BackgroundWebm} type="video/webm" />
-            <source src={BackgroundMp4} type="video/mp4" />
-          </Video> */}
+          <Filter />
+          <Poster />
 
           <TitleH1>
             Клуб <span>100!</span>

@@ -10,9 +10,9 @@ export const HeaderBaseBG = styled.div`
   z-index: -999;
   background: linear-gradient(
     to right,
-    rgba(0, 0, 0, 1),
-    rgba(18, 31, 64, 1),
-    rgba(0, 0, 0, 1)
+    var(--secondary-black-color),
+    var(--primary-black-color),
+    var(--secondary-black-color)
   );
 `;
 
@@ -93,7 +93,7 @@ export const NavLinkStyled = styled(NavLink)`
   justify-content: center;
   align-items: center;
   gap: 6px;
-  
+
   color: var(--primary-white-color);
 
   transition: var(--main-transition);

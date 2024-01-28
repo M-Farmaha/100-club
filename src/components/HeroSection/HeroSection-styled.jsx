@@ -1,18 +1,8 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import Poster from "./poster.jpg";
+import PosterImg from "./poster.jpg";
 
-export const Video = styled.video`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -6;
-`;
-
-export const VideoFilter = styled.div`
+export const Filter = styled.div`
   position: fixed;
   top: 0;
   left: 0;
@@ -20,24 +10,19 @@ export const VideoFilter = styled.div`
   height: 100%;
   z-index: -5;
 
-  background: linear-gradient(
-    to right,
-    var(--secondary-black-color),
-    var(--primary-black-color)
-  );
-
-  opacity: 0.6;
+  background-color: var(--secondary-black-color);
+  opacity: 0.5;
 `;
 
-export const VideoPoster = styled.div`
+export const Poster = styled.div`
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -7;
+  z-index: -6;
 
-  background-image: url(${Poster});
+  background-image: url(${PosterImg});
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -58,7 +43,7 @@ export const SectionWrap = styled.div`
 `;
 
 export const TitleH1 = styled.h1`
-  max-width: 400px;
+
   margin-bottom: 30px;
 
   font-family: var(--secondary-font);
@@ -73,7 +58,7 @@ export const TitleH1 = styled.h1`
 `;
 
 export const SubTitle = styled.p`
-  max-width: 400px;
+    max-width: 600px;
   margin-bottom: 30px;
 
   font-size: 18px;
@@ -105,8 +90,8 @@ export const ButtonLink = styled(Link)`
   color: var(--button-color);
   box-shadow: var(--box-shadow);
 
-  font-size: 15px;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 400;
 
   transition: var(--main-transition);
 
@@ -129,11 +114,10 @@ export const Button = styled.a`
   color: var(--button-color);
   box-shadow: var(--box-shadow);
 
-  font-size: 15px;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 400;
 
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  
 
   &:hover {
     background-color: var(--accent-hover-color);

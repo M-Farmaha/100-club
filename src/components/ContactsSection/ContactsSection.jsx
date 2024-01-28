@@ -23,6 +23,7 @@ export const ContactsSection = () => {
       <Section>
         <SectionWrap>
           <TitleH2>Наші контакти:</TitleH2>
+          
           <BlockWrap>
             <CourtIconSvg>
               <use href={sprite + "#icon-court"}></use>
@@ -51,12 +52,7 @@ export const ContactsSection = () => {
             <Address>
               <Text>Директор клубу:</Text>
 
-              <Link
-                href="tel:+380975057249"
-                rel="noopener noreferrer"
-                target="_blank"
-                aria-label="Подзвонити"
-              >
+              <Link href="tel:+380975057249" aria-label="Подзвонити">
                 <IconSvg>
                   <use href={sprite + "#icon-phone"}></use>
                 </IconSvg>
@@ -72,12 +68,7 @@ export const ContactsSection = () => {
             <Address>
               <Text>Головний тренер клубу:</Text>
 
-              <Link
-                href="tel:+380960116128"
-                rel="noopener noreferrer"
-                target="_blank"
-                aria-label="Подзвонити"
-              >
+              <Link href="tel:+380960116128" aria-label="Подзвонити">
                 <IconSvg>
                   <use href={sprite + "#icon-phone"}></use>
                 </IconSvg>
