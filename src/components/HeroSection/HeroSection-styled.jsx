@@ -11,15 +11,15 @@ export const Filter = styled.div`
   z-index: -5;
 
   background-color: var(--secondary-black-color);
-  opacity: 0.1;
+  opacity: 0.3;
 `;
 
 export const Poster = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   z-index: -6;
 
   background-image: url(${PosterImg});
