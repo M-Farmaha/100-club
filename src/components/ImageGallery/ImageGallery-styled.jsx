@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Section = styled.section`
   background-color: var(--primary-white-color);
   margin-top: 100px;
-  min-height: 1300px;
+  min-height: 1200px;
 `;
 
 export const SectionWrap = styled.div`

@@ -11,7 +11,7 @@ export const Filter = styled.div`
   z-index: -5;
 
   background-color: var(--secondary-black-color);
-  opacity: 0.6;
+  opacity: 0.1;
 `;
 
 export const Poster = styled.div`
@@ -61,7 +61,7 @@ export const SubTitle = styled.p`
   margin-bottom: 30px;
 
   font-size: 18px;
-  font-weight: 200;
+  font-weight: 400;
   line-height: 28px;
 
   color: var(--primary-white-color);
