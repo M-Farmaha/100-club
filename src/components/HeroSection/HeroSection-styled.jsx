@@ -11,7 +11,7 @@ export const Filter = styled.div`
   z-index: -5;
 
   background-color: var(--secondary-black-color);
-  opacity: 0.5;
+  opacity: 0.6;
 `;
 
 export const Poster = styled.div`
@@ -43,7 +43,6 @@ export const SectionWrap = styled.div`
 `;
 
 export const TitleH1 = styled.h1`
-
   margin-bottom: 30px;
 
   font-family: var(--secondary-font);
@@ -58,7 +57,7 @@ export const TitleH1 = styled.h1`
 `;
 
 export const SubTitle = styled.p`
-    max-width: 600px;
+  max-width: 600px;
   margin-bottom: 30px;
 
   font-size: 18px;
@@ -82,12 +81,10 @@ export const ButtonLink = styled(Link)`
   gap: 10px;
 
   height: 50px;
-
-  border-radius: 12px;
   padding: 12px;
 
-  background-color: var(--accent-color);
-  color: var(--button-color);
+  background-color: var(--primary-black-color);
+  color: var(--primary-white-color);
   box-shadow: var(--box-shadow);
 
   font-size: 16px;
@@ -106,15 +103,16 @@ export const Button = styled.a`
   align-items: center;
   gap: 10px;
 
+  flex-shrink: 0;
+
   height: 50px;
-  border-radius: 12px;
   padding: 12px;
 
-  background-color: var(--accent-color);
-  color: var(--button-color);
+  background-color: #005730;
+  color: var(--primary-white-color);
   box-shadow: var(--box-shadow);
 
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
 
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -145,12 +143,7 @@ export const IconSvgWrap = styled.div`
   min-width: 40px;
   width: 40px;
   height: 40px;
-  background: linear-gradient(
-    to bottom,
-    var(--primary-black-color),
-    var(--secondary-black-color)
-  );
-  opacity: 0.8;
+  background: linear-gradient(to bottom, #576378, #0d1525);
 `;
 
 export const IconSvg = styled.svg`

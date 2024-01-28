@@ -10,8 +10,8 @@ export const Button = styled.button`
     `;
   }}
 
-  background-color: var(--accent-color);
-  color: var(--button-color);
+  background-color: var(--primary-black-color);
+  color: var(--primary-white-color);
   box-shadow: var(--box-shadow);
 
   display: flex;

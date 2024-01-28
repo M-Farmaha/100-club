@@ -7,7 +7,7 @@ export const Section = styled.section`
     var(--primary-black-color),
     var(--secondary-black-color)
   );
-  
+
   color: var(--primary-white-color);
   padding-top: 80px;
   padding-bottom: 50px;

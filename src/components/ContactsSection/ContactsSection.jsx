@@ -23,7 +23,7 @@ export const ContactsSection = () => {
       <Section>
         <SectionWrap>
           <TitleH2>Наші контакти:</TitleH2>
-          
+
           <BlockWrap>
             <CourtIconSvg>
               <use href={sprite + "#icon-court"}></use>
