@@ -54,7 +54,6 @@ export const HeroSection = () => {
               <Button
                 href="https://send.monobank.ua/jar/3MpUJRH8gs"
                 rel="noopener noreferrer"
-                target="_blank"
                 aria-label="Посилання на збір коштів у монобанку"
               >
                 <ButtonIconSvg>
