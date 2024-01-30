@@ -83,6 +83,8 @@ export const ButtonLink = styled(Link)`
   height: 50px;
   padding: 12px;
 
+  border-radius: 50px;
+
   background-color: var(--primary-black-color);
   color: var(--primary-white-color);
   box-shadow: var(--box-shadow);
@@ -108,7 +110,10 @@ export const Button = styled.a`
   height: 50px;
   padding: 12px;
 
-  background-color: #005730;
+  border: 2px solid var(--primary-white-color);
+  border-radius: 50px;
+
+  /* background-color: var(--primary-black-color); */
   color: var(--primary-white-color);
   box-shadow: var(--box-shadow);
 
@@ -118,6 +123,7 @@ export const Button = styled.a`
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover {
+    border: 2px solid var(--accent-hover-color);
     background-color: var(--accent-hover-color);
   }
 `;

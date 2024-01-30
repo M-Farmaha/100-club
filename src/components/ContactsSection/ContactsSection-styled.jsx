@@ -38,11 +38,28 @@ export const BlockWrap = styled.div`
   margin-bottom: 50px;
 `;
 
+export const InfoWrap = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+`;
+
+export const SocialWrap = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+`;
+
 export const Address = styled.address`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: left;
+  align-items: center;
+  gap: 5px;
 
   font-style: inherit;
 `;
@@ -50,7 +67,6 @@ export const Address = styled.address`
 export const Text = styled.p`
   font-size: 17px;
   font-weight: 200;
-  line-height: 28px;
 `;
 
 export const Link = styled.a`
@@ -60,7 +76,7 @@ export const Link = styled.a`
   border: none;
 
   display: flex;
-  justify-content: left;
+  justify-content: center;
   align-items: center;
   gap: 10px;
 
@@ -84,10 +100,16 @@ export const CourtIconSvg = styled.svg`
   height: 80px;
 `;
 
+export const SocialIconSvg = styled.svg`
+  fill: currentColor;
+  width: 50px;
+  height: 50px;
+`;
+
 export const IconSvg = styled.svg`
   fill: currentColor;
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
 `;
 
 export const PhotoWrap = styled.div`
