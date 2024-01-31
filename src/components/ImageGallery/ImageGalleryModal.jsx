@@ -33,7 +33,7 @@ export const ImageGalleryModal = () => {
 
     if (liElement) {
       const rect = liElement.getBoundingClientRect();
-      setScrollPosition(rect.y - rect.height - 100);
+      setScrollPosition(rect.y - window.innerHeight / 2 + 100);
     }
 
     const response = apiRequest();

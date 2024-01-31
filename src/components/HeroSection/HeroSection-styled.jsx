@@ -30,7 +30,7 @@ export const Poster = styled.div`
 
 export const Section = styled.section`
   min-height: 100vh;
-  padding-top: 150px;
+  padding-top: 120px;
   padding-bottom: 100px;
 `;
 
@@ -43,17 +43,21 @@ export const SectionWrap = styled.div`
 `;
 
 export const TitleH1 = styled.h1`
-  margin-bottom: 30px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 30px;
 
+  margin-bottom: 30px;
+`;
+
+export const TitleH1Text = styled.p`
   font-family: var(--secondary-font);
   font-size: 80px;
   font-weight: 800;
+  padding-top: 20px;
 
   color: var(--primary-white-color);
-
-  & span {
-    color: var(--accent-hover-color);
-  }
 `;
 
 export const SubTitle = styled.p`
@@ -152,7 +156,17 @@ export const IconSvgWrap = styled.div`
   background: linear-gradient(to bottom, #576378, #0d1525);
 `;
 
+export const LogoIconWrap = styled.span`
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 160px;
+  color: var(--accent-hover-color);
+`;
+
 export const IconSvg = styled.svg`
   width: 100%;
   height: 100%;
+  fill: currentColor;
 `;

@@ -12,6 +12,8 @@ import {
   SectionWrap,
   SubTitle,
   TitleH1,
+  LogoIconWrap,
+  TitleH1Text,
 } from "./HeroSection-styled";
 
 import sprite from "../../sprite.svg";
@@ -25,7 +27,12 @@ export const HeroSection = () => {
           <Poster />
 
           <TitleH1>
-            Клуб <span>100!</span>
+            <TitleH1Text>Клуб</TitleH1Text>
+            <LogoIconWrap>
+              <IconSvg>
+                <use href={sprite + "#logo-100"}></use>
+              </IconSvg>
+            </LogoIconWrap>
           </TitleH1>
           <SubTitle>
             Вітаємо на сторінці "Клубу-100" любительського тенісу у Львові.
