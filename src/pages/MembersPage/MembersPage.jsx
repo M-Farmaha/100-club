@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { MembersList } from "../../components/MembersList/MembersList";
 
 const MembersPage = () => {
   useEffect(() => {
@@ -7,7 +8,7 @@ const MembersPage = () => {
 
   return (
     <>
-      <p style={{ paddingTop: "100px" }}>Members Page</p>
+      <MembersList />
     </>
   );
 };
