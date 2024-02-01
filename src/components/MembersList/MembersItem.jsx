@@ -10,7 +10,7 @@ export const MembersItem = ({ el, index }) => {
       <MembersItemLi id={el.id}>
         <MembersItemWrap>
           <MembersItemText>{index + 1}.</MembersItemText>
-          <MembersItemText>{el.lastName + " " + el.firstName}</MembersItemText>
+          <MembersItemText>{el.name}</MembersItemText>
           <MembersItemText>{el.type}</MembersItemText>
         </MembersItemWrap>
       </MembersItemLi>
