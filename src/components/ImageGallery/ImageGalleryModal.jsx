@@ -14,7 +14,7 @@ import sprite from "../../sprite.svg";
 import { Loader } from "../Loaders/Loaders";
 import { Modal } from "../Modal/Modal";
 import { Portal } from "../../Routes/Portal/Portal";
-import { apiRequest } from "../../Api/ApiRequest";
+import { photosApi } from "../../Api/ApiRequest";
 
 export const ImageGalleryModal = () => {
   const { id } = useParams();
@@ -36,7 +36,7 @@ export const ImageGalleryModal = () => {
       setScrollPosition(rect.y - window.innerHeight / 2 + 100);
     }
 
-    const response = apiRequest();
+    const response = photosApi();
     const current = response.find((el) => String(el.id) === String(id));
     setGalleryArray(response);
     setCurrentImg(current);

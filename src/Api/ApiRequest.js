@@ -1,6 +1,10 @@
-import data from './photoBase.json';
+import photos from "./photos.json";
+import members from "./members.json";
 
+export const photosApi = () => {
+  return photos;
+};
 
-export const apiRequest = () => {
-  return data
+export const membersApi = () => {
+  return members;
 };
