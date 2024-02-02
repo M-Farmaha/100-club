@@ -1,16 +1,7 @@
-import { useEffect, useState } from "react";
-import { membersApi } from "../../Api/ApiRequest";
 import { MembersUl, Section } from "./MemdersList-styled";
 import { MembersItem } from "./MembersItem";
 
-export const MembersList = () => {
-  const [membersArray, setMembersArray] = useState([]);
-
-  useEffect(() => {
-    const response = membersApi();
-    setMembersArray(response);
-  }, []);
-
+export const MembersList = ({ membersArray }) => {
   return (
     <>
       <Section>
