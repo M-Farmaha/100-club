@@ -58,13 +58,12 @@ export const MembersItemText = styled.p`
   /* border: 1px solid var(--primary-black-color); */
 
   height: 100%;
-  padding: 0px 5px;
 
   font-size: 16px;
   font-weight: 400;
 
   &:nth-child(1) {
-    width: 40px;
+    width: 30px;
   }
 
   &:nth-child(2) {
@@ -73,12 +72,12 @@ export const MembersItemText = styled.p`
   }
 
   &:nth-child(3) {
-    width: 110px;
+    width: 120px;
     justify-content: right;
     text-align: right;
 
     @media screen and (min-width: 450px) {
-      width: 155px;
+      width: 150px;
     }
   }
 `;

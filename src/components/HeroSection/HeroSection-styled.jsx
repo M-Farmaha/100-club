@@ -11,7 +11,7 @@ export const Filter = styled.div`
   z-index: -5;
 
   background-color: var(--secondary-black-color);
-  opacity: 0.3;
+  opacity: 0.2;
 `;
 
 export const Poster = styled.div`
@@ -22,6 +22,7 @@ export const Poster = styled.div`
   height: 100vh;
   z-index: -6;
 
+  background-color: var(--secondary-black-color);
   background-image: url(${PosterImg});
   background-size: cover;
   background-position: center;
