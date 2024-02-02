@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const Section = styled.section`
-  margin-top: 150px;
+  padding-top: 200px;
+  padding-bottom: 100px;
   min-height: 1200px;
 `;
 
@@ -57,21 +58,27 @@ export const MembersItemText = styled.p`
   /* border: 1px solid var(--primary-black-color); */
 
   height: 100%;
-  padding: 0px 10px;
+  padding: 0px 5px;
 
   font-size: 16px;
   font-weight: 400;
 
   &:nth-child(1) {
-    min-width: 40px;
+    width: 40px;
   }
 
   &:nth-child(2) {
-    min-width: 200px;
+    width: 120px;
     flex-grow: 1;
   }
 
   &:nth-child(3) {
-    min-width: 50px;
+    width: 110px;
+    justify-content: right;
+    text-align: right;
+
+    @media screen and (min-width: 450px) {
+      width: 155px;
+    }
   }
 `;

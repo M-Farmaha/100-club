@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { photosApi } from "../../Api/ApiRequest";
 import { ImageGalleryItem } from "./ImageGalleryItem";
 
-import { ImageGalleryList, Section, SectionWrap } from "./ImageGallery-styled";
+import { ImageGalleryList, Section } from "./ImageGallery-styled";
 
 export const ImageGallery = () => {
   const [galleryArray, setGalleryArray] = useState([]);
@@ -15,13 +15,11 @@ export const ImageGallery = () => {
   return (
     <>
       <Section>
-        <SectionWrap>
-          <ImageGalleryList>
-            {galleryArray?.map((el) => (
-              <ImageGalleryItem key={el.id} el={el} />
-            ))}
-          </ImageGalleryList>
-        </SectionWrap>
+        <ImageGalleryList>
+          {galleryArray?.map((el) => (
+            <ImageGalleryItem key={el.id} el={el} />
+          ))}
+        </ImageGalleryList>
       </Section>
     </>
   );

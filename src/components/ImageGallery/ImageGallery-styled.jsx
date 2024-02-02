@@ -1,16 +1,12 @@
 import styled from "styled-components";
 
 export const Section = styled.section`
-  background-color: var(--primary-white-color);
-  margin-top: 100px;
+  padding-top: 100px;
   min-height: 1200px;
-`;
-
-export const SectionWrap = styled.div`
+  
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  max-width: 1200px;
-  background-color: var(--primary-white-color);
 `;
 
 export const ImageGalleryList = styled.ul`
