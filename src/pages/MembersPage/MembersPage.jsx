@@ -7,9 +7,9 @@ const MembersPage = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+
     const members = membersApi();
     members?.sort((a, b) => a.name.localeCompare(b.name));
-
     setMembersArray(members);
   }, []);
 
