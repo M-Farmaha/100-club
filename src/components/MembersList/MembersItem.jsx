@@ -2,7 +2,7 @@ import {
   MembersItemLi,
   MembersItemText,
   MembersItemWrap,
-} from "./MemdersList-styled";
+} from "./MembersList-styled";
 
 export const MembersItem = ({ el, index }) => {
   return (

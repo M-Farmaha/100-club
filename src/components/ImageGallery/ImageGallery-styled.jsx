@@ -1,12 +1,13 @@
 import styled from "styled-components";
 
 export const Section = styled.section`
-  padding-top: 100px;
+  margin-top: 100px;
   min-height: 1200px;
-  
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
+
+  background-color: var(--secondary-white-color);
 `;
 
 export const ImageGalleryList = styled.ul`

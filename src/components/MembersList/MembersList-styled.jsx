@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const Section = styled.section`
-  padding-top: 200px;
   padding-bottom: 100px;
   min-height: 1200px;
+  background-color: var(--secondary-white-color);
 `;
 
 export const MembersUl = styled.ul`

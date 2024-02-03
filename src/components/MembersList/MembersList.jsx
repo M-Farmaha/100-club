@@ -1,12 +1,12 @@
-import { MembersUl, Section } from "./MemdersList-styled";
+import { MembersUl, Section } from "./MembersList-styled";
 import { MembersItem } from "./MembersItem";
 
-export const MembersList = ({ membersArray }) => {
+export const MembersList = ({ visibleMembersArray }) => {
   return (
     <>
       <Section>
         <MembersUl>
-          {membersArray?.map((el, index) => (
+          {visibleMembersArray?.map((el, index) => (
             <MembersItem key={el.id} el={el} index={index} />
           ))}
         </MembersUl>
