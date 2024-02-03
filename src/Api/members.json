@@ -804,5 +804,57 @@
     "forhand": "Зліва",
     "backhand": "Дворучний",
     "joinTennisYear": 2014
+  },
+  {
+    "id": "63",
+    "name": "Кузнєцова Поліна",
+    "birthDate": "2008-10-16",
+    "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/ImageGallery/photos/1.jpg",
+    "sex": "female",
+    "hometown": "Львів",
+    "type": "Професіонал",
+    "category": "МС",
+    "forhand": "Зправа",
+    "backhand": "Дворучний",
+    "joinTennisYear": 2014
+  },
+  {
+    "id": "64",
+    "name": "Кузнєцов Андрій",
+    "birthDate": "1971-09-09",
+    "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/ImageGallery/photos/1.jpg",
+    "sex": "male",
+    "hometown": "Львів",
+    "type": "Аматор",
+    "category": null,
+    "forhand": "Зправа",
+    "backhand": "Одноручний",
+    "joinTennisYear": 2014
+  },
+  {
+    "id": "65",
+    "name": "Хоркава Юлія",
+    "birthDate": "2001-12-27",
+    "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/ImageGallery/photos/1.jpg",
+    "sex": "female",
+    "hometown": "Львів",
+    "type": "Аматор",
+    "category": null,
+    "forhand": "Зправа",
+    "backhand": "Дворучний",
+    "joinTennisYear": 2010
+  },
+  {
+    "id": "66",
+    "name": "Гучко Єлизавета",
+    "birthDate": "2011-02-07",
+    "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/ImageGallery/photos/1.jpg",
+    "sex": "female",
+    "hometown": "Брюховичі",
+    "type": "Професіонал",
+    "category": null,
+    "forhand": "Зправа",
+    "backhand": "Дворучний",
+    "joinTennisYear": 2015
   }
 ]
