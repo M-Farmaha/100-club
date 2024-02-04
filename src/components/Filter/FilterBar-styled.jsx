@@ -23,7 +23,7 @@ export const Group = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: left;
-  gap: 10px;
+  gap: 5px;
 `;
 
 export const Label = styled.label`

@@ -2,9 +2,15 @@ import Select from "react-select";
 import { useState } from "react";
 import { Group, Label } from "./FilterBar-styled";
 
-export const FilterByType = () => {
+export const FilterByType = ({ inputValue, setInputsValue }) => {
   const [isFilterFocused, setIsFilterFocused] = useState(false);
-  const [inputValue, setInputValue] = useState("");
+
+  const onInputChange = (selectedOption) => {
+    setInputsValue((prev) => ({
+      ...prev,
+      type: selectedOption.value,
+    }));
+  };
 
   const typeOptions = [
     "Усі",
@@ -150,7 +156,7 @@ export const FilterByType = () => {
         onMenuOpen={() => setIsFilterFocused(true)}
         onMenuClose={() => setIsFilterFocused(false)}
         menuIsOpen={isFilterFocused}
-        onChange={(selectedOption) => setInputValue(selectedOption)}
+        onChange={(selectedOption) => onInputChange(selectedOption)}
         options={typeOptions.map((type) => ({
           value: type,
           label: type,
