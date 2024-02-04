@@ -78,7 +78,7 @@ export const FilterByType = () => {
       ...styles,
       height: "50px",
       width: "250px",
-      border: isFilterFocused ? "none" : "none",
+      border: "none",
       borderRadius: "50px",
       boxShadow: "none",
 
@@ -90,7 +90,7 @@ export const FilterByType = () => {
 
     menu: (styles) => ({
       ...styles,
-      border: "none",
+      border: "1px solid var(--accent-hover-color)",
       boxShadow: "rgba(0, 0, 0, 0.1) 0px 0px 10px",
       overflow: "hidden",
       borderRadius: "20px",
@@ -102,10 +102,10 @@ export const FilterByType = () => {
       fontSize: "16px",
       cursor: "pointer",
       padding: "8px 20px",
-      color: isSelected
-        ? "var(--primary-black-color)"
-        : isFocused
+      color: isFocused
         ? "var(--accent-hover-color)"
+        : isSelected
+        ? "var(--primary-black-color)"
         : "var(--primary-grey-color)",
       backgroundColor: "var(--primary-white-color)",
     }),
@@ -135,7 +135,7 @@ export const FilterByType = () => {
 
   return (
     <Group>
-      <Label isFilterFocused={isFilterFocused}>Фільтрувати за типом</Label>
+      <Label isFilterFocused={isFilterFocused}>Фільтрувати за категорією</Label>
       <Select
         placeholder={"Усі"}
         noOptionsMessage={() => "Немає збігів"}
@@ -146,8 +146,10 @@ export const FilterByType = () => {
         styles={selectStyles}
         inputId="type"
         value={inputValue}
+        isSearchable={false}
         onMenuOpen={() => setIsFilterFocused(true)}
         onMenuClose={() => setIsFilterFocused(false)}
+        menuIsOpen={isFilterFocused}
         onChange={(selectedOption) => setInputValue(selectedOption)}
         options={typeOptions.map((type) => ({
           value: type,
