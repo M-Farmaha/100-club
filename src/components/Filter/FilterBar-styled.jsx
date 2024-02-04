@@ -5,17 +5,17 @@ export const Section = styled.section`
 
   margin-left: auto;
   margin-right: auto;
-  padding-left: 24px;
-  padding-right: 24px;
+  padding: 24px;
 
   background-color: var(--secondary-white-color);
 `;
 
 export const Form = styled.form`
-  height: 120px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  gap: 20px;
 `;
 
 export const Group = styled.div`
@@ -46,7 +46,7 @@ export const Label = styled.label`
 `;
 
 export const Input = styled.input`
-  width: 290px;
+  width: 250px;
   height: 50px;
   padding: 0px 20px;
 

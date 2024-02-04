@@ -46,11 +46,11 @@ export const FilterByType = () => {
       paddingLeft: "20px",
     }),
 
-    container: (styles, { isFocused }) => ({
+    container: (styles) => ({
       ...styles,
       fontSize: "16px",
       color: "var(--primary-black-color)",
-      border: isFocused
+      border: isFilterFocused
         ? "1px solid var(--accent-hover-color)"
         : "1px solid var(--primary-black-color)",
       borderRadius: "50px",
@@ -61,28 +61,28 @@ export const FilterByType = () => {
       paddingRight: "16px",
     }),
 
-    dropdownIndicator: (styles, { isFocused }) => ({
+    dropdownIndicator: (styles) => ({
       ...styles,
       padding: "0px",
-      color: isFocused
+      color: isFilterFocused
         ? "var(--accent-hover-color)"
-        : "var(--primary-black-color)",
-      transform: isFocused ? "scaleY(-1)" : "scaleY(1)",
+        : "var(--primary-grey-color)",
+      transform: isFilterFocused ? "scaleY(-1)" : "scaleY(1)",
       transition: "var(--main-transition)",
       "&:hover": {
-        color: "var(--accent-hover-color)", // Колір при ховері
+        color: "var(--accent-hover-color)",
       },
     }),
 
-    control: (styles, { isFocused }) => ({
+    control: (styles) => ({
       ...styles,
       height: "50px",
-      width: "220px",
-      border: isFocused ? "none" : "none",
+      width: "250px",
+      border: isFilterFocused ? "none" : "none",
       borderRadius: "50px",
       boxShadow: "none",
 
-      backgroundColor: isFocused
+      backgroundColor: isFilterFocused
         ? "var(--primary-white-color)"
         : "var(--secondary-white-color)",
       cursor: "pointer",
@@ -101,7 +101,7 @@ export const FilterByType = () => {
       ...styles,
       fontSize: "16px",
       cursor: "pointer",
-      padding: "5px 20px",
+      padding: "8px 20px",
       color: isSelected
         ? "var(--primary-black-color)"
         : isFocused
@@ -139,17 +139,15 @@ export const FilterByType = () => {
       <Select
         placeholder={"Усі"}
         noOptionsMessage={() => "Немає збігів"}
-        maxMenuHeight={270}
+        maxMenuHeight={300}
         components={{
           IndicatorSeparator: () => null,
         }}
         styles={selectStyles}
         inputId="type"
         value={inputValue}
-        onFocus={() => setIsFilterFocused(true)}
-        onBlur={() => setIsFilterFocused(false)}
-        // menuIsOpen={isFilterFocused}
-
+        onMenuOpen={() => setIsFilterFocused(true)}
+        onMenuClose={() => setIsFilterFocused(false)}
         onChange={(selectedOption) => setInputValue(selectedOption)}
         options={typeOptions.map((type) => ({
           value: type,
