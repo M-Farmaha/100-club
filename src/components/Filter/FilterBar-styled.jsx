@@ -20,27 +20,29 @@ export const Form = styled.form`
 
 export const Group = styled.div`
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: left;
   gap: 10px;
 `;
 
 export const Label = styled.label`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
+  padding-left: 20px;
 
-  font-size: 16px;
-  font-weight: 600;
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  gap: 6px;
+
+  font-size: 14px;
+  font-weight: 400;
 
   transition: var(--main-transition);
 
   color: ${(props) =>
     props.isFilterFocused
       ? "var(--accent-hover-color)"
-      : "var(--primary-black-color)"};
+      : "var(--primary-grey-color)"};
 `;
 
 export const Input = styled.input`
@@ -53,16 +55,20 @@ export const Input = styled.input`
 
   outline: none;
   border-radius: 50px;
-  border: 2px solid var(--primary-black-color);
+  border: 1px solid var(--primary-black-color);
 
   color: var(--primary-black-color);
   background-color: var(--secondary-white-color);
 
   transition: var(--main-transition);
 
+  &::placeholder {
+    color: var(--primary-grey-color);
+  }
+
   &:focus {
     background-color: var(--primary-white-color);
-    border: 2px solid var(--accent-hover-color);
+    border: 1px solid var(--accent-hover-color);
   }
 `;
 
@@ -70,8 +76,8 @@ export const IconWrap = styled.span`
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
 `;
 
 export const IconSvg = styled.svg`
