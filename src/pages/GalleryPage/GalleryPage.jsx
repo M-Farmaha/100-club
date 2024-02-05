@@ -8,12 +8,13 @@ import { ImageGalleryFilterBar } from "../../components/Filters/ImageGalleryFilt
 const GalleryPage = () => {
   const [galleryArray, setGalleryArray] = useState([]);
   const [orderedGalleryArray, setOrderedGalleryArray] = useState(galleryArray);
+  const [order, setOrder] = useState("newest");
 
   useEffect(() => {
     window.scrollTo(0, 0);
 
     const gallery = photosApi();
-    gallery?.sort((a, b) => a.date.localeCompare(b.date));
+    gallery?.sort((a, b) => b.date.localeCompare(a.date));
     setGalleryArray(gallery);
   }, []);
 
@@ -22,8 +23,9 @@ const GalleryPage = () => {
       <ImageGalleryFilterBar
         galleryArray={galleryArray}
         setOrderedGalleryArray={setOrderedGalleryArray}
+        setOrder={setOrder}
       />
-      <ImageGallery orderedGalleryArray={orderedGalleryArray} />
+      <ImageGallery orderedGalleryArray={orderedGalleryArray} order={order} />
       <Outlet />
     </>
   );

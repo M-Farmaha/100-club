@@ -6,6 +6,7 @@ import { FilterSelect } from "./FilterSelect";
 export const ImageGalleryFilterBar = ({
   galleryArray,
   setOrderedGalleryArray,
+  setOrder,
 }) => {
   const [inputsValue, setInputsValue] = useState({
     type: "Спочатку найновіші",
@@ -14,12 +15,14 @@ export const ImageGalleryFilterBar = ({
   const typeOptions = ["Спочатку найновіші", "Спочатку найстаріші"];
 
   useEffect(() => {
-    const filtredByType =
-      inputsValue.type === "Спочатку найновіші"
-        ? [...galleryArray].reverse()
-        : galleryArray;
-    setOrderedGalleryArray(filtredByType);
-  }, [galleryArray, inputsValue.type, setOrderedGalleryArray]);
+    if (inputsValue.type === "Спочатку найновіші") {
+      setOrderedGalleryArray(galleryArray);
+      setOrder("newest");
+    } else {
+      setOrderedGalleryArray([...galleryArray].reverse());
+      setOrder("eldest");
+    }
+  }, [galleryArray, inputsValue.type, setOrder, setOrderedGalleryArray]);
 
   return (
     <Section>

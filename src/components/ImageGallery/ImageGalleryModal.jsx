@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 
 import {
   ImageCount,
@@ -18,13 +18,17 @@ import { photosApi } from "../../Api/ApiRequest";
 
 export const ImageGalleryModal = () => {
   const { id } = useParams();
+
+  const [searchParams] = useSearchParams();
+  const order = searchParams.get("order");
+
   const navigate = useNavigate();
 
   const [galleryArray, setGalleryArray] = useState([]);
   const [currentImg, setCurrentImg] = useState(null);
   const [scrollPosition, setScrollPosition] = useState(0);
-
   const [isLoading, setIsLoading] = useState(true);
+
   const liElement = document.getElementById(id);
 
   useEffect(() => {
@@ -36,11 +40,14 @@ export const ImageGalleryModal = () => {
       setScrollPosition(rect.y - window.innerHeight / 2 + 100);
     }
 
-    const response = photosApi();
-    const current = response.find((el) => String(el.id) === String(id));
-    setGalleryArray(response);
+    const gallery = photosApi();
+    const orderedGallery =
+      order === "newest" ? gallery : [...gallery].reverse();
+    setGalleryArray(orderedGallery);
+
+    const current = orderedGallery.find((el) => String(el.id) === String(id));
     setCurrentImg(current);
-  }, [id, liElement]);
+  }, [id, liElement, order]);
 
   const closeModal = () => {
     document.body.classList.remove("modal-open");
@@ -67,9 +74,9 @@ export const ImageGalleryModal = () => {
         : galleryArray[findCurrentIndex + 1];
 
     if (e.currentTarget.id === "toLeft" || e.code === "ArrowLeft") {
-      navigate(`/gallery/photo/${prev.id}`);
+      navigate(`/gallery/photo/${prev.id}?order=${order}`);
     } else {
-      navigate(`/gallery/photo/${next.id}`);
+      navigate(`/gallery/photo/${next.id}?order=${order}`);
     }
 
     setIsLoading(true);

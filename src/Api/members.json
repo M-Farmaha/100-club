@@ -1296,7 +1296,20 @@
     "type": "Тренер",
     "category": "Перший дорослий",
     "forhand": "Справа",
+    "backhand": "Одноручний",
+    "joinTennisYear": 1980
+  },
+  {
+    "id": "101",
+    "name": "Луців Данило",
+    "birthDate": "2010-12-09",
+    "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/ImageGallery/photos/1.jpg",
+    "sex": "male",
+    "hometown": "Львів",
+    "type": "Аматор",
+    "category": null,
+    "forhand": "Справа",
     "backhand": "Дворучний",
-    "joinTennisYear": 2012
+    "joinTennisYear": 2015
   }
 ]

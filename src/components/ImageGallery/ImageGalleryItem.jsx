@@ -4,15 +4,12 @@ import { useNavigate } from "react-router-dom";
 import { ImageGalleryImg, ImageGalleryItemLi } from "./ImageGallery-styled";
 import { Loader } from "../Loaders/Loaders";
 
-export const ImageGalleryItem = ({ el }) => {
+export const ImageGalleryItem = ({ el, order }) => {
   const navigate = useNavigate();
-
   const [isLoading, setIsLoading] = useState(true);
 
   const openModal = (el) => {
-    navigate(`photo/${el.id}`, {
-      state: { scrollPosition: window.scrollY },
-    });
+    navigate(`photo/${el.id}?order=${order}`);
   };
 
   return (
