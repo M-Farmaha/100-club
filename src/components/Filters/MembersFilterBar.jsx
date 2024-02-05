@@ -1,11 +1,22 @@
 import { useState } from "react";
-import { Form, Section } from "./FilterBar-styled";
+import { Form, Section } from "./Filters-styled";
 import { FilterByName } from "./FilterByName";
 import { useEffect } from "react";
-import { FilterByType } from "./FilterByType";
+import { FilterSelect } from "./FilterSelect";
 
-export const FilterBar = ({ membersArray, setVisibleMembersArray }) => {
+export const MembersFilterBar = ({ membersArray, setVisibleMembersArray }) => {
   const [inputsValue, setInputsValue] = useState({ name: "", type: "Усі" });
+
+  const typeOptions = [
+    "Усі",
+    "Аматор",
+    "Професіонал",
+    "Напів професіонал",
+    "Тренер",
+    "Дитяча група",
+    "Тенісна мама",
+    "Чемпіон",
+  ];
 
   useEffect(() => {
     const filtredByName = membersArray?.filter((member) =>
@@ -32,9 +43,12 @@ export const FilterBar = ({ membersArray, setVisibleMembersArray }) => {
           inputsValue={inputsValue}
           setInputsValue={setInputsValue}
         />
-        <FilterByType
+        <FilterSelect
           inputsValue={inputsValue}
           setInputsValue={setInputsValue}
+          typeOptions={typeOptions}
+          label={"Фільтрувати за категорією"}
+          placeholder={"Усі"}
         />
       </Form>
     </Section>

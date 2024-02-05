@@ -1,16 +1,15 @@
 import styled from "styled-components";
 
 export const Section = styled.section`
-  margin-top: 100px;
   min-height: 1200px;
+  background-color: var(--primary-white-color);
+`;
+
+export const ImageGalleryList = styled.ul`
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
 
-  background-color: var(--secondary-white-color);
-`;
-
-export const ImageGalleryList = styled.ul`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
 `;
@@ -106,7 +105,7 @@ export const ImageCount = styled.p`
   font-size: 20px;
 `;
 
-export const ImageDescription = styled.p`
+export const ImageDate = styled.p`
   position: absolute;
   left: 0;
   bottom: 0;

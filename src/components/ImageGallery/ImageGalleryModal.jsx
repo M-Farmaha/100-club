@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 
 import {
   ImageCount,
-  ImageDescription,
+  ImageDate,
   ImageGalleryModalImg,
   NavButton,
   NavIcon,
@@ -126,10 +126,10 @@ export const ImageGalleryModal = () => {
                 galleryArray.length
               }`}</ImageCount>
 
-              <ImageDescription>{currentImg?.description}</ImageDescription>
+              <ImageDate>{currentImg?.date}</ImageDate>
               <ImageGalleryModalImg
                 src={currentImg?.path}
-                alt={currentImg?.description}
+                alt={currentImg?.id}
                 loading="lazy"
                 onLoad={() => setIsLoading(false)}
               />

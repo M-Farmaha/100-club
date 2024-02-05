@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
+
 import { MembersList } from "../../components/MembersList/MembersList";
 import { membersApi } from "../../Api/ApiRequest";
-import { FilterBar } from "../../components/Filter/FilterBar";
+import { MembersFilterBar } from "../../components/Filters/MembersFilterBar";
 
 const MembersPage = () => {
   const [membersArray, setMembersArray] = useState([]);
@@ -17,7 +18,7 @@ const MembersPage = () => {
 
   return (
     <>
-      <FilterBar
+      <MembersFilterBar
         membersArray={membersArray}
         setVisibleMembersArray={setVisibleMembersArray}
       />

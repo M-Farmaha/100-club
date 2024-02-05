@@ -22,7 +22,7 @@ export const ImageGalleryItem = ({ el }) => {
         <ImageGalleryImg
           loading="lazy"
           src={el.path}
-          alt={el.description}
+          alt={el.id}
           onLoad={() => setIsLoading(false)}
         />
       </ImageGalleryItemLi>

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Group, IconSvg, IconWrap, Input, Label } from "./FilterBar-styled";
+import { Group, IconSvg, IconWrap, Input, Label } from "./Filters-styled";
 
 import sprite from "../../sprite.svg";
 

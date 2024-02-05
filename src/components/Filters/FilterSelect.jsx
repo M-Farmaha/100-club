@@ -1,8 +1,14 @@
 import Select from "react-select";
 import { useState } from "react";
-import { Group, Label } from "./FilterBar-styled";
+import { Group, Label } from "./Filters-styled";
 
-export const FilterByType = ({ inputValue, setInputsValue }) => {
+export const FilterSelect = ({
+  inputValue,
+  setInputsValue,
+  typeOptions,
+  label,
+  placeholder,
+}) => {
   const [isFilterFocused, setIsFilterFocused] = useState(false);
 
   const onInputChange = (selectedOption) => {
@@ -11,17 +17,6 @@ export const FilterByType = ({ inputValue, setInputsValue }) => {
       type: selectedOption.value,
     }));
   };
-
-  const typeOptions = [
-    "Усі",
-    "Аматор",
-    "Професіонал",
-    "Напів професіонал",
-    "Тренер",
-    "Дитяча група",
-    "Тенісна мама",
-    "Чемпіон",
-  ];
 
   const selectStyles = {
     NoOptionsMessage: (styles) => ({
@@ -141,9 +136,9 @@ export const FilterByType = ({ inputValue, setInputsValue }) => {
 
   return (
     <Group>
-      <Label isFilterFocused={isFilterFocused}>Фільтрувати за категорією</Label>
+      <Label isFilterFocused={isFilterFocused}>{label}</Label>
       <Select
-        placeholder={"Усі"}
+        placeholder={placeholder}
         noOptionsMessage={() => "Немає збігів"}
         maxMenuHeight={300}
         components={{
