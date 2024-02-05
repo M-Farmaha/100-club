@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { MembersList } from "../../components/MembersList/MembersList";
 import { membersApi } from "../../Api/ApiRequest";
 import { MembersFilterBar } from "../../components/Filters/MembersFilterBar";
-import { CounterSection } from "../../components/Counter/CounterSection";
+import { CounterSection } from "../../components/CounterSection/CounterSection";
 
 const MembersPage = () => {
   const [membersArray, setMembersArray] = useState([]);
