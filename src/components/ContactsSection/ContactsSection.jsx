@@ -31,14 +31,13 @@ export const ContactsSection = () => {
             <CourtIconSvg>
               <use href={sprite + "#icon-court"}></use>
             </CourtIconSvg>
-            <Address style={{alignItems: "center"}}>
+            <Address style={{ alignItems: "center" }}>
               <Text>Адреса нашого домашнього корту:</Text>
 
               <Link
                 href="https://maps.app.goo.gl/6N5YkhV3wPf3eLjBA"
                 rel="noopener noreferrer"
-                target="_blank"
-                aria-label="Відкрити карту"
+                aria-label="Відкрити google maps"
               >
                 <IconSvg>
                   <use href={sprite + "#icon-location"}></use>

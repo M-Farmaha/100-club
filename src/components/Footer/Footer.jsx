@@ -20,10 +20,9 @@ export const Footer = () => {
             </FooterIcon>
             by{" "}
             <FooterLink
-              href="https://github.com/M-Farmaha"
+              href="https://www.linkedin.com/in/max-farmaha"
               rel="noopener noreferrer"
-              target="_blank"
-              aria-label="Відвідати профіль автора у гітхабі"
+              aria-label="Перейти на сторінку автора у linkedin"
             >
               Max Farmaha
             </FooterLink>
