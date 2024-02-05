@@ -1,128 +1,118 @@
 [
   {
-    "id": "1",
-    "date": "unknown",
-    "path": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/ImageGallery/photos/1.jpg",
+    "id": "2016-04",
+    "date": "2016-04",
+    "path": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/ImageGallery/photos/2016-04.jpg",
     "description": "Тут може бути опис"
   },
   {
-    "id": "2",
-    "date": "unknown",
-    "path": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/ImageGallery/photos/2.jpg",
+    "id": "2016-05_1",
+    "date": "2016-05",
+    "path": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/ImageGallery/photos/2016-05_1.jpg",
     "description": "Тут може бути опис"
   },
   {
-    "id": "3",
-    "date": "unknown",
-    "path": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/ImageGallery/photos/3.jpg",
+    "id": "2016-05_2",
+    "date": "2016-05",
+    "path": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/ImageGallery/photos/2016-05_2.jpg",
     "description": "Тут може бути опис"
   },
   {
-    "id": "4",
-    "date": "unknown",
-    "path": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/ImageGallery/photos/4.jpg",
+    "id": "2016-06_1",
+    "date": "2016-06",
+    "path": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/ImageGallery/photos/2016-06_1.jpg",
     "description": "Тут може бути опис"
   },
   {
-    "id": "5",
-    "date": "unknown",
-    "path": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/ImageGallery/photos/5.jpg",
+    "id": "2016-06_2",
+    "date": "2016-06",
+    "path": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/ImageGallery/photos/2016-06_2.jpg",
     "description": "Тут може бути опис"
   },
   {
-    "id": "6",
-    "date": "unknown",
-    "path": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/ImageGallery/photos/6.jpg",
+    "id": "2017-07",
+    "date": "2017-07",
+    "path": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/ImageGallery/photos/2017-07.jpg",
     "description": "Тут може бути опис"
   },
   {
-    "id": "7",
-    "date": "unknown",
-    "path": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/ImageGallery/photos/7.jpg",
+    "id": "2017-09",
+    "date": "2017-09",
+    "path": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/ImageGallery/photos/2017-09.jpg",
     "description": "Тут може бути опис"
   },
   {
-    "id": "8",
-    "date": "unknown",
-    "path": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/ImageGallery/photos/8.jpg",
+    "id": "2019-07",
+    "date": "2019-07",
+    "path": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/ImageGallery/photos/2019-07.jpg",
     "description": "Тут може бути опис"
   },
   {
-    "id": "9",
-    "date": "unknown",
-    "path": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/ImageGallery/photos/9.jpg",
+    "id": "2019-12",
+    "date": "2019-12",
+    "path": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/ImageGallery/photos/2019-12.jpg",
+    "description": "Тут може бути опис"
+  },
+
+  {
+    "id": "2020-07_1",
+    "date": "2020-07",
+    "path": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/ImageGallery/photos/2020-07_1.jpg",
     "description": "Тут може бути опис"
   },
   {
-    "id": "10",
-    "date": "unknown",
-    "path": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/ImageGallery/photos/10.jpg",
+    "id": "2020-07_2",
+    "date": "2020-07",
+    "path": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/ImageGallery/photos/2020-07_2.jpg",
     "description": "Тут може бути опис"
   },
   {
-    "id": "11",
-    "date": "unknown",
-    "path": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/ImageGallery/photos/11.jpg",
+    "id": "2020-09_1",
+    "date": "2020-09",
+    "path": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/ImageGallery/photos/2020-09_1.jpg",
     "description": "Тут може бути опис"
   },
   {
-    "id": "12",
-    "date": "unknown",
-    "path": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/ImageGallery/photos/12.jpg",
+    "id": "2020-09_2",
+    "date": "2020-09",
+    "path": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/ImageGallery/photos/2020-09_2.jpg",
     "description": "Тут може бути опис"
   },
   {
-    "id": "13",
-    "date": "unknown",
-    "path": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/ImageGallery/photos/13.jpg",
+    "id": "2020-10_1",
+    "date": "2020-10",
+    "path": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/ImageGallery/photos/2020-10_1.jpg",
     "description": "Тут може бути опис"
   },
   {
-    "id": "14",
-    "date": "unknown",
-    "path": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/ImageGallery/photos/14.jpg",
+    "id": "2020-10_2",
+    "date": "2020-10",
+    "path": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/ImageGallery/photos/2020-10_2.jpg",
     "description": "Тут може бути опис"
   },
   {
-    "id": "15",
-    "date": "unknown",
-    "path": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/ImageGallery/photos/15.jpg",
+    "id": "2021-06",
+    "date": "2021-06",
+    "path": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/ImageGallery/photos/2021-06.jpg",
     "description": "Тут може бути опис"
   },
   {
-    "id": "16",
-    "date": "unknown",
-    "path": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/ImageGallery/photos/16.jpg",
+    "id": "2021-09",
+    "date": "2021-09",
+    "path": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/ImageGallery/photos/2021-09.jpg",
+    "description": "Тут може бути опис"
+  },
+
+  {
+    "id": "2023-04",
+    "date": "2023-04",
+    "path": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/ImageGallery/photos/2023-04.jpg",
     "description": "Тут може бути опис"
   },
   {
-    "id": "17",
-    "date": "unknown",
-    "path": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/ImageGallery/photos/17.jpg",
-    "description": "Тут може бути опис"
-  },
-  {
-    "id": "18",
-    "date": "unknown",
-    "path": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/ImageGallery/photos/18.jpg",
-    "description": "Тут може бути опис"
-  },
-  {
-    "id": "19",
-    "date": "unknown",
-    "path": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/ImageGallery/photos/19.jpg",
-    "description": "Тут може бути опис"
-  },
-  {
-    "id": "20",
-    "date": "unknown",
-    "path": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/ImageGallery/photos/20.jpg",
-    "description": "Тут може бути опис"
-  },
-  {
-    "id": "21",
-    "date": "unknown",
-    "path": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/ImageGallery/photos/21.jpg",
+    "id": "2023-08",
+    "date": "2023-08",
+    "path": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/ImageGallery/photos/2023-08.jpg",
     "description": "Тут може бути опис"
   }
 ]
