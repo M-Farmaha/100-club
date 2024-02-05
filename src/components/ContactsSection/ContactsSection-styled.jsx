@@ -58,15 +58,17 @@ export const Address = styled.address`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: right;
   gap: 5px;
 
   font-style: inherit;
+
 `;
 
 export const Text = styled.p`
   font-size: 17px;
   font-weight: 200;
+  text-align: right;
 `;
 
 export const Link = styled.a`
@@ -76,8 +78,9 @@ export const Link = styled.a`
   border: none;
 
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: right;
+
   gap: 10px;
 
   font-size: 17px;

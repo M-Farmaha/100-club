@@ -25,7 +25,7 @@ export const MembersItemLi = styled.li`
 
   &:hover {
     cursor: pointer;
-    background-color: var(--primary-black-color);
+    background-color: var(--primary-grey-color);
     color: var(--primary-white-color);
   }
 `;

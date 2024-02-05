@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { MembersList } from "../../components/MembersList/MembersList";
 import { membersApi } from "../../Api/ApiRequest";
 import { MembersFilterBar } from "../../components/Filters/MembersFilterBar";
+import { CounterSection } from "../../components/Counter/CounterSection";
 
 const MembersPage = () => {
   const [membersArray, setMembersArray] = useState([]);
@@ -22,6 +23,7 @@ const MembersPage = () => {
         membersArray={membersArray}
         setVisibleMembersArray={setVisibleMembersArray}
       />
+      <CounterSection visibleUsers={visibleMembersArray.length} />
       <MembersList visibleMembersArray={visibleMembersArray} />
     </>
   );

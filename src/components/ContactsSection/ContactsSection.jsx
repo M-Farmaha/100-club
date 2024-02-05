@@ -31,7 +31,7 @@ export const ContactsSection = () => {
             <CourtIconSvg>
               <use href={sprite + "#icon-court"}></use>
             </CourtIconSvg>
-            <Address>
+            <Address style={{alignItems: "center"}}>
               <Text>Адреса нашого домашнього корту:</Text>
 
               <Link

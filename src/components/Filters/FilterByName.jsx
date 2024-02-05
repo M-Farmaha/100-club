@@ -16,12 +16,12 @@ export const FilterByName = ({ inputValue, setInputsValue }) => {
   return (
     <Group>
       <Label isFilterFocused={isFilterFocused}>
+        Знайти учасника за іменем
         <IconWrap>
           <IconSvg>
             <use href={sprite + "#icon-search"}></use>
           </IconSvg>
         </IconWrap>
-        Знайти учасника за іменем
       </Label>
 
       <Input

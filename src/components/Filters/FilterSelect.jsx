@@ -1,6 +1,8 @@
 import Select from "react-select";
 import { useState } from "react";
-import { Group, Label } from "./Filters-styled";
+import { Group, IconSvg, IconWrap, Label } from "./Filters-styled";
+
+import sprite from "../../sprite.svg";
 
 export const FilterSelect = ({
   inputValue,
@@ -136,7 +138,14 @@ export const FilterSelect = ({
 
   return (
     <Group>
-      <Label isFilterFocused={isFilterFocused}>{label}</Label>
+      <Label isFilterFocused={isFilterFocused}>
+        {label}
+        <IconWrap>
+          <IconSvg>
+            <use href={sprite + "#icon-list"}></use>
+          </IconSvg>
+        </IconWrap>
+      </Label>
       <Select
         placeholder={placeholder}
         noOptionsMessage={() => "Немає збігів"}
