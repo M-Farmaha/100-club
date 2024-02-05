@@ -14,7 +14,7 @@ export const Text = styled.p`
   display: flex;
   justify-content: left;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
 `;
 
 export const IconWrap = styled.span`

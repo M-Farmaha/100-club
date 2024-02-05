@@ -47,7 +47,7 @@ export const ModalImgWrap = styled.div`
 
 export const ImageGalleryModalImg = styled.img`
   max-height: calc(100vh - 40px);
-  object-fit: scale-down;
+  object-fit: cover;
 
   @media screen and (min-width: 1200px) {
     max-height: 100vh;

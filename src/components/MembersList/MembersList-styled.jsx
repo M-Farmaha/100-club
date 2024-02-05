@@ -63,7 +63,7 @@ export const MembersItemText = styled.p`
   font-weight: 400;
 
   &:nth-child(1) {
-    width: 30px;
+    width: 35px;
   }
 
   &:nth-child(2) {
