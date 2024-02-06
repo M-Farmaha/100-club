@@ -21,9 +21,7 @@ export const ModalOverlay = styled.div`
 export const ModalWrap = styled.div`
   background-color: transparent;
   color: var(--primary-white-color);
-  overflow: hidden;
   box-shadow: var(--box-shadow);
-
   border: none;
 `;
 

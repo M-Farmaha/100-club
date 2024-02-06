@@ -1,17 +1,20 @@
+import { useNavigate } from "react-router-dom";
 import {
   MembersItemLi,
   MembersItemText,
   MembersItemWrap,
-} from "./MembersList-styled";
+} from "./Members-styled";
 
 export const MembersItem = ({ el, index }) => {
-  const onItemClick = (e) => {
-    console.log(e.currentTarget);
+  const navigate = useNavigate();
+
+  const openModal = () => {
+    navigate(`user/${el.id}`);
   };
 
   return (
     <>
-      <MembersItemLi id={el.id} onClick={onItemClick}>
+      <MembersItemLi id={el.id} onClick={openModal}>
         <MembersItemWrap>
           <MembersItemText>{index + 1}.</MembersItemText>
           <MembersItemText>{el.name}</MembersItemText>

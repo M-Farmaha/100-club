@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Outlet } from "react-router-dom";
 
 import { MembersList } from "../../components/MembersList/MembersList";
 import { membersApi } from "../../Api/ApiRequest";
@@ -25,6 +26,8 @@ const MembersPage = () => {
       />
       <CounterSection visibleUsers={visibleMembersArray.length} />
       <MembersList visibleMembersArray={visibleMembersArray} />
+
+      <Outlet />
     </>
   );
 };

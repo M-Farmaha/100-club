@@ -1,4 +1,4 @@
-import { MembersUl, Section } from "./MembersList-styled";
+import { MembersUl, Section } from "./Members-styled";
 import { MembersItem } from "./MembersItem";
 
 export const MembersList = ({ visibleMembersArray }) => {

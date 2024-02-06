@@ -26,6 +26,7 @@ const GalleryPage = () => {
         setOrder={setOrder}
       />
       <ImageGallery orderedGalleryArray={orderedGalleryArray} order={order} />
+
       <Outlet />
     </>
   );

@@ -22,7 +22,7 @@ export const AboutSection = () => {
               <AboutIconSvg>
                 <use href={sprite + "#icon-serve"}></use>
               </AboutIconSvg>
-              <TitleH3>Персональні та групові тренування</TitleH3>
+              <TitleH3> Персональні та групові тренування</TitleH3>
               <SubTitle>
                 Персональні тренування для будь-якого рівня навичок з
                 досвідченим тренером або групові тренування залежно від вашого

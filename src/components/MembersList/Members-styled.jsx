@@ -55,8 +55,6 @@ export const MembersItemText = styled.p`
   justify-content: left;
   align-items: center;
 
-  /* border: 1px solid var(--primary-black-color); */
-
   height: 100%;
 
   font-size: 16px;
@@ -79,5 +77,60 @@ export const MembersItemText = styled.p`
     @media screen and (min-width: 450px) {
       width: 150px;
     }
+  }
+`;
+
+export const ModalContentWrap = styled.div`
+  position: relative;
+  width: 100vw;
+  background-color: var(--primary-white-color);
+
+  @media screen and (min-width: 500px) {
+    width: 500px;
+  }
+`;
+
+export const AvatarWrap = styled.div`
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background: linear-gradient(
+    to bottom right,
+    var(--primary-white-color),
+    var(--primary-black-color)
+  );
+`;
+
+export const Avatar = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+`;
+
+export const ModalTitle = styled.p`
+  position: absolute;
+  top: -34px;
+  left: 24px;
+  font-size: 20px;
+`;
+
+export const DescriptionWrap = styled.div`
+  padding: 16px 24px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  gap: 12px;
+`;
+
+export const Text = styled.p`
+  color: var(--accent-color);
+
+  font-size: 16px;
+
+  span {
+    color: var(--primary-black-color);
+    font-weight: 600;
   }
 `;

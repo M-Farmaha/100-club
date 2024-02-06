@@ -5,16 +5,16 @@ import { ImageGalleryImg, ImageGalleryItemLi } from "./ImageGallery-styled";
 import { Loader } from "../Loaders/Loaders";
 
 export const ImageGalleryItem = ({ el, order }) => {
-  const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(true);
+  const navigate = useNavigate();
 
-  const openModal = (el) => {
+  const openModal = () => {
     navigate(`photo/${el.id}?order=${order}`);
   };
 
   return (
     <>
-      <ImageGalleryItemLi id={el.id} onClick={() => openModal(el)}>
+      <ImageGalleryItemLi id={el.id} onClick={openModal}>
         {isLoading && <Loader />}
         <ImageGalleryImg
           loading="lazy"

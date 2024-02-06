@@ -18,11 +18,10 @@ import { photosApi } from "../../Api/ApiRequest";
 
 export const ImageGalleryModal = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
 
   const [searchParams] = useSearchParams();
   const order = searchParams.get("order");
-
-  const navigate = useNavigate();
 
   const [galleryArray, setGalleryArray] = useState([]);
   const [currentImg, setCurrentImg] = useState(null);
