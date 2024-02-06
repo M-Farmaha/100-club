@@ -81,9 +81,13 @@ export const MembersItemText = styled.p`
 `;
 
 export const ModalContentWrap = styled.div`
-  position: relative;
   width: 100vw;
-  background-color: var(--primary-white-color);
+  height: 100vh;
+  background: linear-gradient(
+    to right,
+    var(--secondary-black-color),
+    var(--primary-black-color)
+  );
 
   @media screen and (min-width: 500px) {
     width: 500px;
@@ -93,7 +97,7 @@ export const ModalContentWrap = styled.div`
 export const AvatarWrap = styled.div`
   position: relative;
   width: 100%;
-  height: 300px;
+  height: 350px;
   background: linear-gradient(
     to bottom right,
     var(--primary-white-color),
@@ -107,12 +111,12 @@ export const Avatar = styled.img`
   object-fit: cover;
 `;
 
-export const ModalTitle = styled.p`
-  position: absolute;
-  top: -34px;
-  left: 24px;
-  font-size: 20px;
-`;
+// export const ModalTitle = styled.p`
+//   position: absolute;
+//   top: -34px;
+//   left: 24px;
+//   font-size: 20px;
+// `;
 
 export const DescriptionWrap = styled.div`
   padding: 16px 24px;
@@ -125,12 +129,12 @@ export const DescriptionWrap = styled.div`
 `;
 
 export const Text = styled.p`
-  color: var(--accent-color);
+  color: var(--accent-hover-color);
 
   font-size: 16px;
 
   span {
-    color: var(--primary-black-color);
+    color: var(--primary-white-color);
     font-weight: 600;
   }
 `;

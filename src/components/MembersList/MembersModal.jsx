@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { format, differenceInYears } from "date-fns";
 import ukLocale from "date-fns/locale/uk";
 
@@ -8,7 +8,6 @@ import {
   AvatarWrap,
   DescriptionWrap,
   ModalContentWrap,
-  ModalTitle,
   Text,
 } from "./Members-styled";
 
@@ -23,11 +22,11 @@ export const MembersModal = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  const [currentMember, setCurrentMember] = useState(null);
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const [isLoading, setIsLoading] = useState(true);
+  const { state } = useLocation();
+  const scrollPosition = state?.scrollPosition || 0;
 
-  const liElement = document.getElementById(id);
+  const [currentMember, setCurrentMember] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   const {
     birthDate = null,
@@ -44,13 +43,6 @@ export const MembersModal = () => {
 
   const age = differenceInYears(new Date(), new Date(birthDate));
   const experience = new Date().getFullYear() - joinTennisYear;
-
-  useEffect(() => {
-    if (liElement) {
-      const rect = liElement.getBoundingClientRect();
-      setScrollPosition(rect.y - window.innerHeight / 2 + 100);
-    }
-  }, [liElement]);
 
   useEffect(() => {
     document.body.classList.add("modal-open");
@@ -94,7 +86,6 @@ export const MembersModal = () => {
           {currentMember && (
             <>
               <ModalContentWrap>
-                <ModalTitle>{name}</ModalTitle>
                 <AvatarWrap>
                   {isLoading && <Loader />}
                   <Avatar
@@ -106,6 +97,9 @@ export const MembersModal = () => {
                 </AvatarWrap>
 
                 <DescriptionWrap>
+                  <Text>
+                    <span>Ім'я:</span> {name}
+                  </Text>
                   <Text>
                     <span>Категорія:</span> {type}
                   </Text>

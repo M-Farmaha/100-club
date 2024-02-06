@@ -9,7 +9,8 @@ export const MembersItem = ({ el, index }) => {
   const navigate = useNavigate();
 
   const openModal = () => {
-    navigate(`user/${el.id}`);
+    const scrollPosition = window.scrollY;
+    navigate(`user/${el.id}`, { state: { scrollPosition } });
   };
 
   return (
