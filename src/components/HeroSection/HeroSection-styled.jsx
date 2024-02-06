@@ -30,7 +30,7 @@ export const Poster = styled.div`
 `;
 
 export const Section = styled.section`
-  min-height: 100vh;
+  height: 100%;
   padding-bottom: 100px;
 `;
 
