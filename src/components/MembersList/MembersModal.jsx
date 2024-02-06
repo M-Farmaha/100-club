@@ -11,9 +11,6 @@ import {
   Text,
 } from "./Members-styled";
 
-// import sprite from "../../sprite.svg";
-import { Loader } from "../Loaders/Loaders";
-
 import { Modal } from "../Modal/Modal";
 import { Portal } from "../../Routes/Portal/Portal";
 import { membersApi } from "../../Api/ApiRequest";
@@ -26,7 +23,6 @@ export const MembersModal = () => {
   const scrollPosition = state?.scrollPosition || 0;
 
   const [currentMember, setCurrentMember] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
 
   const {
     birthDate = null,
@@ -91,13 +87,7 @@ export const MembersModal = () => {
             <>
               <ModalContentWrap>
                 <AvatarWrap>
-                  {isLoading && <Loader />}
-                  <Avatar
-                    src={avatar}
-                    alt={name}
-                    loading="lazy"
-                    onLoad={() => setIsLoading(false)}
-                  />
+                  <Avatar sex={sex} src={avatar} alt={name} loading="lazy" />
                 </AvatarWrap>
 
                 <DescriptionWrap>

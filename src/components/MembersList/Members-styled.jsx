@@ -1,5 +1,8 @@
 import styled from "styled-components";
 
+import MaleDefaultImg from "./img/male-dafault.svg";
+import FemaleDefaultImg from "./img/female-dafault.svg";
+
 export const Section = styled.section`
   padding-bottom: 100px;
   min-height: 1200px;
@@ -29,7 +32,6 @@ export const MembersItemLi = styled.li`
 
   @media screen and (min-width: 1200px) {
     &:hover {
-      cursor: pointer;
       background-color: var(--primary-grey-color);
       color: var(--primary-white-color);
     }
@@ -106,9 +108,9 @@ export const AvatarWrap = styled.div`
   width: 100%;
   height: 350px;
   background: linear-gradient(
-    to bottom right,
-    var(--primary-white-color),
-    var(--primary-black-color)
+    to top right,
+    var(--primary-black-color),
+    var(--primary-white-color)
   );
 `;
 
@@ -116,18 +118,15 @@ export const Avatar = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
+  background-image: url(${props => props.sex === 'male' ? MaleDefaultImg : FemaleDefaultImg});
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 `;
-
-// export const ModalTitle = styled.p`
-//   position: absolute;
-//   top: -34px;
-//   left: 24px;
-//   font-size: 20px;
-// `;
 
 export const DescriptionWrap = styled.div`
   padding: 24px;
-  padding-bottom: 72px;
+  padding-bottom: 48px;
 
   display: flex;
   flex-direction: column;
