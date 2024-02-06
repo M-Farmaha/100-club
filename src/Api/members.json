@@ -3,7 +3,7 @@
     "id": "1",
     "name": "Фармага Максим",
     "birthDate": "1994-06-06",
-    "avatar": null,
+    "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/1.jpg",
     "sex": "male",
     "hometown": "Львів",
     "type": "Аматор",
