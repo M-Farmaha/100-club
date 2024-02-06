@@ -44,6 +44,10 @@ export const MembersModal = () => {
   const age = differenceInYears(new Date(), new Date(birthDate));
   const experience = new Date().getFullYear() - joinTennisYear;
 
+  window.onpopstate = () => {
+    closeModal();
+  };
+
   useEffect(() => {
     document.body.classList.add("modal-open");
     document.documentElement.classList.add("modal-open");

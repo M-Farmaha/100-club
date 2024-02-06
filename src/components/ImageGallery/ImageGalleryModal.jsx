@@ -30,6 +30,10 @@ export const ImageGalleryModal = () => {
 
   const liElement = document.getElementById(id);
 
+  window.onpopstate = () => {
+    closeModal();
+  };
+
   useEffect(() => {
     document.body.classList.add("modal-open");
     document.documentElement.classList.add("modal-open");
