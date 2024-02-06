@@ -18,8 +18,8 @@ export const Poster = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   z-index: -6;
 
   background-color: var(--secondary-black-color);
@@ -30,7 +30,7 @@ export const Poster = styled.div`
 `;
 
 export const Section = styled.section`
-  height: 100vh;
+  height: 100%;
   min-height: 800px;
   padding-bottom: 100px;
 `;
