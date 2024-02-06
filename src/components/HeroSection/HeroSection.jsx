@@ -24,7 +24,7 @@ export const HeroSection = () => {
       <Section>
         <SectionWrap>
           {/* <Filter /> */}
-          <Poster />
+          {/* <Poster /> */}
 
           <TitleH1>
             <TitleH1Text>Клуб</TitleH1Text>

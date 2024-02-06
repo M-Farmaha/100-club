@@ -21,18 +21,18 @@ export const Poster = styled.div`
   width: 100%;
   height: 100%;
   z-index: -6;
-
-  background-color: var(--secondary-black-color);
-  background-image: url(${PosterImg});
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 `;
 
 export const Section = styled.section`
   height: 100%;
   min-height: 800px;
   padding-bottom: 100px;
+
+  background-color: var(--primary-black-color);
+  /* background-image: url(${PosterImg}); */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 `;
 
 export const SectionWrap = styled.div`
