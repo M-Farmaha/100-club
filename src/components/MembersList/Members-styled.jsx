@@ -81,6 +81,7 @@ export const MembersItemText = styled.p`
 `;
 
 export const ModalContentWrap = styled.div`
+  overflow: auto;
   width: 100vw;
   height: 100vh;
   background: linear-gradient(
@@ -119,7 +120,8 @@ export const Avatar = styled.img`
 // `;
 
 export const DescriptionWrap = styled.div`
-  padding: 16px 24px;
+  padding: 24px;
+  padding-bottom: 72px;
 
   display: flex;
   flex-direction: column;
