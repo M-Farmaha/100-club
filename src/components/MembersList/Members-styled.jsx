@@ -106,7 +106,7 @@ export const ModalContentWrap = styled.div`
 export const AvatarWrap = styled.div`
   position: relative;
   width: 100%;
-  height: 350px;
+  height: 400px;
   background: linear-gradient(
     to top right,
     var(--primary-black-color),
