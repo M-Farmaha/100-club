@@ -106,7 +106,7 @@ export const ModalContentWrap = styled.div`
 export const AvatarWrap = styled.div`
   position: relative;
   width: 100%;
-  height: 400px;
+  height: 350px;
   background: linear-gradient(
     to top right,
     var(--primary-black-color),
@@ -116,7 +116,8 @@ export const AvatarWrap = styled.div`
 
 export const Avatar = styled.img`
   width: 100%;
-  height: 100%;
+  height: auto;
+  min-height: 350px;
   object-fit: cover;
   background-image: url(${props => props.sex === 'male' ? MaleDefaultImg : FemaleDefaultImg});
   background-size: cover;
