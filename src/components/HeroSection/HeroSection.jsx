@@ -3,8 +3,6 @@ import {
   ButtonIconSvg,
   ButtonLink,
   ButtonWrap,
-  // Filter,
-  Poster,
   HeroButtonsWrap,
   IconSvg,
   IconSvgWrap,
@@ -23,9 +21,6 @@ export const HeroSection = () => {
     <>
       <Section>
         <SectionWrap>
-          {/* <Filter /> */}
-          {/* <Poster /> */}
-
           <TitleH1>
             <TitleH1Text>Клуб</TitleH1Text>
             <LogoIconWrap>
