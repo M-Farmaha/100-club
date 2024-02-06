@@ -132,7 +132,7 @@ export const DescriptionWrap = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: left;
-  gap: 12px;
+  gap: 10px;
 `;
 
 export const Text = styled.p`

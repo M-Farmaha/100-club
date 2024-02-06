@@ -1,9 +1,14 @@
 import styled from "styled-components";
+import PosterImg from "./img/poster2.jpg";
 
 export const Section = styled.section`
   padding-top: 100px;
   padding-bottom: 100px;
-  backdrop-filter: blur(10px);
+  background-color: var(--secondary-black-color);
+  background-image: url(${PosterImg});
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 `;
 
 export const SectionWrap = styled.div`
@@ -29,14 +34,12 @@ export const Item = styled.li`
 `;
 
 export const TitleH3 = styled.h3`
-
   font-size: 50px;
   font-weight: 800;
   color: var(--primary-white-color);
 `;
 
 export const SubTitle = styled.p`
-
   font-size: 20px;
   font-weight: 200;
   color: var(--primary-white-color);

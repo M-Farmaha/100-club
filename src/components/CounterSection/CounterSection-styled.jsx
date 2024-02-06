@@ -1,7 +1,12 @@
 import styled from "styled-components";
 
 export const Section = styled.section`
-  background-color: var(--primary-black-color);
+  background: linear-gradient(
+    to right,
+    var(--secondary-black-color),
+    var(--primary-black-color),
+    var(--secondary-black-color)
+  );
   color: var(--primary-white-color);
 `;
 

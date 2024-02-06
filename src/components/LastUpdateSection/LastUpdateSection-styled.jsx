@@ -2,8 +2,13 @@ import styled from "styled-components";
 
 export const Section = styled.section`
   padding-top: 100px;
-  color: var(--secondary-grey-color);
-  background-color: rgba(0, 255, 98, 0.1);
+  color: var(--secondary-white-color);
+  background: linear-gradient(
+    to right,
+    var(--secondary-black-color),
+    var(--primary-black-color),
+    var(--secondary-black-color)
+  );
 `;
 
 export const Text = styled.p`

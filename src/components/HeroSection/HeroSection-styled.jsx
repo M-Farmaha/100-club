@@ -1,35 +1,12 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import PosterImg from "./poster.jpg";
-
-export const Filter = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -5;
-
-  background-color: var(--secondary-black-color);
-  opacity: 0.2;
-`;
-
-export const Poster = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -6;
-`;
+import PosterImg from "./img/poster.jpg";
 
 export const Section = styled.section`
-  height: 100%;
-  min-height: 800px;
+  padding-top: 50px;
   padding-bottom: 100px;
-
-  background-color: var(--primary-black-color);
-  /* background-image: url(${PosterImg}); */
+  background-color: var(--secondary-black-color);
+  background-image: url(${PosterImg});
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

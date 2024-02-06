@@ -86,7 +86,6 @@ export const NavLinkStyled = styled(NavLink)`
   height: 100%;
 
   font-size: 18px;
-  font-weight: 600;
 
   display: flex;
   flex-direction: column;
