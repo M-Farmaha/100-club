@@ -35,23 +35,15 @@ export const ImageGalleryImg = styled.img`
   transition: var(--main-transition);
 
   &:hover {
-    transform: scale(1.1);
+    transform: scale(1.06);
     cursor: pointer;
   }
 `;
 
-export const ModalImgWrap = styled.div`
-  width: 100%;
-  height: 100%;
-`;
-
 export const ImageGalleryModalImg = styled.img`
-  max-height: calc(100vh - 40px);
+  /* max-height: calc(100vh - 40px); */
+  max-height: 100vh;
   object-fit: cover;
-
-  @media screen and (min-width: 1200px) {
-    max-height: 100vh;
-  }
 `;
 
 export const NavButton = styled.button`
