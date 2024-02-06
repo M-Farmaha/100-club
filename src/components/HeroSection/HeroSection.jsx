@@ -3,7 +3,7 @@ import {
   ButtonIconSvg,
   ButtonLink,
   ButtonWrap,
-  Filter,
+  // Filter,
   Poster,
   HeroButtonsWrap,
   IconSvg,
@@ -23,7 +23,7 @@ export const HeroSection = () => {
     <>
       <Section>
         <SectionWrap>
-          <Filter />
+          {/* <Filter /> */}
           <Poster />
 
           <TitleH1>
