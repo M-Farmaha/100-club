@@ -25,8 +25,14 @@ export const MembersItemLi = styled.li`
 
   &:hover {
     cursor: pointer;
-    background-color: var(--primary-grey-color);
-    color: var(--primary-white-color);
+  }
+
+  @media screen and (min-width: 1200px) {
+    &:hover {
+      cursor: pointer;
+      background-color: var(--primary-grey-color);
+      color: var(--primary-white-color);
+    }
   }
 `;
 
