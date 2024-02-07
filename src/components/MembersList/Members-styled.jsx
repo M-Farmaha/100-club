@@ -119,10 +119,11 @@ export const Avatar = styled.img`
   max-height: 500px;
   min-height: 350px;
   object-fit: contain;
-  background-image: url(${props => props.sex === 'male' ? MaleDefaultImg : FemaleDefaultImg});
+  background-image: url(${(props) => props.sex === "male" ? MaleDefaultImg : FemaleDefaultImg});
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 10px 20px;
 `;
 
 export const DescriptionWrap = styled.div`
@@ -137,12 +138,11 @@ export const DescriptionWrap = styled.div`
 `;
 
 export const Text = styled.p`
-  color: var(--accent-hover-color);
-
+  color: var(--primary-white-color);
   font-size: 16px;
+  font-weight: 600;
 
   span {
-    color: var(--primary-white-color);
-    font-weight: 600;
+    font-weight: 200;
   }
 `;

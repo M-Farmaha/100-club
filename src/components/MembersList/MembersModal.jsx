@@ -99,7 +99,7 @@ export const MembersModal = () => {
                   </Text>
                   <Text>
                     <span>Дата народження:</span>
-                    {format(new Date(birthDate), " d MMMM yyyy", {
+                    {format(new Date(birthDate), " d MMMM yyyyр.", {
                       locale: ukLocale,
                     })}
                   </Text>

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import PosterImg from "./img/poster.jpg";
 
 export const Section = styled.section`
-  padding-top: 50px;
+  padding-top: 30px;
   padding-bottom: 100px;
   background-color: var(--secondary-black-color);
   background-image: url(${PosterImg});
@@ -25,7 +25,6 @@ export const TitleH1 = styled.h1`
   justify-content: left;
   align-items: center;
   gap: 30px;
-
   margin-bottom: 30px;
 `;
 
@@ -34,8 +33,24 @@ export const TitleH1Text = styled.p`
   font-size: 80px;
   font-weight: 800;
   padding-top: 20px;
-
   color: var(--primary-white-color);
+`;
+
+export const TitleH2 = styled.h2`
+  padding-left: 10px;
+
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 20px;
+
+  font-family: var(--secondary-font);
+  font-weight: 200;
+`;
+
+export const TitleH2Text = styled.p`
+  color: #ffed00;
+  font-size: 26px;
 `;
 
 export const SubTitle = styled.p`
@@ -43,7 +58,6 @@ export const SubTitle = styled.p`
   margin-bottom: 30px;
 
   font-size: 18px;
-  font-weight: 400;
   line-height: 28px;
 
   color: var(--primary-white-color);
@@ -132,6 +146,15 @@ export const IconSvgWrap = styled.div`
   width: 40px;
   height: 40px;
   background: linear-gradient(to bottom, #576378, #0d1525);
+`;
+
+export const HeartIconSvgWrap = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 60px;
+  height: 60px;
 `;
 
 export const LogoIconWrap = styled.span`

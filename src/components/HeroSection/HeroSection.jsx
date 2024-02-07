@@ -12,6 +12,9 @@ import {
   TitleH1,
   LogoIconWrap,
   TitleH1Text,
+  HeartIconSvgWrap,
+  TitleH2,
+  TitleH2Text,
 } from "./HeroSection-styled";
 
 import sprite from "../../sprite.svg";
@@ -21,6 +24,15 @@ export const HeroSection = () => {
     <>
       <Section>
         <SectionWrap>
+          <TitleH2>
+            <HeartIconSvgWrap>
+              <IconSvg>
+                <use href={sprite + "#icon-ukr-heart"}></use>
+              </IconSvg>
+            </HeartIconSvgWrap>
+            <TitleH2Text>Дякуємо ЗСУ</TitleH2Text>
+          </TitleH2>
+
           <TitleH1>
             <TitleH1Text>Клуб</TitleH1Text>
             <LogoIconWrap>
