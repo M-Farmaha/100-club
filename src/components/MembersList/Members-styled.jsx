@@ -119,8 +119,7 @@ export const Avatar = styled.img`
   max-height: 500px;
   min-height: 350px;
   object-fit: contain;
-  background-image: url(${(props) =>
-    props.sex === "male" ? MaleDefaultImg : FemaleDefaultImg});
+  background-image: url(${(props) => props.sex === "male" ? MaleDefaultImg : FemaleDefaultImg});
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
