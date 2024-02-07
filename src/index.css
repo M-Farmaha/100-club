@@ -36,6 +36,7 @@ body {
   &.modal-open {
     overflow: hidden;
     height: 100%;
+    width: 100%;
   }
 
 }
@@ -46,6 +47,7 @@ html {
   &.modal-open {
     overflow: hidden;
     height: 100%;
+    width: 100%;
   }
 }
 

@@ -92,6 +92,12 @@ export const ModalContentWrap = styled.div`
   overflow: auto;
   width: 100vw;
   height: 100vh;
+
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
   background: linear-gradient(
     to right,
     var(--secondary-black-color),
@@ -104,8 +110,6 @@ export const ModalContentWrap = styled.div`
 `;
 
 export const AvatarWrap = styled.div`
-
-  position: relative;
   width: 100%;
   height: auto;
   background: linear-gradient(
@@ -120,7 +124,8 @@ export const Avatar = styled.img`
   max-height: 500px;
   min-height: 350px;
   object-fit: contain;
-  background-image: url(${(props) => props.sex === "male" ? MaleDefaultImg : FemaleDefaultImg});
+  background-image: url(${(props) =>
+    props.sex === "male" ? MaleDefaultImg : FemaleDefaultImg});
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
