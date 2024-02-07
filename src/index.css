@@ -88,8 +88,15 @@ input {
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 1px;
+  height: 1px;
+}
+
+@media screen and (min-width: 500px) {
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
 }
 
 ::-webkit-scrollbar-track {
@@ -98,7 +105,7 @@ input {
 }
 
 ::-webkit-scrollbar-thumb {
-  height: 66px;
+
   background: var(--accent-color);
 }
 
