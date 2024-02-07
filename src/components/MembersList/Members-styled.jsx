@@ -90,7 +90,7 @@ export const MembersItemText = styled.p`
 
 export const ModalContentWrap = styled.div`
   overflow: auto;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   background: linear-gradient(
     to right,
@@ -119,11 +119,12 @@ export const Avatar = styled.img`
   max-height: 500px;
   min-height: 350px;
   object-fit: contain;
-  background-image: url(${(props) => props.sex === "male" ? MaleDefaultImg : FemaleDefaultImg});
+  background-image: url(${(props) =>
+    props.sex === "male" ? MaleDefaultImg : FemaleDefaultImg});
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-    box-shadow: rgba(0, 0, 0, 0.5) 0px 10px 20px;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 10px 20px;
 `;
 
 export const DescriptionWrap = styled.div`
