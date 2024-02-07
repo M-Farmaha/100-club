@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import PosterImg from "./img/poster.jpg";
+import PosterImg from "./img/poster6.jpg";
 
 export const Section = styled.section`
   padding-top: 30px;
@@ -8,7 +8,7 @@ export const Section = styled.section`
   background-color: var(--secondary-black-color);
   background-image: url(${PosterImg});
   background-size: cover;
-  background-position: center;
+  background-position: right;
   background-repeat: no-repeat;
 `;
 
