@@ -132,7 +132,7 @@ export const Avatar = styled.img`
 
 export const DescriptionWrap = styled.div`
   padding: 24px;
-  padding-bottom: 140px;
+  padding-bottom: 130px;
 
   display: flex;
   flex-direction: column;
