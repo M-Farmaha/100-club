@@ -121,11 +121,10 @@ export const AvatarWrap = styled.div`
 
 export const Avatar = styled.img`
   width: 100%;
-  max-height: 500px;
-  min-height: 350px;
+  height: 400px;
   object-fit: contain;
   background-image: url(${(props) => props.sex === "male" ? MaleDefaultImg : FemaleDefaultImg});
-  background-size: contain;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   box-shadow: rgba(0, 0, 0, 0.5) 0px 10px 20px;
