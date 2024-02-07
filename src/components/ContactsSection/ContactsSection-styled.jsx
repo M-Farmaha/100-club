@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Section = styled.section`
   background: linear-gradient(
@@ -70,7 +71,34 @@ export const Text = styled.p`
   text-align: right;
 `;
 
-export const Link = styled.a`
+export const LinkA = styled.a`
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  border: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: right;
+
+  gap: 10px;
+
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 28px;
+
+  color: inherit;
+
+  transition: var(--main-transition);
+
+  &:hover {
+    cursor: pointer;
+    color: var(--accent-hover-color);
+    text-decoration-color: transparent;
+  }
+`;
+
+export const LinkStyled = styled(Link)`
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 2px;

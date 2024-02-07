@@ -4,7 +4,8 @@ import {
   CourtIconSvg,
   IconSvg,
   InfoWrap,
-  Link,
+  LinkA,
+  LinkStyled,
   PhotoImg,
   PhotoWrap,
   Section,
@@ -35,7 +36,7 @@ export const ContactsSection = () => {
             <Address style={{ alignItems: "center" }}>
               <Text>Адреса нашого домашнього корту:</Text>
 
-              <Link
+              <LinkA
                 href="https://maps.app.goo.gl/6N5YkhV3wPf3eLjBA"
                 rel="noopener noreferrer"
                 aria-label="Відкрити google maps"
@@ -44,11 +45,11 @@ export const ContactsSection = () => {
                   <use href={sprite + "#icon-location"}></use>
                 </IconSvg>
                 м. Львів, вул. Сяйво, 18
-              </Link>
+              </LinkA>
             </Address>
 
             <SocialWrap>
-              <Link
+              <LinkA
                 href="https://www.facebook.com/club100tennisLviv"
                 rel="noopener noreferrer"
                 aria-label="facebook"
@@ -56,9 +57,9 @@ export const ContactsSection = () => {
                 <SocialIconSvg>
                   <use href={sprite + "#icon-facebook"}></use>
                 </SocialIconSvg>
-              </Link>
+              </LinkA>
 
-              <Link
+              <LinkA
                 href="https://www.instagram.com/tennislvivclub100/"
                 rel="noopener noreferrer"
                 aria-label="instagram"
@@ -66,9 +67,9 @@ export const ContactsSection = () => {
                 <SocialIconSvg>
                   <use href={sprite + "#icon-instagram"}></use>
                 </SocialIconSvg>
-              </Link>
+              </LinkA>
 
-              <Link
+              <LinkA
                 href="https://www.youtube.com/@atl-amateurtennislviv7215"
                 rel="noopener noreferrer"
                 aria-label="youtube"
@@ -76,7 +77,7 @@ export const ContactsSection = () => {
                 <SocialIconSvg>
                   <use href={sprite + "#icon-youtube"}></use>
                 </SocialIconSvg>
-              </Link>
+              </LinkA>
             </SocialWrap>
           </BlockWrap>
 
@@ -88,27 +89,25 @@ export const ContactsSection = () => {
               <Address>
                 <Text>Директор клубу:</Text>
 
-                <Link href="tel:+380975057249" aria-label="Подзвонити">
+                <LinkA href="tel:+380975057249" aria-label="Подзвонити">
                   <IconSvg>
                     <use href={sprite + "#icon-phone"}></use>
                   </IconSvg>
                   Марина Семенівна
-                </Link>
+                </LinkA>
 
-                <Link
-                  href="100-club/members/user/61"
+                <LinkStyled
+                  to="/members/user/61"
                   aria-label="Переглянути профіль учасника"
-                  rel="noopener noreferrer"
-                  target="_blank"
                 >
                   <IconSvg>
                     <use href={sprite + "#icon-users"}></use>
                   </IconSvg>
                   Переглянути профіль
-                </Link>
+                </LinkStyled>
               </Address>
               <SocialWrap>
-                <Link
+                <LinkA
                   href="https://www.facebook.com/profile.php?id=100066487460791"
                   rel="noopener noreferrer"
                   aria-label="facebook"
@@ -116,7 +115,7 @@ export const ContactsSection = () => {
                   <SocialIconSvg>
                     <use href={sprite + "#icon-facebook"}></use>
                   </SocialIconSvg>
-                </Link>
+                </LinkA>
               </SocialWrap>
             </InfoWrap>
           </BlockWrap>
@@ -129,27 +128,25 @@ export const ContactsSection = () => {
               <Address>
                 <Text>Заступник директора клубу:</Text>
 
-                <Link href="tel:+380677445024" aria-label="Подзвонити">
+                <LinkA href="tel:+380677445024" aria-label="Подзвонити">
                   <IconSvg>
                     <use href={sprite + "#icon-phone"}></use>
                   </IconSvg>
                   В'ячеслав Іванович
-                </Link>
+                </LinkA>
 
-                <Link
-                  href="100-club/members/user/38"
+                <LinkStyled
+                  to="/members/user/38"
                   aria-label="Переглянути профіль учасника"
-                  rel="noopener noreferrer"
-                  target="_blank"
                 >
                   <IconSvg>
                     <use href={sprite + "#icon-users"}></use>
                   </IconSvg>
                   Переглянути профіль
-                </Link>
+                </LinkStyled>
               </Address>
               <SocialWrap>
-                <Link
+                <LinkA
                   href="https://www.facebook.com/profile.php?id=100019350066012"
                   rel="noopener noreferrer"
                   aria-label="facebook"
@@ -157,7 +154,7 @@ export const ContactsSection = () => {
                   <SocialIconSvg>
                     <use href={sprite + "#icon-facebook"}></use>
                   </SocialIconSvg>
-                </Link>
+                </LinkA>
               </SocialWrap>
             </InfoWrap>
           </BlockWrap>
@@ -171,27 +168,25 @@ export const ContactsSection = () => {
               <Address>
                 <Text>Головний тренер клубу:</Text>
 
-                <Link href="tel:+380960116128" aria-label="Подзвонити">
+                <LinkA href="tel:+380960116128" aria-label="Подзвонити">
                   <IconSvg>
                     <use href={sprite + "#icon-phone"}></use>
                   </IconSvg>
                   Ігор Осипович
-                </Link>
+                </LinkA>
 
-                <Link
-                  href="100-club/members/user/100"
+                <LinkStyled
+                  to="/members/user/100"
                   aria-label="Переглянути профіль учасника"
-                  rel="noopener noreferrer"
-                  target="_blank"
                 >
                   <IconSvg>
                     <use href={sprite + "#icon-users"}></use>
                   </IconSvg>
                   Переглянути профіль
-                </Link>
+                </LinkStyled>
               </Address>
               <SocialWrap>
-                <Link
+                <LinkA
                   href="https://www.facebook.com/profile.php?id=100008346792063"
                   rel="noopener noreferrer"
                   aria-label="facebook"
@@ -199,7 +194,7 @@ export const ContactsSection = () => {
                   <SocialIconSvg>
                     <use href={sprite + "#icon-facebook"}></use>
                   </SocialIconSvg>
-                </Link>
+                </LinkA>
               </SocialWrap>
             </InfoWrap>
           </BlockWrap>
