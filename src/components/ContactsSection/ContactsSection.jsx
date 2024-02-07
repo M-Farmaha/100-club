@@ -94,6 +94,18 @@ export const ContactsSection = () => {
                   </IconSvg>
                   Марина Семенівна
                 </Link>
+
+                <Link
+                  href="100-club/members/user/61"
+                  aria-label="Переглянути профіль учасника"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <IconSvg>
+                    <use href={sprite + "#icon-users"}></use>
+                  </IconSvg>
+                  Переглянути профіль
+                </Link>
               </Address>
               <SocialWrap>
                 <Link
@@ -122,6 +134,18 @@ export const ContactsSection = () => {
                     <use href={sprite + "#icon-phone"}></use>
                   </IconSvg>
                   В'ячеслав Іванович
+                </Link>
+
+                <Link
+                  href="100-club/members/user/38"
+                  aria-label="Переглянути профіль учасника"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <IconSvg>
+                    <use href={sprite + "#icon-users"}></use>
+                  </IconSvg>
+                  Переглянути профіль
                 </Link>
               </Address>
               <SocialWrap>
@@ -152,6 +176,18 @@ export const ContactsSection = () => {
                     <use href={sprite + "#icon-phone"}></use>
                   </IconSvg>
                   Ігор Осипович
+                </Link>
+
+                <Link
+                  href="100-club/members/user/100"
+                  aria-label="Переглянути профіль учасника"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <IconSvg>
+                    <use href={sprite + "#icon-users"}></use>
+                  </IconSvg>
+                  Переглянути профіль
                 </Link>
               </Address>
               <SocialWrap>
