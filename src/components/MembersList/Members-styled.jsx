@@ -90,7 +90,7 @@ export const MembersItemText = styled.p`
 
 export const ModalContentWrap = styled.div`
   overflow: auto;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   background: linear-gradient(
     to right,
@@ -104,6 +104,7 @@ export const ModalContentWrap = styled.div`
 `;
 
 export const AvatarWrap = styled.div`
+
   position: relative;
   width: 100%;
   height: auto;
@@ -128,7 +129,7 @@ export const Avatar = styled.img`
 
 export const DescriptionWrap = styled.div`
   padding: 24px;
-  padding-bottom: 48px;
+  padding-bottom: 72px;
 
   display: flex;
   flex-direction: column;
