@@ -39,8 +39,8 @@ export const BlockWrap = styled.div`
 `;
 
 export const InfoWrap = styled.div`
+  min-width: 290px;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 20px;
@@ -62,7 +62,6 @@ export const Address = styled.address`
   gap: 5px;
 
   font-style: inherit;
-
 `;
 
 export const Text = styled.p`

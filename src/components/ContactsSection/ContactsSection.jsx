@@ -19,6 +19,7 @@ import sprite from "../../sprite.svg";
 
 import BossImg from "./img/boss.jpg";
 import TrainerImg from "./img/trainer.jpg";
+import AssistantImg from "./img/assistant.jpg";
 
 export const ContactsSection = () => {
   return (
@@ -110,7 +111,36 @@ export const ContactsSection = () => {
 
           <BlockWrap style={{ flexDirection: "row-reverse" }}>
             <PhotoWrap>
-              <PhotoImg src={TrainerImg} alt="Марина Семенівна" />
+              <PhotoImg src={AssistantImg} alt="В'ячеслав Іванович" />
+            </PhotoWrap>
+            <InfoWrap>
+              <Address>
+                <Text>Заступник директора клубу:</Text>
+
+                <Link href="tel:+380677445024" aria-label="Подзвонити">
+                  <IconSvg>
+                    <use href={sprite + "#icon-phone"}></use>
+                  </IconSvg>
+                  В'ячеслав Іванович
+                </Link>
+              </Address>
+              <SocialWrap>
+                <Link
+                  href="https://www.facebook.com/profile.php?id=100019350066012"
+                  rel="noopener noreferrer"
+                  aria-label="facebook"
+                >
+                  <SocialIconSvg>
+                    <use href={sprite + "#icon-facebook"}></use>
+                  </SocialIconSvg>
+                </Link>
+              </SocialWrap>
+            </InfoWrap>
+          </BlockWrap>
+
+          <BlockWrap>
+            <PhotoWrap>
+              <PhotoImg src={TrainerImg} alt="Ігор Осипович" />
             </PhotoWrap>
 
             <InfoWrap>
