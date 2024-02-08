@@ -124,9 +124,9 @@ export const ModalContentWrap = styled.div`
       : "var(--primary-black-color)"};
 
   background-image: url(${(props) => props.isTodayBirthDay ? BirthdayBG : null});
-  background-size: contain;
+  background-size: cover;
   background-position: center;
-  background-repeat: repeat-y;
+
 
   @media screen and (min-width: 500px) {
     width: 500px;
