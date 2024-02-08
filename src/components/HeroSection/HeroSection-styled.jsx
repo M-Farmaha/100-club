@@ -1,14 +1,20 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import PosterImg from "./img/poster6.jpg";
+import PosterImg4 from "./img/poster4.jpg";
+import PosterImg5 from "./img/poster5.jpg";
+import PosterImg6 from "./img/poster6.jpg";
+
+const getRandomIndex = () => Math.floor(Math.random() * 3);
+const posterImages = [PosterImg4, PosterImg5, PosterImg6];
+const randomPoster = posterImages[getRandomIndex()];
 
 export const Section = styled.section`
   padding-top: 30px;
   padding-bottom: 100px;
   background-color: var(--secondary-black-color);
-  background-image: url(${PosterImg});
+  background-image: url(${randomPoster});
   background-size: cover;
-  background-position: right;
+  background-position: 98% center;
   background-repeat: no-repeat;
 `;
 
@@ -57,7 +63,7 @@ export const SubTitle = styled.p`
   max-width: 600px;
   margin-bottom: 30px;
 
-  font-size: 18px;
+  font-size: 16px;
   line-height: 28px;
 
   color: var(--primary-white-color);
