@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 import MaleDefaultImg from "./img/male-dafault.svg";
 import FemaleDefaultImg from "./img/female-dafault.svg";
+import BirthdayTape from "./img/birthday-tape.svg";
+import BirthdayBG from "./img/BirthDayBG.svg";
 
 export const Section = styled.section`
   padding-bottom: 100px;
@@ -9,21 +11,31 @@ export const Section = styled.section`
   background-color: var(--secondary-white-color);
 `;
 
-export const MembersUl = styled.ul`
-  color: var(--primary-black-color);
-`;
+export const MembersUl = styled.ul``;
 
 export const MembersItemLi = styled.li`
+  position: relative;
   overflow: hidden;
   width: 100%;
   height: 50px;
 
+  background-image: url(${(props) => props.isTodayBirthDay ? BirthdayTape : null});
+  background-size: contain;
+  background-position: center;
+  background-repeat: repeat-x;
+
   &:nth-child(odd) {
-    background-color: var(--primary-white-color);
+    background-color: ${(props) =>
+      props.isTodayBirthDay
+        ? "var(--secondary-red-color)"
+        : "var(--primary-white-color)"};
   }
 
   &:nth-child(even) {
-    background-color: var(--secondary-white-color);
+    background-color: ${(props) =>
+      props.isTodayBirthDay
+        ? "var(--secondary-red-color)"
+        : "var(--secondary-white-color)"};
   }
 
   &:hover {
@@ -32,7 +44,10 @@ export const MembersItemLi = styled.li`
 
   @media screen and (min-width: 1200px) {
     &:hover {
-      background-color: var(--primary-grey-color);
+      background-color: ${(props) =>
+        props.isTodayBirthDay
+          ? "var(--primary-red-color)"
+          : "var(--primary-black-color)"};
       color: var(--primary-white-color);
     }
   }
@@ -97,12 +112,21 @@ export const ModalContentWrap = styled.div`
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  
-  background: linear-gradient(
-    to right,
-    var(--secondary-black-color),
-    var(--primary-black-color)
-  );
+
+  color: ${(props) =>
+    props.isTodayBirthDay
+      ? "var(--primary-black-color)"
+      : "var(--primary-white-color)"};
+
+  background-color: ${(props) =>
+    props.isTodayBirthDay
+      ? "var(--secondary-red-color)"
+      : "var(--primary-black-color)"};
+
+  background-image: url(${(props) => props.isTodayBirthDay ? BirthdayBG : null});
+  background-size: contain;
+  background-position: center;
+  background-repeat: repeat-y;
 
   @media screen and (min-width: 500px) {
     width: 500px;
@@ -142,7 +166,6 @@ export const DescriptionWrap = styled.div`
 `;
 
 export const Text = styled.p`
-  color: var(--primary-white-color);
   font-size: 16px;
   font-weight: 600;
 

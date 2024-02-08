@@ -40,6 +40,12 @@ export const MembersModal = () => {
   const age = differenceInYears(new Date(), new Date(birthDate));
   const experience = new Date().getFullYear() - joinTennisYear;
 
+  const birth = new Date(birthDate);
+  const today = new Date();
+  const isTodayBirthDay =
+    birth.getDate() === today.getDate() &&
+    birth.getMonth() === today.getMonth();
+
   window.onpopstate = () => {
     closeModal();
   };
@@ -85,7 +91,7 @@ export const MembersModal = () => {
         <Modal closeModal={closeModal}>
           {currentMember && (
             <>
-              <ModalContentWrap>
+              <ModalContentWrap isTodayBirthDay={isTodayBirthDay}>
                 <AvatarWrap>
                   <Avatar sex={sex} src={avatar} alt={name} loading="lazy" />
                 </AvatarWrap>
