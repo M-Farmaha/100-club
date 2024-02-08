@@ -717,7 +717,7 @@
   {
     "id": "56",
     "name": "Хомик-Луцик Оксана",
-    "birthDate": "1988-02-08",
+    "birthDate": "1988-02-07",
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/56.jpg",
     "sex": "female",
     "hometown": "Львів",
@@ -1311,5 +1311,18 @@
     "forhand": "Справа",
     "backhand": "Дворучний",
     "joinTennisYear": 2015
+  },
+  {
+    "id": "102",
+    "name": "Гавірко Марія",
+    "birthDate": "1964-01-08",
+    "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/102.jpg",
+    "sex": "female",
+    "hometown": "Львів",
+    "type": "Аматор",
+    "category": null,
+    "forhand": "Справа",
+    "backhand": "Дворучний",
+    "joinTennisYear": 2007
   }
 ]

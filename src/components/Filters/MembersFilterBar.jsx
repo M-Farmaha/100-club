@@ -1,13 +1,19 @@
 import { useState } from "react";
+import { format } from "date-fns";
+
 import { Form, Section } from "./Filters-styled";
 import { FilterByName } from "./FilterByName";
 import { useEffect } from "react";
 import { FilterSelect } from "./FilterSelect";
 
 export const MembersFilterBar = ({ membersArray, setVisibleMembersArray }) => {
-  const [inputsValue, setInputsValue] = useState({ name: "", type: "Усі" });
+  const [inputsValue, setInputsValue] = useState({
+    name: "",
+    type: "Усі",
+    birthday: "Вимкнути",
+  });
 
-  const typeOptions = [
+  const optionsByType = [
     "Усі",
     "Аматор",
     "Професіонал",
@@ -17,6 +23,7 @@ export const MembersFilterBar = ({ membersArray, setVisibleMembersArray }) => {
     "Тенісна мама",
     "Чемпіон",
   ];
+  const optionsByBirthday = ["Вимкнути", "Найближчим часом", "Недавно було"];
 
   useEffect(() => {
     const filtredByName = membersArray?.filter((member) =>
@@ -28,13 +35,31 @@ export const MembersFilterBar = ({ membersArray, setVisibleMembersArray }) => {
         ? filtredByName
         : filtredByName?.filter((member) => member.type === inputsValue.type);
 
-    setVisibleMembersArray(filtredByType);
-  }, [
-    inputsValue.name,
-    inputsValue.type,
-    membersArray,
-    setVisibleMembersArray,
-  ]);
+    const filtredByBirthday = filtredByType;
+    const formatDate = format(new Date(), "MM-dd");
+
+    if (inputsValue.birthday === "Найближчим часом" || inputsValue.birthday === "Недавно було") {
+      const ascendingOrder = inputsValue.birthday === "Найближчим часом";
+      
+      filtredByBirthday?.sort((a, b) => {
+        const comparison = ascendingOrder
+          ? a.birthDate.slice(5).localeCompare(b.birthDate.slice(5))
+          : b.birthDate.slice(5).localeCompare(a.birthDate.slice(5));
+        return comparison;
+      });
+    
+      const index = filtredByBirthday.findIndex((el) =>
+        ascendingOrder ? el.birthDate.slice(5) >= formatDate : el.birthDate.slice(5) <= formatDate
+      );
+    
+      if (index !== -1) {
+        const removed = filtredByBirthday.splice(0, index);
+        filtredByBirthday.push(...removed);
+      }
+    }
+
+    setVisibleMembersArray(filtredByBirthday);
+  }, [inputsValue, membersArray, setVisibleMembersArray]);
 
   return (
     <Section>
@@ -43,12 +68,23 @@ export const MembersFilterBar = ({ membersArray, setVisibleMembersArray }) => {
           inputsValue={inputsValue}
           setInputsValue={setInputsValue}
         />
+
         <FilterSelect
           inputsValue={inputsValue}
           setInputsValue={setInputsValue}
-          typeOptions={typeOptions}
-          label={"Фільтрувати за категорією"}
+          typeOptions={optionsByType}
+          label={"Фільтр за категорією"}
           placeholder={"Усі"}
+          icon={"#icon-list"}
+        />
+
+        <FilterSelect
+          inputsValue={inputsValue}
+          setInputsValue={setInputsValue}
+          typeOptions={optionsByBirthday}
+          label={"Фільтр за днем народження"}
+          placeholder={"Вимкнути"}
+          icon={"#icon-gift"}
         />
       </Form>
     </Section>

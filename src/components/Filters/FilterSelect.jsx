@@ -10,14 +10,26 @@ export const FilterSelect = ({
   typeOptions,
   label,
   placeholder,
+  icon
 }) => {
   const [isFilterFocused, setIsFilterFocused] = useState(false);
 
   const onInputChange = (selectedOption) => {
-    setInputsValue((prev) => ({
-      ...prev,
-      type: selectedOption.value,
-    }));
+    setInputsValue((prev) => {
+      if (label === "Фільтр за категорією") {
+        return {
+          ...prev,
+          type: selectedOption.value,
+        };
+      } else if (label === "Фільтр за днем народження") {
+        return {
+          ...prev,
+          birthday: selectedOption.value,
+        };
+      } else {
+        return prev;
+      }
+    });
   };
 
   const selectStyles = {
@@ -142,7 +154,7 @@ export const FilterSelect = ({
         {label}
         <IconWrap>
           <IconSvg>
-            <use href={sprite + "#icon-list"}></use>
+            <use href={sprite + icon}></use>
           </IconSvg>
         </IconWrap>
       </Label>
