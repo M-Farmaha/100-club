@@ -111,6 +111,7 @@ export const MembersModal = () => {
                   </Text>
                   <Text>
                     <span>Вік:</span> {age} {getAgeSuffix(age)}
+                    {isTodayBirthDay && " (виповнилось сьогодні)"}
                   </Text>
                   <Text>
                     <span>Рідне місто:</span> {hometown}
