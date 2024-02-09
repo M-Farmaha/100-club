@@ -41,7 +41,11 @@ export const ImageGalleryImg = styled.img`
 `;
 
 export const ImageGalleryModalImg = styled.img`
-  /* max-height: calc(100vh - 40px); */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
   max-height: 100vh;
   object-fit: cover;
 `;
