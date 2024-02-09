@@ -23,7 +23,13 @@ export const MembersFilterBar = ({ membersArray, setVisibleMembersArray }) => {
     "Тенісна мама",
     "Чемпіон",
   ];
-  const optionsByBirthday = ["Вимкнути", "Найближчим часом", "Недавно було"];
+  const optionsByBirthday = [
+    "Вимкнути",
+    "Найближчим часом",
+    "Недавно було",
+    "Найстарші",
+    "Наймолодші",
+  ];
 
   useEffect(() => {
     const filtredByName = membersArray?.filter((member) =>
@@ -38,28 +44,47 @@ export const MembersFilterBar = ({ membersArray, setVisibleMembersArray }) => {
     const filtredByBirthday = filtredByType;
     const formatDate = format(new Date(), "MM-dd");
 
-    if (inputsValue.birthday === "Найближчим часом" || inputsValue.birthday === "Недавно було") {
+    if (
+      inputsValue.birthday === "Найближчим часом" ||
+      inputsValue.birthday === "Недавно було"
+    ) {
       const ascendingOrder = inputsValue.birthday === "Найближчим часом";
-      
+
       filtredByBirthday?.sort((a, b) => {
         const comparison = ascendingOrder
           ? a.birthDate.slice(5).localeCompare(b.birthDate.slice(5))
           : b.birthDate.slice(5).localeCompare(a.birthDate.slice(5));
         return comparison;
       });
-    
+
       const index = filtredByBirthday.findIndex((el) =>
-        ascendingOrder ? el.birthDate.slice(5) >= formatDate : el.birthDate.slice(5) <= formatDate
+        ascendingOrder
+          ? el.birthDate.slice(5) >= formatDate
+          : el.birthDate.slice(5) <= formatDate
       );
-    
+
       if (index !== -1) {
         const removed = filtredByBirthday.splice(0, index);
         filtredByBirthday.push(...removed);
       }
     }
 
+    if (inputsValue.birthday === "Найстарші") {
+      filtredByBirthday?.sort((a, b) => a.birthDate.localeCompare(b.birthDate));
+    }
+
+    if (inputsValue.birthday === "Наймолодші") {
+      filtredByBirthday?.sort((a, b) => b.birthDate.localeCompare(a.birthDate));
+    }
+
     setVisibleMembersArray(filtredByBirthday);
-  }, [inputsValue, membersArray, setVisibleMembersArray]);
+  }, [
+    inputsValue.birthday,
+    inputsValue.name,
+    inputsValue.type,
+    membersArray,
+    setVisibleMembersArray,
+  ]);
 
   return (
     <Section>

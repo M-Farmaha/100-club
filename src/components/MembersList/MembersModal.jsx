@@ -46,10 +46,6 @@ export const MembersModal = () => {
     birth.getDate() === today.getDate() &&
     birth.getMonth() === today.getMonth();
 
-  window.onpopstate = () => {
-    closeModal();
-  };
-
   useEffect(() => {
     document.body.classList.add("modal-open");
     document.documentElement.classList.add("modal-open");
@@ -57,14 +53,16 @@ export const MembersModal = () => {
     const members = membersApi();
     const current = members.find((el) => String(el.id) === String(id));
     setCurrentMember(current);
-  }, [id]);
+
+    return () => {
+      document.body.classList.remove("modal-open");
+      document.documentElement.classList.remove("modal-open");
+      window.scrollTo(0, scrollPosition);
+    };
+  }, [id, scrollPosition]);
 
   const closeModal = () => {
-    document.body.classList.remove("modal-open");
-    document.documentElement.classList.remove("modal-open");
-
     navigate("/members");
-    window.scrollTo(0, scrollPosition);
   };
 
   const getAgeSuffix = (age) => {

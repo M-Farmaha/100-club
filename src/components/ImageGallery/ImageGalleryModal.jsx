@@ -30,10 +30,6 @@ export const ImageGalleryModal = () => {
 
   const liElement = document.getElementById(id);
 
-  window.onpopstate = () => {
-    closeModal();
-  };
-
   useEffect(() => {
     document.body.classList.add("modal-open");
     document.documentElement.classList.add("modal-open");
@@ -50,14 +46,16 @@ export const ImageGalleryModal = () => {
 
     const current = orderedGallery.find((el) => String(el.id) === String(id));
     setCurrentImg(current);
-  }, [id, liElement, order]);
+
+    return () => {
+      document.body.classList.remove("modal-open");
+      document.documentElement.classList.remove("modal-open");
+      window.scrollTo(0, scrollPosition);
+    };
+  }, [id, liElement, order, scrollPosition]);
 
   const closeModal = () => {
-    document.body.classList.remove("modal-open");
-    document.documentElement.classList.remove("modal-open");
-
     navigate("/gallery");
-    window.scrollTo(0, scrollPosition);
   };
 
   // eslint-disable-next-line react-hooks/exhaustive-deps

@@ -17,7 +17,7 @@ export const MembersItem = ({ el, index }) => {
 
   const openModal = () => {
     const scrollPosition = window.scrollY;
-    navigate(`user/${el.id}`, { state: { scrollPosition, isTodayBirthDay } });
+    navigate(`user/${el.id}`, { state: { scrollPosition } });
   };
 
   return (

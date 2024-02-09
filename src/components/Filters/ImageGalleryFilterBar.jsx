@@ -9,20 +9,20 @@ export const ImageGalleryFilterBar = ({
   setOrder,
 }) => {
   const [inputsValue, setInputsValue] = useState({
-    type: "Спочатку найновіші",
+    date: "Спочатку найновіші",
   });
 
   const typeOptions = ["Спочатку найновіші", "Спочатку найстаріші"];
 
   useEffect(() => {
-    if (inputsValue.type === "Спочатку найновіші") {
+    if (inputsValue.date === "Спочатку найновіші") {
       setOrderedGalleryArray(galleryArray);
       setOrder("newest");
     } else {
       setOrderedGalleryArray([...galleryArray].reverse());
       setOrder("eldest");
     }
-  }, [galleryArray, inputsValue.type, setOrder, setOrderedGalleryArray]);
+  }, [galleryArray, inputsValue.date, setOrder, setOrderedGalleryArray]);
 
   return (
     <Section>
@@ -31,8 +31,9 @@ export const ImageGalleryFilterBar = ({
           inputsValue={inputsValue}
           setInputsValue={setInputsValue}
           typeOptions={typeOptions}
-          label={"Фільтрувати за датою"}
+          label={"Фільтр за датою"}
           placeholder={"Спочатку найновіші"}
+          icon={"#icon-list"}
         />
       </Form>
     </Section>

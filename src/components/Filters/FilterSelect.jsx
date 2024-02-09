@@ -10,7 +10,7 @@ export const FilterSelect = ({
   typeOptions,
   label,
   placeholder,
-  icon
+  icon,
 }) => {
   const [isFilterFocused, setIsFilterFocused] = useState(false);
 
@@ -25,6 +25,11 @@ export const FilterSelect = ({
         return {
           ...prev,
           birthday: selectedOption.value,
+        };
+      } else if (label === "Фільтр за датою") {
+        return {
+          ...prev,
+          date: selectedOption.value,
         };
       } else {
         return prev;

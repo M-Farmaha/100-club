@@ -11,8 +11,22 @@ const MembersPage = () => {
   const [visibleMembersArray, setVisibleMembersArray] = useState(membersArray);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    const savedScrollPosition = localStorage.getItem(
+      "membersPageScrollPosition"
+    );
+    if (savedScrollPosition) {
+      const parsedScrollPosition = parseInt(savedScrollPosition, 10);
+      window.scrollTo(0, parsedScrollPosition);
+    } else {
+      window.scrollTo(0, 0);
+    }
 
+    return () => {
+      localStorage.setItem("membersPageScrollPosition", window.scrollY);
+    };
+  }, []);
+
+  useEffect(() => {
     const members = membersApi();
     members?.sort((a, b) => a.name.localeCompare(b.name));
     setMembersArray(members);
