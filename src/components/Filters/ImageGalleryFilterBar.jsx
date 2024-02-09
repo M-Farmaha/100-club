@@ -28,6 +28,7 @@ export const ImageGalleryFilterBar = ({
     <Section>
       <Form onSubmit={(e) => e.preventDefault()}>
         <FilterSelect
+          id={"FilterByDate"}
           inputsValue={inputsValue}
           setInputsValue={setInputsValue}
           typeOptions={typeOptions}

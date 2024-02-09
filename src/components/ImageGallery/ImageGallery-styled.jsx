@@ -99,6 +99,7 @@ export const ImageCount = styled.p`
   background-color: transparent;
 
   font-size: 20px;
+  z-index: 1;
 `;
 
 export const ImageDate = styled.p`
@@ -117,4 +118,5 @@ export const ImageDate = styled.p`
   background-color: transparent;
 
   font-size: 18px;
+  z-index: 1;
 `;

@@ -5,6 +5,7 @@ import { Group, IconSvg, IconWrap, Label } from "./Filters-styled";
 import sprite from "../../sprite.svg";
 
 export const FilterSelect = ({
+  id,
   inputValue,
   setInputsValue,
   typeOptions,
@@ -155,7 +156,7 @@ export const FilterSelect = ({
 
   return (
     <Group>
-      <Label isFilterFocused={isFilterFocused}>
+      <Label htmlFor={id} isFilterFocused={isFilterFocused}>
         {label}
         <IconWrap>
           <IconSvg>
@@ -164,6 +165,8 @@ export const FilterSelect = ({
         </IconWrap>
       </Label>
       <Select
+        inputId={id}
+        name={id}
         placeholder={placeholder}
         noOptionsMessage={() => "Немає збігів"}
         maxMenuHeight={300}
@@ -171,7 +174,6 @@ export const FilterSelect = ({
           IndicatorSeparator: () => null,
         }}
         styles={selectStyles}
-        inputId="type"
         value={inputValue}
         isSearchable={false}
         onMenuOpen={() => setIsFilterFocused(true)}

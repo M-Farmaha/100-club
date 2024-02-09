@@ -3,7 +3,7 @@ import { Group, IconSvg, IconWrap, Input, Label } from "./Filters-styled";
 
 import sprite from "../../sprite.svg";
 
-export const FilterByName = ({ inputValue, setInputsValue }) => {
+export const FilterByName = ({ id, inputValue, setInputsValue }) => {
   const [isFilterFocused, setIsFilterFocused] = useState(false);
 
   const onInputChange = (e) => {
@@ -15,7 +15,7 @@ export const FilterByName = ({ inputValue, setInputsValue }) => {
 
   return (
     <Group>
-      <Label isFilterFocused={isFilterFocused}>
+      <Label htmlFor={id} isFilterFocused={isFilterFocused}>
         Знайти учасника за іменем
         <IconWrap>
           <IconSvg>
@@ -25,6 +25,8 @@ export const FilterByName = ({ inputValue, setInputsValue }) => {
       </Label>
 
       <Input
+        id={id}
+        name={id}
         autoComplete="off"
         type="text"
         value={inputValue}

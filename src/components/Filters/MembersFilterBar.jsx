@@ -90,11 +90,13 @@ export const MembersFilterBar = ({ membersArray, setVisibleMembersArray }) => {
     <Section>
       <Form onSubmit={(e) => e.preventDefault()}>
         <FilterByName
+          id={"filterByName"}
           inputsValue={inputsValue}
           setInputsValue={setInputsValue}
         />
 
         <FilterSelect
+          id={"filterByType"}
           inputsValue={inputsValue}
           setInputsValue={setInputsValue}
           typeOptions={optionsByType}
@@ -104,6 +106,7 @@ export const MembersFilterBar = ({ membersArray, setVisibleMembersArray }) => {
         />
 
         <FilterSelect
+          id={"filterByBirthday"}
           inputsValue={inputsValue}
           setInputsValue={setInputsValue}
           typeOptions={optionsByBirthday}
