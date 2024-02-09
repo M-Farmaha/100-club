@@ -9,20 +9,7 @@ const HomePage = () => {
   const [membersArray, setMembersArray] = useState([]);
 
   useEffect(() => {
-    const savedScrollPosition = localStorage.getItem("homePageScrollPosition");
-    if (savedScrollPosition) {
-      const parsedScrollPosition = parseInt(savedScrollPosition, 10);
-      window.scrollTo(0, parsedScrollPosition);
-    } else {
-      window.scrollTo(0, 0);
-    }
-
-    return () => {
-      localStorage.setItem("homePageScrollPosition", window.scrollY);
-    };
-  }, []);
-
-  useEffect(() => {
+    window.scrollTo(0, 0);
     const members = membersApi();
     setMembersArray(members);
   }, []);

@@ -11,22 +11,7 @@ const GalleryPage = () => {
   const [order, setOrder] = useState("newest");
 
   useEffect(() => {
-    const savedScrollPosition = localStorage.getItem(
-      "galleryPageScrollPosition"
-    );
-    if (savedScrollPosition) {
-      const parsedScrollPosition = parseInt(savedScrollPosition, 10);
-      window.scrollTo(0, parsedScrollPosition);
-    } else {
-      window.scrollTo(0, 0);
-    }
-
-    return () => {
-      localStorage.setItem("galleryPageScrollPosition", window.scrollY);
-    };
-  }, []);
-
-  useEffect(() => {
+    window.scrollTo(0, 0);
     const gallery = photosApi();
     gallery?.sort((a, b) => b.date.localeCompare(a.date));
     setGalleryArray(gallery);
