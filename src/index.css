@@ -19,6 +19,14 @@
   --primary-grey-color: #bdbdbd;
   --secondary-grey-color: #9f9f9f;
 
+  --type-kid-color: #b7ff00;
+  --type-amateur-color: #6cff4b;
+  --type-semiprofi-color: #00ff8c;
+  --type-profi-color: #009dff;
+  --type-coach-color: rgb(88, 59, 255);
+  --type-tennismom-color: #ff00a6;
+  --type-champion-color: #ff002f;
+
   --box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;

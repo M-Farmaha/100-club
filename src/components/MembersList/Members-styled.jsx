@@ -103,6 +103,23 @@ export const MembersItemText = styled.p`
   }
 `;
 
+export const MembersItemIndictator = styled.div`
+  position: absolute;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  opacity: 0.3;
+`;
+
+export const MembersItemIndictatorBG = styled.div`
+  position: absolute;
+  right: 0;
+
+  width: 50%;
+  height: 65%;
+  opacity: 0.2;
+`;
+
 export const ModalContentWrap = styled.div`
   overflow: auto;
   width: 100vw;
@@ -126,7 +143,6 @@ export const ModalContentWrap = styled.div`
   background-image: url(${(props) => props.isTodayBirthDay ? BirthdayBG : null});
   background-size: cover;
   background-position: center;
-
 
   @media screen and (min-width: 500px) {
     width: 500px;
