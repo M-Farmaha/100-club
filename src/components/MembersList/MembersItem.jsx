@@ -7,6 +7,7 @@ import {
   MembersItemText,
   MembersItemWrap,
 } from "./Members-styled";
+import { getColorByType } from "../../helpers/getColorByType";
 
 export const MembersItem = ({ el, index }) => {
   const navigate = useNavigate();
@@ -16,27 +17,6 @@ export const MembersItem = ({ el, index }) => {
   const isTodayBirthDay =
     birth.getDate() === today.getDate() &&
     birth.getMonth() === today.getMonth();
-
-  const indicatorColor = () => {
-    switch (el.type) {
-      case "Аматор":
-        return "var(--type-amateur-color)";
-      case "Професіонал":
-        return "var(--type-profi-color)";
-      case "Напів професіонал":
-        return "var(--type-semiprofi-color)";
-      case "Тренер":
-        return "var(--type-coach-color)";
-      case "Дитяча група":
-        return "var(--type-kid-color)";
-      case "Тенісна мама":
-        return "var(--type-tennismom-color)";
-      case "Чемпіон":
-        return "var(--type-champion-color)";
-      default:
-        return "var(--secondary-grey-color)";
-    }
-  };
 
   const openModal = () => {
     const scrollPosition = window.scrollY;
@@ -51,7 +31,7 @@ export const MembersItem = ({ el, index }) => {
         onClick={openModal}
       >
         <MembersItemIndictator
-          style={{ backgroundColor: indicatorColor() }}
+          style={{ backgroundColor: getColorByType(el.type) }}
         ></MembersItemIndictator>
         <MembersItemWrap isTodayBirthDay={isTodayBirthDay}>
           <MembersItemText>{index + 1}.</MembersItemText>
@@ -59,7 +39,9 @@ export const MembersItem = ({ el, index }) => {
           <MembersItemText>{el.type}</MembersItemText>
           <MembersItemIndictatorBG
             style={{
-              background: `linear-gradient(to right, transparent,  ${indicatorColor()})`,
+              background: `linear-gradient(to right, transparent,  ${getColorByType(
+                el.type
+              )})`,
             }}
           ></MembersItemIndictatorBG>
         </MembersItemWrap>

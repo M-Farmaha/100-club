@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom";
 import { MembersList } from "../../components/MembersList/MembersList";
 import { membersApi } from "../../Api/ApiRequest";
 import { MembersFilterBar } from "../../components/Filters/MembersFilterBar";
-import { CounterSection } from "../../components/CounterSection/CounterSection";
+import { ChartSection } from "../../components/ChartSection/ChartSection";
 
 const MembersPage = () => {
   const [membersArray, setMembersArray] = useState([]);
@@ -23,9 +23,9 @@ const MembersPage = () => {
         membersArray={membersArray}
         setVisibleMembersArray={setVisibleMembersArray}
       />
-      <CounterSection visibleUsers={visibleMembersArray.length} />
-      <MembersList visibleMembersArray={visibleMembersArray} />
 
+      <MembersList visibleMembersArray={visibleMembersArray} />
+      <ChartSection membersArray={membersArray} />
       <Outlet />
     </>
   );

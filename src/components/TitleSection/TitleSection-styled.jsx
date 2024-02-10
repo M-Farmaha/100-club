@@ -10,7 +10,7 @@ export const Section = styled.section`
   color: var(--primary-white-color);
 `;
 
-export const Text = styled.p`
+export const Title = styled.h2`
   max-width: 1200px;
   padding: 24px;
   margin-left: auto;
@@ -20,6 +20,9 @@ export const Text = styled.p`
   justify-content: left;
   align-items: center;
   gap: 15px;
+
+  font-weight: 500;
+  font-size: 16px;
 `;
 
 export const IconWrap = styled.span`

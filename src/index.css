@@ -27,6 +27,20 @@
   --type-tennismom-color: #ff00a6;
   --type-champion-color: #ff002f;
 
+  --type-male-color: #0055ff;
+  --type-female-color: #ff0062;
+
+  --type-left-color: #00ff84;
+  --type-right-color: #fbff00;
+
+  --type-onehand-color: #00ffd0;
+  --type-both-color: #00aeff;
+  --type-twohand-color: rgb(128, 0, 255);
+
+  --type-lviv-color: #0080ff;
+  --type-others-color: #ff00e1;
+
+
   --box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;

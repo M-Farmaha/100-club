@@ -6,8 +6,7 @@ import BirthdayTape from "./img/birthday-tape.svg";
 import BirthdayBG from "./img/BirthDayBG.svg";
 
 export const Section = styled.section`
-  padding-bottom: 100px;
-  min-height: 1200px;
+  padding-bottom: 50px;
   background-color: var(--secondary-white-color);
 `;
 
@@ -106,9 +105,11 @@ export const MembersItemText = styled.p`
 export const MembersItemIndictator = styled.div`
   position: absolute;
   left: 0;
-  width: 6px;
+  width: 7px;
   height: 100%;
   opacity: 0.3;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
 `;
 
 export const MembersItemIndictatorBG = styled.div`
