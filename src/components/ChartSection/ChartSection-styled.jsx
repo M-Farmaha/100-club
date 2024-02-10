@@ -15,6 +15,9 @@ export const Subtitle = styled.h3`
 `;
 
 export const ChartWrap = styled.div`
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
   width: 100%;
   height: 50px;
   display: flex;
@@ -44,6 +47,6 @@ export const ChartElement = styled.div`
 
     position: absolute;
     top: -24px;
-    left: 150px;
+    right: 24px;
   }
 `;

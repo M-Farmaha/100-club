@@ -57,7 +57,7 @@ export const ChartSection = ({ membersArray }) => {
           type={"backhand"}
         />
 
-        <Subtitle>За містом:</Subtitle>
+        <Subtitle>За рідним містом:</Subtitle>
         <Chart
           membersArray={membersArray}
           options={optionsByHomeTown}

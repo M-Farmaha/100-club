@@ -7,6 +7,7 @@ import BirthdayBG from "./img/BirthDayBG.svg";
 
 export const Section = styled.section`
   padding-bottom: 50px;
+  min-height: 800px;
   background-color: var(--secondary-white-color);
 `;
 
