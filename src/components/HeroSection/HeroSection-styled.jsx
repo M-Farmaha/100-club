@@ -1,18 +1,43 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { Link } from "react-router-dom";
-import PosterImg4 from "./img/poster4.jpg";
-import PosterImg5 from "./img/poster5.jpg";
-import PosterImg6 from "./img/poster6.jpg";
 
-const getRandomIndex = () => Math.floor(Math.random() * 3);
-const posterImages = [PosterImg4, PosterImg5, PosterImg6];
-const randomPoster = posterImages[getRandomIndex()];
+const Animation = keyframes`
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+`;
 
 export const Section = styled.section`
+  position: relative;
   padding-top: 30px;
   padding-bottom: 100px;
+`;
+
+export const FirstPoster = styled.div`
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  background-size: cover;
+  background-position: 98% center;
+  background-repeat: no-repeat;
+
+  animation: ${Animation} 3s infinite ease-in-out alternate;
+`;
+
+export const SecondPoster = styled.div`
   background-color: var(--secondary-black-color);
-  background-image: url(${randomPoster});
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
   background-size: cover;
   background-position: 98% center;
   background-repeat: no-repeat;

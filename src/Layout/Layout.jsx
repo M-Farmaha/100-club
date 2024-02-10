@@ -12,9 +12,9 @@ const Layout = () => {
       <LastUpdateSection />
       <main>
         <Outlet />
+        <ContactsSection />
       </main>
 
-      <ContactsSection />
       <Footer />
       <ScrollToTopButton />
     </>

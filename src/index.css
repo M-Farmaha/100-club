@@ -40,6 +40,11 @@
   --type-lviv-color: #0080ff;
   --type-others-color: #ff00e1;
 
+  --type-to20-color: #bfff00;
+  --type-20-40-color: rgb(59, 255, 134);
+  --type-40-60-color: #006aff;
+  --type-over60-color: #9500ff;
+
 
   --box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,

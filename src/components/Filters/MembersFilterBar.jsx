@@ -21,7 +21,6 @@ export const MembersFilterBar = ({ membersArray, setVisibleMembersArray }) => {
     "Тренер",
     "Дитяча група",
     "Тенісна мама",
-    "Чемпіон",
   ];
   const optionsByBirthday = [
     "Вимкнути",

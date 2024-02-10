@@ -23,6 +23,13 @@ export const ChartSection = ({ membersArray }) => {
     "Дворучний",
   ];
 
+  const optionsByAge = [
+    "Менше 20 років",
+    "20-40 років",
+    "40-60 років",
+    "Більше 60 років",
+  ];
+
   const optionsByHomeTown = ["Львів", "Інші"];
 
   return (
@@ -62,6 +69,13 @@ export const ChartSection = ({ membersArray }) => {
           membersArray={membersArray}
           options={optionsByHomeTown}
           type={"hometown"}
+        />
+
+        <Subtitle>За віком:</Subtitle>
+        <Chart
+          membersArray={membersArray}
+          options={optionsByAge}
+          type={"birthDate"}
         />
       </Section>
     </>

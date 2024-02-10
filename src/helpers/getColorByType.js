@@ -37,6 +37,15 @@ export const getColorByType = (type) => {
     case "Інші":
       return "var(--type-others-color)";
 
+    case "Менше 20 років":
+      return "var(--type-to20-color)";
+    case "20-40 років":
+      return "var(--type-20-40-color)";
+    case "40-60 років":
+      return "var(--type-40-60-color)";
+    case "Більше 60 років":
+      return "var(--type-over60-color)";
+
     default:
       return "var(--primary-grey-color)";
   }

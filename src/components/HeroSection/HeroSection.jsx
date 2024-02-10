@@ -15,7 +15,12 @@ import {
   HeartIconSvgWrap,
   TitleH2,
   TitleH2Text,
+  FirstPoster,
+  SecondPoster,
 } from "./HeroSection-styled";
+
+import PosterImg5 from "./img/poster5.jpg";
+import PosterImg6 from "./img/poster6.jpg";
 
 import sprite from "../../sprite.svg";
 
@@ -23,6 +28,8 @@ export const HeroSection = () => {
   return (
     <>
       <Section>
+        <FirstPoster style={{ backgroundImage: `url(${PosterImg6})` }} />
+        <SecondPoster style={{ backgroundImage: `url(${PosterImg5})` }} />
         <SectionWrap>
           <TitleH2>
             <HeartIconSvgWrap>
