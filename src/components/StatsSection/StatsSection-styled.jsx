@@ -7,8 +7,9 @@ export const Section = styled.section`
   background-color: var(--secondary-black-color);
   background-image: url(${PosterImg});
   background-size: cover;
-  background-position: top;
+  background-position: top center;
   background-repeat: no-repeat;
+  margin-bottom: 1px;
 `;
 
 export const SectionWrap = styled.div`
