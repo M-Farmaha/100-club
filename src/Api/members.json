@@ -1324,5 +1324,44 @@
     "forhand": "Справа",
     "backhand": "Дворучний",
     "joinTennisYear": 2007
+  },
+  {
+    "id": "103",
+    "name": "Тарасенко Марина",
+    "birthDate": "1989-02-05",
+    "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/103.jpg",
+    "sex": "female",
+    "hometown": "Харків",
+    "type": "Аматор",
+    "category": null,
+    "forhand": "Справа",
+    "backhand": "Дворучний",
+    "joinTennisYear": 2020
+  },
+  {
+    "id": "104",
+    "name": "Белоконь Галина",
+    "birthDate": "1986-08-01",
+    "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/104.jpg",
+    "sex": "female",
+    "hometown": "Львів",
+    "type": "Аматор",
+    "category": null,
+    "forhand": "Зліва",
+    "backhand": "Дворучний",
+    "joinTennisYear": 2015
+  },
+  {
+    "id": "105",
+    "name": "Когут Наталія",
+    "birthDate": "1971-03-04",
+    "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/105.jpg",
+    "sex": "female",
+    "hometown": "Львів",
+    "type": "Аматор",
+    "category": null,
+    "forhand": "Справа",
+    "backhand": "Дворучний",
+    "joinTennisYear": 2016
   }
 ]

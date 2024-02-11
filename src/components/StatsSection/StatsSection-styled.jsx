@@ -9,7 +9,7 @@ export const Section = styled.section`
   background-size: cover;
   background-position: top center;
   background-repeat: no-repeat;
-  margin-bottom: 1px;
+
 `;
 
 export const SectionWrap = styled.div`
