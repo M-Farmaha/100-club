@@ -48,8 +48,8 @@ export const Item = styled.li`
 
   transform: ${(props) => (props.even ? "translate(-100%)" : "translate(100%)")};
   animation-name: ${(props) => (props.isVisible ? (props.even ? showFromLeft : showFromRight) : null)};
-  animation-duration: 1s;
-  animation-timing-function: ease-in-out;
+  animation-duration: 500ms;
+  animation-timing-function: ease;
   animation-fill-mode: forwards;
 `;
 
