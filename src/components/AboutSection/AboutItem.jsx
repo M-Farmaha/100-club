@@ -9,9 +9,8 @@ export const AboutItem = ({ item }) => {
   const [isVisible, setIsVisible] = useState(false);
 
   const props = useSpring({
-    left: isVisible ? "0%" : "-100%",
     transform: isVisible ? "translateX(0%)" : "translateX(-100%)",
-    config: { tension: 200, friction: 50 },
+
   });
 
   useEffect(() => {
