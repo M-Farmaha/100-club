@@ -500,7 +500,7 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/39.jpg",
     "sex": "male",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "Чемпіон",
     "category": null,
     "forhand": "Зліва",
     "backhand": "Одноручний",
@@ -1363,5 +1363,31 @@
     "forhand": "Справа",
     "backhand": "Дворучний",
     "joinTennisYear": 2016
+  },
+  {
+    "id": "106",
+    "name": "Поточняк Ірина",
+    "birthDate": "1985-03-07",
+    "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/106.jpg",
+    "sex": "female",
+    "hometown": "Львів",
+    "type": "Аматор",
+    "category": null,
+    "forhand": "Справа",
+    "backhand": "Дворучний",
+    "joinTennisYear": 2021
+  },
+  {
+    "id": "107",
+    "name": "Поточняк Яна",
+    "birthDate": "2017-11-27",
+    "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/107.jpg",
+    "sex": "female",
+    "hometown": "Львів",
+    "type": "Дитяча група",
+    "category": null,
+    "forhand": "Справа",
+    "backhand": "Дворучний",
+    "joinTennisYear": 2021
   }
 ]

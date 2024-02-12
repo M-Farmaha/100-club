@@ -9,19 +9,15 @@ export const StatItem = ({ name, count, icon }) => {
 
   const props = useSpring({
     value: isVisible ? count : 0,
-    config: { duration: 2000 },
+    config: { tension: 200, friction: 100 },
   });
 
   useEffect(() => {
     const handleScroll = () => {
-      if (isVisible) {
-        window.removeEventListener("scroll", handleScroll);
-        return;
-      }
-
       const id = document.getElementById(name);
       const rect = id.getBoundingClientRect();
       const visible = rect.top <= window.innerHeight && rect.bottom >= 0;
+
       setIsVisible(visible);
     };
 
@@ -31,7 +27,7 @@ export const StatItem = ({ name, count, icon }) => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [isVisible, name]);
+  }, [name]);
 
   return (
     <>
