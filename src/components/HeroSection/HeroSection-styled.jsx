@@ -1,7 +1,16 @@
 import styled, { keyframes } from "styled-components";
 import { Link } from "react-router-dom";
 
-const Animation = keyframes`
+const showFromLeft = keyframes`
+  0% {
+    transform: translate(-120%);
+  }
+  100% {
+    transform: translate(0%);
+  }
+`;
+
+const posterAnimation = keyframes`
   0% {
     opacity: 1;
   }
@@ -27,7 +36,7 @@ export const FirstPoster = styled.div`
   background-position: 98% center;
   background-repeat: no-repeat;
 
-  animation: ${Animation} 3s infinite ease-in-out alternate;
+  animation: ${posterAnimation} 3s infinite ease-in-out alternate;
 `;
 
 export const SecondPoster = styled.div`
@@ -49,6 +58,7 @@ export const SectionWrap = styled.div`
   padding-left: 24px;
   padding-right: 24px;
   max-width: 1200px;
+  overflow: hidden;
 `;
 
 export const TitleH1 = styled.h1`
@@ -57,6 +67,13 @@ export const TitleH1 = styled.h1`
   align-items: center;
   gap: 30px;
   margin-bottom: 30px;
+
+  transform: translateX(-120%);
+  animation-name: ${showFromLeft};
+  animation-duration: 500ms;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  animation-delay: 200ms;
 `;
 
 export const TitleH1Text = styled.p`
@@ -77,6 +94,12 @@ export const TitleH2 = styled.h2`
 
   font-family: var(--secondary-font);
   font-weight: 200;
+
+  transform: translateX(-120%);
+  animation-name: ${showFromLeft};
+  animation-duration: 500ms;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
 `;
 
 export const TitleH2Text = styled.p`
@@ -92,6 +115,13 @@ export const SubTitle = styled.p`
   line-height: 28px;
 
   color: var(--primary-white-color);
+
+  transform: translateX(-120%);
+  animation-name: ${showFromLeft};
+  animation-duration: 500ms;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  animation-delay: 400ms;
 `;
 
 export const HeroButtonsWrap = styled.div`
@@ -99,6 +129,13 @@ export const HeroButtonsWrap = styled.div`
   flex-wrap: wrap;
   gap: 10px;
   max-width: 500px;
+
+  transform: translateX(-120%);
+  animation-name: ${showFromLeft};
+  animation-duration: 500ms;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  animation-delay: 600ms;
 `;
 
 export const ButtonLink = styled(Link)`
