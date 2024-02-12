@@ -1389,5 +1389,44 @@
     "forhand": "Справа",
     "backhand": "Дворучний",
     "joinTennisYear": 2021
+  },
+  {
+    "id": "108",
+    "name": "Посікіра Олександр",
+    "birthDate": "1976-10-18",
+    "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/108.jpg",
+    "sex": "male",
+    "hometown": "Львів",
+    "type": "Аматор",
+    "category": null,
+    "forhand": "Справа",
+    "backhand": "Дворучний",
+    "joinTennisYear": 2011
+  },
+  {
+    "id": "109",
+    "name": "Посікіра Софія",
+    "birthDate": "2010-09-23",
+    "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/109.jpg",
+    "sex": "female",
+    "hometown": "Львів",
+    "type": "Аматор",
+    "category": null,
+    "forhand": "Зліва",
+    "backhand": "Дворучний",
+    "joinTennisYear": 2011
+  },
+  {
+    "id": "110",
+    "name": "Посікіра Назар",
+    "birthDate": "2004-10-16",
+    "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/110.jpg",
+    "sex": "male",
+    "hometown": "Львів",
+    "type": "Професіонал",
+    "category": null,
+    "forhand": "Справа",
+    "backhand": "Дворучний",
+    "joinTennisYear": 2011
   }
 ]
