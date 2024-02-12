@@ -151,9 +151,9 @@ export const ButtonLink = styled(Link)`
 
   background-color: var(--primary-black-color);
   color: var(--primary-white-color);
-  box-shadow: var(--box-shadow);
+  /* box-shadow: var(--box-shadow); */
 
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
 
   transition: var(--main-transition);
@@ -177,9 +177,7 @@ export const Button = styled.a`
   border: 2px solid var(--primary-white-color);
   border-radius: 50px;
 
-  /* background-color: var(--primary-black-color); */
   color: var(--primary-white-color);
-  box-shadow: var(--box-shadow);
 
   font-size: 14px;
   font-weight: 400;
