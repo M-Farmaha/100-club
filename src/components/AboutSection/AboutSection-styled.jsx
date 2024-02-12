@@ -1,8 +1,17 @@
 import styled, { keyframes } from "styled-components";
 
-const show = keyframes`
+const showFromLeft = keyframes`
   0% {
-    transform: translate(-200%);
+    transform: translate(-100%);
+  }
+  100% {
+    transform: translate(0%);
+  }
+`;
+
+const showFromRight = keyframes`
+  0% {
+    transform: translate(100%);
   }
   100% {
     transform: translate(0%);
@@ -37,8 +46,8 @@ export const Item = styled.li`
   flex-grow: 1;
   text-align: center;
 
-  transform: translate(-200%);
-  animation-name: ${(props) => (props.isVisible ? show : null)};
+  transform: ${(props) => (props.even ? "translate(-100%)" : "translate(100%)")};
+  animation-name: ${(props) => (props.isVisible ? (props.even ? showFromLeft : showFromRight) : null)};
   animation-duration: 1s;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
