@@ -1,4 +1,13 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const show = keyframes`
+  0% {
+    transform: translate(-200%);
+  }
+  100% {
+    transform: translate(0%);
+  }
+`;
 
 export const Section = styled.section`
   background-color: var(--primary-white-color);
@@ -27,6 +36,12 @@ export const Item = styled.li`
   max-width: 500px;
   flex-grow: 1;
   text-align: center;
+
+  transform: translate(-200%);
+  animation-name: ${(props) => (props.isVisible ? show : null)};
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
 `;
 
 export const TitleH2 = styled.h2`
