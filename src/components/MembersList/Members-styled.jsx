@@ -4,6 +4,7 @@ import MaleDefaultImg from "./img/male-dafault.svg";
 import FemaleDefaultImg from "./img/female-dafault.svg";
 import BirthdayTape from "./img/birthday-tape.svg";
 import BirthdayBG from "./img/BirthDayBG.svg";
+import DefaultBG from "./img/member-bg.svg";
 
 export const Section = styled.section`
   padding-bottom: 50px;
@@ -142,7 +143,7 @@ export const ModalContentWrap = styled.div`
       ? "var(--secondary-red-color)"
       : "var(--primary-black-color)"};
 
-  background-image: url(${(props) => props.isTodayBirthDay ? BirthdayBG : null});
+  background-image: url(${(props) => props.isTodayBirthDay ? BirthdayBG : DefaultBG});
   background-size: cover;
   background-position: center;
 
