@@ -15,6 +15,7 @@ export const SectionWrap = styled.div`
 `;
 
 export const List = styled.ul`
+  overflow: hidden;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -34,7 +35,7 @@ export const TitleH2 = styled.h2`
 
   font-size: 28px;
   font-weight: 600;
-  
+
   color: var(--primary-black-color);
 `;
 
@@ -47,7 +48,6 @@ export const TitleH3 = styled.h3`
 `;
 
 export const SubTitle = styled.p`
-
   font-size: 18px;
   font-weight: 200;
   color: var(--primary-black-color);

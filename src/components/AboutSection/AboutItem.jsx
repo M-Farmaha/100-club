@@ -4,13 +4,14 @@ import { useSpring, a } from "@react-spring/web";
 import { AboutIconSvg, Item, SubTitle, TitleH3 } from "./AboutSection-styled";
 import sprite from "../../sprite.svg";
 
-export const AboutItem = ({ item }) => {
+export const AboutItem = ({ item, index }) => {
   const { id, icon, title, text } = item;
   const [isVisible, setIsVisible] = useState(false);
 
+  const even = index % 2 === 0;
+
   const { transform } = useSpring({
-    transform: isVisible ? "translateX(0%)" : "translateX(-100%)",
-    config: { tension: 200, friction: 50 },
+    transform: isVisible ? "translateX(0%)" : even ? "translateX(-100%)" : "translateX(100%)",
   });
 
   useEffect(() => {

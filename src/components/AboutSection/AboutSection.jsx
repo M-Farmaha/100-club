@@ -36,8 +36,8 @@ export const AboutSection = () => {
         <SectionWrap>
           <TitleH2>Наш клуб пропонує:</TitleH2>
           <List>
-            {aboutList.map((item) => (
-              <AboutItem key={item.id} item={item} />
+            {aboutList.map((item, index) => (
+              <AboutItem key={item.id} item={item} index={index} />
             ))}
           </List>
         </SectionWrap>
