@@ -8,9 +8,9 @@ export const AboutItem = ({ item }) => {
   const { id, icon, title, text } = item;
   const [isVisible, setIsVisible] = useState(false);
 
-  const props = useSpring({
+  const { transform } = useSpring({
     transform: isVisible ? "translateX(0%)" : "translateX(-100%)",
-
+    config: { tension: 200, friction: 50 },
   });
 
   useEffect(() => {
@@ -32,7 +32,7 @@ export const AboutItem = ({ item }) => {
 
   return (
     <>
-      <a.div style={props}>
+      <a.div style={{transform}}>
         <Item id={id}>
           <AboutIconSvg>
             <use href={sprite + icon}></use>
