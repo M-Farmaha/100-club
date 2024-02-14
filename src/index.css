@@ -61,6 +61,11 @@ body {
 
   outline: none;
 
+  ::selection {
+    background-color: var(--accent-hover-color);
+    color: var(--primary-white-color);
+}
+
   &.modal-open {
     overflow: hidden;
     height: 100%;
