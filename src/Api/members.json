@@ -1428,5 +1428,31 @@
     "forhand": "Справа",
     "backhand": "Дворучний",
     "joinTennisYear": 2011
+  },
+  {
+    "id": "111",
+    "name": "Бойко Юрій",
+    "birthDate": "2006-11-17",
+    "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/111.jpg",
+    "sex": "male",
+    "hometown": "Львів",
+    "type": "Напів професіонал",
+    "category": null,
+    "forhand": "Справа",
+    "backhand": "Дворучний",
+    "joinTennisYear": 2010
+  },
+  {
+    "id": "112",
+    "name": "Бойко Роман",
+    "birthDate": "2006-11-17",
+    "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/112.jpg",
+    "sex": "male",
+    "hometown": "Львів",
+    "type": "Напів професіонал",
+    "category": null,
+    "forhand": "Справа",
+    "backhand": "Дворучний",
+    "joinTennisYear": 2010
   }
 ]
