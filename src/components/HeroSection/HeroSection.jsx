@@ -76,7 +76,6 @@ export const HeroSection = () => {
                 href="https://send.monobank.ua/jar/3MpUJRH8gs"
                 rel="noopener noreferrer"
                 aria-label="Посилання на збір коштів у монобанку"
-
               >
                 <ButtonIconSvg>
                   <use href={sprite + "#icon-credit-card"}></use>
