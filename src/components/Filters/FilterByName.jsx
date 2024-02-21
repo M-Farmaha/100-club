@@ -16,7 +16,7 @@ export const FilterByName = ({ id, inputValue, setInputsValue }) => {
   return (
     <Group>
       <Label htmlFor={id} isFilterFocused={isFilterFocused}>
-        Знайти учасника за іменем
+        Знайти гравця за іменем
         <IconWrap>
           <IconSvg>
             <use href={sprite + "#icon-search"}></use>

@@ -40,8 +40,7 @@ export const Chart = ({ membersArray, options, type }) => {
 
               if (type === "joinTennisYear") {
                 const experience = new Date().getFullYear() - member.joinTennisYear;
-                console.log(experience);
-            
+
                 if (el === "До 2 років" && experience < 2) {
                   return acc + 1;
                 }

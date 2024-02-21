@@ -48,7 +48,7 @@ export const AppBar = () => {
                 <NavIconSvg>
                   <use href={sprite + "#icon-users"}></use>
                 </NavIconSvg>
-                Учасники
+                Гравці
               </NavLinkStyled>
             </NavItem>
 

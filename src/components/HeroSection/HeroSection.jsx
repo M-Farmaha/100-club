@@ -69,7 +69,7 @@ export const HeroSection = () => {
               <ButtonIconSvg>
                 <use href={sprite + "#icon-users"}></use>
               </ButtonIconSvg>
-              Переглянути учасників
+              Переглянути гравців
             </ButtonLink>
             <ButtonWrap>
               <Button

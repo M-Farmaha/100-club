@@ -8,7 +8,7 @@ export const MembersList = ({ visibleMembersArray }) => {
       <Section>
         <TitleSection
           icon={"#icon-users"}
-          title={"Кількість учасників: " + visibleMembersArray.length}
+          title={"Кількість гравців: " + visibleMembersArray.length}
         />
         <MembersUl>
           {visibleMembersArray?.map((el, index) => (
