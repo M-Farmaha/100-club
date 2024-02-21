@@ -46,6 +46,15 @@ export const getColorByType = (type) => {
     case "Більше 60 років":
       return "var(--type-over60-color)";
 
+      case "До 2 років":
+        return "var(--experience-to2-color)";
+      case "2-5 років":
+        return "var(--experience-2-5-color)";
+      case "5-10 років":
+        return "var(--experience-5-10-color)";
+      case "Більше 10 років":
+        return "var(--experience-over10-color)";
+
     default:
       return "var(--primary-grey-color)";
   }

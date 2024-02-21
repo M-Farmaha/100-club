@@ -19,13 +19,22 @@ export const ChartSection = ({ membersArray }) => {
     "Одноручний та Дворучний",
     "Дворучний",
   ];
+
+  const optionsByHomeTown = ["Львів", "Інші"];
+
   const optionsByAge = [
     "Менше 20 років",
     "20-40 років",
     "40-60 років",
     "Більше 60 років",
   ];
-  const optionsByHomeTown = ["Львів", "Інші"];
+
+  const optionsByExperience = [
+    "До 2 років",
+    "2-5 років",
+    "5-10 років",
+    "Більше 10 років",
+  ];
 
   return (
     <>
@@ -71,6 +80,13 @@ export const ChartSection = ({ membersArray }) => {
           membersArray={membersArray}
           options={optionsByAge}
           type={"birthDate"}
+        />
+
+        <Subtitle>За досвідом:</Subtitle>
+        <Chart
+          membersArray={membersArray}
+          options={optionsByExperience}
+          type={"joinTennisYear"}
         />
       </Section>
     </>

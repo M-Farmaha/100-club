@@ -37,6 +37,25 @@ export const Chart = ({ membersArray, options, type }) => {
         <ChartWrap id={type}>
           {options.map((el) => {
             const amount = membersArray?.reduce((acc, member) => {
+
+              if (type === "joinTennisYear") {
+                const experience = new Date().getFullYear() - member.joinTennisYear;
+                console.log(experience);
+            
+                if (el === "До 2 років" && experience < 2) {
+                  return acc + 1;
+                }
+                if (el === "2-5 років" && experience >= 2 && experience < 5) {
+                  return acc + 1;
+                }
+                if (el === "5-10 років" && experience >= 5 && experience < 10) {
+                  return acc + 1;
+                }
+                if (el === "Більше 10 років" && experience >= 10) {
+                  return acc + 1;
+                }
+              }
+
               if (type === "birthDate") {
                 const age = differenceInYears(
                   new Date(),

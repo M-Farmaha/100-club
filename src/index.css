@@ -33,17 +33,22 @@
   --type-left-color: #00ff84;
   --type-right-color: #fbff00;
 
-  --type-onehand-color: #00ffd0;
-  --type-both-color: #00aeff;
-  --type-twohand-color: rgb(128, 0, 255);
+  --type-onehand-color: #ff006a;
+  --type-both-color: #ae00ff;
+  --type-twohand-color: #001aff;
 
   --type-lviv-color: #0080ff;
-  --type-others-color: #ff00e1;
+  --type-others-color: #fbff00;
 
   --type-to20-color: #bfff00;
-  --type-20-40-color: rgb(59, 255, 134);
+  --type-20-40-color: #00ff84;
   --type-40-60-color: #006aff;
   --type-over60-color: #9500ff;
+
+  --experience-to2-color: #00ff7b;
+  --experience-2-5-color: #fbff00;
+  --experience-5-10-color: #ff9100;
+  --experience-over10-color: #ff002f;
 
 
   --box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
@@ -64,7 +69,7 @@ body {
   ::selection {
     background-color: var(--accent-hover-color);
     color: var(--primary-white-color);
-}
+  }
 
   &.modal-open {
     overflow: hidden;
