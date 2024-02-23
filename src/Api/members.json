@@ -444,7 +444,7 @@
   {
     "id": "35",
     "name": "Поздєєва Анастасія",
-    "birthDate": "2012-12-01",
+    "birthDate": "2012-02-01",
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/35.jpg",
     "sex": "female",
     "hometown": "Львів",
@@ -1454,5 +1454,31 @@
     "forhand": "Справа",
     "backhand": "Дворучний",
     "joinTennisYear": 2010
+  },
+  {
+    "id": "113",
+    "name": "Андруник Орест",
+    "birthDate": "1989-06-08",
+    "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/113.jpg",
+    "sex": "male",
+    "hometown": "Львів",
+    "type": "Аматор",
+    "category": null,
+    "forhand": "Справа",
+    "backhand": "Дворучний",
+    "joinTennisYear": 2022
+  },
+  {
+    "id": "114",
+    "name": "Андруник Ольга",
+    "birthDate": "1988-12-28",
+    "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/114.jpg",
+    "sex": "female",
+    "hometown": "Львів",
+    "type": "Аматор",
+    "category": null,
+    "forhand": "Справа",
+    "backhand": "Дворучний",
+    "joinTennisYear": 2022
   }
 ]
