@@ -19,6 +19,7 @@ import {
 import sprite from "../../sprite.svg";
 
 import BossImg from "./img/boss.jpg";
+import DeputyImg from "./img/deputy.jpg";
 import TrainerImg from "./img/trainer.jpg";
 import AssistantImg from "./img/assistant.jpg";
 
@@ -122,6 +123,45 @@ export const ContactsSection = () => {
 
           <BlockWrap style={{ flexDirection: "row-reverse" }}>
             <PhotoWrap>
+              <PhotoImg src={DeputyImg} alt="Наталія Петрівна" />
+            </PhotoWrap>
+            <InfoWrap>
+              <Address>
+                <Text>Голова наглядової ради клубу:</Text>
+
+                <LinkA href="tel:+380997877316" aria-label="Подзвонити">
+                  <IconSvg>
+                    <use href={sprite + "#icon-phone"}></use>
+                  </IconSvg>
+                  Наталія Петрівна
+                </LinkA>
+
+                <LinkStyled
+                  to="/members/user/2"
+                  aria-label="Переглянути профіль учасника"
+                >
+                  <IconSvg>
+                    <use href={sprite + "#icon-users"}></use>
+                  </IconSvg>
+                  Переглянути профіль
+                </LinkStyled>
+              </Address>
+              <SocialWrap>
+                <LinkA
+                  href="https://www.facebook.com/profile.php?id=100001904710920"
+                  rel="noopener noreferrer"
+                  aria-label="facebook"
+                >
+                  <SocialIconSvg>
+                    <use href={sprite + "#icon-facebook"}></use>
+                  </SocialIconSvg>
+                </LinkA>
+              </SocialWrap>
+            </InfoWrap>
+          </BlockWrap>
+
+          <BlockWrap >
+            <PhotoWrap>
               <PhotoImg src={AssistantImg} alt="В'ячеслав Іванович" />
             </PhotoWrap>
             <InfoWrap>
@@ -159,7 +199,7 @@ export const ContactsSection = () => {
             </InfoWrap>
           </BlockWrap>
 
-          <BlockWrap>
+          <BlockWrap style={{ flexDirection: "row-reverse" }}>
             <PhotoWrap>
               <PhotoImg src={TrainerImg} alt="Ігор Осипович" />
             </PhotoWrap>
