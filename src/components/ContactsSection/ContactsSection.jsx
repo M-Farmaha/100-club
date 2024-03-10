@@ -123,7 +123,7 @@ export const ContactsSection = () => {
 
           <BlockWrap style={{ flexDirection: "row-reverse" }}>
             <PhotoWrap>
-              <PhotoImg src={DeputyImg} alt="Наталія Петрівна" />
+              <PhotoImg src={DeputyImg} alt="Наталія Степанівна" />
             </PhotoWrap>
             <InfoWrap>
               <Address>
@@ -133,7 +133,7 @@ export const ContactsSection = () => {
                   <IconSvg>
                     <use href={sprite + "#icon-phone"}></use>
                   </IconSvg>
-                  Наталія Петрівна
+                  Наталія Степанівна
                 </LinkA>
 
                 <LinkStyled
