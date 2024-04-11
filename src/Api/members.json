@@ -1480,5 +1480,31 @@
     "forhand": "Справа",
     "backhand": "Дворучний",
     "joinTennisYear": 2022
+  },
+  {
+    "id": "115",
+    "name": "Лойко Катерина",
+    "birthDate": "2006-10-24",
+    "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/115.jpg",
+    "sex": "female",
+    "hometown": "Львів",
+    "type": "Професіонал",
+    "category": null,
+    "forhand": "Справа",
+    "backhand": "Дворучний",
+    "joinTennisYear": 2012
+  },
+  {
+    "id": "116",
+    "name": "Лойко Меланія",
+    "birthDate": "2017-07-25",
+    "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/116.jpg",
+    "sex": "female",
+    "hometown": "Львів",
+    "type": "Дитяча група",
+    "category": null,
+    "forhand": "Справа",
+    "backhand": "Дворучний",
+    "joinTennisYear": 2023
   }
 ]
