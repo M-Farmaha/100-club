@@ -8,6 +8,7 @@ import Layout from "./Layout/Layout";
 import { ImageGalleryModal } from "./components/ImageGallery/ImageGalleryModal";
 import { MembersModal } from "./components/MembersList/MembersModal";
 import TournamentsPage from "./pages/TournamentsPage/TournamentsPage";
+import { StagesList } from "./components/StagesList/StagesList";
 
 function App() {
   return (
@@ -15,20 +16,17 @@ function App() {
       <BrowserRouter basename="/100-club">
         <Routes>
           <Route path="/" element={<Layout />}>
-            <Route index element={<HomePage />} />
-
-            <Route path="tournaments" element={<TournamentsPage />}>
-              <Route path="user/:id" element={<MembersModal />} />
-            </Route>
+            <Route index element={<HomePage />} />F
+            
+            <Route path="tournaments" element={<TournamentsPage />} />
+            <Route path="tournaments/:id" element={<StagesList />} />
 
             <Route path="members" element={<MembersPage />}>
               <Route path="user/:id" element={<MembersModal />} />
             </Route>
-
             <Route path="gallery" element={<GalleryPage />}>
               <Route path="photo/:id" element={<ImageGalleryModal />} />
             </Route>
-
             <Route path="*" element={<Navigate to="/" replace />} />
           </Route>
         </Routes>

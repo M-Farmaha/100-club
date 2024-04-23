@@ -46,7 +46,7 @@ export const AppBar = () => {
             <NavItem>
               <NavLinkStyled to="/tournaments">
                 <NavIconSvg>
-                  <use href={sprite + "#icon-tournament"}></use>
+                  <use href={sprite + "#icon-cup"}></use>
                 </NavIconSvg>
                 Турніри
               </NavLinkStyled>
