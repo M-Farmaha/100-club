@@ -44,6 +44,15 @@ export const AppBar = () => {
           </a.div>
           <NavList>
             <NavItem>
+              <NavLinkStyled to="/tournaments">
+                <NavIconSvg>
+                  <use href={sprite + "#icon-tournament"}></use>
+                </NavIconSvg>
+                Турніри
+              </NavLinkStyled>
+            </NavItem>
+
+            <NavItem>
               <NavLinkStyled to="/members">
                 <NavIconSvg>
                   <use href={sprite + "#icon-users"}></use>

@@ -7,6 +7,7 @@ import Layout from "./Layout/Layout";
 
 import { ImageGalleryModal } from "./components/ImageGallery/ImageGalleryModal";
 import { MembersModal } from "./components/MembersList/MembersModal";
+import TournamentsPage from "./pages/TournamentsPage/TournamentsPage";
 
 function App() {
   return (
@@ -15,6 +16,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<HomePage />} />
+
+            <Route path="tournaments" element={<TournamentsPage />}>
+              <Route path="user/:id" element={<MembersModal />} />
+            </Route>
 
             <Route path="members" element={<MembersPage />}>
               <Route path="user/:id" element={<MembersModal />} />

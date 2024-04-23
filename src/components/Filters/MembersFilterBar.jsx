@@ -18,7 +18,7 @@ export const MembersFilterBar = ({ membersArray, setVisibleMembersArray }) => {
     "Аматор",
     "Напів професіонал",
     "Професіонал",
-    "Чемпіон",
+    "Легенда",
     "Тренер",
     "Дитяча група",
     "Тенісна мама",

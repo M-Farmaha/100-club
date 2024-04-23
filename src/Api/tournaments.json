@@ -1,0 +1,55 @@
+[
+  {
+    "id": "2023_1",
+    "year": 2023,
+    "name": "Kosyk's Open 2023",
+    "logo": "logo-KO",
+    "status": "Завершений",
+    "stages": [
+      {
+        "date": "2023-06-25",
+        "players": [
+          { "member_id": "42", "win": 1, "defeat": 1 },
+          { "member_id": "1", "win": 8, "defeat": 3 },
+          { "member_id": "76", "win": 3, "defeat": 6 },
+          { "member_id": "39", "win": 13, "defeat": 1 },
+          { "member_id": "85", "win": 0, "defeat": 6 },
+          { "member_id": "11", "win": 2, "defeat": 6 },
+          { "member_id": "57", "win": 2, "defeat": 6 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2024_1",
+    "year": 2024,
+    "name": "Kosyk's Open 2024",
+    "logo": "logo-KO",
+    "status": "Активний",
+    "stages": [
+      {
+        "date": "2024-04-7",
+        "players": [
+          { "member_id": "1", "win": 6, "defeat": 3 },
+          { "member_id": "39", "win": 7, "defeat": 3 },
+          { "member_id": "76", "win": 4, "defeat": 5 },
+          { "member_id": "20", "win": 1, "defeat": 3 },
+          { "member_id": "5", "win": 0, "defeat": 5 },
+          { "member_id": "57", "win": 5, "defeat": 4 }
+        ]
+      },
+      {
+        "date": "2024-04-21",
+        "players": [
+          { "member_id": "1", "win": 13, "defeat": 1 },
+          { "member_id": "39", "win": 10, "defeat": 4 },
+          { "member_id": "76", "win": 1, "defeat": 10 },
+          { "member_id": "20", "win": 0, "defeat": 1 },
+          { "member_id": "11", "win": 8, "defeat": 4 },
+          { "member_id": "5", "win": 0, "defeat": 5 },
+          { "member_id": "31", "win": 0, "defeat": 1 }
+        ]
+      }
+    ]
+  }
+]

@@ -12,7 +12,7 @@ export const getColorByType = (type) => {
       return "var(--type-kid-color)";
     case "Тенісна мама":
       return "var(--type-tennismom-color)";
-    case "Чемпіон":
+    case "Легенда":
       return "var(--type-champion-color)";
 
     case "male":

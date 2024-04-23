@@ -1,14 +1,14 @@
 import sprite from "../../sprite.svg";
-import { LogoSvg, LogoWWrap, LogoWWrapAlt } from "./Logo-styled";
+import { LogoSvg, LogoWrap } from "./Logo-styled";
 
 export const Logo = () => {
   return (
     <>
-      <LogoWWrap>
+      <LogoWrap>
         <LogoSvg>
           <use href={sprite + "#logo-full"}></use>
         </LogoSvg>
-      </LogoWWrap>
+      </LogoWrap>
     </>
   );
 };
@@ -16,11 +16,23 @@ export const Logo = () => {
 export const LogoAlt = () => {
   return (
     <>
-      <LogoWWrapAlt>
+      <LogoWrap>
         <LogoSvg>
           <use href={sprite + "#logo-alt"}></use>
         </LogoSvg>
-      </LogoWWrapAlt>
+      </LogoWrap>
+    </>
+  );
+};
+
+export const TournamentLogo = ({ path }) => {
+  return (
+    <>
+      <LogoWrap style={{ width: "60px", height: "60px" }}>
+        <LogoSvg>
+          <use href={sprite + `#${path}`}></use>
+        </LogoSvg>
+      </LogoWrap>
     </>
   );
 };

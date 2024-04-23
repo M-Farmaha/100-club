@@ -5,7 +5,7 @@ import { Section, Subtitle } from "./ChartSection-styled";
 export const ChartSection = ({ membersArray }) => {
   const optionsByType = [
     "Аматор",
-    "Чемпіон",
+    "Легенда",
     "Напів професіонал",
     "Професіонал",
     "Тренер",

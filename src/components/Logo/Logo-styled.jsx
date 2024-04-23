@@ -1,14 +1,6 @@
 import styled from "styled-components";
 
-export const LogoWWrap = styled.div`
-  width: 80px;
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
-export const LogoWWrapAlt = styled.div`
+export const LogoWrap = styled.div`
   width: 80px;
   height: 80px;
   display: flex;
