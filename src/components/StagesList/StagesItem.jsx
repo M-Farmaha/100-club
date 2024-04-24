@@ -31,7 +31,7 @@ export const StagesItem = ({ el, index }) => {
             })}
           </StagesItemText>
           <StagesItemText>
-            {el.date === "2024-04-7" || el.date === "2024-04-21"
+            {el.date === "2024-04-07" || el.date === "2024-04-21"
               ? "Приховано"
               : winnerName}
           </StagesItemText>
