@@ -150,7 +150,7 @@
     "status": "Активний",
     "stages": [
       {
-        "date": "2024-04-7",
+        "date": "2024-04-07",
         "players": [
           { "member_id": "1", "win": 6, "defeat": 3 },
           { "member_id": "39", "win": 7, "defeat": 3 },
