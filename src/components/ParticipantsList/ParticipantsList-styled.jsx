@@ -63,18 +63,25 @@ export const ItemText = styled.p`
   }
 
   &:nth-child(2) {
-    width: 140px;
+    min-width: 100px;
     flex-grow: 1;
   }
 
   &:nth-child(3) {
-    width: 130px;
+    min-width: 50px;
+    width: 10%;
+    justify-content: center;
+    border-right: 1px solid var(--primary-black-color);
+  }
+  &:nth-child(4) {
+    min-width: 50px;
+    width: 10%;
+    justify-content: center;
+  }
+  &:nth-child(5) {
+    min-width: 50px;
+    width: 10%;
     justify-content: right;
-    text-align: right;
-
-    @media screen and (min-width: 450px) {
-      width: 150px;
-    }
   }
 `;
 
@@ -117,18 +124,25 @@ export const HeadingText = styled.div`
   }
 
   &:nth-child(2) {
-    width: 140px;
+    min-width: 100px;
     flex-grow: 1;
   }
 
   &:nth-child(3) {
-    width: 120px;
+    min-width: 50px;
+    width: 10%;
+    justify-content: center;
+    border-right: 1px solid var(--primary-black-color);
+  }
+  &:nth-child(4) {
+    min-width: 50px;
+    width: 10%;
+    justify-content: center;
+  }
+  &:nth-child(5) {
+    min-width: 50px;
+    width: 10%;
     justify-content: right;
-    text-align: right;
-
-    @media screen and (min-width: 450px) {
-      width: 150px;
-    }
   }
 `;
 

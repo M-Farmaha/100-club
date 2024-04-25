@@ -10,12 +10,19 @@ export const Section = styled.section`
   color: var(--primary-white-color);
 `;
 
-export const Title = styled.h2`
+export const SectionWrap = styled.div`
+  height: 80px;
   max-width: 1200px;
   padding: 24px;
   margin-left: auto;
   margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+`;
 
+export const Title = styled.h2`
   display: flex;
   justify-content: left;
   align-items: center;

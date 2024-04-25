@@ -1,11 +1,17 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { TitleSection } from "../TitleSection/TitleSection";
-import { StagesItem } from "./StagesItem";
-import { Button, ButtonIconSvg, List, Section } from "./StagesList-styled";
-import { StagesListHeading } from "./StagesListHeading";
-import sprite from "../../sprite.svg";
 
-export const StagesList = () => {
+import {
+  Button,
+  ButtonIconSvg,
+  List,
+  Section,
+} from "./ParticipantsList-styled";
+import { ParticipantsListHeading } from "./ParticipantsListHeading";
+import sprite from "../../sprite.svg";
+import { ParticipantsItem } from "./ParticipantsItem";
+
+export const ParticipantsList = () => {
   const { state } = useLocation();
   const navigate = useNavigate();
 
@@ -17,8 +23,8 @@ export const StagesList = () => {
     <>
       <Section>
         <TitleSection
-          icon={"#icon-medal"}
-          title={"Кількість етапів: " + state?.stages?.length}
+          icon={"#icon-users"}
+          title={"Кількість учасників: " + state?.players?.length}
         >
           <Button onClick={handleBack}>
             <ButtonIconSvg>
@@ -28,9 +34,9 @@ export const StagesList = () => {
           </Button>
         </TitleSection>
         <List>
-          <StagesListHeading />
-          {state?.stages?.map((el, index) => (
-            <StagesItem key={el.date} el={el} index={index} />
+          <ParticipantsListHeading />
+          {state?.players?.map((el, index) => (
+            <ParticipantsItem key={el.member_id} el={el} index={index} />
           ))}
         </List>
       </Section>

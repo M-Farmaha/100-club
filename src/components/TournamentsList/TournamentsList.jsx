@@ -10,6 +10,7 @@ export const TournamentsList = ({ tournamentsArray, membersArray }) => {
           icon={"#icon-cup"}
           title={"Кількість турнірів: " + tournamentsArray.length}
         />
+
         <List>
           {tournamentsArray?.map((el, index) => (
             <TournamentsItem

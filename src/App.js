@@ -9,6 +9,7 @@ import { ImageGalleryModal } from "./components/ImageGallery/ImageGalleryModal";
 import { MembersModal } from "./components/MembersList/MembersModal";
 import TournamentsPage from "./pages/TournamentsPage/TournamentsPage";
 import { StagesList } from "./components/StagesList/StagesList";
+import { ParticipantsList } from "./components/ParticipantsList/ParticipantsList";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             
             <Route path="tournaments" element={<TournamentsPage />} />
             <Route path="tournaments/:id" element={<StagesList />} />
+            <Route path="tournaments/:id/:id" element={<ParticipantsList />} />
 
             <Route path="members" element={<MembersPage />}>
               <Route path="user/:id" element={<MembersModal />} />
