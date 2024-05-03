@@ -5,22 +5,16 @@ import { membersApi } from "../../Api/ApiRequest";
 import { useNavigate } from "react-router-dom";
 
 export const StagesItem = ({ el, index }) => {
+  const isHide =
+    el.date === "2024-04-07" ||
+    el.date === "2024-04-21" ||
+    el.date === "2024-04-28";
   const navigate = useNavigate();
 
   const members = membersApi();
-  const { member_id } = el?.players?.reduce((acc, curr) => {
-    if (
-      curr.win > acc.win ||
-      (curr.win === acc.win && curr.defeat < acc.defeat)
-    ) {
-      return curr;
-    } else {
-      return acc;
-    }
-  });
 
-  const winner = members.find((member) => member.id === member_id);
-  const winnerName = winner ? winner?.name : "Не знайдено";
+  const winner = el?.players?.find((player) => player.position === 1);
+  const { name } = members?.find((member) => member.id === winner.member_id);
 
   const handleItemClick = () => {
     navigate(el.date, { state: { players: el.players } });
@@ -37,11 +31,7 @@ export const StagesItem = ({ el, index }) => {
               locale: ukLocale,
             })}
           </ItemText>
-          <ItemText>
-            {el.date === "2024-04-07" || el.date === "2024-04-21"
-              ? "Приховано"
-              : winnerName}
-          </ItemText>
+          <ItemText>{isHide ? "Приховано" : name}</ItemText>
         </ItemWrap>
       </Item>
     </>

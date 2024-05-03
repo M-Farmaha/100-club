@@ -9,135 +9,135 @@
       {
         "date": "2023-06-25",
         "players": [
-          { "member_id": "42", "win": 1, "defeat": 1 },
-          { "member_id": "1", "win": 8, "defeat": 3 },
-          { "member_id": "76", "win": 3, "defeat": 6 },
-          { "member_id": "39", "win": 13, "defeat": 1 },
-          { "member_id": "85", "win": 0, "defeat": 6 },
-          { "member_id": "11", "win": 2, "defeat": 6 },
-          { "member_id": "57", "win": 2, "defeat": 6 }
+          { "member_id": "42", "win": 1, "defeat": 1, "position": 6 },
+          { "member_id": "1", "win": 8, "defeat": 3, "position": 2 },
+          { "member_id": "76", "win": 3, "defeat": 6, "position": 3 },
+          { "member_id": "39", "win": 13, "defeat": 1, "position": 1 },
+          { "member_id": "85", "win": 0, "defeat": 6, "position": 7 },
+          { "member_id": "11", "win": 2, "defeat": 6, "position": 4 },
+          { "member_id": "57", "win": 2, "defeat": 6, "position": 4 }
         ]
       },
       {
         "date": "2023-07-02",
         "players": [
-          { "member_id": "39", "win": 3, "defeat": 4 },
-          { "member_id": "57", "win": 0, "defeat": 7 },
-          { "member_id": "85", "win": 3, "defeat": 4 },
-          { "member_id": "30", "win": 1, "defeat": 6 },
-          { "member_id": "76", "win": 5, "defeat": 2 },
-          { "member_id": "42", "win": 5, "defeat": 2 },
-          { "member_id": "1", "win": 6, "defeat": 1 },
-          { "member_id": "11", "win": 5, "defeat": 2 }
+          { "member_id": "39", "win": 3, "defeat": 4, "position": 5 },
+          { "member_id": "57", "win": 0, "defeat": 7, "position": 8 },
+          { "member_id": "85", "win": 3, "defeat": 4, "position": 6 },
+          { "member_id": "30", "win": 1, "defeat": 6, "position": 7 },
+          { "member_id": "76", "win": 5, "defeat": 2, "position": 2 },
+          { "member_id": "42", "win": 5, "defeat": 2, "position": 4 },
+          { "member_id": "1", "win": 6, "defeat": 1, "position": 1 },
+          { "member_id": "11", "win": 5, "defeat": 2, "position": 3 }
         ]
       },
       {
         "date": "2023-07-09",
         "players": [
-          { "member_id": "111", "win": 0, "defeat": 3 },
-          { "member_id": "57", "win": 2, "defeat": 4 },
-          { "member_id": "85", "win": 4, "defeat": 4 },
-          { "member_id": "76", "win": 4, "defeat": 2 },
-          { "member_id": "42", "win": 2, "defeat": 2 },
-          { "member_id": "1", "win": 5, "defeat": 2 }
+          { "member_id": "111", "win": 0, "defeat": 3, "position": 6 },
+          { "member_id": "57", "win": 2, "defeat": 4, "position": 5 },
+          { "member_id": "85", "win": 4, "defeat": 4, "position": 3 },
+          { "member_id": "76", "win": 4, "defeat": 2, "position": 2 },
+          { "member_id": "42", "win": 2, "defeat": 2, "position": 4 },
+          { "member_id": "1", "win": 5, "defeat": 2, "position": 1 }
         ]
       },
       {
         "date": "2023-07-15",
         "players": [
-          { "member_id": "111", "win": 1, "defeat": 5 },
-          { "member_id": "39", "win": 2, "defeat": 4 },
-          { "member_id": "85", "win": 3, "defeat": 3 },
-          { "member_id": "1", "win": 6, "defeat": 0 }
+          { "member_id": "111", "win": 1, "defeat": 5, "position": 4 },
+          { "member_id": "39", "win": 2, "defeat": 4, "position": 3 },
+          { "member_id": "85", "win": 3, "defeat": 3, "position": 2 },
+          { "member_id": "1", "win": 6, "defeat": 0, "position": 1 }
         ]
       },
       {
         "date": "2023-07-16",
         "players": [
-          { "member_id": "39", "win": 2, "defeat": 3 },
-          { "member_id": "57", "win": 0, "defeat": 3 },
-          { "member_id": "5", "win": 0, "defeat": 3 },
-          { "member_id": "85", "win": 5, "defeat": 0 },
-          { "member_id": "76", "win": 4, "defeat": 2 }
+          { "member_id": "39", "win": 2, "defeat": 3, "position": 3 },
+          { "member_id": "57", "win": 0, "defeat": 3, "position": 1 },
+          { "member_id": "5", "win": 0, "defeat": 3, "position": 4 },
+          { "member_id": "85", "win": 5, "defeat": 0, "position": 4 },
+          { "member_id": "76", "win": 4, "defeat": 2, "position": 2 }
         ]
       },
       {
         "date": "2023-07-23",
         "players": [
-          { "member_id": "61", "win": 1, "defeat": 1 },
-          { "member_id": "39", "win": 7, "defeat": 4 },
-          { "member_id": "5", "win": 0, "defeat": 5 },
-          { "member_id": "8", "win": 5, "defeat": 4 },
-          { "member_id": "85", "win": 4, "defeat": 6 },
-          { "member_id": "76", "win": 6, "defeat": 5 },
-          { "member_id": "11", "win": 5, "defeat": 4 }
+          { "member_id": "61", "win": 1, "defeat": 1, "position": 6 },
+          { "member_id": "39", "win": 7, "defeat": 4, "position": 1 },
+          { "member_id": "5", "win": 0, "defeat": 5, "position": 7 },
+          { "member_id": "8", "win": 5, "defeat": 4, "position": 3 },
+          { "member_id": "85", "win": 4, "defeat": 6, "position": 5 },
+          { "member_id": "76", "win": 6, "defeat": 5, "position": 2 },
+          { "member_id": "11", "win": 5, "defeat": 4, "position": 4 }
         ]
       },
       {
         "date": "2023-08-06",
         "players": [
-          { "member_id": "39", "win": 8, "defeat": 3 },
-          { "member_id": "57", "win": 0, "defeat": 8 },
-          { "member_id": "8", "win": 1, "defeat": 3 },
-          { "member_id": "76", "win": 8, "defeat": 2 },
-          { "member_id": "11", "win": 4, "defeat": 4 },
-          { "member_id": "1", "win": 4, "defeat": 5 }
+          { "member_id": "39", "win": 8, "defeat": 3, "position": 2 },
+          { "member_id": "57", "win": 0, "defeat": 8, "position": 6 },
+          { "member_id": "8", "win": 1, "defeat": 3, "position": 5 },
+          { "member_id": "76", "win": 8, "defeat": 2, "position": 1 },
+          { "member_id": "11", "win": 4, "defeat": 4, "position": 3 },
+          { "member_id": "1", "win": 4, "defeat": 5, "position": 4 }
         ]
       },
       {
         "date": "2023-08-26",
         "players": [
-          { "member_id": "39", "win": 1, "defeat": 5 },
-          { "member_id": "85", "win": 1, "defeat": 4 },
-          { "member_id": "42", "win": 3, "defeat": 1 },
-          { "member_id": "76", "win": 3, "defeat": 3 },
-          { "member_id": "11", "win": 2, "defeat": 3 },
-          { "member_id": "1", "win": 7, "defeat": 1 }
+          { "member_id": "39", "win": 1, "defeat": 5, "position": 6 },
+          { "member_id": "85", "win": 1, "defeat": 4, "position": 5 },
+          { "member_id": "42", "win": 3, "defeat": 1, "position": 2 },
+          { "member_id": "76", "win": 3, "defeat": 3, "position": 3 },
+          { "member_id": "11", "win": 2, "defeat": 3, "position": 4 },
+          { "member_id": "1", "win": 7, "defeat": 1, "position": 1 }
         ]
       },
       {
         "date": "2023-09-03",
         "players": [
-          { "member_id": "57", "win": 3, "defeat": 5 },
-          { "member_id": "5", "win": 0, "defeat": 8 },
-          { "member_id": "76", "win": 5, "defeat": 5 },
-          { "member_id": "11", "win": 6, "defeat": 3 },
-          { "member_id": "1", "win": 9, "defeat": 2 }
+          { "member_id": "57", "win": 3, "defeat": 5, "position": 4 },
+          { "member_id": "5", "win": 0, "defeat": 8, "position": 5 },
+          { "member_id": "76", "win": 5, "defeat": 5, "position": 3 },
+          { "member_id": "11", "win": 6, "defeat": 3, "position": 2 },
+          { "member_id": "1", "win": 9, "defeat": 2, "position": 1 }
         ]
       },
       {
         "date": "2023-10-14",
         "players": [
-          { "member_id": "39", "win": 7, "defeat": 1 },
-          { "member_id": "5", "win": 1, "defeat": 4 },
-          { "member_id": "76", "win": 2, "defeat": 4 },
-          { "member_id": "42", "win": 0, "defeat": 4 },
-          { "member_id": "1", "win": 6, "defeat": 3 },
-          { "member_id": "11", "win": 4, "defeat": 4 }
+          { "member_id": "39", "win": 7, "defeat": 1, "position": 1 },
+          { "member_id": "5", "win": 1, "defeat": 4, "position": 5 },
+          { "member_id": "76", "win": 2, "defeat": 4, "position": 4 },
+          { "member_id": "42", "win": 0, "defeat": 4, "position": 6 },
+          { "member_id": "1", "win": 6, "defeat": 3, "position": 2 },
+          { "member_id": "11", "win": 4, "defeat": 4, "position": 3 }
         ]
       },
       {
         "date": "2023-10-21",
         "players": [
-          { "member_id": "39", "win": 4, "defeat": 3 },
-          { "member_id": "31", "win": 1, "defeat": 0 },
-          { "member_id": "5", "win": 1, "defeat": 4 },
-          { "member_id": "76", "win": 3, "defeat": 4 },
-          { "member_id": "42", "win": 2, "defeat": 4 },
-          { "member_id": "1", "win": 7, "defeat": 1 },
-          { "member_id": "11", "win": 2, "defeat": 4 }
+          { "member_id": "39", "win": 4, "defeat": 3, "position": 2 },
+          { "member_id": "31", "win": 1, "defeat": 0, "position": 6 },
+          { "member_id": "5", "win": 1, "defeat": 4, "position": 7 },
+          { "member_id": "76", "win": 3, "defeat": 4, "position": 3 },
+          { "member_id": "42", "win": 2, "defeat": 4, "position": 4 },
+          { "member_id": "1", "win": 7, "defeat": 1, "position": 1 },
+          { "member_id": "11", "win": 2, "defeat": 4, "position": 4 }
         ]
       },
       {
         "date": "2023-10-29",
         "players": [
-          { "member_id": "4", "win": 2, "defeat": 2 },
-          { "member_id": "39", "win": 2, "defeat": 3 },
-          { "member_id": "57", "win": 2, "defeat": 3 },
-          { "member_id": "5", "win": 2, "defeat": 2 },
-          { "member_id": "30", "win": 3, "defeat": 2 },
-          { "member_id": "1", "win": 4, "defeat": 1 },
-          { "member_id": "11", "win": 2, "defeat": 4 }
+          { "member_id": "4", "win": 2, "defeat": 2, "position": 3 },
+          { "member_id": "39", "win": 2, "defeat": 3, "position": 5 },
+          { "member_id": "57", "win": 2, "defeat": 3, "position": 5 },
+          { "member_id": "5", "win": 2, "defeat": 2, "position": 3 },
+          { "member_id": "30", "win": 3, "defeat": 2, "position": 2 },
+          { "member_id": "1", "win": 4, "defeat": 1, "position": 1 },
+          { "member_id": "11", "win": 2, "defeat": 4, "position": 7 }
         ]
       }
     ]
@@ -152,24 +152,35 @@
       {
         "date": "2024-04-07",
         "players": [
-          { "member_id": "1", "win": 6, "defeat": 3 },
-          { "member_id": "39", "win": 7, "defeat": 3 },
-          { "member_id": "76", "win": 4, "defeat": 5 },
-          { "member_id": "20", "win": 1, "defeat": 3 },
-          { "member_id": "5", "win": 0, "defeat": 5 },
-          { "member_id": "57", "win": 5, "defeat": 4 }
+          { "member_id": "1", "win": 6, "defeat": 3, "position": 2 },
+          { "member_id": "39", "win": 7, "defeat": 3, "position": 1 },
+          { "member_id": "76", "win": 4, "defeat": 5, "position": 4 },
+          { "member_id": "20", "win": 1, "defeat": 3, "position": 5 },
+          { "member_id": "5", "win": 0, "defeat": 5, "position": 6 },
+          { "member_id": "57", "win": 5, "defeat": 4, "position": 3 }
         ]
       },
       {
         "date": "2024-04-21",
         "players": [
-          { "member_id": "20", "win": 0, "defeat": 1 },
-          { "member_id": "39", "win": 10, "defeat": 4 },
-          { "member_id": "76", "win": 1, "defeat": 10 },
-          { "member_id": "57", "win": 0, "defeat": 11 },
-          { "member_id": "11", "win": 8, "defeat": 4 },
-          { "member_id": "1", "win": 13, "defeat": 1 },
-          { "member_id": "31", "win": 0, "defeat": 1 }
+          { "member_id": "20", "win": 0, "defeat": 1, "position": 5 },
+          { "member_id": "39", "win": 10, "defeat": 4, "position": 2 },
+          { "member_id": "76", "win": 1, "defeat": 10, "position": 4 },
+          { "member_id": "57", "win": 0, "defeat": 11, "position": 7 },
+          { "member_id": "11", "win": 8, "defeat": 4, "position": 3 },
+          { "member_id": "1", "win": 13, "defeat": 1, "position": 1 },
+          { "member_id": "31", "win": 0, "defeat": 1, "position": 5 }
+        ]
+      },
+      {
+        "date": "2024-04-28",
+        "players": [
+          { "member_id": "4", "win": 0, "defeat": 3, "position": 5 },
+          { "member_id": "5", "win": 0, "defeat": 2, "position": 4 },
+          { "member_id": "76", "win": 6, "defeat": 1, "position": 1 },
+          { "member_id": "57", "win": 0, "defeat": 4, "position": 6 },
+          { "member_id": "11", "win": 5, "defeat": 1, "position": 2 },
+          { "member_id": "1", "win": 3, "defeat": 3, "position": 3 }
         ]
       }
     ]
