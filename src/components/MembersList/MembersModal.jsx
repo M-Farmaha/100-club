@@ -13,9 +13,12 @@ import {
 
 import { Modal } from "../Modal/Modal";
 import { Portal } from "../../Routes/Portal/Portal";
-import { membersApi } from "../../Api/ApiRequest";
+import { useStateContext } from "../../state/stateContext";
 
 export const MembersModal = () => {
+  const { globalState } = useStateContext();
+  const { members } = globalState;
+
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -50,8 +53,7 @@ export const MembersModal = () => {
     document.body.classList.add("modal-open");
     document.documentElement.classList.add("modal-open");
 
-    const members = membersApi();
-    const current = members.find((el) => String(el.id) === String(id));
+    const current = members?.find((el) => String(el.id) === String(id));
     setCurrentMember(current);
 
     return () => {
@@ -59,7 +61,7 @@ export const MembersModal = () => {
       document.documentElement.classList.remove("modal-open");
       window.scrollTo(0, scrollPosition);
     };
-  }, [id, scrollPosition]);
+  }, [id, members, scrollPosition]);
 
   const closeModal = () => {
     navigate("/members");

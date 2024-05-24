@@ -1,16 +1,21 @@
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { TitleSection } from "../TitleSection/TitleSection";
 import { StagesItem } from "./StagesItem";
 import { Button, ButtonIconSvg, List, Section } from "./StagesList-styled";
 import { StagesListHeading } from "./StagesListHeading";
 import sprite from "../../sprite.svg";
+import { useStateContext } from "../../state/stateContext";
 
 export const StagesList = () => {
-  const { state } = useLocation();
+  const { globalState } = useStateContext();
+  const { tournaments } = globalState;
+
   const navigate = useNavigate();
+  const { id } = useParams();
+  const currentTournament = tournaments?.find((t) => t.id === id);
 
   const handleBack = () => {
-    navigate(-1);
+    navigate("/tournaments");
   };
 
   return (
@@ -18,7 +23,7 @@ export const StagesList = () => {
       <Section>
         <TitleSection
           icon={"#icon-medal"}
-          title={"Кількість етапів: " + state?.stages?.length}
+          title={"Кількість етапів: " + currentTournament?.stages?.length}
         >
           <Button onClick={handleBack}>
             <ButtonIconSvg>
@@ -29,7 +34,7 @@ export const StagesList = () => {
         </TitleSection>
         <List>
           <StagesListHeading />
-          {state?.stages?.map((el, index) => (
+          {currentTournament?.stages?.map((el, index) => (
             <StagesItem key={el.date} el={el} index={index} />
           ))}
         </List>

@@ -14,9 +14,12 @@ import sprite from "../../sprite.svg";
 import { Loader } from "../Loaders/Loaders";
 import { Modal } from "../Modal/Modal";
 import { Portal } from "../../Routes/Portal/Portal";
-import { photosApi } from "../../Api/ApiRequest";
+import { useStateContext } from "../../state/stateContext";
 
 export const ImageGalleryModal = () => {
+  const { globalState } = useStateContext();
+  const { photos } = globalState;
+
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -39,9 +42,7 @@ export const ImageGalleryModal = () => {
       setScrollPosition(rect.y - window.innerHeight / 2 + 100);
     }
 
-    const gallery = photosApi();
-    const orderedGallery =
-      order === "newest" ? gallery : [...gallery].reverse();
+    const orderedGallery = order === "newest" ? photos : [...photos].reverse();
     setGalleryArray(orderedGallery);
 
     const current = orderedGallery.find((el) => String(el.id) === String(id));
@@ -52,7 +53,7 @@ export const ImageGalleryModal = () => {
       document.documentElement.classList.remove("modal-open");
       window.scrollTo(0, scrollPosition);
     };
-  }, [id, liElement, order, scrollPosition]);
+  }, [id, liElement, order, photos, scrollPosition]);
 
   const closeModal = () => {
     navigate("/gallery");

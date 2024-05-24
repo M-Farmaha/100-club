@@ -1,26 +1,25 @@
 import { useState, useEffect } from "react";
 import { Outlet } from "react-router-dom";
-import { photosApi } from "../../Api/ApiRequest";
 
 import { ImageGallery } from "../../components/ImageGallery/ImageGallery";
 import { ImageGalleryFilterBar } from "../../components/Filters/ImageGalleryFilterBar";
+import { useStateContext } from "../../state/stateContext";
 
 const GalleryPage = () => {
-  const [galleryArray, setGalleryArray] = useState([]);
-  const [orderedGalleryArray, setOrderedGalleryArray] = useState(galleryArray);
+  const { globalState } = useStateContext();
+  const { photos } = globalState;
+
+  const [orderedGalleryArray, setOrderedGalleryArray] = useState(photos);
   const [order, setOrder] = useState("newest");
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    const gallery = photosApi();
-    gallery?.sort((a, b) => b.date.localeCompare(a.date));
-    setGalleryArray(gallery);
   }, []);
 
   return (
     <>
       <ImageGalleryFilterBar
-        galleryArray={galleryArray}
+        galleryArray={photos}
         setOrderedGalleryArray={setOrderedGalleryArray}
         setOrder={setOrder}
       />

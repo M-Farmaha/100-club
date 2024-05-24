@@ -10,7 +10,7 @@ export const TournamentsItem = ({ el, index }) => {
   const navigate = useNavigate();
 
   const handleItemClick = () => {
-    navigate(el.id, { state: { stages: el.stages } });
+    navigate(el.id);
   };
 
   return (

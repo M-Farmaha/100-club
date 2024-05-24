@@ -1,10 +1,14 @@
 import { List, Section, SectionWrap } from "./StatsSection-styled";
 
 import { StatItem } from "./StatsItem";
+import { useStateContext } from "../../state/stateContext";
 
-export const StatsSection = ({ membersArray }) => {
-  const players = membersArray.length;
-  const trainers = membersArray.filter((member) => member.type === "Тренер");
+export const StatsSection = () => {
+  const { globalState } = useStateContext();
+  const { members } = globalState;
+
+  const players = members.length;
+  const trainers = members.filter((member) => member.type === "Тренер");
   const experience = new Date().getFullYear() - 2016;
 
   const stats = [

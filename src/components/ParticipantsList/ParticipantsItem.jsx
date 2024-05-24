@@ -1,17 +1,19 @@
 import { Item, ItemText, ItemWrap } from "./ParticipantsList-styled";
-import { membersApi } from "../../Api/ApiRequest";
 import { useParams } from "react-router-dom";
 import { defineRank } from "../../helpers/defineRank";
+import { useStateContext } from "../../state/stateContext";
+import { isDateHidden } from "../../helpers/isDateHidden";
 
 export const ParticipantsItem = ({ el, index }) => {
+  const { globalState } = useStateContext();
+  const { members } = globalState;
+
   const { id } = useParams();
-  const members = membersApi();
   const participant = members.find((member) => member.id === el.member_id);
 
   const participantRank = defineRank(el.position);
 
-  const isHide =
-    id === "2024-04-07" || id === "2024-04-21" || id === "2024-04-28";
+  const isHide = isDateHidden(id);
 
   return (
     <>

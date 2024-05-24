@@ -2,30 +2,29 @@ import { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 
 import { MembersList } from "../../components/MembersList/MembersList";
-import { membersApi } from "../../Api/ApiRequest";
 import { MembersFilterBar } from "../../components/Filters/MembersFilterBar";
 import { ChartSection } from "../../components/ChartSection/ChartSection";
+import { useStateContext } from "../../state/stateContext";
 
 const MembersPage = () => {
-  const [membersArray, setMembersArray] = useState([]);
-  const [visibleMembersArray, setVisibleMembersArray] = useState(membersArray);
+  const { globalState } = useStateContext();
+  const { members } = globalState;
+
+  const [visibleMembersArray, setVisibleMembersArray] = useState(members);
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    const members = membersApi();
-    members?.sort((a, b) => a.name.localeCompare(b.name));
-    setMembersArray(members);
   }, []);
 
   return (
     <>
       <MembersFilterBar
-        membersArray={membersArray}
+        membersArray={members}
         setVisibleMembersArray={setVisibleMembersArray}
       />
 
       <MembersList visibleMembersArray={visibleMembersArray} />
-      <ChartSection membersArray={membersArray} />
+      <ChartSection membersArray={members} />
       <Outlet />
     </>
   );

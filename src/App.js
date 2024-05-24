@@ -18,11 +18,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<HomePage />} />F
-            
             <Route path="tournaments" element={<TournamentsPage />} />
             <Route path="tournaments/:id" element={<StagesList />} />
             <Route path="tournaments/:id/:id" element={<ParticipantsList />} />
-
             <Route path="members" element={<MembersPage />}>
               <Route path="user/:id" element={<MembersModal />} />
             </Route>
