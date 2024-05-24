@@ -33,7 +33,7 @@ export const ParticipantsList = () => {
   return (
     <>
       <Section>
-        <TitleSection icon={"#icon-users"} title={currentStage?.date}>
+        <TitleSection icon={"#icon-date"} title={currentStage?.date}>
           <Button onClick={handleBack}>
             <ButtonIconSvg>
               <use href={sprite + "#icon-undo"}></use>
