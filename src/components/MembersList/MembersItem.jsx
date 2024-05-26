@@ -32,7 +32,8 @@ export const MembersItem = ({ el, index }) => {
       >
         <MembersItemIndictator
           style={{ backgroundColor: getColorByType(el.type) }}
-        ></MembersItemIndictator>
+        />
+
         <MembersItemWrap isTodayBirthDay={isTodayBirthDay}>
           <MembersItemText>{index + 1}.</MembersItemText>
           <MembersItemText>{el.name}</MembersItemText>
@@ -43,7 +44,7 @@ export const MembersItem = ({ el, index }) => {
                 el.type
               )})`,
             }}
-          ></MembersItemIndictatorBG>
+          />
         </MembersItemWrap>
       </MembersItemLi>
     </>

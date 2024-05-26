@@ -34,6 +34,25 @@ export const Item = styled.li`
   }
 `;
 
+export const ItemIndictator = styled.div`
+  position: absolute;
+  left: 0;
+  width: 7px;
+  height: 100%;
+  opacity: 1;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+`;
+
+export const ItemIndictatorBG = styled.div`
+  position: absolute;
+  right: 0;
+
+  width: 50%;
+  height: 65%;
+  opacity: 0.4;
+`;
+
 export const ItemWrap = styled.div`
   display: flex;
   justify-content: space-between;
@@ -90,7 +109,7 @@ export const Heading = styled.div`
   overflow: hidden;
   width: 100%;
   height: 100px;
-  background-color: var(--tertiary-white-color);
+  background-color: var(--list-heading-bg-color);
   color: var(--primary-black-color);
 `;
 

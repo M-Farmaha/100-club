@@ -1,9 +1,8 @@
-import { format } from "date-fns";
-import ukLocale from "date-fns/locale/uk";
 import { Item, ItemText, ItemWrap } from "./StagesList-styled";
 import { useNavigate } from "react-router-dom";
 import { useStateContext } from "../../state/stateContext";
 import { isDateHidden } from "../../helpers/isDateHidden";
+import { getUkrLocaleDate } from "../../helpers/getUkrLocaleDate";
 
 export const StagesItem = ({ el, index }) => {
   const { globalState } = useStateContext();
@@ -17,7 +16,7 @@ export const StagesItem = ({ el, index }) => {
   const { name } = members?.find((member) => member.id === winner.member_id);
 
   const handleItemClick = () => {
-    navigate(el.date, { state: { players: el.players } });
+    navigate(el.date);
   };
 
   return (
@@ -26,11 +25,7 @@ export const StagesItem = ({ el, index }) => {
         <ItemWrap>
           <ItemText>{index + 1}.</ItemText>
 
-          <ItemText>
-            {format(new Date(el.date), " d MMMM yyyyр.", {
-              locale: ukLocale,
-            })}
-          </ItemText>
+          <ItemText>{getUkrLocaleDate(el.date)}</ItemText>
           <ItemText>{isHide ? "Приховано" : name}</ItemText>
         </ItemWrap>
       </Item>

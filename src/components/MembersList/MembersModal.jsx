@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
-import { format, differenceInYears } from "date-fns";
-import ukLocale from "date-fns/locale/uk";
+import { differenceInYears } from "date-fns";
 
 import {
   Avatar,
@@ -14,6 +13,7 @@ import {
 import { Modal } from "../Modal/Modal";
 import { Portal } from "../../Routes/Portal/Portal";
 import { useStateContext } from "../../state/stateContext";
+import { getUkrLocaleDate } from "../../helpers/getUkrLocaleDate";
 
 export const MembersModal = () => {
   const { globalState } = useStateContext();
@@ -105,9 +105,7 @@ export const MembersModal = () => {
                   </Text>
                   <Text>
                     <span>Дата народження:</span>
-                    {format(new Date(birthDate), " d MMMM yyyyр.", {
-                      locale: ukLocale,
-                    })}
+                    {getUkrLocaleDate(birthDate)}
                   </Text>
                   <Text>
                     <span>Вік:</span> {age} {getAgeSuffix(age)}

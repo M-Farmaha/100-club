@@ -123,17 +123,17 @@ export const ContactsSection = () => {
 
           <BlockWrap style={{ flexDirection: "row-reverse" }}>
             <PhotoWrap>
-              <PhotoImg src={DeputyImg} alt="Наталія Степанівна" />
+              <PhotoImg src={DeputyImg} alt="Наталія Григорівна" />
             </PhotoWrap>
             <InfoWrap>
               <Address>
-                <Text>Голова наглядової ради клубу:</Text>
+                <Text>Головний координатор клубу:</Text>
 
                 <LinkA href="tel:+380997877316" aria-label="Подзвонити">
                   <IconSvg>
                     <use href={sprite + "#icon-phone"}></use>
                   </IconSvg>
-                  Наталія Степанівна
+                  Наталія Григорівна
                 </LinkA>
 
                 <LinkStyled
@@ -160,7 +160,7 @@ export const ContactsSection = () => {
             </InfoWrap>
           </BlockWrap>
 
-          <BlockWrap >
+          <BlockWrap>
             <PhotoWrap>
               <PhotoImg src={AssistantImg} alt="В'ячеслав Іванович" />
             </PhotoWrap>

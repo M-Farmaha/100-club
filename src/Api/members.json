@@ -218,7 +218,7 @@
     "category": null,
     "forhand": "Зліва",
     "backhand": "Дворучний",
-    "joinTennisYear": 1986
+    "joinTennisYear": 1997
   },
   {
     "id": "18",
@@ -327,7 +327,7 @@
   {
     "id": "26",
     "name": "Сех Михайло",
-    "birthDate": "1980-04-30",
+    "birthDate": "1980-04-29",
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/26.jpg",
     "sex": "male",
     "hometown": "Львів",

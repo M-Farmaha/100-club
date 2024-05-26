@@ -83,7 +83,7 @@ export const Heading = styled.div`
   overflow: hidden;
   width: 100%;
   height: 100px;
-  background-color: var(--tertiary-white-color);
+  background-color: var(--list-heading-bg-color);
   color: var(--primary-black-color);
 `;
 

@@ -11,10 +11,11 @@ import { ParticipantsListHeading } from "./ParticipantsListHeading";
 import sprite from "../../sprite.svg";
 import { ParticipantsItem } from "./ParticipantsItem";
 import { useStateContext } from "../../state/stateContext";
+import { getUkrLocaleDate } from "../../helpers/getUkrLocaleDate";
 
 export const ParticipantsList = () => {
   const { globalState } = useStateContext();
-  const { tournaments } = globalState;
+  const { tournaments, members } = globalState;
 
   const { pathname } = useLocation();
   const navigate = useNavigate();
@@ -26,6 +27,18 @@ export const ParticipantsList = () => {
   const { stages } = tournaments?.find((t) => t.id === tournamentId);
   const currentStage = stages?.find((s) => s.date === stageId);
 
+  const getPlayerNameById = (id) => {
+    const member = members.find((member) => member.id === id);
+    return member ? member.name : "unknown player";
+  };
+
+  const sortedPlayers = currentStage?.players
+    .map((player) => ({
+      ...player,
+      name: getPlayerNameById(player?.member_id),
+    }))
+    .sort((a, b) => a.name.localeCompare(b.name));
+
   const handleBack = () => {
     navigate(`/tournaments/${tournamentId}`);
   };
@@ -33,7 +46,10 @@ export const ParticipantsList = () => {
   return (
     <>
       <Section>
-        <TitleSection icon={"#icon-date"} title={currentStage?.date}>
+        <TitleSection
+          icon={"#icon-date"}
+          title={getUkrLocaleDate(currentStage?.date)}
+        >
           <Button onClick={handleBack}>
             <ButtonIconSvg>
               <use href={sprite + "#icon-undo"}></use>
@@ -43,7 +59,7 @@ export const ParticipantsList = () => {
         </TitleSection>
         <List>
           <ParticipantsListHeading />
-          {currentStage?.players?.map((el, index) => (
+          {sortedPlayers?.map((el, index) => (
             <ParticipantsItem key={el.member_id} el={el} index={index} />
           ))}
         </List>

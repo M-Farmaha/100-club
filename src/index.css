@@ -4,6 +4,12 @@
 
   --main-transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
+  --win-color: #00b64c;
+  --lose-color: #b60000;
+  --gold-color: #ffa600;
+
+  --list-heading-bg-color: #e1f1e7;
+
   --accent-color: rgb(105, 150, 0);
   --accent-hover-color: rgb(151, 211, 0);
 
@@ -15,7 +21,7 @@
 
   --primary-white-color: #ffffff;
   --secondary-white-color: #f7f7f7;
-  --tertiary-white-color: #d9ffdc;
+
 
   --primary-grey-color: #bdbdbd;
   --secondary-grey-color: #9f9f9f;
@@ -28,6 +34,11 @@
   --type-coach-color: rgb(88, 59, 255);
   --type-tennismom-color: #ff00a6;
   --type-champion-color: #ff002f;
+
+  --player-gold-color: #ffec82;
+  --player-silver-color: #cfe1ff;
+  --player-bronze-color: #c6a576;
+
 
   --type-male-color: #0055ff;
   --type-female-color: #ff0062;
