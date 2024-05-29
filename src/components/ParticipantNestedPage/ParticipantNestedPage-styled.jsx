@@ -21,17 +21,6 @@ export const Item = styled.li`
   &:nth-child(even) {
     background-color: var(--secondary-white-color);
   }
-
-  &:hover {
-    cursor: pointer;
-  }
-
-  @media screen and (min-width: 1200px) {
-    &:hover {
-      background-color: var(--primary-black-color);
-      color: var(--primary-white-color);
-    }
-  }
 `;
 
 export const ItemIndictator = styled.div`
@@ -73,33 +62,18 @@ export const ItemText = styled.p`
   justify-content: left;
   align-items: center;
   height: 100%;
+  gap: 15px;
 
   font-size: 16px;
   font-weight: 400;
 
   &:nth-child(1) {
-    width: 35px;
-  }
-
-  &:nth-child(2) {
     min-width: 100px;
     flex-grow: 1;
   }
 
-  &:nth-child(3) {
-    min-width: 35px;
-    width: 10%;
-    justify-content: center;
-    border-right: 1px solid var(--primary-black-color);
-  }
-  &:nth-child(4) {
-    min-width: 35px;
-    width: 10%;
-    justify-content: center;
-  }
-  &:nth-child(5) {
-    min-width: 35px;
-    width: 10%;
+  &:nth-child(2) {
+    min-width: 100px;
     justify-content: right;
   }
 `;
@@ -148,18 +122,18 @@ export const HeadingText = styled.div`
   }
 
   &:nth-child(3) {
-    min-width: 35px;
+    min-width: 50px;
     width: 10%;
     justify-content: center;
     border-right: 1px solid var(--primary-black-color);
   }
   &:nth-child(4) {
-    min-width: 35px;
+    min-width: 50px;
     width: 10%;
     justify-content: center;
   }
   &:nth-child(5) {
-    min-width: 35px;
+    min-width: 50px;
     width: 10%;
     justify-content: right;
   }

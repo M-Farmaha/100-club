@@ -31,7 +31,7 @@ export const ParticipantsListHeading = () => {
           </HeadingText>
 
           <HeadingText>
-            <ButtonIconSvg color="var(--gold-color)">
+            <ButtonIconSvg color="var(--rank-color)">
               <use href={sprite + "#icon-star"}></use>
             </ButtonIconSvg>
           </HeadingText>

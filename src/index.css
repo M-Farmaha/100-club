@@ -6,7 +6,7 @@
 
   --win-color: #00b64c;
   --lose-color: #b60000;
-  --gold-color: #ffa600;
+  --rank-color: #ffa600;
 
   --list-heading-bg-color: #e1f1e7;
 
@@ -38,6 +38,7 @@
   --player-gold-color: #ffec82;
   --player-silver-color: #cfe1ff;
   --player-bronze-color: #c6a576;
+  --player-default-color: #4d5569;
 
 
   --type-male-color: #0055ff;

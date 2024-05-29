@@ -5,42 +5,33 @@ import {
   ItemText,
   ItemWrap,
 } from "./ParticipantsList-styled";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { defineRank } from "../../helpers/defineRank";
 import { useStateContext } from "../../state/stateContext";
 import { isDateHidden } from "../../helpers/isDateHidden";
+import { getMedalColor } from "../../helpers/getMedalColor";
 
 export const ParticipantsItem = ({ el, index }) => {
   const { globalState } = useStateContext();
   const { members } = globalState;
+  const navigate = useNavigate();
 
   const { id } = useParams();
   const participant = members.find((member) => member.id === el.member_id);
-
   const participantRank = defineRank(el.position);
 
-  const getItemColorByPosition = (position) => {
-    switch (position) {
-      case 1:
-        return "var(--player-gold-color)";
-      case 2:
-        return "var(--player-silver-color)";
-      case 3:
-        return "var(--player-bronze-color)";
-
-      default:
-        return;
-    }
+  const handleItemClick = () => {
+    navigate(el.member_id);
   };
 
   const isHide = isDateHidden(id);
 
   return (
     <>
-      <Item id={el.member_id}>
+      <Item id={el.member_id} onClick={handleItemClick}>
         {!isHide && (
           <ItemIndictator
-            style={{ backgroundColor: getItemColorByPosition(el.position) }}
+            style={{ backgroundColor: getMedalColor(el.position) }}
           />
         )}
 
@@ -58,7 +49,7 @@ export const ParticipantsItem = ({ el, index }) => {
           {!isHide && (
             <ItemIndictatorBG
               style={{
-                background: `linear-gradient(to right, transparent,  ${getItemColorByPosition(
+                background: `linear-gradient(to right, transparent,  ${getMedalColor(
                   el.position
                 )})`,
               }}

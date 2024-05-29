@@ -17,8 +17,8 @@ export const ParticipantsList = () => {
   const { globalState } = useStateContext();
   const { tournaments, members } = globalState;
 
-  const { pathname } = useLocation();
   const navigate = useNavigate();
+  const { pathname } = useLocation();
 
   const parts = pathname.split("/");
   const tournamentId = parts[2];
