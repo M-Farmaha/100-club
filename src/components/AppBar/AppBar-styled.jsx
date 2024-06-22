@@ -69,16 +69,61 @@ export const NavWrap = styled.nav`
   gap: 24px;
 `;
 
+export const MobileBackdrop = styled.div`
+  display: none;
+
+  @media screen and (max-width: 576px) {
+    display: ${({ isMobileMenuOpen }) => (isMobileMenuOpen ? "block" : "none")};
+
+    position: fixed;
+    z-index: 999;
+    background-color: transparent;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
+`;
+
 export const NavList = styled.ul`
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 20px;
+
+  @media screen and (max-width: 576px) {
+    transform: translateX(100%);
+
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    max-width: 300px;
+
+    padding: 100px 24px;
+
+    flex-direction: column;
+    justify-content: left;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+
+    transition: var(--main-transition);
+
+    transform: ${({ isMobileMenuOpen }) =>
+      isMobileMenuOpen ? "translateX(0%)" : "translateX(100%)"};
+  }
 `;
 
 export const NavItem = styled.li`
   height: 100%;
+
+  @media screen and (max-width: 576px) {
+    width: 100%;
+    height: 50px;
+  }
 `;
 
 export const NavLinkStyled = styled(NavLink)`
@@ -136,10 +181,58 @@ export const NavLinkStyled = styled(NavLink)`
       transform: scaleX(1);
     }
   }
+
+  @media screen and (max-width: 576px) {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    &:not(.logo):after {
+      display: none;
+    }
+
+    &.active {
+      &:not(.logo):after {
+        display: none;
+      }
+    }
+  }
 `;
 
 export const NavIconSvg = styled.svg`
   width: 20px;
   height: 20px;
   fill: currentColor;
+`;
+
+export const MobileMenuButton = styled.button`
+  position: fixed;
+  z-index: 1001;
+  right: 0;
+  top: 0;
+  width: 72px;
+  height: 100px;
+  border: none;
+  background-color: transparent;
+
+  color: var(--primary-white-color);
+
+  transition: var(--main-transition);
+
+  &:hover {
+    color: var(--accent-hover-color);
+  }
+
+  @media screen and (min-width: 576px) {
+    display: none;
+  }
+`;
+
+export const BurgerIconSvg = styled.svg`
+  width: ${({ isMobileMenuOpen }) => (isMobileMenuOpen ? "24px" : "30px")};
+  height: ${({ isMobileMenuOpen }) => (isMobileMenuOpen ? "24px" : "30px")};
+  fill: currentColor;
+
+  /* transition: var(--main-transition); */
 `;
