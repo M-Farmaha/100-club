@@ -93,7 +93,6 @@ export const NavList = styled.ul`
   gap: 20px;
 
   @media screen and (max-width: 576px) {
-    transform: translateX(100%);
 
     position: fixed;
     z-index: 1000;
@@ -114,6 +113,10 @@ export const NavList = styled.ul`
 
     transform: ${({ isMobileMenuOpen }) =>
       isMobileMenuOpen ? "translateX(0%)" : "translateX(100%)"};
+  }
+
+  @media screen and (min-width: 577px) {
+
   }
 `;
 
@@ -216,6 +219,10 @@ export const MobileMenuButton = styled.button`
   border: none;
   background-color: transparent;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   color: var(--primary-white-color);
 
   transition: var(--main-transition);
@@ -229,10 +236,20 @@ export const MobileMenuButton = styled.button`
   }
 `;
 
-export const BurgerIconSvg = styled.svg`
-  width: ${({ isMobileMenuOpen }) => (isMobileMenuOpen ? "24px" : "30px")};
-  height: ${({ isMobileMenuOpen }) => (isMobileMenuOpen ? "24px" : "30px")};
-  fill: currentColor;
+// export const BurgerIconSvg = styled.svg`
+//   width: ${({ isMobileMenuOpen }) => (isMobileMenuOpen ? "24px" : "30px")};
+//   height: ${({ isMobileMenuOpen }) => (isMobileMenuOpen ? "24px" : "30px")};
+//   fill: currentColor;
 
-  /* transition: var(--main-transition); */
+//   transition: var(--main-transition);
+// `;
+
+export const BurgerStick = styled.div`
+  position: absolute;
+  width: 30px;
+  height: 4px;
+  background-color: currentColor;
+  border-radius: 30px;
+
+  transition: var(--main-transition);
 `;

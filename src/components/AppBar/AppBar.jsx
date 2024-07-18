@@ -13,7 +13,7 @@ import {
   HeaderBaseBG,
   MobileBackdrop,
   MobileMenuButton,
-  BurgerIconSvg,
+  BurgerStick,
 } from "./AppBar-styled";
 
 import sprite from "../../sprite.svg";
@@ -92,13 +92,39 @@ export const AppBar = () => {
             type="button"
             onClick={isMobileMenuOpen ? closeMobileMenu : openMobileMenu}
           >
-            <BurgerIconSvg isMobileMenuOpen={isMobileMenuOpen}>
+            {/* <BurgerIconSvg isMobileMenuOpen={isMobileMenuOpen}>
               <use
                 href={
                   sprite + (isMobileMenuOpen ? "#icon-close" : "#icon-burger")
                 }
               ></use>
-            </BurgerIconSvg>
+            </BurgerIconSvg> */}
+
+            <BurgerStick
+              style={{
+                top: "38px",
+                transform: isMobileMenuOpen
+                  ? "rotate(45deg)  translateX(4px) translateY(-4px)"
+                  : null,
+                transformOrigin: "0px 0px",
+              }}
+            />
+
+            <BurgerStick
+              style={{
+                bottom: "38px",
+                transform: isMobileMenuOpen
+                  ? "rotate(45deg) translateX(-4px) translateY(4px)"
+                  : null,
+                transformOrigin: "30px 4px",
+              }}
+            />
+
+            <BurgerStick
+              style={{
+                transform: isMobileMenuOpen ? "rotate(-45deg)" : null,
+              }}
+            />
           </MobileMenuButton>
 
           <MobileBackdrop

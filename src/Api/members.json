@@ -1506,5 +1506,18 @@
     "forhand": "Справа",
     "backhand": "Дворучний",
     "joinTennisYear": 2023
+  },
+  {
+    "id": "117",
+    "name": "Саламаха Ірина",
+    "birthDate": "1975-02-14",
+    "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/117.jpg",
+    "sex": "female",
+    "hometown": "Львів",
+    "type": "Аматор",
+    "category": null,
+    "forhand": "Справа",
+    "backhand": "Дворучний",
+    "joinTennisYear": 1984
   }
 ]
