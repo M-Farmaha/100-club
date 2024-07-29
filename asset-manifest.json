@@ -1,15 +1,26 @@
 {
   "files": {
-    "main.css": "/100-club/static/css/main.c843b92f.css",
-    "main.js": "/100-club/static/js/main.4fb7f480.js",
-    "static/media/tennis.webm": "/100-club/static/media/tennis.f85e945265b06283fce5.webm",
-    "static/media/tennis.mp4": "/100-club/static/media/tennis.232c90c1803e5399d330.mp4",
+    "main.css": "/100-club/static/css/main.56aaccb4.css",
+    "main.js": "/100-club/static/js/main.b14cc3aa.js",
+    "static/media/member-bg.svg": "/100-club/static/media/member-bg.0ce155651ee797ca0428f9b919deb303.svg",
+    "static/media/sprite.svg": "/100-club/static/media/sprite.7e8b4210201da1342cff025aea11a297.svg",
+    "static/media/boss.jpg": "/100-club/static/media/boss.d73741806b09a6ba6a34.jpg",
+    "static/media/BirthDayBG.svg": "/100-club/static/media/BirthDayBG.37e1b1610358d3c22d5265e4f7109809.svg",
+    "static/media/assistant.jpg": "/100-club/static/media/assistant.2fb390c6b80eee8a802d.jpg",
+    "static/media/deputy.jpg": "/100-club/static/media/deputy.ddb865fe69833ac59814.jpg",
+    "static/media/trainer.jpg": "/100-club/static/media/trainer.63b452dba3a70cae73b7.jpg",
+    "static/media/poster5.jpg": "/100-club/static/media/poster5.c1a3899fd50602195170.jpg",
+    "static/media/poster6.jpg": "/100-club/static/media/poster6.1e085432d6b8a4571a0c.jpg",
+    "static/media/birthday-tape.svg": "/100-club/static/media/birthday-tape.5c902c513522c5e69248fac473cff4ee.svg",
+    "static/media/male-dafault.svg": "/100-club/static/media/male-dafault.2b94bd743480974edb8bfce272314610.svg",
+    "static/media/female-dafault.svg": "/100-club/static/media/female-dafault.13c22fc5e46d6ab1923527d2b8c05c9a.svg",
+    "static/media/poster.jpg": "/100-club/static/media/poster.7fd8c32df2cb26dd3bbe.jpg",
     "index.html": "/100-club/index.html",
-    "main.c843b92f.css.map": "/100-club/static/css/main.c843b92f.css.map",
-    "main.4fb7f480.js.map": "/100-club/static/js/main.4fb7f480.js.map"
+    "main.56aaccb4.css.map": "/100-club/static/css/main.56aaccb4.css.map",
+    "main.b14cc3aa.js.map": "/100-club/static/js/main.b14cc3aa.js.map"
   },
   "entrypoints": [
-    "static/css/main.c843b92f.css",
-    "static/js/main.4fb7f480.js"
+    "static/css/main.56aaccb4.css",
+    "static/js/main.b14cc3aa.js"
   ]
 }
