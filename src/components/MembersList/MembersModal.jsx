@@ -41,7 +41,9 @@ export const MembersModal = () => {
   } = currentMember || {};
 
   const age = differenceInYears(new Date(), new Date(birthDate));
-  const experience = new Date().getFullYear() - joinTennisYear;
+  const experience = joinTennisYear
+    ? `${new Date().getFullYear() - joinTennisYear} р. тому`
+    : "Невідомо";
 
   const birth = new Date(birthDate);
   const today = new Date();
@@ -108,7 +110,8 @@ export const MembersModal = () => {
                     {getUkrLocaleDate(birthDate)}
                   </Text>
                   <Text>
-                    <span>Вік:</span> {age} {getAgeSuffix(age)}
+                    <span>Вік:</span>
+                    {birthDate ? ` ${age} ${getAgeSuffix(age)}` : " Heвідомо"}
                     {isTodayBirthDay && " (виповнилось сьогодні)"}
                   </Text>
                   <Text>
@@ -120,7 +123,7 @@ export const MembersModal = () => {
                         sex === "male" ? "спробував" : "спробувала"
                       } теніс: `}
                     </span>
-                    {experience} р. тому
+                    {experience}
                   </Text>
                   <Text>
                     <span>Форхенд:</span> {forhand}

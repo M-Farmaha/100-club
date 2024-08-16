@@ -127,7 +127,7 @@ export const ContactsSection = () => {
             </PhotoWrap>
             <InfoWrap>
               <Address>
-                <Text>Головний координатор клубу:</Text>
+                <Text>Координатор клубу:</Text>
 
                 <LinkA href="tel:+380997877316" aria-label="Подзвонити">
                   <IconSvg>

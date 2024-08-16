@@ -192,6 +192,18 @@
           { "member_id": "57", "win": 6, "defeat": 4, "position": 3 },
           { "member_id": "1", "win": 7, "defeat": 3, "position": 1 }
         ]
+      },
+      {
+        "date": "2024-08-04",
+        "players": [
+          { "member_id": "39", "win": 7, "defeat": 0, "position": 1 },
+          { "member_id": "42", "win": 4, "defeat": 0, "position": 2 },
+          { "member_id": "76", "win": 2, "defeat": 4, "position": 4 },
+          { "member_id": "57", "win": 3, "defeat": 4, "position": 3 },
+          { "member_id": "1", "win": 2, "defeat": 4, "position": 4 },
+          { "member_id": "30", "win": 2, "defeat": 4, "position": 4 },
+          { "member_id": "119", "win": 1, "defeat": 5, "position": 7 }
+        ]
       }
     ]
   }

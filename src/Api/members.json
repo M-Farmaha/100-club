@@ -1519,5 +1519,31 @@
     "forhand": "Справа",
     "backhand": "Дворучний",
     "joinTennisYear": 1984
+  },
+  {
+    "id": "118",
+    "name": "Олійник Мар'ян",
+    "birthDate": "1983-12-28",
+    "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/118.jpg",
+    "sex": "male",
+    "hometown": "Золочів",
+    "type": "Тренер",
+    "category": null,
+    "forhand": "Справа",
+    "backhand": "Дворучний",
+    "joinTennisYear": 1997
+  },
+  {
+    "id": "119",
+    "name": "Паращак Юрій",
+    "birthDate": null,
+    "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/119.jpg",
+    "sex": "male",
+    "hometown": "Львів",
+    "type": "Аматор",
+    "category": null,
+    "forhand": "Справа",
+    "backhand": "Дворучний",
+    "joinTennisYear": null
   }
 ]
