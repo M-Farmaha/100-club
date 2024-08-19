@@ -41,7 +41,9 @@ export const MembersFilterBar = ({ membersArray, setVisibleMembersArray }) => {
         ? filtredByName
         : filtredByName?.filter((member) => member.type === inputsValue.type);
 
-    const filtredByBirthday = filtredByType;
+    const filtredByBirthday = filtredByType?.filter((m) => m.birthDate);
+    const withoutBirthDate = filtredByType?.filter((m) => !m.birthDate);
+
     const formatDate = format(new Date(), "MM-dd");
 
     if (
@@ -76,6 +78,8 @@ export const MembersFilterBar = ({ membersArray, setVisibleMembersArray }) => {
     if (inputsValue.birthday === "Наймолодші") {
       filtredByBirthday?.sort((a, b) => b.birthDate.localeCompare(a.birthDate));
     }
+
+    filtredByBirthday.push(...withoutBirthDate);
 
     setVisibleMembersArray(filtredByBirthday);
   }, [

@@ -1536,14 +1536,14 @@
   {
     "id": "119",
     "name": "Паращак Юрій",
-    "birthDate": null,
+    "birthDate": "1986-05-15",
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/119.jpg",
     "sex": "male",
-    "hometown": "Львів",
+    "hometown": "Трускавець",
     "type": "Аматор",
     "category": null,
     "forhand": "Справа",
     "backhand": "Дворучний",
-    "joinTennisYear": null
+    "joinTennisYear": 1999
   }
 ]

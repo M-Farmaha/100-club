@@ -204,6 +204,25 @@
           { "member_id": "30", "win": 2, "defeat": 4, "position": 4 },
           { "member_id": "119", "win": 1, "defeat": 5, "position": 7 }
         ]
+      },
+      {
+        "date": "2024-08-17",
+        "players": [
+          { "member_id": "39", "win": 4, "defeat": 2, "position": 1 },
+          { "member_id": "57", "win": 2, "defeat": 4, "position": 4 },
+          { "member_id": "1", "win": 3, "defeat": 3, "position": 2 },
+          { "member_id": "85", "win": 3, "defeat": 3, "position": 3 }
+        ]
+      },
+      {
+        "date": "2024-08-18",
+        "players": [
+          { "member_id": "61", "win": 1, "defeat": 3, "position": 4 },
+          { "member_id": "57", "win": 1, "defeat": 6, "position": 5 },
+          { "member_id": "1", "win": 3, "defeat": 5, "position": 3 },
+          { "member_id": "85", "win": 8, "defeat": 0, "position": 1 },
+          { "member_id": "76", "win": 4, "defeat": 3, "position": 2 }
+        ]
       }
     ]
   }
