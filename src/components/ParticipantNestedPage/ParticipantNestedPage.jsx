@@ -14,7 +14,7 @@ import { TitleSection } from "../TitleSection/TitleSection";
 
 import sprite from "../../sprite.svg";
 import { getMedalColor } from "../../helpers/getMedalColor";
-import { isDateHidden } from "../../helpers/isDateHidden";
+// import { isDateHidden } from "../../helpers/isDateHidden";
 
 export const ParticipantNestedPage = () => {
   const { globalState } = useStateContext();
@@ -39,7 +39,7 @@ export const ParticipantNestedPage = () => {
   const currentPlayerRank = defineRank(position);
   const member = members.find((member) => member.id === playerId);
 
-  const isHide = isDateHidden(stageId);
+  // const isHide = isDateHidden(stageId);
 
   const handleBack = () => {
     navigate(`/tournaments/${tournamentId}/${stageId}`);
@@ -63,16 +63,14 @@ export const ParticipantNestedPage = () => {
               <ItemText>
                 <ButtonIconSvg
                   color={
-                    isHide
-                      ? "var(--player-default-color)"
-                      : getMedalColor(position) || "var(--player-default-color)"
+                    getMedalColor(position) || "var(--player-default-color)"
                   }
                 >
                   <use href={sprite + "#icon-medal"}></use>
                 </ButtonIconSvg>
                 Позиція
               </ItemText>
-              <ItemText>{isHide ? "?" : position}</ItemText>
+              <ItemText>{position}</ItemText>
             </ItemWrap>
           </Item>
 
@@ -84,7 +82,7 @@ export const ParticipantNestedPage = () => {
                 </ButtonIconSvg>
                 Рейтинг
               </ItemText>
-              <ItemText>{isHide ? "?" : currentPlayerRank}</ItemText>
+              <ItemText>{currentPlayerRank}</ItemText>
             </ItemWrap>
           </Item>
 
@@ -108,7 +106,7 @@ export const ParticipantNestedPage = () => {
                 </ButtonIconSvg>
                 Kількість перемог
               </ItemText>
-              <ItemText>{isHide ? "?" : win}</ItemText>
+              <ItemText>{win}</ItemText>
             </ItemWrap>
           </Item>
 
@@ -123,7 +121,7 @@ export const ParticipantNestedPage = () => {
                 </ButtonIconSvg>
                 Kількість поразок
               </ItemText>
-              <ItemText>{isHide ? "?" : defeat}</ItemText>
+              <ItemText>{defeat}</ItemText>
             </ItemWrap>
           </Item>
 
@@ -135,7 +133,7 @@ export const ParticipantNestedPage = () => {
                 </ButtonIconSvg>
                 Відсоток перемог
               </ItemText>
-              <ItemText>{isHide ? "?" : winPercentage} %</ItemText>
+              <ItemText>{winPercentage} %</ItemText>
             </ItemWrap>
           </Item>
 
@@ -150,7 +148,7 @@ export const ParticipantNestedPage = () => {
                 </ButtonIconSvg>
                 Відсоток поразок
               </ItemText>
-              <ItemText>{isHide ? "?" : defeatPercentage} %</ItemText>
+              <ItemText>{defeatPercentage} %</ItemText>
             </ItemWrap>
           </Item>
         </List>

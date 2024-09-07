@@ -1545,5 +1545,18 @@
     "forhand": "Справа",
     "backhand": "Дворучний",
     "joinTennisYear": 1999
+  },
+  {
+    "id": "120",
+    "name": "Лойко Тетяна",
+    "birthDate": "2010-01-25",
+    "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/120.jpg",
+    "sex": "female",
+    "hometown": "Львів",
+    "type": "Професіонал",
+    "category": null,
+    "forhand": "Справа",
+    "backhand": "Дворучний",
+    "joinTennisYear": 2017
   }
 ]
