@@ -244,7 +244,7 @@
         ]
       },
       {
-        "date": "2024-12-02",
+        "date": "2024-02-12",
         "players": [
           { "member_id": "39", "win": 5, "defeat": 1, "position": 1 },
           { "member_id": "57", "win": 2, "defeat": 5, "position": 4 },
@@ -253,7 +253,7 @@
         ]
       },
       {
-        "date": "2024-13-02",
+        "date": "2024-02-13",
         "players": [
           { "member_id": "39", "win": 9, "defeat": 4, "position": 2 },
           { "member_id": "57", "win": 4, "defeat": 8, "position": 4 },
