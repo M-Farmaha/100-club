@@ -1024,7 +1024,7 @@
     "category": null,
     "forhand": "Справа",
     "backhand": "Дворучний",
-    "joinTennisYear": 2015
+    "joinTennisYear": 2012
   },
   {
     "id": "80",
@@ -1037,7 +1037,7 @@
     "category": null,
     "forhand": "Справа",
     "backhand": "Дворучний",
-    "joinTennisYear": 2018
+    "joinTennisYear": 2015
   },
   {
     "id": "81",
@@ -1558,5 +1558,18 @@
     "forhand": "Справа",
     "backhand": "Дворучний",
     "joinTennisYear": 2017
+  },
+  {
+    "id": "121",
+    "name": "Тюріна Ірина",
+    "birthDate": "1987-03-11",
+    "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/121.jpg",
+    "sex": "female",
+    "hometown": "Суми",
+    "type": "Аматор",
+    "category": null,
+    "forhand": "Справа",
+    "backhand": "Дворучний",
+    "joinTennisYear": 1994
   }
 ]
