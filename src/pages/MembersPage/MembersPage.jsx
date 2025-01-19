@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Outlet } from "react-router-dom";
 
 import { MembersList } from "../../components/MembersList/MembersList";
@@ -11,10 +11,6 @@ const MembersPage = () => {
   const { members } = globalState;
 
   const [visibleMembersArray, setVisibleMembersArray] = useState(members);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   return (
     <>

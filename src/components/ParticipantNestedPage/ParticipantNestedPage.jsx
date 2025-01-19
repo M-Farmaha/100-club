@@ -48,7 +48,11 @@ export const ParticipantNestedPage = () => {
   return (
     <>
       <Section>
-        <TitleSection icon={"#icon-user"} title={member?.name}>
+        <TitleSection
+          icon={"#icon-user"}
+          title={member?.name}
+          memberId={member?.id}
+        >
           <Button onClick={handleBack}>
             <ButtonIconSvg>
               <use href={sprite + "#icon-undo"}></use>
@@ -89,7 +93,7 @@ export const ParticipantNestedPage = () => {
           <Item>
             <ItemWrap>
               <ItemText>
-                <ButtonIconSvg color="var(--accent-color)">
+                <ButtonIconSvg color="var(--power-color)">
                   <use href={sprite + "#icon-power"}></use>
                 </ButtonIconSvg>
                 Зіграно тайбрейків
@@ -101,7 +105,7 @@ export const ParticipantNestedPage = () => {
           <Item>
             <ItemWrap>
               <ItemText>
-                <ButtonIconSvg color="var(--win-color)">
+                <ButtonIconSvg color="var(--accent-hover-color)">
                   <use href={sprite + "#icon-arrow-bold"}></use>
                 </ButtonIconSvg>
                 Kількість перемог
@@ -128,7 +132,7 @@ export const ParticipantNestedPage = () => {
           <Item>
             <ItemWrap>
               <ItemText>
-                <ButtonIconSvg color="var(--win-color)">
+                <ButtonIconSvg color="var(--accent-hover-color)">
                   <use href={sprite + "#icon-chart"}></use>
                 </ButtonIconSvg>
                 Відсоток перемог

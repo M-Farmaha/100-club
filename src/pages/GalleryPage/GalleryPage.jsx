@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Outlet } from "react-router-dom";
 
 import { ImageGallery } from "../../components/ImageGallery/ImageGallery";
@@ -11,10 +11,6 @@ const GalleryPage = () => {
 
   const [orderedGalleryArray, setOrderedGalleryArray] = useState(photos);
   const [order, setOrder] = useState("newest");
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   return (
     <>

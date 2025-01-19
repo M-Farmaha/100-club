@@ -11,11 +11,13 @@ import TournamentsPage from "./pages/TournamentsPage/TournamentsPage";
 import { StagesList } from "./components/StagesList/StagesList";
 import { ParticipantsList } from "./components/ParticipantsList/ParticipantsList";
 import { ParticipantNestedPage } from "./components/ParticipantNestedPage/ParticipantNestedPage";
+import { ScrollSave } from "./components/ScrollSave/ScrollSave";
 
 function App() {
   return (
     <>
       <BrowserRouter basename="/100-club">
+        <ScrollSave />
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<HomePage />} />F

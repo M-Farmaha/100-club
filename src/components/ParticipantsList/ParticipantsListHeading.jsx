@@ -16,7 +16,7 @@ export const ParticipantsListHeading = () => {
           <HeadingText>Учасник</HeadingText>
 
           <HeadingText>
-            <ButtonIconSvg color="var(--win-color)">
+            <ButtonIconSvg color="var(--accent-hover-color)">
               <use href={sprite + "#icon-arrow-bold"}></use>
             </ButtonIconSvg>
           </HeadingText>
