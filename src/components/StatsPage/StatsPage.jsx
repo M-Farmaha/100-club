@@ -1,0 +1,90 @@
+import sprite from "../../sprite.svg";
+
+import { useLocation, useNavigate } from "react-router-dom";
+import { TitleSection } from "../TitleSection/TitleSection";
+import { Button, ButtonIconSvg, List, Section } from "./StatsPage-styled";
+import { StatsPageHeading } from "./StatsPageHeading";
+import { StatsItem } from "./StatsItem";
+import { useStateContext } from "../../state/stateContext";
+import { defineRank } from "../../helpers/defineRank";
+import { getPlayerNameById } from "../../helpers/getPlayerNameById";
+
+export const StatsPage = () => {
+  const { globalState } = useStateContext();
+  const { tournaments, members } = globalState;
+
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
+
+  const parts = pathname.split("/");
+  const tournamentId = parts[2];
+
+  const { name = "", stages = [] } =
+    tournaments?.find((t) => t.id === tournamentId) || {};
+
+  const playersStats = stages
+    ?.flatMap((stage) => stage.players)
+    .reduce((acc, player) => {
+      const { member_id, win, defeat, position } = player;
+
+      if (!acc[member_id]) {
+        acc[member_id] = {
+          member_id,
+          win: 0,
+          defeat: 0,
+          position: [],
+        };
+      }
+
+      acc[member_id].win += win;
+      acc[member_id].defeat += defeat;
+      acc[member_id].position.push(position);
+
+      return acc;
+    }, {});
+  const structuredPlayersStats = Object.values(playersStats);
+
+  const statsWithWins = structuredPlayersStats.map((el) => {
+    const winCount = el.position.filter((pos) => pos === 1).length;
+    const rankArray = el.position.map((pos) => defineRank(pos));
+    const totalRank = rankArray.reduce((acc, rank) => acc + rank, 0);
+    const averageRank = (totalRank / el.position.length).toFixed(2);
+    const name = getPlayerNameById(el.member_id, members);
+    return { ...el, winCount, totalRank, averageRank, name };
+  });
+
+  const sortedPlayersStats = statsWithWins.sort((a, b) => {
+    if (b.winCount === a.winCount) {
+      if (b.totalRank === a.totalRank) {
+        return a.name.localeCompare(b.name);
+      }
+      return b.totalRank - a.totalRank;
+    }
+    return b.winCount - a.winCount;
+  });
+
+  const handleBack = () => {
+    navigate(`/tournaments/${tournamentId}`);
+  };
+
+  return (
+    <>
+      <Section>
+        <TitleSection icon={"#icon-cup"} title={name}>
+          <Button onClick={handleBack}>
+            <ButtonIconSvg>
+              <use href={sprite + "#icon-undo"}></use>
+            </ButtonIconSvg>
+            Назад
+          </Button>
+        </TitleSection>
+        <List>
+          <StatsPageHeading />
+          {sortedPlayersStats?.map((el, index) => (
+            <StatsItem key={el.member_id} el={el} index={index} />
+          ))}
+        </List>
+      </Section>
+    </>
+  );
+};

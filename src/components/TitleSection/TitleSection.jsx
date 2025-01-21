@@ -10,7 +10,13 @@ import {
 
 import sprite from "../../sprite.svg";
 
-export const TitleSection = ({ icon, title, children, memberId = null }) => {
+export const TitleSection = ({
+  icon,
+  title,
+  children,
+  memberId = null,
+  stats = false,
+}) => {
   return (
     <>
       <Section>
@@ -24,6 +30,20 @@ export const TitleSection = ({ icon, title, children, memberId = null }) => {
               </IconWrap>
               {title}
             </Title>
+
+            {stats && (
+              <LinkStyled
+                to={`stats`}
+                aria-label="Переглянути загальну статистику по турніру"
+              >
+                <IconWrap>
+                  <IconSvg>
+                    <use href={sprite + "#icon-info"}></use>
+                  </IconSvg>
+                </IconWrap>
+                Статистика
+              </LinkStyled>
+            )}
 
             {memberId && (
               <LinkStyled

@@ -12,6 +12,7 @@ import sprite from "../../sprite.svg";
 import { ParticipantsItem } from "./ParticipantsItem";
 import { useStateContext } from "../../state/stateContext";
 import { getUkrLocaleDate } from "../../helpers/getUkrLocaleDate";
+import { getPlayerNameById } from "../../helpers/getPlayerNameById";
 
 export const ParticipantsList = () => {
   const { globalState } = useStateContext();
@@ -27,17 +28,17 @@ export const ParticipantsList = () => {
   const { stages } = tournaments?.find((t) => t.id === tournamentId);
   const currentStage = stages?.find((s) => s.date === stageId);
 
-  const getPlayerNameById = (id) => {
-    const member = members.find((member) => member.id === id);
-    return member ? member.name : "unknown player";
-  };
-
   const sortedPlayers = currentStage?.players
     .map((player) => ({
       ...player,
-      name: getPlayerNameById(player?.member_id),
+      name: getPlayerNameById(player?.member_id, members),
     }))
-    .sort((a, b) => a.name.localeCompare(b.name));
+    .sort((a, b) => {
+      if (a.position === b.position) {
+        return a.name.localeCompare(b.name);
+      }
+      return a.position - b.position;
+    });
 
   const handleBack = () => {
     navigate(`/tournaments/${tournamentId}`);

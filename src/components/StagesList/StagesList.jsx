@@ -24,6 +24,7 @@ export const StagesList = () => {
         <TitleSection
           icon={"#icon-medal"}
           title={"Кількість етапів: " + currentTournament?.stages?.length}
+          stats
         >
           <Button onClick={handleBack}>
             <ButtonIconSvg>

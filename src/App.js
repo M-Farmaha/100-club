@@ -12,6 +12,8 @@ import { StagesList } from "./components/StagesList/StagesList";
 import { ParticipantsList } from "./components/ParticipantsList/ParticipantsList";
 import { ParticipantNestedPage } from "./components/ParticipantNestedPage/ParticipantNestedPage";
 import { ScrollSave } from "./components/ScrollSave/ScrollSave";
+import { StatsPage } from "./components/StatsPage/StatsPage";
+import { StatsItemDetail } from "./components/StatsPage/StatsItemDetail";
 
 function App() {
   return (
@@ -23,6 +25,11 @@ function App() {
             <Route index element={<HomePage />} />F
             <Route path="tournaments" element={<TournamentsPage />} />
             <Route path="tournaments/:id" element={<StagesList />} />
+            <Route path="tournaments/:id/stats" element={<StatsPage />} />
+            <Route
+              path="tournaments/:id/stats/:id"
+              element={<StatsItemDetail />}
+            />
             <Route path="tournaments/:id/:id" element={<ParticipantsList />} />
             <Route
               path="tournaments/:id/:id/:id"
