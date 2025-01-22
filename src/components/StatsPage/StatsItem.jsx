@@ -11,7 +11,7 @@ import { getMedalColor } from "../../helpers/getMedalColor";
 export const StatsItem = ({ el, index }) => {
   const navigate = useNavigate();
 
-  const { member_id, winCount, totalRank, name } = el;
+  const { member_id, winCount, topFiveRank, name } = el;
   const handleItemClick = () => {
     navigate(member_id);
   };
@@ -32,7 +32,7 @@ export const StatsItem = ({ el, index }) => {
 
           <ItemText>{winCount}</ItemText>
 
-          <ItemText>{totalRank}</ItemText>
+          <ItemText>{topFiveRank}</ItemText>
 
           {
             <ItemIndictatorBG

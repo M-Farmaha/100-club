@@ -46,19 +46,21 @@ export const StatsPage = () => {
 
   const statsWithWins = structuredPlayersStats.map((el) => {
     const winCount = el.position.filter((pos) => pos === 1).length;
-    const rankArray = el.position.map((pos) => defineRank(pos));
-    const totalRank = rankArray.reduce((acc, rank) => acc + rank, 0);
-    const averageRank = (totalRank / el.position.length).toFixed(2);
+    const sortedPositions = el.position.sort((a, b) => a - b);
+    const topFivePositions = sortedPositions.slice(0, 5);
+    const topFiveRankArray = topFivePositions.map((pos) => defineRank(pos));
+    const topFiveRank = topFiveRankArray.reduce((acc, rank) => acc + rank, 0);
+
     const name = getPlayerNameById(el.member_id, members);
-    return { ...el, winCount, totalRank, averageRank, name };
+    return { ...el, winCount, name, topFiveRank };
   });
 
   const sortedPlayersStats = statsWithWins.sort((a, b) => {
     if (b.winCount === a.winCount) {
-      if (b.totalRank === a.totalRank) {
+      if (b.topFiveRank === a.topFiveRank) {
         return a.name.localeCompare(b.name);
       }
-      return b.totalRank - a.totalRank;
+      return b.topFiveRank - a.topFiveRank;
     }
     return b.winCount - a.winCount;
   });

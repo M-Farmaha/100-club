@@ -96,7 +96,7 @@ export const ParticipantNestedPage = () => {
                 <ButtonIconSvg color="var(--power-color)">
                   <use href={sprite + "#icon-power"}></use>
                 </ButtonIconSvg>
-                Зіграно тайбрейків
+                Зіграно поєдинків
               </ItemText>
               <ItemText>{total}</ItemText>
             </ItemWrap>

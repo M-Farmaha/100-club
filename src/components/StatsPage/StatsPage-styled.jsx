@@ -34,6 +34,21 @@ export const Item = styled.li`
   }
 `;
 
+export const ItemDetail = styled.li`
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 50px;
+
+  &:nth-child(odd) {
+    background-color: var(--primary-white-color);
+  }
+
+  &:nth-child(even) {
+    background-color: var(--secondary-white-color);
+  }
+`;
+
 export const ItemIndictator = styled.div`
   position: absolute;
   left: 0;
@@ -78,7 +93,7 @@ export const ItemText = styled.p`
   font-weight: 400;
 
   &:nth-child(1) {
-    width: 35px;
+    width: 25px;
   }
 
   &:nth-child(2) {
@@ -87,19 +102,41 @@ export const ItemText = styled.p`
   }
 
   &:nth-child(3) {
-    min-width: 35px;
+    min-width: 50px;
     width: 10%;
     justify-content: center;
     border-right: 1px solid var(--primary-black-color);
   }
   &:nth-child(4) {
-    min-width: 35px;
+    min-width: 50px;
     width: 10%;
     justify-content: center;
   }
   &:nth-child(5) {
-    min-width: 35px;
+    min-width: 50px;
     width: 10%;
+    justify-content: right;
+  }
+`;
+
+export const ItemDetailText = styled.p`
+  overflow: hidden;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  height: 100%;
+  gap: 15px;
+
+  font-size: 16px;
+  font-weight: 400;
+
+  &:nth-child(1) {
+    min-width: 100px;
+    flex-grow: 1;
+  }
+
+  &:nth-child(2) {
+    min-width: 50px;
     justify-content: right;
   }
 `;
@@ -139,7 +176,7 @@ export const HeadingText = styled.div`
   line-height: 1.6;
 
   &:nth-child(1) {
-    width: 35px;
+    width: 25px;
   }
 
   &:nth-child(2) {
@@ -148,18 +185,18 @@ export const HeadingText = styled.div`
   }
 
   &:nth-child(3) {
-    min-width: 35px;
+    min-width: 50px;
     width: 10%;
     justify-content: center;
     border-right: 1px solid var(--primary-black-color);
   }
   &:nth-child(4) {
-    min-width: 35px;
+    min-width: 50px;
     width: 10%;
     justify-content: center;
   }
   &:nth-child(5) {
-    min-width: 35px;
+    min-width: 50px;
     width: 10%;
     justify-content: right;
   }
