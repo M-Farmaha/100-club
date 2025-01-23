@@ -274,7 +274,7 @@
     "status": "Завершений",
     "stages": [
       {
-        "date": "2025-07-28",
+        "date": "2024-07-28",
         "players": [
           { "member_id": "118", "win": 3, "defeat": 0, "position": 1 },
           { "member_id": "1", "win": 2, "defeat": 1, "position": 2 },
@@ -288,7 +288,7 @@
         ]
       },
       {
-        "date": "2025-08-18",
+        "date": "2024-08-18",
         "players": [
           { "member_id": "39", "win": 3, "defeat": 0, "position": 1 },
           { "member_id": "74", "win": 2, "defeat": 1, "position": 2 },
@@ -302,7 +302,7 @@
         ]
       },
       {
-        "date": "2025-09-08",
+        "date": "2024-09-08",
         "players": [
           { "member_id": "39", "win": 4, "defeat": 0, "position": 1 },
           { "member_id": "100", "win": 3, "defeat": 1, "position": 2 },
@@ -312,7 +312,7 @@
         ]
       },
       {
-        "date": "2025-09-15",
+        "date": "2024-09-15",
         "players": [
           { "member_id": "39", "win": 3, "defeat": 0, "position": 1 },
           { "member_id": "100", "win": 3, "defeat": 1, "position": 2 },
@@ -329,7 +329,7 @@
         ]
       },
       {
-        "date": "2025-10-06",
+        "date": "2024-10-06",
         "players": [
           { "member_id": "39", "win": 4, "defeat": 0, "position": 1 },
           { "member_id": "145", "win": 3, "defeat": 1, "position": 2 },
@@ -339,7 +339,7 @@
         ]
       },
       {
-        "date": "2025-11-10",
+        "date": "2024-11-10",
         "players": [
           { "member_id": "39", "win": 3, "defeat": 0, "position": 1 },
           { "member_id": "145", "win": 2, "defeat": 1, "position": 2 },
@@ -473,7 +473,7 @@
         ]
       },
       {
-        "date": "2025-09-15",
+        "date": "2024-09-15",
         "players": [
           { "member_id": "59", "win": 4, "defeat": 0, "position": 1 },
           { "member_id": "143", "win": 2, "defeat": 1, "position": 2 },
@@ -490,7 +490,7 @@
         ]
       },
       {
-        "date": "2025-10-06",
+        "date": "2024-10-06",
         "players": [
           { "member_id": "14", "win": 3, "defeat": 0, "position": 1 },
           { "member_id": "117", "win": 2, "defeat": 1, "position": 2 },
@@ -504,7 +504,7 @@
         ]
       },
       {
-        "date": "2025-10-10",
+        "date": "2024-10-10",
         "players": [
           { "member_id": "22", "win": 3, "defeat": 0, "position": 1 },
           { "member_id": "47", "win": 2, "defeat": 1, "position": 2 },
@@ -513,7 +513,7 @@
         ]
       },
       {
-        "date": "2025-11-10",
+        "date": "2024-11-10",
         "players": [
           { "member_id": "2", "win": 3, "defeat": 0, "position": 1 },
           { "member_id": "47", "win": 2, "defeat": 1, "position": 2 },
@@ -527,7 +527,7 @@
         ]
       },
       {
-        "date": "2025-12-15",
+        "date": "2024-12-15",
         "players": [
           { "member_id": "74", "win": 3, "defeat": 0, "position": null },
           { "member_id": "150", "win": 2, "defeat": 1, "position": 1 },
