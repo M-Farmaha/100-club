@@ -7,6 +7,8 @@ export const TournamentsList = () => {
   const { globalState } = useStateContext();
   const { tournaments } = globalState;
 
+  const sortedByYear = tournaments.sort((a, b) => b.year - a.year);
+
   return (
     <>
       <Section>
@@ -16,7 +18,7 @@ export const TournamentsList = () => {
         />
 
         <List>
-          {tournaments?.map((el, index) => (
+          {sortedByYear?.map((el, index) => (
             <TournamentsItem key={el.id} el={el} index={index} />
           ))}
         </List>

@@ -56,13 +56,13 @@ export const StatsPage = () => {
   });
 
   const sortedPlayersStats = statsWithWins.sort((a, b) => {
-    if (b.winCount === a.winCount) {
-      if (b.topFiveRank === a.topFiveRank) {
+    if (b.topFiveRank === a.topFiveRank) {
+      if (b.winCount === a.winCount) {
         return a.name.localeCompare(b.name);
       }
-      return b.topFiveRank - a.topFiveRank;
+      return b.winCount - a.winCount;
     }
-    return b.winCount - a.winCount;
+    return b.topFiveRank - a.topFiveRank;
   });
 
   const handleBack = () => {

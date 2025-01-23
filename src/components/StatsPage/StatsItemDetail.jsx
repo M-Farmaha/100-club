@@ -168,8 +168,8 @@ export const StatsItemDetail = () => {
         <ItemDetail>
           <ItemWrap>
             <ItemDetailText>
-              <ButtonIconSvg color="var(--power-color)">
-                <use href={sprite + "#icon-play"}></use>
+              <ButtonIconSvg color="var(--ball-color)">
+                <use href={sprite + "#icon-ball"}></use>
               </ButtonIconSvg>
               Зіграно поєдинків
             </ItemDetailText>

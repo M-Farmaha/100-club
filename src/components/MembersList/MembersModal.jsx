@@ -115,7 +115,7 @@ export const MembersModal = () => {
                     {isTodayBirthDay && " (виповнилось сьогодні)"}
                   </Text>
                   <Text>
-                    <span>Рідне місто:</span> {hometown}
+                    <span>Рідне місто:</span> {hometown || " Heвідомо"}
                   </Text>
                   <Text>
                     <span>

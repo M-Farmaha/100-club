@@ -93,8 +93,8 @@ export const ParticipantNestedPage = () => {
           <Item>
             <ItemWrap>
               <ItemText>
-                <ButtonIconSvg color="var(--power-color)">
-                  <use href={sprite + "#icon-power"}></use>
+                <ButtonIconSvg color="var(--ball-color)">
+                  <use href={sprite + "#icon-ball"}></use>
                 </ButtonIconSvg>
                 Зіграно поєдинків
               </ItemText>
