@@ -405,6 +405,16 @@
       {
         "date": "2024-05-26",
         "players": [
+          { "member_id": "128", "win": 4, "defeat": 0, "position": 1 },
+          { "member_id": "61", "win": 3, "defeat": 1, "position": 2 },
+          { "member_id": "17", "win": 3, "defeat": 1, "position": 3 },
+          { "member_id": "129", "win": 2, "defeat": 2, "position": 4 },
+
+          { "member_id": "59", "win": 3, "defeat": 1, "position": 5 },
+          { "member_id": "123", "win": 2, "defeat": 2, "position": 6 },
+          { "member_id": "2", "win": 2, "defeat": 2, "position": 7 },
+          { "member_id": "15", "win": 1, "defeat": 3, "position": 8 },
+
           { "member_id": "130", "win": 4, "defeat": 1, "position": 9 },
           { "member_id": "12", "win": 3, "defeat": 2, "position": 10 },
           { "member_id": "131", "win": 2, "defeat": 2, "position": 11 },
