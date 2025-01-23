@@ -27,7 +27,7 @@ jobs:
         env:
           PUBLIC_URL: /100-club
       - name: upload artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ./build
       - name: deploy to github pages
