@@ -1,7 +1,6 @@
 import { Item, ItemText, ItemWrap } from "./StagesList-styled";
 import { useNavigate } from "react-router-dom";
 import { useStateContext } from "../../state/stateContext";
-// import { isDateHidden } from "../../helpers/isDateHidden";
 import { getUkrLocaleDate } from "../../helpers/getUkrLocaleDate";
 
 export const StagesItem = ({ el, index }) => {
@@ -9,8 +8,6 @@ export const StagesItem = ({ el, index }) => {
   const { members } = globalState;
 
   const navigate = useNavigate();
-
-  // const isHide = isDateHidden(el.date);
 
   const winner = el?.players?.find((player) => player.position === 1);
   const { name } = members?.find((member) => member.id === winner.member_id);
