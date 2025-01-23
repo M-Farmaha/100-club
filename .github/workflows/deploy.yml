@@ -27,9 +27,9 @@ jobs:
         env:
           PUBLIC_URL: /100-club
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v3 # Оновлено на v3
         with:
           path: ./build
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v2 # Використовуємо останню стабільну версію для deploy-pages
