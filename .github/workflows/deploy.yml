@@ -25,7 +25,7 @@ jobs:
       - name: Update last update date
         run: |
           CURRENT_DATE=$(date '+%d.%m.%Y') 
-          sed -i "s/Останнє оновлення: .*/Останнє оновлення: $CURRENT_DATE/" src/components/LastUpdateSection/LastUpdateSection.js
+          sed -i "s/Останнє оновлення: .*/Останнє оновлення: $CURRENT_DATE/" src/components/LastUpdateSection/LastUpdateSection.jsx
       - name: Build app
         run: npm run build && npm run gh-pages:404
         env:
