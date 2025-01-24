@@ -22,10 +22,10 @@ jobs:
           node-version: 18.x
       - name: Install dependencies
         run: npm ci
-      - name: Update last update date
+      - name: Update currentDate in LastUpdateSection.jsx
         run: |
-          CURRENT_DATE=$(date '+%d.%m.%Y') 
-          sed -i "s/Останнє оновлення: .*/Останнє оновлення: $CURRENT_DATE/" src/components/LastUpdateSection/LastUpdateSection.jsx
+          CURRENT_DATE=$(date '+%d.%m.%Y')
+          sed -i "s/let currentDate = .*/let currentDate = '${CURRENT_DATE}';/" src/components/LastUpdateSection/LastUpdateSection.jsx
       - name: Build app
         run: npm run build && npm run gh-pages:404
         env:
