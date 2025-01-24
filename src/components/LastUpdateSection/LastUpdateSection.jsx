@@ -2,7 +2,6 @@ import sprite from "../../sprite.svg";
 import { IconSvg, IconWrap, Section, Text } from "./LastUpdateSection-styled";
 
 export const LastUpdateSection = () => {
-  let currentDate;
   return (
     <>
       <Section>
@@ -12,7 +11,7 @@ export const LastUpdateSection = () => {
               <use href={sprite + "#icon-loop"}></use>
             </IconSvg>
           </IconWrap>
-          Останнє оновлення: {currentDate}
+          Останнє оновлення: 24.01.2024
         </Text>
       </Section>
     </>
