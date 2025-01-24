@@ -24,8 +24,14 @@ jobs:
         run: npm ci
       - name: Update currentDate in LastUpdateSection.jsx
         run: |
-          CURRENT_DATE=$(date '+%d.%m.%Y')
-          sed -i "s/let currentDate = .*/let currentDate = '${CURRENT_DATE}';/" src/components/LastUpdateSection/LastUpdateSection.jsx
+          node -e "
+            const fs = require('fs');
+            const file = 'src/components/LastUpdateSection/LastUpdateSection.jsx';
+            const date = new Date().toLocaleDateString('de-DE');
+            const content = fs.readFileSync(file, 'utf8');
+            const updated = content.replace(/let currentDate = .*?;/, `let currentDate = '${date}';`);
+            fs.writeFileSync(file, updated);
+          "
       - name: Build app
         run: npm run build && npm run gh-pages:404
         env:
