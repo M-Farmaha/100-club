@@ -73,9 +73,5 @@ export const MembersItemText = styled.p`
     width: 120px;
     justify-content: right;
     text-align: right;
-
-    @media screen and (min-width: 450px) {
-      width: 150px;
-    }
   }
 `;
