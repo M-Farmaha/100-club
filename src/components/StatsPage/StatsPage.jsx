@@ -65,6 +65,25 @@ export const StatsPage = () => {
     return b.topFiveRank - a.topFiveRank;
   });
 
+  let globalPosition = 1;
+  let prevWinCount = sortedPlayersStats[0].winCount;
+  let prevTopFiveRank = sortedPlayersStats[0].topFiveRank;
+
+  sortedPlayersStats.forEach((player, index) => {
+    if (
+      player.winCount === prevWinCount &&
+      player.topFiveRank === prevTopFiveRank
+    ) {
+      player.globalPosition = globalPosition;
+    } else {
+      globalPosition = index + 1;
+      player.globalPosition = globalPosition;
+    }
+
+    prevWinCount = player.winCount;
+    prevTopFiveRank = player.topFiveRank;
+  });
+
   const handleBack = () => {
     navigate(`/tournaments/${tournamentId}`);
   };

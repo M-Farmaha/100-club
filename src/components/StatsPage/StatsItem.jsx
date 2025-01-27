@@ -11,7 +11,7 @@ import { getMedalColor } from "../../helpers/getMedalColor";
 export const StatsItem = ({ el, index }) => {
   const navigate = useNavigate();
 
-  const { member_id, winCount, topFiveRank, name } = el;
+  const { member_id, winCount, topFiveRank, name, globalPosition } = el;
   const handleItemClick = () => {
     navigate(member_id);
   };
@@ -21,7 +21,7 @@ export const StatsItem = ({ el, index }) => {
       <Item id={member_id} onClick={handleItemClick}>
         {
           <ItemIndictator
-            style={{ backgroundColor: getMedalColor(index + 1) }}
+            style={{ backgroundColor: getMedalColor(globalPosition) }}
           />
         }
 
@@ -38,7 +38,7 @@ export const StatsItem = ({ el, index }) => {
             <ItemIndictatorBG
               style={{
                 background: `linear-gradient(to right, transparent,  ${getMedalColor(
-                  index + 1
+                  globalPosition
                 )})`,
               }}
             />
