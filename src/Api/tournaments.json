@@ -553,6 +553,15 @@
           { "member_id": "70", "win": 1, "defeat": 2, "position": 3 },
           { "member_id": "100", "win": 2, "defeat": 1, "position": 2 }
         ]
+      },
+      {
+        "date": "2025-01-26",
+        "players": [
+          { "member_id": "13", "win": 3, "defeat": 0, "position": 1 },
+          { "member_id": "1", "win": 1, "defeat": 2, "position": 2 },
+          { "member_id": "39", "win": 1, "defeat": 2, "position": 2 },
+          { "member_id": "88", "win": 1, "defeat": 2, "position": 2 }
+        ]
       }
     ]
   }
