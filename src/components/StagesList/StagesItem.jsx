@@ -2,6 +2,7 @@ import { Item, ItemText, ItemWrap } from "./StagesList-styled";
 import { useNavigate } from "react-router-dom";
 import { useStateContext } from "../../state/stateContext";
 import { getUkrLocaleDate } from "../../helpers/getUkrLocaleDate";
+import { getPlayerNameById } from "../../helpers/getPlayerNameById";
 
 export const StagesItem = ({ el, index }) => {
   const { globalState } = useStateContext();
@@ -10,7 +11,7 @@ export const StagesItem = ({ el, index }) => {
   const navigate = useNavigate();
 
   const winner = el?.players?.find((player) => player.position === 1);
-  const { name } = members?.find((member) => member.id === winner.member_id);
+  const name = getPlayerNameById(winner.member_id, members);
 
   const handleItemClick = () => {
     navigate(el.date);

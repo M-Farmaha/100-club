@@ -564,5 +564,24 @@
         ]
       }
     ]
+  },
+
+  {
+    "id": "2025_3",
+    "year": 2025,
+    "name": "Шалений Мікст",
+    "logo": "logo-M",
+    "status": "Активний",
+    "stages": [
+      {
+        "date": "2025-01-26",
+        "players": [
+          { "member_id": ["1", "47"], "win": 4, "defeat": 0, "position": 1 },
+          { "member_id": ["74", "21"], "win": 3, "defeat": 1, "position": 2 },
+          { "member_id": ["39", "41"], "win": 2, "defeat": 1, "position": 3 },
+          { "member_id": ["49", "2"], "win": 1, "defeat": 2, "position": 4 }
+        ]
+      }
+    ]
   }
 ]

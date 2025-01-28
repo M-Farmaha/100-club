@@ -23,13 +23,19 @@ export const StatsItemDetail = () => {
   const { pathname } = useLocation();
   const parts = pathname.split("/");
   const tournamentId = parts[2];
-  const memberId = parts[4];
+  const playerId = parts[4];
+  const playerIds = playerId.split("-");
 
   const { stages = [] } = tournaments?.find((t) => t.id === tournamentId) || {};
 
   const playerStats = stages
-    ?.flatMap((stage) => stage.players)
-    .filter((player) => player.member_id === memberId)
+    .flatMap((stage) => stage.players)
+    .filter((player) => {
+      const playerIdsArray = Array.isArray(player.member_id)
+        ? player.member_id
+        : player.member_id.split("-");
+      return playerIds.every((id) => playerIdsArray.includes(id));
+    })
     .reduce(
       (acc, player) => {
         const { win, defeat, position } = player;
@@ -40,30 +46,34 @@ export const StatsItemDetail = () => {
 
         return acc;
       },
-      { member_id: memberId, win: 0, defeat: 0, position: [] }
+      { member_id: playerIds, win: 0, defeat: 0, position: [] }
     );
 
-  const totalTournaments = playerStats.position.length;
+  const { member_id, position, win, defeat } = playerStats;
 
-  const gold = playerStats.position.filter((pos) => pos === 1).length;
-  const silver = playerStats.position.filter((pos) => pos === 2).length;
-  const bronze = playerStats.position.filter((pos) => pos === 3).length;
+  const complexId = Array.isArray(member_id) ? null : member_id;
 
-  const totalWins = playerStats.win;
-  const totalDefeats = playerStats.defeat;
+  const totalTournaments = position.length;
+
+  const gold = position.filter((pos) => pos === 1).length;
+  const silver = position.filter((pos) => pos === 2).length;
+  const bronze = position.filter((pos) => pos === 3).length;
+
+  const totalWins = win;
+  const totalDefeats = defeat;
   const totalGames = totalWins + totalDefeats;
   const winPercentage = ((totalWins / totalGames) * 100).toFixed(2);
   const defeatPercentage = ((totalDefeats / totalGames) * 100).toFixed(2);
 
-  const rankArray = playerStats.position.map((pos) => defineRank(pos));
+  const rankArray = position.map((pos) => defineRank(pos));
   const totalRank = rankArray.reduce((acc, rank) => acc + rank, 0);
-  const averageRank = (totalRank / playerStats.position.length).toFixed(2);
-  const sortedPositions = playerStats.position.sort((a, b) => a - b);
+  const averageRank = (totalRank / position.length).toFixed(2);
+  const sortedPositions = position.sort((a, b) => a - b);
   const topFivePositions = sortedPositions.slice(0, 5);
   const topFiveRankArray = topFivePositions.map((pos) => defineRank(pos));
   const topFiveRank = topFiveRankArray.reduce((acc, rank) => acc + rank, 0);
 
-  const name = getPlayerNameById(playerStats.member_id, members);
+  const name = getPlayerNameById(member_id, members);
 
   const handleBack = () => {
     navigate(`/tournaments/${tournamentId}/stats`);
@@ -71,7 +81,11 @@ export const StatsItemDetail = () => {
 
   return (
     <Section>
-      <TitleSection icon={"#icon-user"} title={name} memberId={memberId}>
+      <TitleSection
+        icon={complexId ? "#icon-user" : "#icon-users"}
+        title={name}
+        memberId={complexId}
+      >
         <Button onClick={handleBack}>
           <ButtonIconSvg>
             <use href={sprite + "#icon-undo"}></use>

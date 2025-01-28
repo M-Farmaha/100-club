@@ -14,7 +14,7 @@ import { TitleSection } from "../TitleSection/TitleSection";
 
 import sprite from "../../sprite.svg";
 import { getMedalColor } from "../../helpers/getMedalColor";
-// import { isDateHidden } from "../../helpers/isDateHidden";
+import { getPlayerNameById } from "../../helpers/getPlayerNameById";
 
 export const ParticipantNestedPage = () => {
   const { globalState } = useStateContext();
@@ -26,20 +26,26 @@ export const ParticipantNestedPage = () => {
   const tournamentId = parts[2];
   const stageId = parts[3];
   const playerId = parts[4];
+  const playerIds = playerId.split("-");
 
-  const { stages } = tournaments?.find((t) => t.id === tournamentId);
-  const { players } = stages?.find((s) => s.date === stageId);
+  const { stages = [] } = tournaments?.find((t) => t.id === tournamentId);
+  const { players = [] } = stages?.find((s) => s.date === stageId);
 
-  const currentPlayer = players?.find((p) => p.member_id === playerId);
-  const { position, win, defeat } = currentPlayer;
+  const currentPlayer = players?.find((player) => {
+    const playerIdsArray = Array.isArray(player.member_id)
+      ? player.member_id
+      : player.member_id.split("-");
+    return playerIds.every((id) => playerIdsArray.includes(id));
+  });
+
+  const { position, win, defeat, member_id } = currentPlayer;
+
+  const complexId = Array.isArray(member_id) ? null : member_id;
+  const name = getPlayerNameById(member_id, members);
   const total = win + defeat;
   const winPercentage = ((win / total) * 100).toFixed(2);
   const defeatPercentage = ((defeat / total) * 100).toFixed(2);
-
   const currentPlayerRank = defineRank(position);
-  const member = members.find((member) => member.id === playerId);
-
-  // const isHide = isDateHidden(stageId);
 
   const handleBack = () => {
     navigate(`/tournaments/${tournamentId}/${stageId}`);
@@ -49,9 +55,9 @@ export const ParticipantNestedPage = () => {
     <>
       <Section>
         <TitleSection
-          icon={"#icon-user"}
-          title={member?.name}
-          memberId={member?.id}
+          icon={complexId ? "#icon-user" : "#icon-users"}
+          title={name}
+          memberId={complexId}
         >
           <Button onClick={handleBack}>
             <ButtonIconSvg>

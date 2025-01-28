@@ -19,8 +19,11 @@ export const StatsPage = () => {
   const parts = pathname.split("/");
   const tournamentId = parts[2];
 
-  const { name = "", stages = [] } =
-    tournaments?.find((t) => t.id === tournamentId) || {};
+  const {
+    name = "",
+    stages = [],
+    year = null,
+  } = tournaments?.find((t) => t.id === tournamentId) || {};
 
   const playersStats = stages
     ?.flatMap((stage) => stage.players)
@@ -91,7 +94,7 @@ export const StatsPage = () => {
   return (
     <>
       <Section>
-        <TitleSection icon={"#icon-cup"} title={name}>
+        <TitleSection icon={"#icon-cup"} title={`${name} ${year}`}>
           <Button onClick={handleBack}>
             <ButtonIconSvg>
               <use href={sprite + "#icon-undo"}></use>
@@ -102,7 +105,7 @@ export const StatsPage = () => {
         <List>
           <StatsPageHeading />
           {sortedPlayersStats?.map((el, index) => (
-            <StatsItem key={el.member_id} el={el} index={index} />
+            <StatsItem key={index} el={el} index={index} />
           ))}
         </List>
       </Section>

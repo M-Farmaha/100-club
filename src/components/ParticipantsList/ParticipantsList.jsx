@@ -61,7 +61,7 @@ export const ParticipantsList = () => {
         <List>
           <ParticipantsListHeading />
           {sortedPlayers?.map((el, index) => (
-            <ParticipantsItem key={el.member_id} el={el} index={index} />
+            <ParticipantsItem key={index} el={el} index={index} />
           ))}
         </List>
       </Section>
