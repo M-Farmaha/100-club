@@ -13,17 +13,15 @@ export const StatsItem = ({ el, index }) => {
 
   const { member_id, winCount, topFiveRank, name, globalPosition } = el;
 
-  const complexId = Array.isArray(member_id)
-    ? `${member_id[0]}-${member_id[1]}`
-    : member_id;
+  const stringId = member_id.join("-");
 
   const handleItemClick = () => {
-    navigate(complexId);
+    navigate(stringId);
   };
 
   return (
     <>
-      <Item id={complexId} onClick={handleItemClick}>
+      <Item id={stringId} onClick={handleItemClick}>
         {
           <ItemIndictator
             style={{ backgroundColor: getMedalColor(globalPosition) }}

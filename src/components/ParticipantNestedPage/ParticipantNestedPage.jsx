@@ -32,15 +32,13 @@ export const ParticipantNestedPage = () => {
   const { players = [] } = stages?.find((s) => s.date === stageId);
 
   const currentPlayer = players?.find((player) => {
-    const playerIdsArray = Array.isArray(player.member_id)
-      ? player.member_id
-      : player.member_id.split("-");
-    return playerIds.every((id) => playerIdsArray.includes(id));
+    return playerIds.every((id) => player.member_id.includes(id));
   });
 
   const { position, win, defeat, member_id } = currentPlayer;
 
-  const complexId = Array.isArray(member_id) ? null : member_id;
+  const isComplexId = member_id.length > 1;
+
   const name = getPlayerNameById(member_id, members);
   const total = win + defeat;
   const winPercentage = ((win / total) * 100).toFixed(2);
@@ -55,9 +53,9 @@ export const ParticipantNestedPage = () => {
     <>
       <Section>
         <TitleSection
-          icon={complexId ? "#icon-user" : "#icon-users"}
+          icon={isComplexId ? "#icon-users" : "#icon-user"}
           title={name}
-          memberId={complexId}
+          memberId={isComplexId ? null : member_id}
         >
           <Button onClick={handleBack}>
             <ButtonIconSvg>

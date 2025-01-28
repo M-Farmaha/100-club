@@ -31,10 +31,7 @@ export const StatsItemDetail = () => {
   const playerStats = stages
     .flatMap((stage) => stage.players)
     .filter((player) => {
-      const playerIdsArray = Array.isArray(player.member_id)
-        ? player.member_id
-        : player.member_id.split("-");
-      return playerIds.every((id) => playerIdsArray.includes(id));
+      return playerIds.every((id) => player.member_id.includes(id));
     })
     .reduce(
       (acc, player) => {
@@ -51,7 +48,7 @@ export const StatsItemDetail = () => {
 
   const { member_id, position, win, defeat } = playerStats;
 
-  const complexId = Array.isArray(member_id) ? null : member_id;
+  const isComplexId = member_id.length > 1;
 
   const totalTournaments = position.length;
 
@@ -82,9 +79,9 @@ export const StatsItemDetail = () => {
   return (
     <Section>
       <TitleSection
-        icon={complexId ? "#icon-user" : "#icon-users"}
+        icon={isComplexId ? "#icon-users" : "#icon-user"}
         title={name}
-        memberId={complexId}
+        memberId={isComplexId ? null : member_id}
       >
         <Button onClick={handleBack}>
           <ButtonIconSvg>

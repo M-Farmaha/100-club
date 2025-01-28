@@ -12,19 +12,19 @@ import { getMedalColor } from "../../helpers/getMedalColor";
 export const ParticipantsItem = ({ el, index }) => {
   const navigate = useNavigate();
 
-  const participantRank = defineRank(el.position);
+  const { member_id, position, name, win, defeat } = el;
 
-  const complexId = Array.isArray(el.member_id)
-    ? `${el.member_id[0]}-${el.member_id[1]}`
-    : el.member_id;
+  const stringId = member_id.join("-");
+
+  const participantRank = defineRank(position);
 
   const handleItemClick = () => {
-    navigate(complexId);
+    navigate(stringId);
   };
 
   return (
     <>
-      <Item id={complexId} onClick={handleItemClick}>
+      <Item id={stringId} onClick={handleItemClick}>
         {
           <ItemIndictator
             style={{ backgroundColor: getMedalColor(el.position) }}
@@ -34,11 +34,11 @@ export const ParticipantsItem = ({ el, index }) => {
         <ItemWrap>
           <ItemText>{index + 1}.</ItemText>
 
-          <ItemText>{el?.name || "Невідомий учасник"}</ItemText>
+          <ItemText>{name || "Невідомий учасник"}</ItemText>
 
-          <ItemText>{el.win}</ItemText>
+          <ItemText>{win}</ItemText>
 
-          <ItemText>{el.defeat}</ItemText>
+          <ItemText>{defeat}</ItemText>
 
           <ItemText>{participantRank}</ItemText>
 
@@ -46,7 +46,7 @@ export const ParticipantsItem = ({ el, index }) => {
             <ItemIndictatorBG
               style={{
                 background: `linear-gradient(to right, transparent,  ${getMedalColor(
-                  el.position
+                  position
                 )})`,
               }}
             />

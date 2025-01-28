@@ -10,20 +10,22 @@ export const StagesItem = ({ el, index }) => {
 
   const navigate = useNavigate();
 
-  const winner = el?.players?.find((player) => player.position === 1);
+  const { players, date } = el;
+
+  const winner = players.find((player) => player.position === 1);
   const name = getPlayerNameById(winner.member_id, members);
 
   const handleItemClick = () => {
-    navigate(el.date);
+    navigate(date);
   };
 
   return (
     <>
-      <Item id={el.date} onClick={handleItemClick}>
+      <Item id={date} onClick={handleItemClick}>
         <ItemWrap>
           <ItemText>{index + 1}.</ItemText>
 
-          <ItemText>{getUkrLocaleDate(el.date)}</ItemText>
+          <ItemText>{getUkrLocaleDate(date)}</ItemText>
           <ItemText>{name}</ItemText>
         </ItemWrap>
       </Item>

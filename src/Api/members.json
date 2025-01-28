@@ -1948,5 +1948,18 @@
     "forhand": "Справа",
     "backhand": "Дворучний",
     "joinTennisYear": null
+  },
+  {
+    "id": "151",
+    "name": "Дроздов Ігор",
+    "birthDate": null,
+    "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/151.jpg",
+    "sex": "female",
+    "hometown": null,
+    "type": "Аматор",
+    "category": null,
+    "forhand": "Справа",
+    "backhand": "Дворучний",
+    "joinTennisYear": null
   }
 ]

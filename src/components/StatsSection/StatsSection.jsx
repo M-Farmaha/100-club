@@ -5,14 +5,15 @@ import { useStateContext } from "../../state/stateContext";
 
 export const StatsSection = () => {
   const { globalState } = useStateContext();
-  const { members } = globalState;
+  const { members, tournaments } = globalState;
 
+  const stages = tournaments.flatMap((tournament) => tournament.stages).length;
   const players = members.length;
   const trainers = members.filter((member) => member.type === "Тренер");
   const experience = new Date().getFullYear() - 2016;
 
   const stats = [
-    { name: "Турнірів за рік", count: 45, icon: "icon-stats-1" },
+    { name: "Турнірів зіграно", count: stages, icon: "icon-stats-1" },
     { name: "Гравців у клубі", count: players, icon: "icon-stats-2" },
     { name: "Років досвіду", count: experience, icon: "icon-stats-3" },
     { name: "Тренерів у клубі", count: trainers.length, icon: "icon-stats-4" },
