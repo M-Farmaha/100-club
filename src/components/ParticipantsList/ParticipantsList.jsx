@@ -25,8 +25,8 @@ export const ParticipantsList = () => {
   const tournamentId = parts[2];
   const stageId = parts[3];
 
-  const { stages } = tournaments?.find((t) => t.id === tournamentId);
-  const currentStage = stages?.find((s) => s.date === stageId);
+  const { stages = [] } = tournaments?.find((t) => t.id === tournamentId) || {};
+  const currentStage = stages.find((s) => s.date === stageId);
 
   const sortedPlayers = currentStage?.players
     .map((player) => ({

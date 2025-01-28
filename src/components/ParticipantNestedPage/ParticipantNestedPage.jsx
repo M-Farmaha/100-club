@@ -28,8 +28,8 @@ export const ParticipantNestedPage = () => {
   const playerId = parts[4];
   const playerIds = playerId.split("-");
 
-  const { stages = [] } = tournaments?.find((t) => t.id === tournamentId);
-  const { players = [] } = stages?.find((s) => s.date === stageId);
+  const { stages = [] } = tournaments?.find((t) => t.id === tournamentId) || {};
+  const { players = [] } = stages?.find((s) => s.date === stageId) || {};
 
   const currentPlayer = players?.find((player) => {
     return playerIds.every((id) => player.member_id.includes(id));
