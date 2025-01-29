@@ -1600,7 +1600,7 @@
   },
   {
     "id": "124",
-    "name": "Блажейко С.",
+    "name": "Блажейко Соломія",
     "birthDate": null,
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/124.jpg",
     "sex": "female",
@@ -1613,20 +1613,20 @@
   },
   {
     "id": "125",
-    "name": "Мурза Ю.",
-    "birthDate": null,
+    "name": "Мурза Юлія",
+    "birthDate": "2002-03-15",
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/125.jpg",
     "sex": "female",
-    "hometown": null,
+    "hometown": "Золочів",
     "type": "Аматор",
     "category": null,
     "forhand": "Справа",
     "backhand": "Дворучний",
-    "joinTennisYear": null
+    "joinTennisYear": 2023
   },
   {
     "id": "126",
-    "name": "Кушнір І.",
+    "name": "Кушнір Інна",
     "birthDate": null,
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/126.jpg",
     "sex": "female",
@@ -1639,16 +1639,16 @@
   },
   {
     "id": "127",
-    "name": "Погончук І.",
-    "birthDate": null,
+    "name": "Погончук Ірина",
+    "birthDate": "1994-03-18",
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/127.jpg",
     "sex": "female",
-    "hometown": null,
+    "hometown": "Золочів",
     "type": "Аматор",
     "category": null,
     "forhand": "Справа",
     "backhand": "Дворучний",
-    "joinTennisYear": null
+    "joinTennisYear": 2023
   },
   {
     "id": "128",
@@ -1769,7 +1769,7 @@
   },
   {
     "id": "137",
-    "name": "Флекей І.",
+    "name": "Флекей Уляна",
     "birthDate": null,
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/137.jpg",
     "sex": "female",
@@ -1861,15 +1861,15 @@
   {
     "id": "144",
     "name": "Капелистий Дмитро",
-    "birthDate": null,
+    "birthDate": "1995-08-24",
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/144.jpg",
     "sex": "male",
-    "hometown": null,
+    "hometown": "Львів",
     "type": "Аматор",
     "category": null,
     "forhand": "Справа",
     "backhand": "Дворучний",
-    "joinTennisYear": null
+    "joinTennisYear": 2024
   },
   {
     "id": "145",
@@ -1939,27 +1939,27 @@
   {
     "id": "150",
     "name": "Дралова Каріна",
-    "birthDate": null,
+    "birthDate": "1986-12-20",
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/150.jpg",
     "sex": "female",
-    "hometown": "Львів",
+    "hometown": "Харків",
     "type": "Аматор",
     "category": null,
     "forhand": "Справа",
     "backhand": "Дворучний",
-    "joinTennisYear": null
+    "joinTennisYear": 1994
   },
   {
     "id": "151",
     "name": "Дроздов Ігор",
-    "birthDate": null,
+    "birthDate": "1986-02-21",
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/151.jpg",
     "sex": "female",
-    "hometown": null,
+    "hometown": "Львів",
     "type": "Аматор",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
-    "joinTennisYear": null
+    "forhand": "Зліва",
+    "backhand": "Одноручний",
+    "joinTennisYear": 2018
   }
 ]
