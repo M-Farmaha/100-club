@@ -3,20 +3,21 @@ import { Group, IconSvg, IconWrap, Input, Label } from "./Filters-styled";
 
 import sprite from "../../sprite.svg";
 
-export const FilterByName = ({ id, inputValue, setInputsValue }) => {
+export const FilterByName = ({ id, label, value, setFilters }) => {
   const [isFilterFocused, setIsFilterFocused] = useState(false);
 
   const onInputChange = (e) => {
-    setInputsValue((prev) => ({
+    const { name, value } = e.target;
+    setFilters((prev) => ({
       ...prev,
-      name: e.target.value,
+      [name]: value,
     }));
   };
 
   return (
     <Group>
       <Label htmlFor={id} isFilterFocused={isFilterFocused}>
-        Знайти гравця за іменем
+        {label}
         <IconWrap>
           <IconSvg>
             <use href={sprite + "#icon-search"}></use>
@@ -27,9 +28,9 @@ export const FilterByName = ({ id, inputValue, setInputsValue }) => {
       <Input
         id={id}
         name={id}
+        value={value}
         autoComplete="off"
         type="text"
-        value={inputValue}
         placeholder="Введіть ім'я"
         onChange={onInputChange}
         onFocus={() => setIsFilterFocused(true)}

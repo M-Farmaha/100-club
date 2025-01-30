@@ -8,32 +8,34 @@ export const ImageGalleryFilterBar = ({
   setOrderedGalleryArray,
   setOrder,
 }) => {
-  const [inputsValue, setInputsValue] = useState({
-    date: "Спочатку найновіші",
+  const optionsByDate = ["Спочатку найновіші", "Спочатку найстаріші"];
+  const DATE = "filterByDate";
+  const filterByDateLabel = "Фільтр за датою";
+
+  const [filters, setFilters] = useState({
+    [DATE]: optionsByDate[0],
   });
 
-  const typeOptions = ["Спочатку найновіші", "Спочатку найстаріші"];
-
   useEffect(() => {
-    if (inputsValue.date === "Спочатку найновіші") {
+    if (filters[DATE] === optionsByDate[0]) {
       setOrderedGalleryArray(galleryArray);
       setOrder("newest");
     } else {
       setOrderedGalleryArray([...galleryArray].reverse());
       setOrder("eldest");
     }
-  }, [galleryArray, inputsValue.date, setOrder, setOrderedGalleryArray]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [filters, setOrder, setOrderedGalleryArray]);
 
   return (
     <Section>
       <Form onSubmit={(e) => e.preventDefault()}>
         <FilterSelect
-          id={"FilterByDate"}
-          inputsValue={inputsValue}
-          setInputsValue={setInputsValue}
-          typeOptions={typeOptions}
-          label={"Фільтр за датою"}
-          placeholder={"Спочатку найновіші"}
+          id={DATE}
+          setFilters={setFilters}
+          typeOptions={optionsByDate}
+          label={filterByDateLabel}
+          placeholder={optionsByDate[0]}
           icon={"#icon-list"}
         />
       </Form>

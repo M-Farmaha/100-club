@@ -25,26 +25,54 @@ export const StatsPage = () => {
     year = null,
   } = tournaments?.find((t) => t.id === tournamentId) || {};
 
-  const playersStats = stages
-    ?.flatMap((stage) => stage.players)
-    .reduce((acc, player) => {
-      const { member_id, win, defeat, position } = player;
+  const sortBySex = (array, sex = "") => {
+    const sortedArray = array.map((player) => {
+      if (!sex) return player;
 
-      if (!acc[member_id]) {
-        acc[member_id] = {
-          member_id,
-          win: 0,
-          defeat: 0,
-          position: [],
-        };
+      if (player.member_id.length === 2) {
+        const memberId = player.member_id.find((id) => {
+          const foundMember = members.find((m) => m.id === id && m.sex === sex);
+          return foundMember;
+        });
+
+        if (memberId) {
+          return {
+            ...player,
+            member_id: [memberId],
+            name: getPlayerNameById([memberId], members),
+          };
+        }
+
+        return player;
       }
 
-      acc[member_id].win += win;
-      acc[member_id].defeat += defeat;
-      acc[member_id].position.push(position);
+      return player;
+    });
 
-      return acc;
-    }, {});
+    return sortedArray;
+  };
+
+  const flattenedPlayersStats = stages.flatMap((stage) => stage.players);
+  const filteredPlayersStats = sortBySex(flattenedPlayersStats, "");
+  const playersStats = filteredPlayersStats.reduce((acc, player) => {
+    const { member_id, win, defeat, position } = player;
+
+    if (!acc[member_id]) {
+      acc[member_id] = {
+        member_id,
+        win: 0,
+        defeat: 0,
+        position: [],
+      };
+    }
+
+    acc[member_id].win += win;
+    acc[member_id].defeat += defeat;
+    acc[member_id].position.push(position);
+
+    return acc;
+  }, {});
+
   const structuredPlayersStats = Object.values(playersStats);
 
   const statsWithWins = structuredPlayersStats.map((el) => {
@@ -90,6 +118,8 @@ export const StatsPage = () => {
   const handleBack = () => {
     navigate(`/tournaments/${tournamentId}`);
   };
+
+  console.log(sortedPlayersStats);
 
   return (
     <>

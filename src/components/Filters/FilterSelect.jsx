@@ -6,8 +6,7 @@ import sprite from "../../sprite.svg";
 
 export const FilterSelect = ({
   id,
-  inputValue,
-  setInputsValue,
+  setFilters,
   typeOptions,
   label,
   placeholder,
@@ -15,27 +14,11 @@ export const FilterSelect = ({
 }) => {
   const [isFilterFocused, setIsFilterFocused] = useState(false);
 
-  const onInputChange = (selectedOption) => {
-    setInputsValue((prev) => {
-      if (label === "Фільтр за категорією") {
-        return {
-          ...prev,
-          type: selectedOption.value,
-        };
-      } else if (label === "Фільтр за днем народження") {
-        return {
-          ...prev,
-          birthday: selectedOption.value,
-        };
-      } else if (label === "Фільтр за датою") {
-        return {
-          ...prev,
-          date: selectedOption.value,
-        };
-      } else {
-        return prev;
-      }
-    });
+  const onInputChange = (e) => {
+    setFilters((prev) => ({
+      ...prev,
+      [id]: e.value,
+    }));
   };
 
   const selectStyles = {
@@ -174,12 +157,11 @@ export const FilterSelect = ({
           IndicatorSeparator: () => null,
         }}
         styles={selectStyles}
-        value={inputValue}
         isSearchable={false}
         onMenuOpen={() => setIsFilterFocused(true)}
         onMenuClose={() => setIsFilterFocused(false)}
         menuIsOpen={isFilterFocused}
-        onChange={(selectedOption) => onInputChange(selectedOption)}
+        onChange={onInputChange}
         options={typeOptions.map((type) => ({
           value: type,
           label: type,

@@ -7,12 +7,6 @@ import { useEffect } from "react";
 import { FilterSelect } from "./FilterSelect";
 
 export const MembersFilterBar = ({ membersArray, setVisibleMembersArray }) => {
-  const [inputsValue, setInputsValue] = useState({
-    name: "",
-    type: "Усі",
-    birthday: "Вимкнути",
-  });
-
   const optionsByType = [
     "Усі",
     "Аматор",
@@ -30,27 +24,55 @@ export const MembersFilterBar = ({ membersArray, setVisibleMembersArray }) => {
     "Найстарші",
     "Наймолодші",
   ];
+  const optionsBySex = ["Усі", "Чоловіки", "Жінки"];
+
+  const NAME = "filterByName";
+  const TYPE = "filterByType";
+  const BIRTH = "filterByBirthday";
+  const SEX = "filterBySex";
+
+  const filterByNameLabel = "Знайти гравця за іменем";
+  const filterByTypeLabel = "Фільтр за категорією";
+  const filterByBirthdayLabel = "Фільтр за днем народження";
+  const filterBySexLabel = "Фільтр за статтю";
+
+  const [filters, setFilters] = useState({
+    [NAME]: "",
+    [TYPE]: optionsByType[0],
+    [BIRTH]: optionsByBirthday[0],
+    [SEX]: optionsBySex[0],
+  });
 
   useEffect(() => {
     const filtredByName = membersArray?.filter((member) =>
-      member.name.toLowerCase().includes(inputsValue.name.toLowerCase())
+      member.name.toLowerCase().includes(filters[NAME].toLowerCase())
     );
 
     const filtredByType =
-      inputsValue.type === "Усі"
+      filters[TYPE] === optionsByType[0]
         ? filtredByName
-        : filtredByName?.filter((member) => member.type === inputsValue.type);
+        : filtredByName?.filter((m) => m.type === filters[TYPE]);
 
-    const filtredByBirthday = filtredByType?.filter((m) => m.birthDate);
-    const withoutBirthDate = filtredByType?.filter((m) => !m.birthDate);
+    const filtredBySex = filtredByType?.filter((m) => {
+      if (filters[SEX] === optionsBySex[1]) {
+        return m.sex === "male";
+      } else if (filters[SEX] === optionsBySex[2]) {
+        return m.sex === "female";
+      } else {
+        return m;
+      }
+    });
+
+    const filtredByBirthday = filtredBySex?.filter((m) => m.birthDate);
+    const withoutBirthDate = filtredBySex?.filter((m) => !m.birthDate);
 
     const formatDate = format(new Date(), "MM-dd");
 
     if (
-      inputsValue.birthday === "Найближчим часом" ||
-      inputsValue.birthday === "Недавно було"
+      filters[BIRTH] === optionsByBirthday[1] ||
+      filters[BIRTH] === optionsByBirthday[2]
     ) {
-      const ascendingOrder = inputsValue.birthday === "Найближчим часом";
+      const ascendingOrder = filters[BIRTH] === optionsByBirthday[1];
 
       filtredByBirthday?.sort((a, b) => {
         const comparison = ascendingOrder
@@ -70,53 +92,54 @@ export const MembersFilterBar = ({ membersArray, setVisibleMembersArray }) => {
         filtredByBirthday.push(...removed);
       }
     }
-
-    if (inputsValue.birthday === "Найстарші") {
+    if (filters[BIRTH] === optionsByBirthday[3]) {
       filtredByBirthday?.sort((a, b) => a.birthDate.localeCompare(b.birthDate));
     }
-
-    if (inputsValue.birthday === "Наймолодші") {
+    if (filters[BIRTH] === optionsByBirthday[4]) {
       filtredByBirthday?.sort((a, b) => b.birthDate.localeCompare(a.birthDate));
     }
-
     filtredByBirthday.push(...withoutBirthDate);
 
     setVisibleMembersArray(filtredByBirthday);
-  }, [
-    inputsValue.birthday,
-    inputsValue.name,
-    inputsValue.type,
-    membersArray,
-    setVisibleMembersArray,
-  ]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [filters, setVisibleMembersArray]);
 
   return (
     <Section>
       <Form onSubmit={(e) => e.preventDefault()}>
         <FilterByName
-          id={"filterByName"}
-          inputsValue={inputsValue}
-          setInputsValue={setInputsValue}
+          id={NAME}
+          value={filters[NAME]}
+          setFilters={setFilters}
+          label={filterByNameLabel}
         />
 
         <FilterSelect
-          id={"filterByType"}
-          inputsValue={inputsValue}
-          setInputsValue={setInputsValue}
+          id={TYPE}
+          value={filters[TYPE]}
+          setFilters={setFilters}
           typeOptions={optionsByType}
-          label={"Фільтр за категорією"}
-          placeholder={"Усі"}
+          label={filterByTypeLabel}
+          placeholder={optionsByType[0]}
           icon={"#icon-list"}
         />
 
         <FilterSelect
-          id={"filterByBirthday"}
-          inputsValue={inputsValue}
-          setInputsValue={setInputsValue}
+          id={BIRTH}
+          setFilters={setFilters}
           typeOptions={optionsByBirthday}
-          label={"Фільтр за днем народження"}
-          placeholder={"Вимкнути"}
+          label={filterByBirthdayLabel}
+          placeholder={optionsByBirthday[0]}
           icon={"#icon-gift"}
+        />
+
+        <FilterSelect
+          id={SEX}
+          setFilters={setFilters}
+          typeOptions={optionsBySex}
+          label={filterBySexLabel}
+          placeholder={optionsBySex[0]}
+          icon={"#icon-sex"}
         />
       </Form>
     </Section>
