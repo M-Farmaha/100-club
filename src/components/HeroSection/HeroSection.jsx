@@ -59,35 +59,41 @@ export const HeroSection = () => {
           </SubTitle>
 
           <HeroButtonsWrap>
-            <ButtonLink to="/gallery">
+            <ButtonWrap>
+              <Button
+                href="https://send.monobank.ua/jar/3MpUJRH8gs"
+                rel="noopener noreferrer"
+                aria-label="Посилання на банку у додатку 'Монобанк'"
+              >
+                <IconSvgWrap>
+                  <IconSvg>
+                    <use href={sprite + "#icon-mono"}></use>
+                  </IconSvg>
+                </IconSvgWrap>
+                Підтримати проект
+              </Button>
+            </ButtonWrap>
+
+            <ButtonLink to="/tournaments">
               <ButtonIconSvg>
-                <use href={sprite + "#icon-camera"}></use>
+                <use href={sprite + "#icon-cup"}></use>
               </ButtonIconSvg>
-              Перейти до галереї
+              Переглянути турніри
             </ButtonLink>
+
             <ButtonLink to="/members">
               <ButtonIconSvg>
                 <use href={sprite + "#icon-users"}></use>
               </ButtonIconSvg>
               Переглянути гравців
             </ButtonLink>
-            <ButtonWrap>
-              <Button
-                href="https://send.monobank.ua/jar/3MpUJRH8gs"
-                rel="noopener noreferrer"
-                aria-label="Посилання на збір коштів у монобанку"
-              >
-                <ButtonIconSvg>
-                  <use href={sprite + "#icon-credit-card"}></use>
-                </ButtonIconSvg>
-                Підтримати розвиток проекту
-              </Button>
-              <IconSvgWrap>
-                <IconSvg>
-                  <use href={sprite + "#icon-mono"}></use>
-                </IconSvg>
-              </IconSvgWrap>
-            </ButtonWrap>
+
+            <ButtonLink to="/gallery">
+              <ButtonIconSvg>
+                <use href={sprite + "#icon-camera"}></use>
+              </ButtonIconSvg>
+              Перейти до галереї
+            </ButtonLink>
           </HeroButtonsWrap>
         </SectionWrap>
       </Section>

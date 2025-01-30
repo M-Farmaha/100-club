@@ -13,7 +13,7 @@ export const StatsSection = () => {
   const experience = new Date().getFullYear() - 2016;
 
   const stats = [
-    { name: "Турнірів зіграно", count: stages, icon: "icon-stats-1" },
+    { name: "Турнірів проведено", count: stages, icon: "icon-stats-1" },
     { name: "Гравців у клубі", count: players, icon: "icon-stats-2" },
     { name: "Років досвіду", count: experience, icon: "icon-stats-3" },
     { name: "Тренерів у клубі", count: trainers.length, icon: "icon-stats-4" },

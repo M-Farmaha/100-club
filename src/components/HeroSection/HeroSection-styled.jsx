@@ -127,8 +127,8 @@ export const SubTitle = styled.p`
 export const HeroButtonsWrap = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  max-width: 500px;
+  row-gap: 10px;
+  column-gap: 20px;
 
   transform: translateX(-120%);
   animation-name: ${showFromLeft};
@@ -140,18 +140,18 @@ export const HeroButtonsWrap = styled.div`
 
 export const ButtonLink = styled(Link)`
   display: inline-flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
   gap: 10px;
 
   height: 50px;
-  padding: 12px;
+  width: 220px;
+  padding: 20px;
 
   border-radius: 50px;
 
-  background-color: var(--primary-black-color);
-  color: var(--primary-white-color);
-  /* box-shadow: var(--box-shadow); */
+  background-color: var(--primary-white-color);
+  color: var(--primary-black-color);
 
   font-size: 14px;
   font-weight: 400;
@@ -165,27 +165,25 @@ export const ButtonLink = styled(Link)`
 
 export const Button = styled.a`
   display: inline-flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
   gap: 10px;
 
-  flex-shrink: 0;
-
   height: 50px;
-  padding: 12px;
+  width: 220px;
+  padding: 20px;
 
-  border: 2px solid var(--primary-white-color);
   border-radius: 50px;
 
-  color: var(--primary-white-color);
+  background-color: var(--primary-white-color);
+  color: var(--primary-black-color);
 
   font-size: 14px;
   font-weight: 400;
 
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: var(--main-transition);
 
   &:hover {
-    border: 2px solid var(--accent-hover-color);
     background-color: var(--accent-hover-color);
   }
 `;
@@ -206,11 +204,10 @@ export const IconSvgWrap = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 50px;
-  margin-left: 10px;
-  min-width: 40px;
-  width: 40px;
-  height: 40px;
+  border-radius: 50%;
+  min-width: 20px;
+  width: 20px;
+  height: 20px;
   background: linear-gradient(to bottom, #576378, #0d1525);
 `;
 

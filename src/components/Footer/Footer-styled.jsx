@@ -3,11 +3,11 @@ import styled, { keyframes } from "styled-components";
 const heartbeat = keyframes`
   0% {
     transform: scale(1);
-    fill: var(--primary-red-color);
+    fill: var(--primary-black-color);
   }
 
   100% {
-    transform: scale(1.5);
+    transform: scale(1.2);
   }
 `;
 
@@ -42,7 +42,7 @@ export const FooterIcon = styled.svg`
   margin-left: 10px;
   margin-right: 10px;
   margin-bottom: -3px;
-  fill: var(--primary-black-color);
+  fill: var(--power-color);
 
   animation-name: ${heartbeat};
   animation-duration: 777ms;
@@ -66,7 +66,7 @@ export const FooterLink = styled.a`
   transition: var(--main-transition);
 
   &:hover {
-    color: var(--primary-red-color);
+    color: var(--power-color);
     text-decoration-color: transparent;
   }
 `;
