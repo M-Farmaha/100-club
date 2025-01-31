@@ -116,7 +116,6 @@ export const MembersFilterBar = ({ membersArray, setVisibleMembersArray }) => {
 
         <FilterSelect
           id={TYPE}
-          value={filters[TYPE]}
           setFilters={setFilters}
           typeOptions={optionsByType}
           label={filterByTypeLabel}

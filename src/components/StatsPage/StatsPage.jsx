@@ -8,6 +8,8 @@ import { StatsItem } from "./StatsItem";
 import { useStateContext } from "../../state/stateContext";
 import { defineRank } from "../../helpers/defineRank";
 import { getPlayerNameById } from "../../helpers/getPlayerNameById";
+import { useState } from "react";
+import { TournamentsMixtFilterBar } from "../Filters/TournamentsMixtFilterBar";
 
 export const StatsPage = () => {
   const { globalState } = useStateContext();
@@ -25,36 +27,13 @@ export const StatsPage = () => {
     year = null,
   } = tournaments?.find((t) => t.id === tournamentId) || {};
 
-  const sortBySex = (array, sex = "") => {
-    const sortedArray = array.map((player) => {
-      if (!sex) return player;
+  const flattenedArray = stages.flatMap((stage) => stage.players);
 
-      if (player.member_id.length === 2) {
-        const memberId = player.member_id.find((id) => {
-          const foundMember = members.find((m) => m.id === id && m.sex === sex);
-          return foundMember;
-        });
+  const isMixt = flattenedArray[0].member_id.length === 2;
 
-        if (memberId) {
-          return {
-            ...player,
-            member_id: [memberId],
-            name: getPlayerNameById([memberId], members),
-          };
-        }
+  const [filteredArray, setFilteredArray] = useState(flattenedArray);
 
-        return player;
-      }
-
-      return player;
-    });
-
-    return sortedArray;
-  };
-
-  const flattenedPlayersStats = stages.flatMap((stage) => stage.players);
-  const filteredPlayersStats = sortBySex(flattenedPlayersStats, "");
-  const playersStats = filteredPlayersStats.reduce((acc, player) => {
+  const playersStats = filteredArray.reduce((acc, player) => {
     const { member_id, win, defeat, position } = player;
 
     if (!acc[member_id]) {
@@ -119,8 +98,6 @@ export const StatsPage = () => {
     navigate(`/tournaments/${tournamentId}`);
   };
 
-  console.log(sortedPlayersStats);
-
   return (
     <>
       <Section>
@@ -132,6 +109,15 @@ export const StatsPage = () => {
             Назад
           </Button>
         </TitleSection>
+
+        {isMixt && (
+          <TournamentsMixtFilterBar
+            flattenedArray={flattenedArray}
+            members={members}
+            setFilteredArray={setFilteredArray}
+          />
+        )}
+
         <List>
           <StatsPageHeading />
           {sortedPlayersStats?.map((el, index) => (

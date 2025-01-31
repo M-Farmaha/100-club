@@ -1517,7 +1517,7 @@
     "type": "Аматор",
     "category": null,
     "forhand": "Справа",
-    "backhand": "Дворучний",
+    "backhand": "Одноручний та Дворучний",
     "joinTennisYear": 1984
   },
   {
@@ -1574,16 +1574,16 @@
   },
   {
     "id": "122",
-    "name": "Химич Юрій",
-    "birthDate": null,
+    "name": "Хімка Юрій",
+    "birthDate": "2006-01-30",
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/122.jpg",
     "sex": "male",
-    "hometown": null,
+    "hometown": "Добротвір",
     "type": "Аматор",
     "category": null,
     "forhand": "Справа",
-    "backhand": "Дворучний",
-    "joinTennisYear": null
+    "backhand": "Одноручний",
+    "joinTennisYear": 2022
   },
   {
     "id": "123",
@@ -1678,7 +1678,7 @@
   },
   {
     "id": "130",
-    "name": "Жукровська",
+    "name": "Жукровська Ксенія",
     "birthDate": null,
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/130.jpg",
     "sex": "female",
@@ -1743,7 +1743,7 @@
   },
   {
     "id": "135",
-    "name": "Шкурко С.",
+    "name": "Шкурко Світлана",
     "birthDate": null,
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/135.jpg",
     "sex": "female",
@@ -1783,15 +1783,15 @@
   {
     "id": "138",
     "name": "Ємельянова Лідія",
-    "birthDate": null,
+    "birthDate": "1983-10-15",
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/138.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "Напів професіонал",
     "category": null,
     "forhand": "Справа",
-    "backhand": "Дворучний",
-    "joinTennisYear": null
+    "backhand": "Одноручний та Дворучний",
+    "joinTennisYear": 1989
   },
   {
     "id": "139",
@@ -1821,7 +1821,7 @@
   },
   {
     "id": "141",
-    "name": "Ченгек Н.",
+    "name": "Ченчак Максим",
     "birthDate": null,
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/141.jpg",
     "sex": "male",
@@ -1961,5 +1961,57 @@
     "forhand": "Зліва",
     "backhand": "Одноручний",
     "joinTennisYear": 2018
+  },
+  {
+    "id": "152",
+    "name": "Сурмай Уляна",
+    "birthDate": "1981-12-30",
+    "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/152.jpg",
+    "sex": "female",
+    "hometown": "Львів",
+    "type": "Аматор",
+    "category": null,
+    "forhand": "Справа",
+    "backhand": "Одноручний",
+    "joinTennisYear": 2024
+  },
+  {
+    "id": "153",
+    "name": "Рехман Леся",
+    "birthDate": "1980-10-30",
+    "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/153.jpg",
+    "sex": "female",
+    "hometown": "Львів",
+    "type": "Аматор",
+    "category": null,
+    "forhand": "Справа",
+    "backhand": "Дворучний",
+    "joinTennisYear": 2024
+  },
+  {
+    "id": "154",
+    "name": "Рехман Дарія",
+    "birthDate": "2009-07-01",
+    "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/154.jpg",
+    "sex": "female",
+    "hometown": "Львів",
+    "type": "Аматор",
+    "category": null,
+    "forhand": "Справа",
+    "backhand": "Дворучний",
+    "joinTennisYear": 2024
+  },
+  {
+    "id": "155",
+    "name": "Лайон Маріна",
+    "birthDate": "1983-08-04",
+    "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/155.jpg",
+    "sex": "female",
+    "hometown": "Чорнобиль",
+    "type": "Аматор",
+    "category": null,
+    "forhand": "Зліва",
+    "backhand": "Дворучний",
+    "joinTennisYear": 2024
   }
 ]
