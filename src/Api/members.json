@@ -2013,5 +2013,18 @@
     "forhand": "Зліва",
     "backhand": "Дворучний",
     "joinTennisYear": 2024
+  },
+  {
+    "id": "156",
+    "name": "Горбаченко Мар'яна",
+    "birthDate": "1997-09-16",
+    "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/156.jpg",
+    "sex": "female",
+    "hometown": "Іванків",
+    "type": "Аматор",
+    "category": null,
+    "forhand": "Справа",
+    "backhand": "Дворучний",
+    "joinTennisYear": 2024
   }
 ]
