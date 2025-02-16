@@ -1588,15 +1588,15 @@
   {
     "id": "123",
     "name": "Зирянова Катерина",
-    "birthDate": null,
+    "birthDate": "1983-07-27",
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/123.jpg",
     "sex": "female",
-    "hometown": null,
+    "hometown": "Краматорськ",
     "type": "Аматор",
     "category": null,
     "forhand": "Справа",
     "backhand": "Дворучний",
-    "joinTennisYear": null
+    "joinTennisYear": 2006
   },
   {
     "id": "124",
@@ -1607,8 +1607,8 @@
     "hometown": null,
     "type": "Аматор",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": null,
+    "backhand": null,
     "joinTennisYear": null
   },
   {
@@ -1632,9 +1632,8 @@
     "sex": "female",
     "hometown": null,
     "type": "Аматор",
-    "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": null,
+    "backhand": null,
     "joinTennisYear": null
   },
   {
@@ -1659,8 +1658,8 @@
     "hometown": "Івано-Франківськ",
     "type": "Аматор",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": null,
+    "backhand": null,
     "joinTennisYear": null
   },
   {
@@ -1672,8 +1671,8 @@
     "hometown": "Івано-Франківськ",
     "type": "Аматор",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": null,
+    "backhand": null,
     "joinTennisYear": null
   },
   {
@@ -1685,8 +1684,8 @@
     "hometown": null,
     "type": "Аматор",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": null,
+    "backhand": null,
     "joinTennisYear": null
   },
   {
@@ -1698,8 +1697,8 @@
     "hometown": null,
     "type": "Аматор",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": null,
+    "backhand": null,
     "joinTennisYear": null
   },
   {
@@ -1711,8 +1710,8 @@
     "hometown": null,
     "type": "Аматор",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": null,
+    "backhand": null,
     "joinTennisYear": null
   },
   {
@@ -1724,8 +1723,8 @@
     "hometown": null,
     "type": "Аматор",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": null,
+    "backhand": null,
     "joinTennisYear": null
   },
   {
@@ -1737,8 +1736,8 @@
     "hometown": "Львів",
     "type": "Аматор",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": null,
+    "backhand": null,
     "joinTennisYear": null
   },
   {
@@ -1750,8 +1749,8 @@
     "hometown": null,
     "type": "Аматор",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": null,
+    "backhand": null,
     "joinTennisYear": null
   },
   {
@@ -1763,8 +1762,8 @@
     "hometown": "Львів",
     "type": "Аматор",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": null,
+    "backhand": null,
     "joinTennisYear": null
   },
   {
@@ -1776,8 +1775,8 @@
     "hometown": null,
     "type": "Аматор",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": null,
+    "backhand": null,
     "joinTennisYear": null
   },
   {
@@ -1802,8 +1801,8 @@
     "hometown": null,
     "type": "Аматор",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": null,
+    "backhand": null,
     "joinTennisYear": null
   },
   {
@@ -1815,8 +1814,8 @@
     "hometown": null,
     "type": "Аматор",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": null,
+    "backhand": null,
     "joinTennisYear": null
   },
   {
@@ -1828,8 +1827,8 @@
     "hometown": null,
     "type": "Аматор",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": null,
+    "backhand": null,
     "joinTennisYear": null
   },
   {
@@ -1841,8 +1840,8 @@
     "hometown": null,
     "type": "Аматор",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": null,
+    "backhand": null,
     "joinTennisYear": null
   },
   {
@@ -1854,8 +1853,8 @@
     "hometown": null,
     "type": "Аматор",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": null,
+    "backhand": null,
     "joinTennisYear": null
   },
   {
@@ -1880,8 +1879,8 @@
     "hometown": null,
     "type": "Аматор",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": null,
+    "backhand": null,
     "joinTennisYear": null
   },
   {
@@ -1893,8 +1892,8 @@
     "hometown": null,
     "type": "Аматор",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": null,
+    "backhand": null,
     "joinTennisYear": null
   },
   {
@@ -1906,8 +1905,8 @@
     "hometown": null,
     "type": "Аматор",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": null,
+    "backhand": null,
     "joinTennisYear": null
   },
   {
@@ -1919,8 +1918,8 @@
     "hometown": null,
     "type": "Аматор",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": null,
+    "backhand": null,
     "joinTennisYear": null
   },
   {
@@ -1932,8 +1931,8 @@
     "hometown": null,
     "type": "Аматор",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": null,
+    "backhand": null,
     "joinTennisYear": null
   },
   {
@@ -2026,5 +2025,18 @@
     "forhand": "Справа",
     "backhand": "Дворучний",
     "joinTennisYear": 2024
+  },
+  {
+    "id": "157",
+    "name": "Цебрик Тарас",
+    "birthDate": null,
+    "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/157.jpg",
+    "sex": "male",
+    "hometown": null,
+    "type": "Аматор",
+    "category": null,
+    "forhand": null,
+    "backhand": null,
+    "joinTennisYear": null
   }
 ]

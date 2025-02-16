@@ -126,10 +126,10 @@ export const MembersModal = () => {
                     {experience}
                   </Text>
                   <Text>
-                    <span>Форхенд:</span> {forhand}
+                    <span>Форхенд:</span> {forhand || " Heвідомо"}
                   </Text>
                   <Text>
-                    <span>Бекхенд:</span> {backhand}
+                    <span>Бекхенд:</span> {backhand || " Heвідомо"}
                   </Text>
 
                   {category && (

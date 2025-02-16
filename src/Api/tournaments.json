@@ -562,12 +562,42 @@
           { "member_id": ["39"], "win": 1, "defeat": 2, "position": 2 },
           { "member_id": ["88"], "win": 1, "defeat": 2, "position": 2 }
         ]
+      },
+      {
+        "date": "2025-02-16",
+        "players": [
+          { "member_id": ["74"], "win": 4, "defeat": 0, "position": 1 },
+          { "member_id": ["70"], "win": 3, "defeat": 1, "position": 2 },
+          { "member_id": ["122"], "win": 1, "defeat": 3, "position": 3 },
+          { "member_id": ["157"], "win": 1, "defeat": 3, "position": 3 },
+          { "member_id": ["12"], "win": 1, "defeat": 3, "position": 3 }
+        ]
       }
     ]
   },
 
   {
     "id": "2025_3",
+    "year": 2025,
+    "name": "Галицькі Паняники",
+    "logo": "logo-GL",
+    "status": "Активний",
+    "stages": [
+      {
+        "date": "2025-02-16",
+        "players": [
+          { "member_id": ["125"], "win": 4, "defeat": 0, "position": 1 },
+          { "member_id": ["150"], "win": 3, "defeat": 1, "position": 2 },
+          { "member_id": ["47"], "win": 2, "defeat": 2, "position": 3 },
+          { "member_id": ["15"], "win": 1, "defeat": 3, "position": 4 },
+          { "member_id": ["127"], "win": 0, "defeat": 4, "position": 5 }
+        ]
+      }
+    ]
+  },
+
+  {
+    "id": "2025_4",
     "year": 2025,
     "name": "Шалений Мікст",
     "logo": "logo-M",
@@ -604,6 +634,15 @@
           { "member_id": ["74", "21"], "win": 1, "defeat": 2, "position": 6 },
           { "member_id": ["100", "29"], "win": 1, "defeat": 2, "position": 7 },
           { "member_id": ["7", "47"], "win": 0, "defeat": 3, "position": 8 }
+        ]
+      },
+      {
+        "date": "2025-02-16",
+        "players": [
+          { "member_id": ["74", "125"], "win": 2, "defeat": 0, "position": 1 },
+          { "member_id": ["157", "117"], "win": 1, "defeat": 1, "position": 2 },
+          { "member_id": ["122", "15"], "win": 1, "defeat": 1, "position": 3 },
+          { "member_id": ["70", "127"], "win": 0, "defeat": 2, "position": 4 }
         ]
       }
     ]
