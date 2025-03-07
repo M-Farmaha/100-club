@@ -539,6 +539,44 @@
   },
 
   {
+    "id": "2024_4",
+    "year": 2024,
+    "name": "Шалений Мікст",
+    "logo": "logo-M",
+    "status": "Завершений",
+    "stages": [
+      {
+        "date": "2024-01-21",
+        "players": [
+          { "member_id": ["31", "22"], "win": 3, "defeat": 0, "position": 1 },
+          { "member_id": ["39", "4"], "win": 2, "defeat": 1, "position": 2 },
+          { "member_id": ["7", "61"], "win": 2, "defeat": 1, "position": 3 },
+          { "member_id": ["26", "48"], "win": 1, "defeat": 2, "position": 4 },
+
+          { "member_id": ["88", "123"], "win": 2, "defeat": 1, "position": 5 },
+          { "member_id": ["100", "48"], "win": 1, "defeat": 2, "position": 6 },
+          { "member_id": ["7", "15"], "win": 1, "defeat": 2, "position": 7 },
+          { "member_id": ["39", "77"], "win": 0, "defeat": 3, "position": 8 }
+        ]
+      },
+      {
+        "date": "2024-08-24",
+        "players": [
+          { "member_id": ["39", "14"], "win": 3, "defeat": 0, "position": 1 },
+          { "member_id": ["7", "2"], "win": 2, "defeat": 1, "position": 2 },
+          { "member_id": ["30", "117"], "win": 2, "defeat": 1, "position": 3 },
+          { "member_id": ["100", "2"], "win": 1, "defeat": 2, "position": 4 },
+
+          { "member_id": ["57", "117"], "win": 2, "defeat": 1, "position": 5 },
+          { "member_id": ["49", "15"], "win": 1, "defeat": 2, "position": 6 },
+          { "member_id": ["26", "61"], "win": 1, "defeat": 2, "position": 7 },
+          { "member_id": ["70", "15"], "win": 0, "defeat": 3, "position": 8 }
+        ]
+      }
+    ]
+  },
+
+  {
     "id": "2025_2",
     "year": 2025,
     "name": "Львівські Батяри",
