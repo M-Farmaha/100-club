@@ -14,12 +14,9 @@ const MembersPage = () => {
 
   return (
     <>
-      <MembersFilterBar
-        membersArray={members}
-        setVisibleMembersArray={setVisibleMembersArray}
-      />
-
+      <MembersFilterBar setVisibleMembersArray={setVisibleMembersArray} />
       <MembersList visibleMembersArray={visibleMembersArray} />
+
       <ChartSection membersArray={members} />
       <Outlet />
     </>

@@ -1,4 +1,5 @@
 import { createContext, useContext, useState, useEffect } from "react";
+import { FILTERS } from "../constants/constants";
 
 const StateContext = createContext();
 
@@ -9,7 +10,17 @@ export const StateProvider = ({ children }) => {
     members: parsedData?.members || [],
     photos: parsedData?.photos || [],
     tournaments: parsedData?.tournaments || [],
+
+    filters: parsedData?.filters || {
+      playersName: FILTERS.playersName.initialValue,
+      playersType: FILTERS.playersType.initialValue,
+      playersBirth: FILTERS.playersBirth.initialValue,
+      playersSex: FILTERS.playersSex.initialValue,
+      galleryDate: FILTERS.galleryDate.initialValue,
+      mixSex: FILTERS.mixSex.initialValue,
+    },
   });
+
   useEffect(() => {
     localStorage.setItem("globalState", JSON.stringify(globalState));
   }, [globalState]);

@@ -2,18 +2,13 @@ import { useEffect, useState } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { differenceInYears } from "date-fns";
 
-import {
-  Avatar,
-  AvatarWrap,
-  DescriptionWrap,
-  ModalContentWrap,
-  Text,
-} from "./Members-styled";
+import { Avatar, AvatarWrap, DescriptionWrap, ModalContentWrap, Text } from "./Members-styled";
 
 import { Modal } from "../Modal/Modal";
 import { Portal } from "../../Routes/Portal/Portal";
 import { useStateContext } from "../../state/stateContext";
 import { getUkrLocaleDate } from "../../helpers/getUkrLocaleDate";
+import { optionsByBackhand, optionsByForhand, optionsBySex, optionsByType } from "../../constants/constants";
 
 export const MembersModal = () => {
   const { globalState } = useStateContext();
@@ -41,15 +36,11 @@ export const MembersModal = () => {
   } = currentMember || {};
 
   const age = differenceInYears(new Date(), new Date(birthDate));
-  const experience = joinTennisYear
-    ? `${new Date().getFullYear() - joinTennisYear} р. тому`
-    : "Невідомо";
+  const experience = joinTennisYear ? `${new Date().getFullYear() - joinTennisYear} р. тому` : "Невідомо";
 
   const birth = new Date(birthDate);
   const today = new Date();
-  const isTodayBirthDay =
-    birth.getDate() === today.getDate() &&
-    birth.getMonth() === today.getMonth();
+  const isTodayBirthDay = birth.getDate() === today.getDate() && birth.getMonth() === today.getMonth();
 
   useEffect(() => {
     document.body.classList.add("modal-open");
@@ -103,7 +94,7 @@ export const MembersModal = () => {
                     <span>Ім'я:</span> {name}
                   </Text>
                   <Text>
-                    <span>Категорія:</span> {type}
+                    <span>Категорія:</span> {optionsByType[type].title}
                   </Text>
                   <Text>
                     <span>Дата народження:</span>
@@ -118,18 +109,14 @@ export const MembersModal = () => {
                     <span>Рідне місто:</span> {hometown || " Heвідомо"}
                   </Text>
                   <Text>
-                    <span>
-                      {`Вперше ${
-                        sex === "male" ? "спробував" : "спробувала"
-                      } теніс: `}
-                    </span>
+                    <span>{`Вперше ${sex === optionsBySex.male.id ? "спробував" : "спробувала"} теніс: `}</span>
                     {experience}
                   </Text>
                   <Text>
-                    <span>Форхенд:</span> {forhand || " Heвідомо"}
+                    <span>Форхенд:</span> {optionsByForhand[forhand].title}
                   </Text>
                   <Text>
-                    <span>Бекхенд:</span> {backhand || " Heвідомо"}
+                    <span>Бекхенд:</span> {optionsByBackhand[backhand].title}
                   </Text>
 
                   {category && (

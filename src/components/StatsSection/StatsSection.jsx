@@ -2,6 +2,7 @@ import { List, Section, SectionWrap } from "./StatsSection-styled";
 
 import { StatItem } from "./StatsItem";
 import { useStateContext } from "../../state/stateContext";
+import { filterOptionsByType } from "../../constants/constants";
 
 export const StatsSection = () => {
   const { globalState } = useStateContext();
@@ -9,7 +10,7 @@ export const StatsSection = () => {
 
   const stages = tournaments.flatMap((tournament) => tournament.stages).length;
   const players = members.length;
-  const trainers = members.filter((member) => member.type === "Тренер");
+  const trainers = members.filter((member) => member.type === filterOptionsByType.coach.id);
   const experience = new Date().getFullYear() - 2016;
 
   const stats = [
@@ -25,12 +26,7 @@ export const StatsSection = () => {
         <SectionWrap>
           <List>
             {stats.map((stat) => (
-              <StatItem
-                key={stat.name}
-                name={stat.name}
-                count={stat.count}
-                icon={stat.icon}
-              />
+              <StatItem key={stat.name} name={stat.name} count={stat.count} icon={stat.icon} />
             ))}
           </List>
         </SectionWrap>

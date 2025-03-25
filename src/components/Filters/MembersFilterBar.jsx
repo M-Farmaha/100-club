@@ -1,143 +1,96 @@
-import { useState } from "react";
 import { format } from "date-fns";
 
 import { Form, Section } from "./Filters-styled";
 import { FilterByName } from "./FilterByName";
 import { useEffect } from "react";
 import { FilterSelect } from "./FilterSelect";
+import { useStateContext } from "../../state/stateContext";
+import { FILTERS, filterOptionsByBirth, filterOptionsBySex, filterOptionsByType } from "../../constants/constants";
 
-export const MembersFilterBar = ({ membersArray, setVisibleMembersArray }) => {
-  const optionsByType = [
-    "Усі",
-    "Аматор",
-    "Напів професіонал",
-    "Професіонал",
-    "Легенда",
-    "Тренер",
-    "Дитяча група",
-    "Тенісна мама",
-  ];
-  const optionsByBirthday = [
-    "Вимкнути",
-    "Найближчим часом",
-    "Недавно було",
-    "Найстарші",
-    "Наймолодші",
-  ];
-  const optionsBySex = ["Усі", "Чоловіки", "Жінки"];
+export const MembersFilterBar = ({ setVisibleMembersArray }) => {
+  const { globalState } = useStateContext();
+  const { members, filters } = globalState;
 
-  const NAME = "filterByName";
-  const TYPE = "filterByType";
-  const BIRTH = "filterByBirthday";
-  const SEX = "filterBySex";
-
-  const filterByNameLabel = "Знайти гравця за іменем";
-  const filterByTypeLabel = "Фільтр за категорією";
-  const filterByBirthdayLabel = "Фільтр за днем народження";
-  const filterBySexLabel = "Фільтр за статтю";
-
-  const [filters, setFilters] = useState({
-    [NAME]: "",
-    [TYPE]: optionsByType[0],
-    [BIRTH]: optionsByBirthday[0],
-    [SEX]: optionsBySex[0],
-  });
+  const { playersName, playersType, playersBirth, playersSex } = filters || {};
 
   useEffect(() => {
-    const filtredByName = membersArray?.filter((member) =>
-      member.name.toLowerCase().includes(filters[NAME].toLowerCase())
-    );
+    if (!members) return;
+    const filtredByName = members?.filter((m) => m.name.toLowerCase().includes(playersName.toLowerCase()));
 
     const filtredByType =
-      filters[TYPE] === optionsByType[0]
-        ? filtredByName
-        : filtredByName?.filter((m) => m.type === filters[TYPE]);
+      playersType === filterOptionsByType.all.id ? filtredByName : filtredByName?.filter((m) => m.type === playersType);
 
-    const filtredBySex = filtredByType?.filter((m) => {
-      if (filters[SEX] === optionsBySex[1]) {
-        return m.sex === "male";
-      } else if (filters[SEX] === optionsBySex[2]) {
-        return m.sex === "female";
-      } else {
-        return m;
+    const filtredBySex =
+      playersSex === filterOptionsBySex.all.id ? filtredByType : filtredByType?.filter((m) => m.sex === playersSex);
+
+    let filtredByBirth = filtredBySex;
+
+    if (playersBirth !== filterOptionsByBirth.off.id) {
+      const membersWithBirth = filtredBySex?.filter((m) => m.birthDate);
+      const membersWithoutBirth = filtredBySex?.filter((m) => !m.birthDate);
+
+      const formatDate = format(new Date(), "MM-dd");
+
+      const ascendingOrder = playersBirth === filterOptionsByBirth.upcoming.id;
+      const descendingOrder = playersBirth === filterOptionsByBirth.recently.id;
+
+      if (ascendingOrder || descendingOrder) {
+        membersWithBirth?.sort((a, b) => {
+          const comparison = ascendingOrder
+            ? a.birthDate.slice(5).localeCompare(b.birthDate.slice(5))
+            : b.birthDate.slice(5).localeCompare(a.birthDate.slice(5));
+          return comparison;
+        });
+
+        const index = membersWithBirth.findIndex((el) =>
+          ascendingOrder ? el.birthDate.slice(5) >= formatDate : el.birthDate.slice(5) <= formatDate
+        );
+
+        if (index !== -1) {
+          const removed = membersWithBirth.splice(0, index);
+          membersWithBirth.push(...removed);
+        }
       }
-    });
 
-    const filtredByBirthday = filtredBySex?.filter((m) => m.birthDate);
-    const withoutBirthDate = filtredBySex?.filter((m) => !m.birthDate);
-
-    const formatDate = format(new Date(), "MM-dd");
-
-    if (
-      filters[BIRTH] === optionsByBirthday[1] ||
-      filters[BIRTH] === optionsByBirthday[2]
-    ) {
-      const ascendingOrder = filters[BIRTH] === optionsByBirthday[1];
-
-      filtredByBirthday?.sort((a, b) => {
-        const comparison = ascendingOrder
-          ? a.birthDate.slice(5).localeCompare(b.birthDate.slice(5))
-          : b.birthDate.slice(5).localeCompare(a.birthDate.slice(5));
-        return comparison;
-      });
-
-      const index = filtredByBirthday.findIndex((el) =>
-        ascendingOrder
-          ? el.birthDate.slice(5) >= formatDate
-          : el.birthDate.slice(5) <= formatDate
-      );
-
-      if (index !== -1) {
-        const removed = filtredByBirthday.splice(0, index);
-        filtredByBirthday.push(...removed);
+      if (playersBirth === filterOptionsByBirth.oldest.id) {
+        membersWithBirth?.sort((a, b) => a.birthDate.localeCompare(b.birthDate));
       }
-    }
-    if (filters[BIRTH] === optionsByBirthday[3]) {
-      filtredByBirthday?.sort((a, b) => a.birthDate.localeCompare(b.birthDate));
-    }
-    if (filters[BIRTH] === optionsByBirthday[4]) {
-      filtredByBirthday?.sort((a, b) => b.birthDate.localeCompare(a.birthDate));
-    }
-    filtredByBirthday.push(...withoutBirthDate);
+      if (playersBirth === filterOptionsByBirth.youngest.id) {
+        membersWithBirth?.sort((a, b) => b.birthDate.localeCompare(a.birthDate));
+      }
 
-    setVisibleMembersArray(filtredByBirthday);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [filters, setVisibleMembersArray]);
+      filtredByBirth = [...membersWithBirth, ...membersWithoutBirth];
+    }
+
+    setVisibleMembersArray(filtredByBirth);
+  }, [members, playersBirth, playersName, playersSex, playersType, setVisibleMembersArray]);
 
   return (
     <Section>
       <Form onSubmit={(e) => e.preventDefault()}>
-        <FilterByName
-          id={NAME}
-          value={filters[NAME]}
-          setFilters={setFilters}
-          label={filterByNameLabel}
-        />
+        <FilterByName id={FILTERS.playersName.id} value={playersName} label={FILTERS.playersName.label} />
 
         <FilterSelect
-          id={TYPE}
-          setFilters={setFilters}
-          typeOptions={optionsByType}
-          label={filterByTypeLabel}
-          placeholder={optionsByType[0]}
+          id={FILTERS.playersType.id}
+          options={filterOptionsByType}
+          label={FILTERS.playersType.label}
+          placeholder={filterOptionsByType[playersType]?.title}
           icon={"#icon-list"}
         />
 
         <FilterSelect
-          id={BIRTH}
-          setFilters={setFilters}
-          typeOptions={optionsByBirthday}
-          label={filterByBirthdayLabel}
-          placeholder={optionsByBirthday[0]}
+          id={FILTERS.playersBirth.id}
+          options={filterOptionsByBirth}
+          label={FILTERS.playersBirth.label}
+          placeholder={filterOptionsByBirth[playersBirth]?.title}
           icon={"#icon-gift"}
         />
 
         <FilterSelect
-          id={SEX}
-          setFilters={setFilters}
-          typeOptions={optionsBySex}
-          label={filterBySexLabel}
-          placeholder={optionsBySex[0]}
+          id={FILTERS.playersSex.id}
+          options={filterOptionsBySex}
+          label={FILTERS.playersSex.label}
+          placeholder={filterOptionsBySex[playersSex]?.title}
           icon={"#icon-sex"}
         />
       </Form>

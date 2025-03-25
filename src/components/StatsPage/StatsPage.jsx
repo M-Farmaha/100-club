@@ -21,15 +21,11 @@ export const StatsPage = () => {
   const parts = pathname.split("/");
   const tournamentId = parts[2];
 
-  const {
-    name = "",
-    stages = [],
-    year = null,
-  } = tournaments?.find((t) => t.id === tournamentId) || {};
+  const { name = "", stages = [], year = null } = tournaments?.find((t) => t.id === tournamentId) || {};
 
   const flattenedArray = stages.flatMap((stage) => stage.players);
 
-  const isMixt = flattenedArray[0].member_id.length === 2;
+  const isMixt = flattenedArray[0]?.member_id.length === 2;
 
   const [filteredArray, setFilteredArray] = useState(flattenedArray);
 
@@ -76,14 +72,11 @@ export const StatsPage = () => {
   });
 
   let globalPosition = 1;
-  let prevWinCount = sortedPlayersStats[0].winCount;
-  let prevTopFiveRank = sortedPlayersStats[0].topFiveRank;
+  let prevWinCount = sortedPlayersStats[0]?.winCount;
+  let prevTopFiveRank = sortedPlayersStats[0]?.topFiveRank;
 
   sortedPlayersStats.forEach((player, index) => {
-    if (
-      player.winCount === prevWinCount &&
-      player.topFiveRank === prevTopFiveRank
-    ) {
+    if (player.winCount === prevWinCount && player.topFiveRank === prevTopFiveRank) {
       player.globalPosition = globalPosition;
     } else {
       globalPosition = index + 1;

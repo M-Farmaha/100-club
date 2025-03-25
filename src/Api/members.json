@@ -6,10 +6,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/1.jpg",
     "sex": "male",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Зліва",
-    "backhand": "Одноручний",
+    "forhand": "left",
+    "backhand": "onehand",
     "joinTennisYear": 2021
   },
   {
@@ -19,10 +19,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/2.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2015
   },
   {
@@ -32,10 +32,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/3.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2015
   },
   {
@@ -45,10 +45,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/4.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Напів професіонал",
+    "type": "semiProfessional",
     "category": "Перший",
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 1987
   },
   {
@@ -58,10 +58,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/5.jpg",
     "sex": "male",
     "hometown": "Дубляни",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Одноручний",
+    "forhand": "right",
+    "backhand": "onehand",
     "joinTennisYear": 1995
   },
   {
@@ -71,10 +71,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/6.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Одноручний",
+    "forhand": "right",
+    "backhand": "onehand",
     "joinTennisYear": 2021
   },
   {
@@ -84,10 +84,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/7.jpg",
     "sex": "male",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Одноручний",
+    "forhand": "right",
+    "backhand": "onehand",
     "joinTennisYear": 2018
   },
   {
@@ -97,10 +97,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/8.jpg",
     "sex": "male",
     "hometown": "Львів",
-    "type": "Напів професіонал",
+    "type": "semiProfessional",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2011
   },
   {
@@ -110,10 +110,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/9.jpg",
     "sex": "male",
     "hometown": "Львів",
-    "type": "Тренер",
+    "type": "coach",
     "category": null,
-    "forhand": "Зліва",
-    "backhand": "Одноручний",
+    "forhand": "left",
+    "backhand": "onehand",
     "joinTennisYear": 2011
   },
   {
@@ -123,10 +123,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/10.jpg",
     "sex": "male",
     "hometown": "Львів",
-    "type": "Дитяча група",
+    "type": "juniorGroup",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2023
   },
   {
@@ -136,10 +136,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/11.jpg",
     "sex": "male",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2020
   },
   {
@@ -149,10 +149,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/12.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2020
   },
   {
@@ -162,10 +162,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/13.jpg",
     "sex": "male",
     "hometown": "Львів",
-    "type": "Напів професіонал",
+    "type": "semiProfessional",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Одноручний",
+    "forhand": "right",
+    "backhand": "onehand",
     "joinTennisYear": 1985
   },
   {
@@ -175,10 +175,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/14.jpg",
     "sex": "female",
     "hometown": "Свалява, Закарпатська обл.",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2016
   },
   {
@@ -188,10 +188,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/15.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2023
   },
   {
@@ -201,10 +201,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/16.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Дитяча група",
+    "type": "juniorGroup",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2022
   },
   {
@@ -214,10 +214,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/17.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Зліва",
-    "backhand": "Дворучний",
+    "forhand": "left",
+    "backhand": "twohand",
     "joinTennisYear": 1997
   },
   {
@@ -227,10 +227,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/18.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2011
   },
   {
@@ -240,10 +240,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/19.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Напів професіонал",
+    "type": "semiProfessional",
     "category": "Третій",
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2016
   },
   {
@@ -253,10 +253,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/20.jpg",
     "sex": "male",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2016
   },
   {
@@ -266,10 +266,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/21.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Тренер",
+    "type": "coach",
     "category": "КМС",
-    "forhand": "Справа",
-    "backhand": "Одноручний та Дворучний",
+    "forhand": "right",
+    "backhand": "both",
     "joinTennisYear": 1986
   },
   {
@@ -279,10 +279,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/22.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Зліва",
-    "backhand": "Дворучний",
+    "forhand": "left",
+    "backhand": "twohand",
     "joinTennisYear": 2016
   },
   {
@@ -292,10 +292,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/23.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Професіонал",
+    "type": "professional",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Одноручний та Дворучний",
+    "forhand": "right",
+    "backhand": "both",
     "joinTennisYear": 2017
   },
   {
@@ -305,10 +305,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/24.jpg",
     "sex": "male",
     "hometown": "Львів",
-    "type": "Дитяча група",
+    "type": "juniorGroup",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Одноручний та Дворучний",
+    "forhand": "right",
+    "backhand": "both",
     "joinTennisYear": 2023
   },
   {
@@ -318,10 +318,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/25.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Тенісна мама",
+    "type": "tennisMom",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Одноручний та Дворучний",
+    "forhand": "right",
+    "backhand": "both",
     "joinTennisYear": 2017
   },
   {
@@ -331,10 +331,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/26.jpg",
     "sex": "male",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Одноручний та Дворучний",
+    "forhand": "right",
+    "backhand": "both",
     "joinTennisYear": 2014
   },
   {
@@ -344,10 +344,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/27.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Одноручний",
+    "forhand": "right",
+    "backhand": "onehand",
     "joinTennisYear": 2015
   },
   {
@@ -357,10 +357,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/28.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Одноручний",
+    "forhand": "right",
+    "backhand": "onehand",
     "joinTennisYear": 2022
   },
   {
@@ -370,10 +370,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/29.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2019
   },
   {
@@ -383,10 +383,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/30.jpg",
     "sex": "male",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2018
   },
   {
@@ -396,10 +396,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/31.jpg",
     "sex": "male",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Одноручний",
+    "forhand": "right",
+    "backhand": "onehand",
     "joinTennisYear": 2014
   },
   {
@@ -409,10 +409,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/32.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Дитяча група",
+    "type": "juniorGroup",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2022
   },
   {
@@ -422,10 +422,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/33.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2014
   },
   {
@@ -435,10 +435,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/34.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2022
   },
   {
@@ -448,10 +448,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/35.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Професіонал",
+    "type": "professional",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2016
   },
   {
@@ -461,10 +461,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/36.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2023
   },
   {
@@ -474,10 +474,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/37.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2016
   },
   {
@@ -487,10 +487,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/38.jpg",
     "sex": "male",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Одноручний та Дворучний",
+    "forhand": "right",
+    "backhand": "both",
     "joinTennisYear": 2016
   },
   {
@@ -500,10 +500,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/39.jpg",
     "sex": "male",
     "hometown": "Львів",
-    "type": "Легенда",
+    "type": "legend",
     "category": null,
-    "forhand": "Зліва",
-    "backhand": "Одноручний",
+    "forhand": "left",
+    "backhand": "onehand",
     "joinTennisYear": 2008
   },
   {
@@ -513,10 +513,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/40.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2022
   },
   {
@@ -526,10 +526,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/41.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2022
   },
   {
@@ -539,10 +539,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/42.jpg",
     "sex": "male",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 1988
   },
   {
@@ -552,10 +552,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/43.jpg",
     "sex": "male",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Одноручний",
+    "forhand": "right",
+    "backhand": "onehand",
     "joinTennisYear": 2019
   },
   {
@@ -565,10 +565,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/44.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2010
   },
   {
@@ -578,10 +578,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/45.jpg",
     "sex": "male",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Одноручний",
+    "forhand": "right",
+    "backhand": "onehand",
     "joinTennisYear": 2020
   },
   {
@@ -591,10 +591,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/46.jpg",
     "sex": "male",
     "hometown": "Харків",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Зліва",
-    "backhand": "Дворучний",
+    "forhand": "left",
+    "backhand": "twohand",
     "joinTennisYear": 2022
   },
   {
@@ -604,10 +604,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/47.jpg",
     "sex": "female",
     "hometown": "Новоселиця, Закарпатська обл.",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2015
   },
   {
@@ -617,10 +617,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/48.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2015
   },
   {
@@ -630,10 +630,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/49.jpg",
     "sex": "male",
     "hometown": "Стрий",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Одноручний",
+    "forhand": "right",
+    "backhand": "onehand",
     "joinTennisYear": 2001
   },
   {
@@ -643,10 +643,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/50.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2023
   },
   {
@@ -656,10 +656,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/51.jpg",
     "sex": "female",
     "hometown": "Краматорськ",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2016
   },
   {
@@ -669,10 +669,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/52.jpg",
     "sex": "male",
     "hometown": "Трускавець",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Одноручний та Дворучний",
+    "forhand": "right",
+    "backhand": "both",
     "joinTennisYear": 1990
   },
   {
@@ -682,10 +682,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/53.jpg",
     "sex": "male",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Одноручний",
+    "forhand": "right",
+    "backhand": "onehand",
     "joinTennisYear": 2019
   },
   {
@@ -695,10 +695,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/54.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Дитяча група",
+    "type": "juniorGroup",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2023
   },
   {
@@ -708,10 +708,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/55.jpg",
     "sex": "male",
     "hometown": "Миколаїв, Львівська обл.",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2015
   },
   {
@@ -721,10 +721,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/56.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Тренер",
+    "type": "coach",
     "category": "МС",
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 1994
   },
   {
@@ -734,10 +734,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/57.jpg",
     "sex": "male",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2014
   },
   {
@@ -747,10 +747,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/58.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2014
   },
   {
@@ -760,10 +760,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/59.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2017
   },
   {
@@ -773,10 +773,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/60.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Зліва",
-    "backhand": "Дворучний",
+    "forhand": "left",
+    "backhand": "twohand",
     "joinTennisYear": 2015
   },
   {
@@ -786,10 +786,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/61.jpg",
     "sex": "female",
     "hometown": "Міжгір'я, Закарпатська обл.",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2014
   },
   {
@@ -799,10 +799,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/62.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Зліва",
-    "backhand": "Дворучний",
+    "forhand": "left",
+    "backhand": "twohand",
     "joinTennisYear": 2014
   },
   {
@@ -812,10 +812,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/63.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Професіонал",
+    "type": "professional",
     "category": "МС",
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2014
   },
   {
@@ -825,10 +825,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/64.jpg",
     "sex": "male",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Одноручний",
+    "forhand": "right",
+    "backhand": "onehand",
     "joinTennisYear": 2014
   },
   {
@@ -838,10 +838,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/65.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2010
   },
   {
@@ -851,10 +851,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/66.jpg",
     "sex": "female",
     "hometown": "Брюховичі",
-    "type": "Професіонал",
+    "type": "professional",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2015
   },
   {
@@ -864,10 +864,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/67.jpg",
     "sex": "male",
     "hometown": "Берегове, Закарпатська обл.",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2021
   },
   {
@@ -877,10 +877,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/68.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2017
   },
   {
@@ -890,10 +890,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/69.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2016
   },
   {
@@ -903,10 +903,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/70.jpg",
     "sex": "male",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Одноручний",
+    "forhand": "right",
+    "backhand": "onehand",
     "joinTennisYear": 2023
   },
   {
@@ -916,10 +916,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/71.jpg",
     "sex": "male",
     "hometown": "Львів",
-    "type": "Дитяча група",
+    "type": "juniorGroup",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2021
   },
   {
@@ -929,10 +929,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/72.jpg",
     "sex": "male",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2015
   },
   {
@@ -942,10 +942,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/73.jpg",
     "sex": "male",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Одноручний",
+    "forhand": "right",
+    "backhand": "onehand",
     "joinTennisYear": 2018
   },
   {
@@ -955,10 +955,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/74.jpg",
     "sex": "male",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2018
   },
   {
@@ -968,10 +968,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/75.jpg",
     "sex": "male",
     "hometown": "Львів",
-    "type": "Дитяча група",
+    "type": "juniorGroup",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2021
   },
   {
@@ -981,10 +981,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/76.jpg",
     "sex": "male",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2016
   },
   {
@@ -994,10 +994,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/77.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2018
   },
   {
@@ -1007,10 +1007,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/78.jpg",
     "sex": "male",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2016
   },
   {
@@ -1020,10 +1020,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/79.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2012
   },
   {
@@ -1033,10 +1033,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/80.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2015
   },
   {
@@ -1046,10 +1046,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/81.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2016
   },
   {
@@ -1059,10 +1059,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/82.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2015
   },
   {
@@ -1072,10 +1072,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/83.jpg",
     "sex": "male",
     "hometown": "Львів",
-    "type": "Напів професіонал",
+    "type": "semiProfessional",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Одноручний",
+    "forhand": "right",
+    "backhand": "onehand",
     "joinTennisYear": 2017
   },
   {
@@ -1085,10 +1085,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/84.jpg",
     "sex": "male",
     "hometown": "Рівне",
-    "type": "Професіонал",
+    "type": "professional",
     "category": "КМС",
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2014
   },
   {
@@ -1098,10 +1098,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/85.jpg",
     "sex": "male",
     "hometown": "Тернопіль",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Одноручний",
+    "forhand": "right",
+    "backhand": "onehand",
     "joinTennisYear": 2019
   },
   {
@@ -1111,10 +1111,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/86.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2022
   },
   {
@@ -1124,10 +1124,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/87.jpg",
     "sex": "male",
     "hometown": "Львів",
-    "type": "Дитяча група",
+    "type": "juniorGroup",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2022
   },
   {
@@ -1137,10 +1137,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/88.jpg",
     "sex": "male",
     "hometown": "Івано-Франківськ",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Одноручний",
+    "forhand": "right",
+    "backhand": "onehand",
     "joinTennisYear": 1990
   },
   {
@@ -1150,10 +1150,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/89.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Тренер",
+    "type": "coach",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2013
   },
   {
@@ -1163,10 +1163,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/90.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Напів професіонал",
+    "type": "semiProfessional",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2013
   },
   {
@@ -1176,10 +1176,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/91.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Напів професіонал",
+    "type": "semiProfessional",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2015
   },
   {
@@ -1189,10 +1189,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/92.jpg",
     "sex": "male",
     "hometown": "Жовква",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Одноручний",
+    "forhand": "right",
+    "backhand": "onehand",
     "joinTennisYear": 2023
   },
   {
@@ -1202,10 +1202,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/93.jpg",
     "sex": "female",
     "hometown": "Жовква",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Одноручний",
+    "forhand": "right",
+    "backhand": "onehand",
     "joinTennisYear": 2023
   },
   {
@@ -1215,10 +1215,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/94.jpg",
     "sex": "female",
     "hometown": "Жовква",
-    "type": "Дитяча група",
+    "type": "juniorGroup",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2023
   },
   {
@@ -1228,10 +1228,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/95.jpg",
     "sex": "male",
     "hometown": "Жовква",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Одноручний",
+    "forhand": "right",
+    "backhand": "onehand",
     "joinTennisYear": 2023
   },
   {
@@ -1241,10 +1241,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/96.jpg",
     "sex": "male",
     "hometown": "Жовква",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Одноручний",
+    "forhand": "right",
+    "backhand": "onehand",
     "joinTennisYear": 2023
   },
   {
@@ -1254,10 +1254,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/97.jpg",
     "sex": "male",
     "hometown": "Рівне",
-    "type": "Дитяча група",
+    "type": "juniorGroup",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2023
   },
   {
@@ -1267,10 +1267,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/98.jpg",
     "sex": "female",
     "hometown": "Рівне",
-    "type": "Тренер",
+    "type": "coach",
     "category": "МС",
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 1989
   },
   {
@@ -1280,10 +1280,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/99.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Тренер",
+    "type": "coach",
     "category": "КМС",
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2012
   },
   {
@@ -1293,10 +1293,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/100.jpg",
     "sex": "male",
     "hometown": "Старява, Львівська обл.",
-    "type": "Тренер",
+    "type": "coach",
     "category": "Перший",
-    "forhand": "Справа",
-    "backhand": "Одноручний",
+    "forhand": "right",
+    "backhand": "onehand",
     "joinTennisYear": 1987
   },
   {
@@ -1306,10 +1306,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/101.jpg",
     "sex": "male",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2015
   },
   {
@@ -1319,10 +1319,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/102.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2007
   },
   {
@@ -1332,10 +1332,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/103.jpg",
     "sex": "female",
     "hometown": "Харків",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2020
   },
   {
@@ -1345,10 +1345,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/104.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Зліва",
-    "backhand": "Дворучний",
+    "forhand": "left",
+    "backhand": "twohand",
     "joinTennisYear": 2015
   },
   {
@@ -1358,10 +1358,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/105.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2016
   },
   {
@@ -1371,10 +1371,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/106.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2021
   },
   {
@@ -1384,10 +1384,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/107.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Дитяча група",
+    "type": "juniorGroup",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2021
   },
   {
@@ -1397,10 +1397,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/108.jpg",
     "sex": "male",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2011
   },
   {
@@ -1410,10 +1410,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/109.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Зліва",
-    "backhand": "Дворучний",
+    "forhand": "left",
+    "backhand": "twohand",
     "joinTennisYear": 2011
   },
   {
@@ -1423,10 +1423,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/110.jpg",
     "sex": "male",
     "hometown": "Львів",
-    "type": "Професіонал",
+    "type": "professional",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2011
   },
   {
@@ -1436,10 +1436,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/111.jpg",
     "sex": "male",
     "hometown": "Львів",
-    "type": "Напів професіонал",
+    "type": "semiProfessional",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2010
   },
   {
@@ -1449,10 +1449,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/112.jpg",
     "sex": "male",
     "hometown": "Львів",
-    "type": "Напів професіонал",
+    "type": "semiProfessional",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2010
   },
   {
@@ -1462,10 +1462,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/113.jpg",
     "sex": "male",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2022
   },
   {
@@ -1475,10 +1475,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/114.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2022
   },
   {
@@ -1488,10 +1488,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/115.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Професіонал",
+    "type": "professional",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2012
   },
   {
@@ -1501,10 +1501,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/116.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Дитяча група",
+    "type": "juniorGroup",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2023
   },
   {
@@ -1514,10 +1514,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/117.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Одноручний та Дворучний",
+    "forhand": "right",
+    "backhand": "both",
     "joinTennisYear": 1984
   },
   {
@@ -1527,10 +1527,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/118.jpg",
     "sex": "male",
     "hometown": "Золочів",
-    "type": "Тренер",
+    "type": "coach",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 1997
   },
   {
@@ -1540,10 +1540,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/119.jpg",
     "sex": "male",
     "hometown": "Трускавець",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 1999
   },
   {
@@ -1553,10 +1553,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/120.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Професіонал",
+    "type": "professional",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2017
   },
   {
@@ -1566,10 +1566,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/121.jpg",
     "sex": "female",
     "hometown": "Суми",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 1994
   },
   {
@@ -1579,10 +1579,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/122.jpg",
     "sex": "male",
     "hometown": "Добротвір",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Одноручний",
+    "forhand": "right",
+    "backhand": "onehand",
     "joinTennisYear": 2022
   },
   {
@@ -1592,10 +1592,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/123.jpg",
     "sex": "female",
     "hometown": "Краматорськ",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2006
   },
   {
@@ -1605,7 +1605,7 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/124.jpg",
     "sex": "female",
     "hometown": null,
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
     "forhand": null,
     "backhand": null,
@@ -1618,10 +1618,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/125.jpg",
     "sex": "female",
     "hometown": "Золочів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2023
   },
   {
@@ -1631,7 +1631,7 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/126.jpg",
     "sex": "female",
     "hometown": null,
-    "type": "Аматор",
+    "type": "amateur",
     "forhand": null,
     "backhand": null,
     "joinTennisYear": null
@@ -1643,10 +1643,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/127.jpg",
     "sex": "female",
     "hometown": "Золочів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2023
   },
   {
@@ -1656,7 +1656,7 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/128.jpg",
     "sex": "female",
     "hometown": "Івано-Франківськ",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
     "forhand": null,
     "backhand": null,
@@ -1669,7 +1669,7 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/129.jpg",
     "sex": "female",
     "hometown": "Івано-Франківськ",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
     "forhand": null,
     "backhand": null,
@@ -1682,7 +1682,7 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/130.jpg",
     "sex": "female",
     "hometown": null,
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
     "forhand": null,
     "backhand": null,
@@ -1695,7 +1695,7 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/131.jpg",
     "sex": "female",
     "hometown": null,
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
     "forhand": null,
     "backhand": null,
@@ -1708,7 +1708,7 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/132.jpg",
     "sex": "female",
     "hometown": null,
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
     "forhand": null,
     "backhand": null,
@@ -1721,7 +1721,7 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/133.jpg",
     "sex": "female",
     "hometown": null,
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
     "forhand": null,
     "backhand": null,
@@ -1734,7 +1734,7 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/134.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
     "forhand": null,
     "backhand": null,
@@ -1747,7 +1747,7 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/135.jpg",
     "sex": "female",
     "hometown": null,
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
     "forhand": null,
     "backhand": null,
@@ -1760,7 +1760,7 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/136.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
     "forhand": null,
     "backhand": null,
@@ -1773,7 +1773,7 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/137.jpg",
     "sex": "female",
     "hometown": null,
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
     "forhand": null,
     "backhand": null,
@@ -1786,10 +1786,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/138.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Напів професіонал",
+    "type": "semiProfessional",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Одноручний та Дворучний",
+    "forhand": "right",
+    "backhand": "both",
     "joinTennisYear": 1989
   },
   {
@@ -1799,7 +1799,7 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/139.jpg",
     "sex": "male",
     "hometown": null,
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
     "forhand": null,
     "backhand": null,
@@ -1812,7 +1812,7 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/140.jpg",
     "sex": "male",
     "hometown": null,
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
     "forhand": null,
     "backhand": null,
@@ -1825,7 +1825,7 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/141.jpg",
     "sex": "male",
     "hometown": null,
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
     "forhand": null,
     "backhand": null,
@@ -1838,7 +1838,7 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/142.jpg",
     "sex": "female",
     "hometown": null,
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
     "forhand": null,
     "backhand": null,
@@ -1851,7 +1851,7 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/143.jpg",
     "sex": "female",
     "hometown": null,
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
     "forhand": null,
     "backhand": null,
@@ -1864,10 +1864,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/144.jpg",
     "sex": "male",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2024
   },
   {
@@ -1877,7 +1877,7 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/145.jpg",
     "sex": "male",
     "hometown": null,
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
     "forhand": null,
     "backhand": null,
@@ -1890,7 +1890,7 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/146.jpg",
     "sex": "male",
     "hometown": null,
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
     "forhand": null,
     "backhand": null,
@@ -1903,7 +1903,7 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/147.jpg",
     "sex": "male",
     "hometown": null,
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
     "forhand": null,
     "backhand": null,
@@ -1916,7 +1916,7 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/148.jpg",
     "sex": "female",
     "hometown": null,
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
     "forhand": null,
     "backhand": null,
@@ -1929,7 +1929,7 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/149.jpg",
     "sex": "male",
     "hometown": null,
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
     "forhand": null,
     "backhand": null,
@@ -1942,10 +1942,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/150.jpg",
     "sex": "female",
     "hometown": "Харків",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 1994
   },
   {
@@ -1955,10 +1955,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/151.jpg",
     "sex": "male",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Зліва",
-    "backhand": "Одноручний",
+    "forhand": "left",
+    "backhand": "onehand",
     "joinTennisYear": 2018
   },
   {
@@ -1968,10 +1968,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/152.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Одноручний",
+    "forhand": "right",
+    "backhand": "onehand",
     "joinTennisYear": 2024
   },
   {
@@ -1981,10 +1981,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/153.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2024
   },
   {
@@ -1994,10 +1994,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/154.jpg",
     "sex": "female",
     "hometown": "Львів",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2024
   },
   {
@@ -2007,10 +2007,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/155.jpg",
     "sex": "female",
     "hometown": "Чорнобиль",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Зліва",
-    "backhand": "Дворучний",
+    "forhand": "left",
+    "backhand": "twohand",
     "joinTennisYear": 2024
   },
   {
@@ -2020,10 +2020,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/156.jpg",
     "sex": "female",
     "hometown": "Іванків",
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 2024
   },
   {
@@ -2033,7 +2033,7 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/157.jpg",
     "sex": "male",
     "hometown": null,
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
     "forhand": null,
     "backhand": null,
@@ -2046,10 +2046,10 @@
     "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/158.jpg",
     "sex": "female",
     "hometown": null,
-    "type": "Аматор",
+    "type": "amateur",
     "category": null,
-    "forhand": "Справа",
-    "backhand": "Дворучний",
+    "forhand": "right",
+    "backhand": "twohand",
     "joinTennisYear": 1969
   }
 ]

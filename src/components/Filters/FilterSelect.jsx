@@ -3,21 +3,19 @@ import { useState } from "react";
 import { Group, IconSvg, IconWrap, Label } from "./Filters-styled";
 
 import sprite from "../../sprite.svg";
+import { useStateContext } from "../../state/stateContext";
 
-export const FilterSelect = ({
-  id,
-  setFilters,
-  typeOptions,
-  label,
-  placeholder,
-  icon,
-}) => {
+export const FilterSelect = ({ id, options, label, placeholder, icon }) => {
+  const { setGlobalState } = useStateContext();
   const [isFilterFocused, setIsFilterFocused] = useState(false);
 
   const onInputChange = (e) => {
-    setFilters((prev) => ({
+    setGlobalState((prev) => ({
       ...prev,
-      [id]: e.value,
+      filters: {
+        ...prev.filters,
+        [id]: e.value,
+      },
     }));
   };
 
@@ -54,9 +52,7 @@ export const FilterSelect = ({
       ...styles,
       fontSize: "16px",
       color: "var(--primary-black-color)",
-      border: isFilterFocused
-        ? "1px solid var(--accent-hover-color)"
-        : "1px solid var(--primary-black-color)",
+      border: isFilterFocused ? "1px solid var(--accent-hover-color)" : "1px solid var(--primary-black-color)",
       borderRadius: "50px",
     }),
 
@@ -68,9 +64,7 @@ export const FilterSelect = ({
     dropdownIndicator: (styles) => ({
       ...styles,
       padding: "0px",
-      color: isFilterFocused
-        ? "var(--accent-hover-color)"
-        : "var(--primary-grey-color)",
+      color: isFilterFocused ? "var(--accent-hover-color)" : "var(--primary-grey-color)",
       transform: isFilterFocused ? "scaleY(-1)" : "scaleY(1)",
       transition: "var(--main-transition)",
       "&:hover": {
@@ -86,9 +80,7 @@ export const FilterSelect = ({
       borderRadius: "50px",
       boxShadow: "none",
 
-      backgroundColor: isFilterFocused
-        ? "var(--primary-white-color)"
-        : "var(--secondary-white-color)",
+      backgroundColor: isFilterFocused ? "var(--primary-white-color)" : "var(--secondary-white-color)",
       cursor: "pointer",
     }),
 
@@ -162,9 +154,9 @@ export const FilterSelect = ({
         onMenuClose={() => setIsFilterFocused(false)}
         menuIsOpen={isFilterFocused}
         onChange={onInputChange}
-        options={typeOptions.map((type) => ({
-          value: type,
-          label: type,
+        options={Object.entries(options).map(([key, { title }]) => ({
+          value: key,
+          label: title,
         }))}
       ></Select>
     </Group>

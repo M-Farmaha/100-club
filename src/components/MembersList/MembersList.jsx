@@ -6,10 +6,7 @@ export const MembersList = ({ visibleMembersArray }) => {
   return (
     <>
       <Section>
-        <TitleSection
-          icon={"#icon-users"}
-          title={"Кількість гравців: " + visibleMembersArray.length}
-        />
+        <TitleSection icon={"#icon-users"} title={"Кількість гравців: " + visibleMembersArray?.length} />
         <MembersUl>
           {visibleMembersArray?.map((el, index) => (
             <MembersItem key={el.id} el={el} index={index} />

@@ -1,33 +1,20 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Form, Section } from "./Filters-styled";
 import { FilterSelect } from "./FilterSelect";
 import { getPlayerNameById } from "../../helpers/getPlayerNameById";
+import { useStateContext } from "../../state/stateContext";
+import { FILTERS, filterfilterOptionsBySexMix } from "../../constants/constants";
 
-export const TournamentsMixtFilterBar = ({
-  flattenedArray,
-  members,
-  setFilteredArray,
-}) => {
-  const optionsBySex = ["Пари", "Чоловіки", "Жінки"];
-  const SEX = "filterBySexMixt";
-  const filterBySexLabel = "Фільтр за статтю";
-
-  const [filters, setFilters] = useState({
-    [SEX]: optionsBySex[0],
-  });
+export const TournamentsMixtFilterBar = ({ flattenedArray, members, setFilteredArray }) => {
+  const { globalState } = useStateContext();
+  const { filters } = globalState;
+  const { mixSex } = filters || {};
 
   const filtredBySex = () => {
-    const map =
-      filters[SEX] === optionsBySex[1]
-        ? "male"
-        : filters[SEX] === optionsBySex[2]
-        ? "female"
-        : "";
-
     const filtredArray = flattenedArray.map((player) => {
       if (player.member_id.length === 2) {
         const memberId = player.member_id.find((id) => {
-          const foundMember = members.find((m) => m.id === id && m.sex === map);
+          const foundMember = members.find((m) => m.id === id && m.sex === mixSex);
           return foundMember;
         });
 
@@ -51,18 +38,18 @@ export const TournamentsMixtFilterBar = ({
   useEffect(() => {
     const filtredArray = filtredBySex();
     setFilteredArray(filtredArray);
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [filters, setFilteredArray]);
+  }, [mixSex]);
 
   return (
     <Section>
       <Form onSubmit={(e) => e.preventDefault()}>
         <FilterSelect
-          id={SEX}
-          setFilters={setFilters}
-          typeOptions={optionsBySex}
-          label={filterBySexLabel}
-          placeholder={optionsBySex[0]}
+          id={FILTERS.mixSex.id}
+          options={filterfilterOptionsBySexMix}
+          label={FILTERS.mixSex.label}
+          placeholder={filterfilterOptionsBySexMix[mixSex]?.title}
           icon={"#icon-sex"}
         />
       </Form>

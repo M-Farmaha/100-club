@@ -1,41 +1,28 @@
-import { useState } from "react";
 import { Form, Section } from "./Filters-styled";
-import { useEffect } from "react";
 import { FilterSelect } from "./FilterSelect";
 
-export const ImageGalleryFilterBar = ({
-  galleryArray,
-  setOrderedGalleryArray,
-  setOrder,
-}) => {
-  const optionsByDate = ["Спочатку найновіші", "Спочатку найстаріші"];
-  const DATE = "filterByDate";
-  const filterByDateLabel = "Фільтр за датою";
+import { useStateContext } from "../../state/stateContext";
+import { useEffect } from "react";
+import { FILTERS, filterOptionsByDate } from "../../constants/constants";
 
-  const [filters, setFilters] = useState({
-    [DATE]: optionsByDate[0],
-  });
+export const ImageGalleryFilterBar = ({ setOrderedGalleryArray }) => {
+  const { globalState } = useStateContext();
+  const { photos, filters } = globalState;
+  const { galleryDate } = filters || {};
 
   useEffect(() => {
-    if (filters[DATE] === optionsByDate[0]) {
-      setOrderedGalleryArray(galleryArray);
-      setOrder("newest");
-    } else {
-      setOrderedGalleryArray([...galleryArray].reverse());
-      setOrder("eldest");
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [filters, setOrder, setOrderedGalleryArray]);
+    if (galleryDate === filterOptionsByDate.newest.id) setOrderedGalleryArray(photos);
+    if (galleryDate === filterOptionsByDate.eldest.id) setOrderedGalleryArray([...photos].reverse());
+  }, [galleryDate, photos, setOrderedGalleryArray]);
 
   return (
     <Section>
       <Form onSubmit={(e) => e.preventDefault()}>
         <FilterSelect
-          id={DATE}
-          setFilters={setFilters}
-          typeOptions={optionsByDate}
-          label={filterByDateLabel}
-          placeholder={optionsByDate[0]}
+          id={FILTERS.galleryDate.id}
+          options={filterOptionsByDate}
+          label={FILTERS.galleryDate.label}
+          placeholder={filterOptionsByDate[galleryDate]?.title}
           icon={"#icon-list"}
         />
       </Form>

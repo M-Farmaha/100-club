@@ -2,15 +2,20 @@ import { useState } from "react";
 import { Group, IconSvg, IconWrap, Input, Label } from "./Filters-styled";
 
 import sprite from "../../sprite.svg";
+import { useStateContext } from "../../state/stateContext";
 
-export const FilterByName = ({ id, label, value, setFilters }) => {
+export const FilterByName = ({ id, label, value }) => {
+  const { setGlobalState } = useStateContext();
+
   const [isFilterFocused, setIsFilterFocused] = useState(false);
 
   const onInputChange = (e) => {
-    const { name, value } = e.target;
-    setFilters((prev) => ({
+    setGlobalState((prev) => ({
       ...prev,
-      [name]: value,
+      filters: {
+        ...prev.filters,
+        [id]: e.target.value,
+      },
     }));
   };
 
