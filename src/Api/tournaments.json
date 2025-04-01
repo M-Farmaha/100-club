@@ -716,6 +716,18 @@
           { "member_id": ["57", "14"], "win": 1, "defeat": 2, "position": 7 },
           { "member_id": ["30", "117"], "win": 0, "defeat": 3, "position": 8 }
         ]
+      },
+      {
+        "date": "2025-03-30",
+        "players": [
+          { "member_id": ["39", "22"], "win": 3, "defeat": 0, "position": 1 },
+          { "member_id": ["1", "4"], "win": 1, "defeat": 1, "position": 2 },
+          { "member_id": ["26", "2"], "win": 2, "defeat": 1, "position": 3 },
+          { "member_id": ["30", "47"], "win": 1, "defeat": 2, "position": 4 },
+          { "member_id": ["45", "22"], "win": 1, "defeat": 1, "position": 5 },
+          { "member_id": ["100", "29"], "win": 1, "defeat": 2, "position": 6 },
+          { "member_id": ["7", "47"], "win": 0, "defeat": 2, "position": 7 }
+        ]
       }
     ]
   }
