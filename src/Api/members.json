@@ -2051,5 +2051,31 @@
     "forhand": "right",
     "backhand": "twohand",
     "joinTennisYear": 1969
+  },
+  {
+    "id": "159",
+    "name": "Павлишин Я.",
+    "birthDate": null,
+    "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/159.jpg",
+    "sex": "male",
+    "hometown": "Золочів",
+    "type": "amateur",
+    "category": null,
+    "forhand": null,
+    "backhand": null,
+    "joinTennisYear": null
+  },
+  {
+    "id": "160",
+    "name": "Рябошапко Василь",
+    "birthDate": null,
+    "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/160.jpg",
+    "sex": "male",
+    "hometown": "Львів",
+    "type": "amateur",
+    "category": null,
+    "forhand": null,
+    "backhand": null,
+    "joinTennisYear": null
   }
 ]
