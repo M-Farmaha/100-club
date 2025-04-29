@@ -742,7 +742,7 @@
           { "member_id": ["57", "150"], "win": 2, "defeat": 2, "position": 7 },
           { "member_id": ["100", "29"], "win": 0, "defeat": 3, "position": 8 },
 
-          { "member_id": ["42", "150"], "win": 2, "defeat": 1, "position": 9 },
+          { "member_id": ["119", "117"], "win": 2, "defeat": 1, "position": 9 },
           { "member_id": ["31", "127"], "win": 1, "defeat": 2, "position": 10 },
           { "member_id": ["74", "12"], "win": 1, "defeat": 2, "position": 11 },
           { "member_id": ["151", "14"], "win": 0, "defeat": 3, "position": 12 }
