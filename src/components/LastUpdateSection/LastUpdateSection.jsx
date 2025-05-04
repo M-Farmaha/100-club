@@ -11,7 +11,7 @@ export const LastUpdateSection = () => {
               <use href={sprite + "#icon-loop"}></use>
             </IconSvg>
           </IconWrap>
-          Останнє оновлення: 29.04.2025
+          Останнє оновлення: 04.05.2025
         </Text>
       </Section>
     </>
