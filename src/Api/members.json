@@ -2077,5 +2077,18 @@
     "forhand": null,
     "backhand": null,
     "joinTennisYear": null
+  },
+  {
+    "id": "161",
+    "name": "Гермак Юрій",
+    "birthDate": null,
+    "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/main/src/components/MembersList/avatars/161.jpg",
+    "sex": "male",
+    "hometown": null,
+    "type": "amateur",
+    "category": null,
+    "forhand": null,
+    "backhand": null,
+    "joinTennisYear": null
   }
 ]
