@@ -684,6 +684,15 @@
           { "member_id": ["167"], "win": 1, "defeat": 2, "position": 13 },
           { "member_id": ["70"], "win": 0, "defeat": 3, "position": 14 }
         ]
+      },
+      {
+        "date": "2025-06-29",
+        "players": [
+          { "member_id": ["39"], "win": 3, "defeat": 0, "position": 1 },
+          { "member_id": ["1"], "win": 1, "defeat": 2, "position": 2 },
+          { "member_id": ["74"], "win": 1, "defeat": 2, "position": 2 },
+          { "member_id": ["8"], "win": 1, "defeat": 2, "position": 2 }
+        ]
       }
     ]
   },
