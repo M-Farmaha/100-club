@@ -719,6 +719,27 @@
           { "member_id": ["161"], "win": 1, "defeat": 2, "position": 7 },
           { "member_id": ["70"], "win": 0, "defeat": 3, "position": 8 }
         ]
+      },
+      {
+        "date": "2025-08-10",
+        "players": [
+          { "member_id": ["39"], "win": 3, "defeat": 0, "position": 1 },
+          { "member_id": ["1"], "win": 2, "defeat": 1, "position": 2 },
+          { "member_id": ["162"], "win": 2, "defeat": 1, "position": 3 },
+          { "member_id": ["170"], "win": 1, "defeat": 2, "position": 4 },
+          { "member_id": ["74"], "win": 1, "defeat": 2, "position": 5 },
+          { "member_id": ["7"], "win": 0, "defeat": 3, "position": 6 }
+        ]
+      },
+      {
+        "date": "2025-08-13",
+        "players": [
+          { "member_id": ["13"], "win": 4, "defeat": 0, "position": 1 },
+          { "member_id": ["85"], "win": 3, "defeat": 1, "position": 2 },
+          { "member_id": ["8"], "win": 2, "defeat": 2, "position": 3 },
+          { "member_id": ["170"], "win": 1, "defeat": 3, "position": 4 },
+          { "member_id": ["74"], "win": 0, "defeat": 4, "position": 5 }
+        ]
       }
     ]
   },
@@ -751,6 +772,18 @@
           { "member_id": ["29"], "win": 1, "defeat": 2, "position": 6 },
           { "member_id": ["17"], "win": 0, "defeat": 2, "position": 7 },
           { "member_id": ["136"], "win": 0, "defeat": 2, "position": 7 }
+        ]
+      },
+      {
+        "date": "2025-08-10",
+        "players": [
+          { "member_id": ["138"], "win": 3, "defeat": 0, "position": 1 },
+          { "member_id": ["48"], "win": 2, "defeat": 1, "position": 2 },
+          { "member_id": ["47"], "win": 2, "defeat": 1, "position": 3 },
+          { "member_id": ["29"], "win": 0, "defeat": 2, "position": 4 },
+          { "member_id": ["171"], "win": 1, "defeat": 1, "position": 5 },
+          { "member_id": ["156"], "win": 1, "defeat": 2, "position": 6 },
+          { "member_id": ["155"], "win": 0, "defeat": 2, "position": 7 }
         ]
       }
     ]
