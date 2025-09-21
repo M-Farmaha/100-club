@@ -295,6 +295,17 @@
               { "member_id": ["57"], "win": 2, "defeat": 6, "position": 4 },
               { "member_id": ["20"], "win": 0, "defeat": 8, "position": 5 }
             ]
+          },
+          {
+            "date": "2024-09-21",
+            "players": [
+              { "member_id": ["85"], "win": 8, "defeat": 1, "position": 1 },
+              { "member_id": ["168"], "win": 7, "defeat": 2, "position": 2 },
+              { "member_id": ["1"], "win": 5, "defeat": 4, "position": 3 },
+              { "member_id": ["76"], "win": 3, "defeat": 6, "position": 4 },
+              { "member_id": ["11"], "win": 1, "defeat": 4, "position": 5 },
+              { "member_id": ["57"], "win": 1, "defeat": 8, "position": 6 }
+            ]
           }
         ]
       }
