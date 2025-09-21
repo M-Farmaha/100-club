@@ -267,7 +267,7 @@
         "year": 2025,
         "stages": [
           {
-            "date": "2024-05-31",
+            "date": "2025-05-31",
             "players": [
               { "member_id": ["168"], "win": 4, "defeat": 0, "position": 1 },
               { "member_id": ["39"], "win": 4, "defeat": 3, "position": 2 },
@@ -277,7 +277,7 @@
             ]
           },
           {
-            "date": "2024-08-17",
+            "date": "2025-08-17",
             "players": [
               { "member_id": ["85"], "win": 7, "defeat": 2, "position": 1 },
               { "member_id": ["1"], "win": 6, "defeat": 4, "position": 2 },
@@ -287,7 +287,7 @@
             ]
           },
           {
-            "date": "2024-08-31",
+            "date": "2025-08-31",
             "players": [
               { "member_id": ["39"], "win": 6, "defeat": 2, "position": 1 },
               { "member_id": ["85"], "win": 6, "defeat": 2, "position": 1 },
@@ -297,7 +297,7 @@
             ]
           },
           {
-            "date": "2024-09-21",
+            "date": "2025-09-21",
             "players": [
               { "member_id": ["85"], "win": 8, "defeat": 1, "position": 1 },
               { "member_id": ["168"], "win": 7, "defeat": 2, "position": 2 },
