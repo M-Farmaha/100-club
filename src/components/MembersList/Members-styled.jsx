@@ -20,23 +20,19 @@ export const MembersItemLi = styled.li`
   width: 100%;
   height: 50px;
 
-  background-image: url(${(props) => props.isTodayBirthDay ? BirthdayTape : null});
+  background-image: url(${(props) => (props.isTodayBirthDay ? BirthdayTape : null)});
   background-size: contain;
   background-position: center;
   background-repeat: repeat-x;
 
   &:nth-child(odd) {
     background-color: ${(props) =>
-      props.isTodayBirthDay
-        ? "var(--secondary-red-color)"
-        : "var(--primary-white-color)"};
+      props.isTodayBirthDay ? "var(--secondary-red-color)" : "var(--primary-white-color)"};
   }
 
   &:nth-child(even) {
     background-color: ${(props) =>
-      props.isTodayBirthDay
-        ? "var(--secondary-red-color)"
-        : "var(--secondary-white-color)"};
+      props.isTodayBirthDay ? "var(--secondary-red-color)" : "var(--secondary-white-color)"};
   }
 
   &:hover {
@@ -46,9 +42,7 @@ export const MembersItemLi = styled.li`
   @media screen and (min-width: 1200px) {
     &:hover {
       background-color: ${(props) =>
-        props.isTodayBirthDay
-          ? "var(--primary-red-color)"
-          : "var(--primary-black-color)"};
+        props.isTodayBirthDay ? "var(--primary-red-color)" : "var(--primary-black-color)"};
       color: var(--primary-white-color);
     }
   }
@@ -133,17 +127,11 @@ export const ModalContentWrap = styled.div`
   left: 50%;
   transform: translateX(-50%);
 
-  color: ${(props) =>
-    props.isTodayBirthDay
-      ? "var(--primary-black-color)"
-      : "var(--primary-white-color)"};
+  color: ${(props) => (props.isTodayBirthDay ? "var(--primary-black-color)" : "var(--primary-white-color)")};
 
-  background-color: ${(props) =>
-    props.isTodayBirthDay
-      ? "var(--secondary-red-color)"
-      : "var(--primary-black-color)"};
+  background-color: ${(props) => (props.isTodayBirthDay ? "var(--secondary-red-color)" : "var(--primary-black-color)")};
 
-  background-image: url(${(props) => props.isTodayBirthDay ? BirthdayBG : DefaultBG});
+  background-image: url(${(props) => (props.isTodayBirthDay ? BirthdayBG : DefaultBG)});
   background-size: cover;
   background-position: center;
 
@@ -155,18 +143,14 @@ export const ModalContentWrap = styled.div`
 export const AvatarWrap = styled.div`
   width: 100%;
   height: auto;
-  background: linear-gradient(
-    to top right,
-    var(--primary-black-color),
-    var(--primary-white-color)
-  );
+  background: linear-gradient(to top right, var(--primary-black-color), var(--primary-white-color));
 `;
 
 export const Avatar = styled.img`
   width: 100%;
   height: 400px;
   object-fit: contain;
-  background-image: url(${(props) => props.sex === "male" ? MaleDefaultImg : FemaleDefaultImg});
+  background-image: url(${(props) => (props.sex === "male" ? MaleDefaultImg : FemaleDefaultImg)});
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -190,5 +174,18 @@ export const Text = styled.p`
 
   span {
     font-weight: 200;
+  }
+`;
+
+export const Table = styled.table`
+  width: 100%;
+  border-collapse: collapse;
+  font-weight: 200;
+
+  th,
+  td {
+    border: 1px solid #ccc;
+    padding: 10px 5px;
+    text-align: center;
   }
 `;

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { differenceInYears } from "date-fns";
 
-import { Avatar, AvatarWrap, DescriptionWrap, ModalContentWrap, Text } from "./Members-styled";
+import { Avatar, AvatarWrap, DescriptionWrap, ModalContentWrap, Table, Text } from "./Members-styled";
 
 import { Modal } from "../Modal/Modal";
 import { Portal } from "../../Routes/Portal/Portal";
@@ -12,7 +12,7 @@ import { optionsByBackhand, optionsByForhand, optionsBySex, optionsByType } from
 
 export const MembersModal = () => {
   const { globalState } = useStateContext();
-  const { members } = globalState;
+  const { members, tournaments } = globalState;
 
   const { id } = useParams();
   const navigate = useNavigate();
@@ -42,6 +42,8 @@ export const MembersModal = () => {
   const today = new Date();
   const isTodayBirthDay = birth.getDate() === today.getDate() && birth.getMonth() === today.getMonth();
 
+  const isMale = sex === optionsBySex.male.id;
+
   useEffect(() => {
     document.body.classList.add("modal-open");
     document.documentElement.classList.add("modal-open");
@@ -57,7 +59,11 @@ export const MembersModal = () => {
   }, [id, members, scrollPosition]);
 
   const closeModal = () => {
-    navigate("/members");
+    if (window.history.state && window.history.state.idx > 0) {
+      navigate(-1);
+    } else {
+      navigate("/members", { replace: true });
+    }
   };
 
   const getAgeSuffix = (age) => {
@@ -77,6 +83,100 @@ export const MembersModal = () => {
       }
     }
   };
+
+  const countMemberTournaments = () => {
+    let singleParticipate = 0;
+    let singleTournamentsWins = 0;
+    let singleWins = 0;
+    let singleDefeats = 0;
+
+    let mixParticipate = 0;
+    let mixTournamentsWins = 0;
+    let mixWins = 0;
+    let mixDefeats = 0;
+
+    tournaments.forEach((tournament) => {
+      tournament.stages.forEach((stage) => {
+        let playedSingle = false;
+        let playedMix = false;
+
+        stage.players.forEach((player) => {
+          if (player.member_id.includes(currentMember?.id)) {
+            if (player.member_id.length === 1) {
+              playedSingle = true;
+              singleWins += player.win || 0;
+              singleDefeats += player.defeat || 0;
+              if (player.position === 1) singleTournamentsWins++;
+            } else if (player.member_id.length === 2) {
+              playedMix = true;
+              mixWins += player.win || 0;
+              mixDefeats += player.defeat || 0;
+              if (player.position === 1) mixTournamentsWins++;
+            }
+          }
+        });
+
+        if (playedSingle) singleParticipate++;
+        if (playedMix) mixParticipate++;
+      });
+    });
+
+    const singleTotalGames = singleWins + singleDefeats;
+    const mixTotalGames = mixWins + mixDefeats;
+
+    const singleWinPercent = singleTotalGames ? ((singleWins / singleTotalGames) * 100).toFixed(1) : 0;
+    const singleDefeatPercent = singleTotalGames ? ((singleDefeats / singleTotalGames) * 100).toFixed(1) : 0;
+
+    const mixWinPercent = mixTotalGames ? ((mixWins / mixTotalGames) * 100).toFixed(1) : 0;
+    const mixDefeatPercent = mixTotalGames ? ((mixDefeats / mixTotalGames) * 100).toFixed(1) : 0;
+
+    const totalParticipate = singleParticipate + mixParticipate;
+    const totalTournamentsWins = singleTournamentsWins + mixTournamentsWins;
+    const totalWins = singleWins + mixWins;
+    const totalDefeats = singleDefeats + mixDefeats;
+    const totalGames = totalWins + totalDefeats;
+
+    const totalWinPercent = totalGames ? ((totalWins / totalGames) * 100).toFixed(1) : 0;
+    const totalDefeatPercent = totalGames ? ((totalDefeats / totalGames) * 100).toFixed(1) : 0;
+
+    return {
+      singleParticipate,
+      mixParticipate,
+      singleTournamentsWins,
+      mixTournamentsWins,
+      singleWins,
+      singleDefeats,
+      mixWins,
+      mixDefeats,
+      singleWinPercent,
+      singleDefeatPercent,
+      mixWinPercent,
+      mixDefeatPercent,
+      totalParticipate,
+      totalTournamentsWins,
+      totalWins,
+      totalDefeats,
+      totalWinPercent,
+      totalDefeatPercent,
+    };
+  };
+  const stats = countMemberTournaments();
+  const showTable = Object.values(stats).some((value) => value > 0);
+
+  const rows = [
+    { label: "Одиночний", key: "single" },
+    { label: "Парний", key: "mix" },
+    { label: "Разом", key: "total" },
+  ];
+  const headers = [
+    { id: "label", title: "Тип турніру" },
+    { id: "Participate", title: "Кількість турнірів" },
+    { id: "TournamentsWins", title: "Виграні турніри" },
+    { id: "Wins", title: "Перемоги у матчах" },
+    { id: "WinPercent", title: "Відсоток перемог" },
+    { id: "Defeats", title: "Поразки у матчах" },
+    { id: "DefeatPercent", title: "Відсоток поразок" },
+  ];
 
   return (
     <>
@@ -109,7 +209,7 @@ export const MembersModal = () => {
                     <span>Рідне місто:</span> {hometown || " Heвідомо"}
                   </Text>
                   <Text>
-                    <span>{`Вперше ${sex === optionsBySex.male.id ? "спробував" : "спробувала"} теніс: `}</span>
+                    <span>{`Вперше ${isMale ? "спробував" : "спробувала"} теніс: `}</span>
                     {experience}
                   </Text>
                   <Text>
@@ -122,6 +222,41 @@ export const MembersModal = () => {
                   {category && (
                     <Text>
                       <span>Спортивний розряд:</span> {category}
+                    </Text>
+                  )}
+
+                  <br />
+
+                  {showTable ? (
+                    <>
+                      <Text>Персональна турнірна статистика:</Text>
+                      <Table>
+                        <tbody>
+                          {headers.map((header) => (
+                            <tr key={header.id}>
+                              <td style={{ textAlign: "left" }}>{header.title}</td>
+                              {rows.map((row) => {
+                                const value = header.id === "label" ? row.label : stats[`${row.key}${header.id}`];
+                                return (
+                                  <td key={row.key}>
+                                    {value}
+                                    {(header.id === "WinPercent" || header.id === "DefeatPercent") && "%"}
+                                  </td>
+                                );
+                              })}
+                            </tr>
+                          ))}
+                        </tbody>
+                      </Table>
+                      <Text>
+                        <span>* Сформовано на основі даних турнірів клубу від 2023р.</span>
+                      </Text>
+                    </>
+                  ) : (
+                    <Text>
+                      Не {isMale ? "приймав" : "приймала"} участь в турнірах клубу
+                      <br />
+                      <span>(за даними від 2023р.)</span>
                     </Text>
                   )}
                 </DescriptionWrap>
