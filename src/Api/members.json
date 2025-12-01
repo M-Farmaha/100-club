@@ -2233,5 +2233,18 @@
     "forhand": null,
     "backhand": null,
     "joinTennisYear": null
+  },
+  {
+    "id": "173",
+    "name": "Максимів Софія",
+    "birthDate": null,
+    "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/refs/heads/main/public/avatars/173.jpg",
+    "sex": "female",
+    "hometown": null,
+    "type": "professional",
+    "category": null,
+    "forhand": "right",
+    "backhand": "twohand",
+    "joinTennisYear": null
   }
 ]
