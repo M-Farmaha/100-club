@@ -13,6 +13,7 @@ import { ParticipantsItem } from "./ParticipantsItem";
 import { useStateContext } from "../../state/stateContext";
 import { getUkrLocaleDate } from "../../helpers/getUkrLocaleDate";
 import { getPlayerNameById } from "../../helpers/getPlayerNameById";
+import { NotFound } from "../NotFound/NotFound";
 
 export const ParticipantsList = () => {
   const { globalState } = useStateContext();
@@ -23,13 +24,18 @@ export const ParticipantsList = () => {
 
   const parts = pathname.split("/");
   const tournamentId = parts[2];
-  const stageId = parts[3];
+  const year = parts[3];
+  const stageId = parts[4];
 
-  const { stages = [] } = tournaments?.find((t) => t.id === tournamentId) || {};
-  const currentStage = stages.find((s) => s.date === stageId);
+  // Find tournament by tournament_id
+  const currentTournament = tournaments?.find((t) => t.tournament_id === tournamentId);
+  // Find season by year
+  const currentSeason = currentTournament?.seasons?.find((s) => s.year === parseInt(year));
+  // Find stage by date
+  const currentStage = currentSeason?.stages?.find((s) => s.date === stageId);
 
   const sortedPlayers = currentStage?.players
-    .map((player) => ({
+    ?.map((player) => ({
       ...player,
       name: getPlayerNameById(player?.member_id, members),
     }))
@@ -41,8 +47,35 @@ export const ParticipantsList = () => {
     });
 
   const handleBack = () => {
-    navigate(`/tournaments/${tournamentId}`);
+    navigate(`/tournaments/${tournamentId}/${year}`);
   };
+
+  // Show NotFound for invalid data
+  if (!currentTournament || !currentSeason) {
+    return (
+      <Section>
+        <NotFound
+          title="Дані не знайдено"
+          message="Турнір або сезон не існує."
+          backPath="/tournaments"
+          backLabel="До турнірів"
+        />
+      </Section>
+    );
+  }
+
+  if (!currentStage) {
+    return (
+      <Section>
+        <NotFound
+          title="Етап не знайдено"
+          message={`Етап ${stageId} для турніру "${currentTournament.name}" (${year}) не існує.`}
+          backPath={`/tournaments/${tournamentId}/${year}`}
+          backLabel="До турнірів"
+        />
+      </Section>
+    );
+  }
 
   return (
     <>

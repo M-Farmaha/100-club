@@ -8,12 +8,16 @@ import Layout from "./Layout/Layout";
 import { ImageGalleryModal } from "./components/ImageGallery/ImageGalleryModal";
 import { MembersModal } from "./components/MembersList/MembersModal";
 import TournamentsPage from "./pages/TournamentsPage/TournamentsPage";
+import TournamentSeasonsPage from "./pages/TournamentSeasonsPage/TournamentSeasonsPage";
 import { StagesList } from "./components/StagesList/StagesList";
 import { ParticipantsList } from "./components/ParticipantsList/ParticipantsList";
 import { ParticipantNestedPage } from "./components/ParticipantNestedPage/ParticipantNestedPage";
 import { ScrollSave } from "./components/ScrollSave/ScrollSave";
 import { StatsPage } from "./components/StatsPage/StatsPage";
 import { StatsItemDetail } from "./components/StatsPage/StatsItemDetail";
+import { AllSeasonsStatsPage } from "./components/StatsPage/AllSeasonsStatsPage";
+import { AllSeasonsStatsItemDetail } from "./components/StatsPage/AllSeasonsStatsItemDetail";
+import { SuperStatsPage } from "./components/StatsPage/SuperStatsPage";
 
 function App() {
   return (
@@ -22,17 +26,21 @@ function App() {
         <ScrollSave />
         <Routes>
           <Route path="/" element={<Layout />}>
-            <Route index element={<HomePage />} />F
+            <Route index element={<HomePage />} />
             <Route path="tournaments" element={<TournamentsPage />} />
-            <Route path="tournaments/:id" element={<StagesList />} />
-            <Route path="tournaments/:id/stats" element={<StatsPage />} />
+            <Route path="tournaments/stats" element={<SuperStatsPage />} />
+            <Route path="tournaments/:tournamentId" element={<TournamentSeasonsPage />} />
+            <Route path="tournaments/:tournamentId/stats" element={<AllSeasonsStatsPage />} />
+            <Route path="tournaments/:tournamentId/stats/:playerId" element={<AllSeasonsStatsItemDetail />} />
+            <Route path="tournaments/:tournamentId/:year" element={<StagesList />} />
+            <Route path="tournaments/:tournamentId/:year/stats" element={<StatsPage />} />
             <Route
-              path="tournaments/:id/stats/:id"
+              path="tournaments/:tournamentId/:year/stats/:playerId"
               element={<StatsItemDetail />}
             />
-            <Route path="tournaments/:id/:id" element={<ParticipantsList />} />
+            <Route path="tournaments/:tournamentId/:year/:stageDate" element={<ParticipantsList />} />
             <Route
-              path="tournaments/:id/:id/:id"
+              path="tournaments/:tournamentId/:year/:stageDate/:playerId"
               element={<ParticipantNestedPage />}
             />
             <Route path="members" element={<MembersPage />}>

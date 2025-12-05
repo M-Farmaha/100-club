@@ -234,3 +234,12 @@ export const ButtonIconSvg = styled.svg`
   height: 20px;
   fill: currentColor;
 `;
+
+export const StatsInfoBar = styled.p`
+  text-align: center;
+  padding: 12px 20px;
+  font-size: 14px;
+  background-color: var(--primary-black-color);
+  color: var(--primary-white-color);
+  margin: 0;
+`;

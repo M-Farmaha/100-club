@@ -16,6 +16,7 @@ export const TitleSection = ({
   children,
   memberId = null,
   stats = false,
+  superStats = false,
 }) => {
   return (
     <>
@@ -42,6 +43,20 @@ export const TitleSection = ({
                   </IconSvg>
                 </IconWrap>
                 Статистика
+              </LinkStyled>
+            )}
+
+            {superStats && (
+              <LinkStyled
+                to={`/tournaments/stats`}
+                aria-label="Переглянути суперстатистику"
+              >
+                <IconWrap>
+                  <IconSvg>
+                    <use href={sprite + "#icon-info"}></use>
+                  </IconSvg>
+                </IconWrap>
+                Суперстатистика
               </LinkStyled>
             )}
 

@@ -15,8 +15,9 @@ import {
 import { getPlayerNameById } from "../../helpers/getPlayerNameById";
 import { defineRank } from "../../helpers/defineRank";
 import { useStateContext } from "../../state/stateContext";
+import { NotFound } from "../NotFound/NotFound";
 
-export const StatsItemDetail = () => {
+export const AllSeasonsStatsItemDetail = () => {
   const { globalState } = useStateContext();
   const { tournaments, members } = globalState;
 
@@ -24,17 +25,16 @@ export const StatsItemDetail = () => {
   const { pathname } = useLocation();
   const parts = pathname.split("/");
   const tournamentId = parts[2];
-  const year = parts[3];
-  const playerId = parts[5];
-  const playerIds = playerId.split("-");
+  const playerId = parts[4];
+  const playerIds = playerId?.split("-") || [];
 
   // Find tournament by tournament_id
   const currentTournament = tournaments?.find((t) => t.tournament_id === tournamentId);
-  // Find season by year
-  const currentSeason = currentTournament?.seasons?.find((s) => s.year === parseInt(year));
-  const stages = currentSeason?.stages || [];
+  
+  // Get ALL stages from ALL seasons
+  const allStages = currentTournament?.seasons?.flatMap((season) => season.stages) || [];
 
-  const playerStats = stages
+  const playerStats = allStages
     .flatMap((stage) => stage.players)
     .filter((player) => {
       return playerIds.every((id) => player.member_id.includes(id));
@@ -54,9 +54,53 @@ export const StatsItemDetail = () => {
 
   const { member_id, position, win, defeat } = playerStats;
 
+  const handleBack = () => {
+    navigate(`/tournaments/${tournamentId}/stats`);
+  };
+
+  // Show NotFound if tournament doesn't exist
+  if (!currentTournament) {
+    return (
+      <Section>
+        <NotFound
+          title="Турнір не знайдено"
+          message={`Турнір "${tournamentId}" не існує.`}
+          backPath="/tournaments"
+          backLabel="До списку турнірів"
+        />
+      </Section>
+    );
+  }
+
+  // Show NotFound if player has no stats
+  if (position.length === 0) {
+    return (
+      <Section>
+        <NotFound
+          title="Гравця не знайдено"
+          message="Статистика для цього гравця відсутня."
+          backPath={`/tournaments/${tournamentId}/stats`}
+          backLabel="До статистики"
+        />
+      </Section>
+    );
+  }
+
   const isComplexId = member_id.length > 1;
 
   const totalTournaments = position.length;
+  const seasonsCount = currentTournament?.seasons?.length || 0;
+
+  // Ukrainian pluralization for "сезон"
+  const getSeasonText = (count) => {
+    if (count === 1) return `весь ${count} сезон`;
+    const lastDigit = count % 10;
+    const lastTwoDigits = count % 100;
+    if (lastTwoDigits >= 11 && lastTwoDigits <= 14) return `всі ${count} сезонів`;
+    if (lastDigit === 1) return `весь ${count} сезон`;
+    if (lastDigit >= 2 && lastDigit <= 4) return `всі ${count} сезони`;
+    return `всі ${count} сезонів`;
+  };
 
   const gold = position.filter((pos) => pos === 1).length;
   const silver = position.filter((pos) => pos === 2).length;
@@ -65,8 +109,8 @@ export const StatsItemDetail = () => {
   const totalWins = win;
   const totalDefeats = defeat;
   const totalGames = totalWins + totalDefeats;
-  const winPercentage = ((totalWins / totalGames) * 100).toFixed(2);
-  const defeatPercentage = ((totalDefeats / totalGames) * 100).toFixed(2);
+  const winPercentage = totalGames > 0 ? ((totalWins / totalGames) * 100).toFixed(2) : "0.00";
+  const defeatPercentage = totalGames > 0 ? ((totalDefeats / totalGames) * 100).toFixed(2) : "0.00";
 
   const rankArray = position.map((pos) => defineRank(pos));
   const totalRank = rankArray.reduce((acc, rank) => acc + rank, 0);
@@ -77,10 +121,6 @@ export const StatsItemDetail = () => {
   const topFiveRank = topFiveRankArray.reduce((acc, rank) => acc + rank, 0);
 
   const name = getPlayerNameById(member_id, members);
-
-  const handleBack = () => {
-    navigate(`/tournaments/${tournamentId}/${year}/stats`);
-  };
 
   return (
     <Section>
@@ -98,7 +138,7 @@ export const StatsItemDetail = () => {
       </TitleSection>
 
       <StatsInfoBar>
-        Статистика за сезон {year} турніру "{currentTournament?.name}"
+        Статистика за {getSeasonText(seasonsCount)} турніру "{currentTournament.name}"
       </StatsInfoBar>
 
       <List>

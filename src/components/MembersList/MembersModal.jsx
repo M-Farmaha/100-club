@@ -9,6 +9,7 @@ import { Portal } from "../../Routes/Portal/Portal";
 import { useStateContext } from "../../state/stateContext";
 import { getUkrLocaleDate } from "../../helpers/getUkrLocaleDate";
 import { optionsByBackhand, optionsByForhand, optionsBySex, optionsByType } from "../../constants/constants";
+import { NotFound } from "../NotFound/NotFound";
 
 export const MembersModal = () => {
   const { globalState } = useStateContext();
@@ -21,6 +22,7 @@ export const MembersModal = () => {
   const scrollPosition = state?.scrollPosition || 0;
 
   const [currentMember, setCurrentMember] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   const {
     birthDate = null,
@@ -50,6 +52,7 @@ export const MembersModal = () => {
 
     const current = members?.find((el) => String(el.id) === String(id));
     setCurrentMember(current);
+    setIsLoading(false);
 
     return () => {
       document.body.classList.remove("modal-open");
@@ -95,29 +98,31 @@ export const MembersModal = () => {
     let mixWins = 0;
     let mixDefeats = 0;
 
-    tournaments.forEach((tournament) => {
-      tournament.stages.forEach((stage) => {
-        let playedSingle = false;
-        let playedMix = false;
+    tournaments?.forEach((tournament) => {
+      tournament.seasons?.forEach((season) => {
+        season.stages?.forEach((stage) => {
+          let playedSingle = false;
+          let playedMix = false;
 
-        stage.players.forEach((player) => {
-          if (player.member_id.includes(currentMember?.id)) {
-            if (player.member_id.length === 1) {
-              playedSingle = true;
-              singleWins += player.win || 0;
-              singleDefeats += player.defeat || 0;
-              if (player.position === 1) singleTournamentsWins++;
-            } else if (player.member_id.length === 2) {
-              playedMix = true;
-              mixWins += player.win || 0;
-              mixDefeats += player.defeat || 0;
-              if (player.position === 1) mixTournamentsWins++;
+          stage.players?.forEach((player) => {
+            if (player.member_id.includes(String(currentMember?.id))) {
+              if (player.member_id.length === 1) {
+                playedSingle = true;
+                singleWins += player.win || 0;
+                singleDefeats += player.defeat || 0;
+                if (player.position === 1) singleTournamentsWins++;
+              } else if (player.member_id.length === 2) {
+                playedMix = true;
+                mixWins += player.win || 0;
+                mixDefeats += player.defeat || 0;
+                if (player.position === 1) mixTournamentsWins++;
+              }
             }
-          }
-        });
+          });
 
-        if (playedSingle) singleParticipate++;
-        if (playedMix) mixParticipate++;
+          if (playedSingle) singleParticipate++;
+          if (playedMix) mixParticipate++;
+        });
       });
     });
 
@@ -182,8 +187,15 @@ export const MembersModal = () => {
     <>
       <Portal>
         <Modal closeModal={closeModal}>
+          {!isLoading && !currentMember && (
+            <NotFound
+              title="Учасника не знайдено"
+              message={`Учасник з ID "${id}" не існує в базі.`}
+              backPath="/members"
+              backLabel="До списку учасників"
+            />
+          )}
           {currentMember && (
-            <>
               <ModalContentWrap isTodayBirthDay={isTodayBirthDay}>
                 <AvatarWrap>
                   <Avatar sex={sex} src={avatar} alt={name} loading="lazy" />
@@ -261,7 +273,6 @@ export const MembersModal = () => {
                   )}
                 </DescriptionWrap>
               </ModalContentWrap>
-            </>
           )}
         </Modal>
       </Portal>

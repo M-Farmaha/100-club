@@ -15,6 +15,7 @@ import { TitleSection } from "../TitleSection/TitleSection";
 import sprite from "../../sprite.svg";
 import { getMedalColor } from "../../helpers/getMedalColor";
 import { getPlayerNameById } from "../../helpers/getPlayerNameById";
+import { NotFound } from "../NotFound/NotFound";
 
 export const ParticipantNestedPage = () => {
   const { globalState } = useStateContext();
@@ -24,30 +25,63 @@ export const ParticipantNestedPage = () => {
   const { pathname } = useLocation();
   const parts = pathname.split("/");
   const tournamentId = parts[2];
-  const stageId = parts[3];
-  const playerId = parts[4];
-  const playerIds = playerId.split("-");
+  const year = parts[3];
+  const stageId = parts[4];
+  const playerId = parts[5];
+  const playerIds = playerId?.split("-") || [];
 
-  const { stages = [] } = tournaments?.find((t) => t.id === tournamentId) || {};
-  const { players = [] } = stages?.find((s) => s.date === stageId) || {};
+  // Find tournament by tournament_id
+  const currentTournament = tournaments?.find((t) => t.tournament_id === tournamentId);
+  // Find season by year
+  const currentSeason = currentTournament?.seasons?.find((s) => s.year === parseInt(year));
+  // Find stage by date
+  const currentStage = currentSeason?.stages?.find((s) => s.date === stageId);
+  const players = currentStage?.players || [];
 
   const currentPlayer = players?.find((player) => {
     return playerIds.every((id) => player.member_id.includes(id));
   });
 
+  const handleBack = () => {
+    navigate(`/tournaments/${tournamentId}/${year}/${stageId}`);
+  };
+
+  // Show NotFound for invalid data
+  if (!currentTournament || !currentSeason || !currentStage) {
+    return (
+      <Section>
+        <NotFound
+          title="Дані не знайдено"
+          message="Турнір, сезон або етап не існує."
+          backPath="/tournaments"
+          backLabel="До турнірів"
+        />
+      </Section>
+    );
+  }
+
+  if (!currentPlayer) {
+    return (
+      <Section>
+        <NotFound
+          title="Учасника не знайдено"
+          message={`Учасник не знайдений в етапі ${stageId}.`}
+          backPath={`/tournaments/${tournamentId}/${year}/${stageId}`}
+          backLabel="До учасників"
+        />
+      </Section>
+    );
+  }
+
   const { position, win, defeat, member_id } = currentPlayer;
 
-  const isComplexId = member_id.length > 1;
+  const isComplexId = member_id?.length > 1;
 
   const name = getPlayerNameById(member_id, members);
   const total = win + defeat;
-  const winPercentage = ((win / total) * 100).toFixed(2);
-  const defeatPercentage = ((defeat / total) * 100).toFixed(2);
+  const winPercentage = total > 0 ? ((win / total) * 100).toFixed(2) : "0.00";
+  const defeatPercentage = total > 0 ? ((defeat / total) * 100).toFixed(2) : "0.00";
   const currentPlayerRank = defineRank(position);
-
-  const handleBack = () => {
-    navigate(`/tournaments/${tournamentId}/${stageId}`);
-  };
 
   return (
     <>

@@ -8,16 +8,19 @@ import {
 import { useNavigate } from "react-router-dom";
 import { getMedalColor } from "../../helpers/getMedalColor";
 
-export const StatsItem = ({ el, index }) => {
+export const StatsItem = ({ el, index, isAllSeasons }) => {
   const navigate = useNavigate();
 
-  const { member_id, winCount, topFiveRank, name, globalPosition } = el;
+  const { member_id, winCount, topFiveRank, totalRank, name, globalPosition } = el;
 
   const stringId = member_id.join("-");
 
   const handleItemClick = () => {
     navigate(stringId);
   };
+
+  // Show totalRank for all-seasons stats, topFiveRank for single-season
+  const rankValue = isAllSeasons ? totalRank : topFiveRank;
 
   return (
     <>
@@ -35,7 +38,7 @@ export const StatsItem = ({ el, index }) => {
 
           <ItemText>{winCount}</ItemText>
 
-          <ItemText>{topFiveRank}</ItemText>
+          <ItemText>{rankValue}</ItemText>
 
           {
             <ItemIndictatorBG

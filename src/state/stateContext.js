@@ -18,6 +18,8 @@ export const StateProvider = ({ children }) => {
       playersSex: FILTERS.playersSex.initialValue,
       galleryDate: FILTERS.galleryDate.initialValue,
       mixSex: FILTERS.mixSex.initialValue,
+      superStatsSex: FILTERS.superStatsSex.initialValue,
+      superStatsTournamentType: FILTERS.superStatsTournamentType.initialValue,
     },
   });
 

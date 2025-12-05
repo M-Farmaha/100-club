@@ -8,10 +8,11 @@ import { StatsItem } from "./StatsItem";
 import { useStateContext } from "../../state/stateContext";
 import { defineRank } from "../../helpers/defineRank";
 import { getPlayerNameById } from "../../helpers/getPlayerNameById";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { TournamentsMixtFilterBar } from "../Filters/TournamentsMixtFilterBar";
+import { NotFound } from "../NotFound/NotFound";
 
-export const StatsPage = () => {
+export const AllSeasonsStatsPage = () => {
   const { globalState } = useStateContext();
   const { tournaments, members } = globalState;
 
@@ -20,21 +21,26 @@ export const StatsPage = () => {
 
   const parts = pathname.split("/");
   const tournamentId = parts[2];
-  const year = parts[3];
 
   // Find tournament by tournament_id
   const currentTournament = tournaments?.find((t) => t.tournament_id === tournamentId);
-  // Find season by year
-  const currentSeason = currentTournament?.seasons?.find((s) => s.year === parseInt(year));
   
   const name = currentTournament?.name || "";
-  const stages = currentSeason?.stages || [];
+  
+  // Get ALL stages from ALL seasons
+  const allStages = currentTournament?.seasons?.flatMap((season) => season.stages) || [];
 
-  const flattenedArray = stages.flatMap((stage) => stage.players);
+  const flattenedArray = allStages.flatMap((stage) => stage.players);
 
   const isMixt = flattenedArray[0]?.member_id.length === 2;
 
   const [filteredArray, setFilteredArray] = useState(flattenedArray);
+
+  // Update filteredArray when flattenedArray changes
+  useEffect(() => {
+    setFilteredArray(flattenedArray);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [tournaments, tournamentId]);
 
   const playersStats = filteredArray.reduce((acc, player) => {
     const { member_id, win, defeat, position } = player;
@@ -60,30 +66,29 @@ export const StatsPage = () => {
   const statsWithWins = structuredPlayersStats.map((el) => {
     const winCount = el.position.filter((pos) => pos === 1).length;
     const sortedPositions = el.position.sort((a, b) => a - b);
-    const topFivePositions = sortedPositions.slice(0, 5);
-    const topFiveRankArray = topFivePositions.map((pos) => defineRank(pos));
-    const topFiveRank = topFiveRankArray.reduce((acc, rank) => acc + rank, 0);
+    const rankArray = sortedPositions.map((pos) => defineRank(pos));
+    const totalRank = rankArray.reduce((acc, rank) => acc + rank, 0);
 
     const name = getPlayerNameById(el.member_id, members);
-    return { ...el, winCount, name, topFiveRank };
+    return { ...el, winCount, name, totalRank };
   });
 
   const sortedPlayersStats = statsWithWins.sort((a, b) => {
-    if (b.topFiveRank === a.topFiveRank) {
+    if (b.totalRank === a.totalRank) {
       if (b.winCount === a.winCount) {
         return a.name.localeCompare(b.name);
       }
       return b.winCount - a.winCount;
     }
-    return b.topFiveRank - a.topFiveRank;
+    return b.totalRank - a.totalRank;
   });
 
   let globalPosition = 1;
   let prevWinCount = sortedPlayersStats[0]?.winCount;
-  let prevTopFiveRank = sortedPlayersStats[0]?.topFiveRank;
+  let prevTotalRank = sortedPlayersStats[0]?.totalRank;
 
   sortedPlayersStats.forEach((player, index) => {
-    if (player.winCount === prevWinCount && player.topFiveRank === prevTopFiveRank) {
+    if (player.winCount === prevWinCount && player.totalRank === prevTotalRank) {
       player.globalPosition = globalPosition;
     } else {
       globalPosition = index + 1;
@@ -91,17 +96,38 @@ export const StatsPage = () => {
     }
 
     prevWinCount = player.winCount;
-    prevTopFiveRank = player.topFiveRank;
+    prevTotalRank = player.totalRank;
   });
 
   const handleBack = () => {
-    navigate(`/tournaments/${tournamentId}/${year}`);
+    navigate(`/tournaments/${tournamentId}`);
   };
+
+  // Get total seasons count for display
+  const seasonsCount = currentTournament?.seasons?.length || 0;
+  const stagesCount = allStages.length;
+
+  // Show NotFound if tournament doesn't exist
+  if (!currentTournament) {
+    return (
+      <Section>
+        <NotFound
+          title="Турнір не знайдено"
+          message={`Турнір "${tournamentId}" не існує.`}
+          backPath="/tournaments"
+          backLabel="До списку турнірів"
+        />
+      </Section>
+    );
+  }
 
   return (
     <>
       <Section>
-        <TitleSection icon={"#icon-cup"} title={`${name} ${year} - Статистика`}>
+        <TitleSection
+          icon={"#icon-cup"}
+          title={`${name} - Статистика`}
+        >
           <Button onClick={handleBack}>
             <ButtonIconSvg>
               <use href={sprite + "#icon-undo"}></use>
@@ -111,7 +137,7 @@ export const StatsPage = () => {
         </TitleSection>
 
         <StatsInfoBar>
-          Турнірів: {stages.length} | {isMixt ? "Пар" : "Учасників"}: {sortedPlayersStats.length}
+          Сезонів: {seasonsCount} | Турнірів: {stagesCount} | {isMixt ? "Пар" : "Учасників"}: {sortedPlayersStats.length}
         </StatsInfoBar>
 
         {isMixt && (
@@ -125,7 +151,7 @@ export const StatsPage = () => {
         <List>
           <StatsPageHeading />
           {sortedPlayersStats?.map((el, index) => (
-            <StatsItem key={index} el={el} index={index} />
+            <StatsItem key={index} el={el} index={index} isAllSeasons />
           ))}
         </List>
       </Section>

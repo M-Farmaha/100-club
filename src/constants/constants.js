@@ -76,6 +76,12 @@ export const optionsByExperience = {
   null: { id: "null", title: "Невідомо", color: "var(--player-default-color)" },
 };
 
+export const filterOptionsByTournamentType = {
+  all: { id: "all", title: "Усі" },
+  single: { id: "single", title: "Одиночний" },
+  pairs: { id: "pairs", title: "Парний" },
+};
+
 export const FILTERS = {
   playersName: { id: "playersName", label: "Знайти гравця за іменем", initialValue: "" },
   playersType: { id: "playersType", label: "Фільтр за категорією", initialValue: filterOptionsByType.all.id },
@@ -85,4 +91,7 @@ export const FILTERS = {
   galleryDate: { id: "galleryDate", label: "Фільтр за датою", initialValue: filterOptionsByDate.newest.id },
 
   mixSex: { id: "mixSex", label: "Фільтр за статтю", initialValue: filterfilterOptionsBySexMix.pairs.id },
+
+  superStatsSex: { id: "superStatsSex", label: "Фільтр за статтю", initialValue: filterOptionsBySex.all.id },
+  superStatsTournamentType: { id: "superStatsTournamentType", label: "Фільтр за типом турніру", initialValue: filterOptionsByTournamentType.all.id },
 };
