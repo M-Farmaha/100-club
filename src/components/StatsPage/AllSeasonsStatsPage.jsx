@@ -8,7 +8,7 @@ import { StatsItem } from "./StatsItem";
 import { useStateContext } from "../../state/stateContext";
 import { defineRank } from "../../helpers/defineRank";
 import { getPlayerNameById } from "../../helpers/getPlayerNameById";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { TournamentsMixtFilterBar } from "../Filters/TournamentsMixtFilterBar";
 import { NotFound } from "../NotFound/NotFound";
 
@@ -24,13 +24,17 @@ export const AllSeasonsStatsPage = () => {
 
   // Find tournament by tournament_id
   const currentTournament = tournaments?.find((t) => t.tournament_id === tournamentId);
-  
-  const name = currentTournament?.name || "";
-  
-  // Get ALL stages from ALL seasons
-  const allStages = currentTournament?.seasons?.flatMap((season) => season.stages) || [];
 
-  const flattenedArray = allStages.flatMap((stage) => stage.players);
+  const name = currentTournament?.name || "";
+
+  // Get ALL stages from ALL seasons
+  const allStages = useMemo(() => {
+    return currentTournament?.seasons?.flatMap((season) => season.stages) || [];
+  }, [currentTournament]);
+
+  const flattenedArray = useMemo(() => {
+    return allStages.flatMap((stage) => stage.players);
+  }, [allStages]);
 
   const isMixt = flattenedArray[0]?.member_id.length === 2;
 
@@ -39,8 +43,7 @@ export const AllSeasonsStatsPage = () => {
   // Update filteredArray when flattenedArray changes
   useEffect(() => {
     setFilteredArray(flattenedArray);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [tournaments, tournamentId]);
+  }, [tournaments, tournamentId, flattenedArray]);
 
   const playersStats = filteredArray.reduce((acc, player) => {
     const { member_id, win, defeat, position } = player;
@@ -111,12 +114,7 @@ export const AllSeasonsStatsPage = () => {
   if (!currentTournament) {
     return (
       <Section>
-        <NotFound
-          title="Турнір не знайдено"
-          message={`Турнір "${tournamentId}" не існує.`}
-          backPath="/tournaments"
-          backLabel="До списку турнірів"
-        />
+        <NotFound title="Турнір не знайдено" message={`Турнір "${tournamentId}" не існує.`} backPath="/tournaments" backLabel="До списку турнірів" />
       </Section>
     );
   }
@@ -124,10 +122,7 @@ export const AllSeasonsStatsPage = () => {
   return (
     <>
       <Section>
-        <TitleSection
-          icon={"#icon-cup"}
-          title={`${name} - Статистика`}
-        >
+        <TitleSection icon={"#icon-cup"} title={`${name} - Статистика`}>
           <Button onClick={handleBack}>
             <ButtonIconSvg>
               <use href={sprite + "#icon-undo"}></use>
@@ -140,13 +135,7 @@ export const AllSeasonsStatsPage = () => {
           Сезонів: {seasonsCount} | Турнірів: {stagesCount} | {isMixt ? "Пар" : "Учасників"}: {sortedPlayersStats.length}
         </StatsInfoBar>
 
-        {isMixt && (
-          <TournamentsMixtFilterBar
-            flattenedArray={flattenedArray}
-            members={members}
-            setFilteredArray={setFilteredArray}
-          />
-        )}
+        {isMixt && <TournamentsMixtFilterBar flattenedArray={flattenedArray} members={members} setFilteredArray={setFilteredArray} />}
 
         <List>
           <StatsPageHeading />
