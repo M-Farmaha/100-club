@@ -11,6 +11,11 @@ export const TournamentsMixtFilterBar = ({ flattenedArray, members, setFilteredA
   const { mixSex } = filters || {};
 
   const filtredBySex = () => {
+    // If "pairs" is selected, return original array
+    if (mixSex === 'pairs' || !mixSex) {
+      return flattenedArray;
+    }
+
     const filtredArray = flattenedArray.map((player) => {
       if (player.member_id.length === 2) {
         const memberId = player.member_id.find((id) => {
@@ -40,7 +45,7 @@ export const TournamentsMixtFilterBar = ({ flattenedArray, members, setFilteredA
     setFilteredArray(filtredArray);
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [mixSex]);
+  }, [mixSex, flattenedArray]);
 
   return (
     <Section>

@@ -14,7 +14,7 @@ export const Footer = () => {
       <Section>
         <SectionWrap>
           <FooterText>
-            &#169; 2024, All Rights Reserved, Developed with
+            &#169; 2024–{new Date().getFullYear()}, All Rights Reserved, Developed with
             <FooterIcon>
               <use href={sprite + "#icon-footer-heart"}></use>
             </FooterIcon>

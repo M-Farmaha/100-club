@@ -8,7 +8,7 @@ export const StatsSection = () => {
   const { globalState } = useStateContext();
   const { members, tournaments } = globalState;
 
-  const stages = tournaments.flatMap((tournament) => tournament.stages).length;
+  const stages = tournaments.flatMap((t) => t.seasons.flatMap((s) => s.stages)).length;
   const players = members.length;
   const trainers = members.filter((member) => member.type === filterOptionsByType.coach.id);
   const experience = new Date().getFullYear() - 2016;

@@ -17,7 +17,6 @@ export const TournamentsItem = ({ el, index }) => {
     <>
       <Item id={el.id} onClick={handleItemClick}>
         <MembersItemWrap>
-          <MembersItemText>{index + 1}.</MembersItemText>
           <TournamentLogo path={el.logo} />
           <MembersItemText>{`${el.name} ${el.year}`}</MembersItemText>
           <MembersItemText>{el.status}</MembersItemText>

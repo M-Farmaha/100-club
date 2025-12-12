@@ -8,12 +8,13 @@ import { StatsItem } from "./StatsItem";
 import { useStateContext } from "../../state/stateContext";
 import { defineRank } from "../../helpers/defineRank";
 import { getPlayerNameById } from "../../helpers/getPlayerNameById";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { TournamentsMixtFilterBar } from "../Filters/TournamentsMixtFilterBar";
 
 export const StatsPage = () => {
   const { globalState } = useStateContext();
-  const { tournaments, members } = globalState;
+  const { tournaments, members, filters } = globalState;
+  const mixSex = filters?.mixSex;
 
   const navigate = useNavigate();
   const { pathname } = useLocation();
@@ -28,9 +29,11 @@ export const StatsPage = () => {
   const currentSeason = currentTournament?.seasons?.find((s) => s.year === parseInt(year));
   
   const name = currentTournament?.name || "";
-  const stages = currentSeason?.stages || [];
 
-  const flattenedArray = stages.flatMap((stage) => stage.players);
+  const flattenedArray = useMemo(() => {
+    const stages = currentSeason?.stages || [];
+    return stages.flatMap((stage) => stage.players);
+  }, [currentSeason]);
 
   const isMixt = flattenedArray[0]?.member_id.length === 2;
 
@@ -111,7 +114,7 @@ export const StatsPage = () => {
         </TitleSection>
 
         <StatsInfoBar>
-          Турнірів: {stages.length} | {isMixt ? "Пар" : "Учасників"}: {sortedPlayersStats.length}
+          Турнірів: {currentSeason?.stages?.length || 0} | {isMixt ? (mixSex === 'male' ? 'Чоловіків' : mixSex === 'female' ? 'Жінок' : 'Пар') : 'Учасників'}: {sortedPlayersStats.length}
         </StatsInfoBar>
 
         {isMixt && (

@@ -8,7 +8,7 @@ export const NotFoundWrapper = styled.div`
   min-height: 400px;
   padding: 40px 20px;
   text-align: center;
-  background-color: var(--primary-white-color);
+  background-color: var(--secondary-white-color);
   border-radius: 8px;
 `;
 

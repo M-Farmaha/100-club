@@ -62,7 +62,6 @@ export const TournamentsByYearList = () => {
               onClick={() => handleItemClick(el.tournament_id)}
             >
               <ItemWrap>
-                <ItemText>{index + 1}.</ItemText>
                 <TournamentLogo path={el.logo} />
                 <ItemText>{el.name}</ItemText>
                 <ItemText>Турнірів: {el.stagesCount}</ItemText>

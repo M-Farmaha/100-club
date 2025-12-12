@@ -35,12 +35,11 @@ export const TournamentsList = () => {
               onClick={() => handleTournamentClick(tournament.tournament_id)}
             >
               <MembersItemWrap>
-                <MembersItemText>{index + 1}.</MembersItemText>
                 <TournamentLogo path={tournament.logo} />
                 <MembersItemText style={{ flexGrow: 1, paddingLeft: 10 }}>
                   {tournament.name}
                 </MembersItemText>
-                <MembersItemText>
+                <MembersItemText style={{ textAlign: "right", justifyContent: "flex-end" }}>
                   Сезонів: {tournament.seasons?.length || 0}
                 </MembersItemText>
               </MembersItemWrap>

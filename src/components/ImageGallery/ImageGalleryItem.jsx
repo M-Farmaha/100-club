@@ -8,13 +8,13 @@ import { useStateContext } from "../../state/stateContext";
 export const ImageGalleryItem = ({ el }) => {
   const { globalState } = useStateContext();
   const { filters } = globalState;
-  const { date } = filters.galleryPage || {};
+  const galleryDate = filters?.galleryDate || 'newest';
 
   const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
 
   const openModal = () => {
-    navigate(`photo/${el.id}?order=${date}`);
+    navigate(`photo/${el.id}?order=${galleryDate}`);
   };
 
   return (

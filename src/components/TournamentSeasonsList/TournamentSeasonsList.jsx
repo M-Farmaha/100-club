@@ -67,8 +67,7 @@ export const TournamentSeasonsList = () => {
               onClick={() => handleYearClick(season.year)}
             >
               <ItemWrap>
-                <ItemText>{index + 1}.</ItemText>
-                <ItemText style={{ flexGrow: 1, paddingLeft: 10 }}>
+                <ItemText style={{ flexGrow: 1 }}>
                   Сезон {season.year}
                 </ItemText>
                 <ItemText style={{ textAlign: "right", justifyContent: "flex-end" }}>

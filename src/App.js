@@ -18,6 +18,7 @@ import { StatsItemDetail } from "./components/StatsPage/StatsItemDetail";
 import { AllSeasonsStatsPage } from "./components/StatsPage/AllSeasonsStatsPage";
 import { AllSeasonsStatsItemDetail } from "./components/StatsPage/AllSeasonsStatsItemDetail";
 import { SuperStatsPage } from "./components/StatsPage/SuperStatsPage";
+import { SuperStatsItemDetail } from "./components/StatsPage/SuperStatsItemDetail";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
             <Route index element={<HomePage />} />
             <Route path="tournaments" element={<TournamentsPage />} />
             <Route path="tournaments/stats" element={<SuperStatsPage />} />
+            <Route path="tournaments/stats/:playerId" element={<SuperStatsItemDetail />} />
             <Route path="tournaments/:tournamentId" element={<TournamentSeasonsPage />} />
             <Route path="tournaments/:tournamentId/stats" element={<AllSeasonsStatsPage />} />
             <Route path="tournaments/:tournamentId/stats/:playerId" element={<AllSeasonsStatsItemDetail />} />
