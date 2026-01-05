@@ -662,6 +662,23 @@
           }
         ]
       }
+      ,
+      {
+        "year": 2026,
+        "stages": [
+          {
+            "date": "2026-01-04",
+            "players": [
+              { "member_id": ["8"], "win": 3, "defeat": 0, "position": 1 },
+              { "member_id": ["1"], "win": 1, "defeat": 1, "position": 2 },
+              { "member_id": ["170"], "win": 1, "defeat": 1, "position": 3 },
+              { "member_id": ["157"], "win": 1, "defeat": 2, "position": 4 },
+              { "member_id": ["161"], "win": 1, "defeat": 1, "position": 5 },
+              { "member_id": ["70"], "win": 0, "defeat": 2, "position": 6 }
+            ]
+          }
+        ]
+      }
     ]
   },
 
@@ -920,6 +937,22 @@
             ]
           }
         ]
+      },
+
+      {
+        "year": 2026,
+        "stages": [
+          {
+            "date": "2026-01-04",
+            "players": [
+              { "member_id": ["125"], "win": 4, "defeat": 0, "position": 1 },
+              { "member_id": ["21"], "win": 3, "defeat": 1, "position": 2 },
+              { "member_id": ["117"], "win": 2, "defeat": 2, "position": 3 },
+              { "member_id": ["61"], "win": 1, "defeat": 3, "position": 4 },
+              { "member_id": ["29"], "win": 0, "defeat": 4, "position": 5 }
+            ]
+          }
+        ]
       }
     ]
   },
@@ -1090,7 +1123,7 @@
             "players": [
               { "member_id": ["39", "4"], "win": 3, "defeat": 0, "position": 1 },
               { "member_id": ["157", "4"], "win": 2, "defeat": 1, "position": 2 },
-              { "member_id": ["170", "117"], "win": 2, "defeat": 1, "position": 3 },
+              { "member_id": ["31", "117"], "win": 2, "defeat": 1, "position": 3 },
               { "member_id": ["26", "61"], "win": 1, "defeat": 2, "position": 4 },
               { "member_id": ["57", "2"], "win": 2, "defeat": 1, "position": 5 },
               { "member_id": ["88", "150"], "win": 1, "defeat": 2, "position": 6 },
