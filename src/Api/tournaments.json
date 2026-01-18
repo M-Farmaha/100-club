@@ -661,8 +661,8 @@
             ]
           }
         ]
-      }
-      ,
+      },
+
       {
         "year": 2026,
         "stages": [
@@ -675,6 +675,19 @@
               { "member_id": ["157"], "win": 1, "defeat": 2, "position": 4 },
               { "member_id": ["161"], "win": 1, "defeat": 1, "position": 5 },
               { "member_id": ["70"], "win": 0, "defeat": 2, "position": 6 }
+            ]
+          },
+          {
+            "date": "2026-01-18",
+            "players": [
+              { "member_id": ["1"], "win": 3, "defeat": 0, "position": 1 },
+              { "member_id": ["119"], "win": 2, "defeat": 1, "position": 2 },
+              { "member_id": ["170"], "win": 2, "defeat": 1, "position": 3 },
+              { "member_id": ["39"], "win": 1, "defeat": 2, "position": 4 },
+              { "member_id": ["74"], "win": 2, "defeat": 1, "position": 5 },
+              { "member_id": ["7"], "win": 1, "defeat": 2, "position": 6 },
+              { "member_id": ["174"], "win": 1, "defeat": 2, "position": 7 },
+              { "member_id": ["70"], "win": 0, "defeat": 3, "position": 8 }
             ]
           }
         ]
@@ -950,6 +963,15 @@
               { "member_id": ["117"], "win": 2, "defeat": 2, "position": 3 },
               { "member_id": ["61"], "win": 1, "defeat": 3, "position": 4 },
               { "member_id": ["29"], "win": 0, "defeat": 4, "position": 5 }
+            ]
+          },
+          {
+            "date": "2026-01-18",
+            "players": [
+              { "member_id": ["4"], "win": 3, "defeat": 0, "position": 1 },
+              { "member_id": ["2"], "win": 2, "defeat": 1, "position": 2 },
+              { "member_id": ["117"], "win": 1, "defeat": 2, "position": 3 },
+              { "member_id": ["47"], "win": 0, "defeat": 3, "position": 4 }
             ]
           }
         ]

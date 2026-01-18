@@ -2246,5 +2246,18 @@
     "forhand": "right",
     "backhand": "twohand",
     "joinTennisYear": null
+  },
+  {
+    "id": "174",
+    "name": "Дивішик Володимир",
+    "birthDate": null,
+    "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/refs/heads/main/public/avatars/174.jpg",
+    "sex": "male",
+    "hometown": "Львів",
+    "type": "amateur",
+    "category": null,
+    "forhand": null,
+    "backhand": null,
+    "joinTennisYear": null
   }
 ]
