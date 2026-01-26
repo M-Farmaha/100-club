@@ -1154,6 +1154,26 @@
             ]
           }
         ]
+      },
+
+      {
+        "year": 2026,
+        "stages": [
+          {
+            "date": "2026-01-25",
+            "players": [
+              { "member_id": ["39", "2"], "win": 3, "defeat": 0, "position": 1 },
+              { "member_id": ["7", "47"], "win": 2, "defeat": 1, "position": 2 },
+              { "member_id": ["1", "4"], "win": 2, "defeat": 1, "position": 3 },
+              { "member_id": ["57", "123"], "win": 1, "defeat": 2, "position": 4 },
+
+              { "member_id": ["170", "29"], "win": 2, "defeat": 1, "position": 5 },
+              { "member_id": ["26", "2"], "win": 1, "defeat": 2, "position": 6 },
+              { "member_id": ["88", "117"], "win": 1, "defeat": 2, "position": 7 },
+              { "member_id": ["30", "155"], "win": 0, "defeat": 3, "position": 8 }
+            ]
+          }
+        ]
       }
     ]
   }
