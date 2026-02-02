@@ -25,10 +25,9 @@ jobs:
       - name: Set build date
         run: echo "BUILD_DATE=$(date +'%d.%m.%Y')" >> $GITHUB_ENV
       - name: Build app
-        run: npm run build && npm run gh-pages:404
+        run: npm run build
         env:
-          PUBLIC_URL: /100-club
-          REACT_APP_BUILD_DATE: ${{ env.BUILD_DATE }}
+          VITE_BUILD_DATE: ${{ env.BUILD_DATE }}
       - name: Remove .map files
         run: find ./build -name "*.map" -type f -exec rm -f {} +
       - name: Upload artifact

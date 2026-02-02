@@ -3,7 +3,7 @@ import { IconSvg, IconWrap, Section, Text } from "./LastUpdateSection-styled";
 
 export const LastUpdateSection = () => {
   // Use build date from environment variable, fallback to current date
-  const buildDate = process.env.REACT_APP_BUILD_DATE || new Date().toLocaleDateString('uk-UA');
+  const buildDate = import.meta.env.VITE_BUILD_DATE || new Date().toLocaleDateString('uk-UA');
 
   return (
     <>

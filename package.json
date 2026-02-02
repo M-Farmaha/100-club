@@ -2,6 +2,7 @@
   "name": "100-club",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "homepage": "https://M-Farmaha.github.io/100-club",
   "dependencies": {
     "@emotion/react": "^11.11.1",
@@ -10,9 +11,6 @@
     "@mui/material": "^5.14.9",
     "@mui/styled-engine-sc": "^5.14.9",
     "@react-spring/web": "^9.7.3",
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
     "axios": "^1.5.0",
     "chart.js": "^4.4.1",
     "date-fns": "^3.3.1",
@@ -24,39 +22,19 @@
     "react-loader-spinner": "^6.1.6",
     "react-modal": "^3.16.1",
     "react-router-dom": "^6.22.0",
-    "react-scripts": "5.0.1",
     "react-select": "^5.7.4",
-    "styled-components": "^5.3.11",
-    "web-vitals": "^2.1.4"
+    "styled-components": "^5.3.11"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "start": "react-scripts start --port=6789",
-    "build": "react-scripts build",
-    "gh-pages:404": "cp build/index.html build/404.html",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "dev": "vite",
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "predeploy": "npm run build && cp build/index.html build/404.html",
+    "deploy": "gh-pages -d build"
   },
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
+    "@vitejs/plugin-react": "^4.2.1",
+    "vite": "^5.1.0"
   }
 }
