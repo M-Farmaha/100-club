@@ -11,5 +11,5 @@ export const membersApi = () => {
 };
 
 export const tournamentsApi = () => {
-  return tournaments;
+  return JSON.parse(JSON.stringify(tournaments));
 };

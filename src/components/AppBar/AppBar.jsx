@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useSpring, a } from "@react-spring/web";
+import { useNavigate } from "react-router-dom";
 
 import { Logo } from "../Logo/Logo";
 import {
@@ -20,12 +21,37 @@ import sprite from "../../sprite.svg";
 
 export const AppBar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const clickCountRef = useRef(0);
+  const clickTimeoutRef = useRef(null);
 
   const [flipped, setFlipped] = useState(false);
   const { transform } = useSpring({
     transform: `perspective(200px) rotateY(${flipped ? 360 : 0}deg)`,
     config: { mass: 10, tension: 200, friction: 40 },
   });
+
+  const handleLogoClick = (e) => {
+    setFlipped((state) => !state);
+    
+    // Easter egg: 5 clicks on logo to access admin panel
+    clickCountRef.current += 1;
+    
+    if (clickTimeoutRef.current) {
+      clearTimeout(clickTimeoutRef.current);
+    }
+    
+    if (clickCountRef.current >= 5) {
+      e.preventDefault();
+      clickCountRef.current = 0;
+      navigate("/admin");
+      return;
+    }
+    
+    clickTimeoutRef.current = setTimeout(() => {
+      clickCountRef.current = 0;
+    }, 1500);
+  };
 
   const closeMobileMenu = () => {
     document.body.classList.remove("modal-open");
@@ -53,7 +79,7 @@ export const AppBar = () => {
             <NavLinkStyled
               to="/"
               className="logo"
-              onClick={() => setFlipped((state) => !state)}
+              onClick={handleLogoClick}
             >
               <Logo />
             </NavLinkStyled>

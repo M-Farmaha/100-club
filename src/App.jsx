@@ -19,6 +19,10 @@ import { AllSeasonsStatsPage } from "./components/StatsPage/AllSeasonsStatsPage"
 import { AllSeasonsStatsItemDetail } from "./components/StatsPage/AllSeasonsStatsItemDetail";
 import { SuperStatsPage } from "./components/StatsPage/SuperStatsPage";
 import { SuperStatsItemDetail } from "./components/StatsPage/SuperStatsItemDetail";
+import AdminPage from "./pages/AdminPage/AdminPage";
+import { AdminTournamentEditor } from "./components/AdminPanel/AdminTournamentEditor";
+import { AdminStagePage } from "./components/AdminPanel/AdminStagePage";
+import { AdminRouteWrapper } from "./components/AdminPanel/AdminRouteWrapper";
 
 function App() {
   return (
@@ -50,6 +54,11 @@ function App() {
             </Route>
             <Route path="gallery" element={<GalleryPage />}>
               <Route path="photo/:id" element={<ImageGalleryModal />} />
+            </Route>
+            <Route path="admin" element={<AdminRouteWrapper />}>
+              <Route index element={<AdminPage />} />
+              <Route path=":tournamentId" element={<AdminTournamentEditor />} />
+              <Route path=":tournamentId/:year/:stageDate" element={<AdminStagePage />} />
             </Route>
             <Route path="*" element={<Navigate to="/" replace />} />
           </Route>

@@ -6,6 +6,7 @@ export const ModalOverlay = styled.div`
   top: 0;
   width: 100%;
   height: 100%;
+  min-width: 330px;
   /* -webkit-overflow-scrolling: touch; */
 
   z-index: 999999;
