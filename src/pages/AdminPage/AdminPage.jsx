@@ -11,6 +11,9 @@ import {
   getGitHubToken,
   setGitHubToken,
   removeGitHubToken,
+  hasAdminUnsavedChanges,
+  setAdminBaseline,
+  getAdminBaselineData,
 } from "../../components/AdminPanel/adminHelpers";
 import { TournamentLogo } from "../../components/Logo/Logo";
 import sprite from "../../sprite.svg";
@@ -88,6 +91,8 @@ const AdminPage = () => {
         `Update tournaments.json — ${now}`
       );
       showMessage("✅ Опубліковано на GitHub! Сайт оновиться через ~1-2 хвилини");
+      // Update baseline so "unsaved changes" is reset
+      setAdminBaseline(tournaments);
     } catch (err) {
       showMessage(`❌ Помилка публікації: ${err.message}`, "error");
     } finally {
@@ -124,47 +129,12 @@ const AdminPage = () => {
 
   const hasToken = !!getGitHubToken();
 
-  // Check if current tournaments differ from original published data
-  // Normalize data for comparison: sort arrays by id/date and object keys
-  const normalizeForComparison = (data) => {
-    const sortArray = (arr, key) => {
-      if (!Array.isArray(arr)) return arr;
-      return [...arr].sort((a, b) => {
-        const aVal = a[key] || '';
-        const bVal = b[key] || '';
-        return String(aVal).localeCompare(String(bVal));
-      });
-    };
-
-    return JSON.stringify(
-      sortArray(data, 'tournament_id').map(t => ({
-        ...t,
-        seasons: sortArray(t.seasons || [], 'year').map(s => ({
-          ...s,
-          stages: sortArray(s.stages || [], 'date').map(st => ({
-            ...st,
-            players: sortArray(st.players || [], 'id')
-          }))
-        }))
-      })),
-      (key, value) => {
-        if (value && typeof value === 'object' && !Array.isArray(value)) {
-          return Object.keys(value).sort().reduce((sorted, k) => {
-            sorted[k] = value[k];
-            return sorted;
-          }, {});
-        }
-        return value;
-      }
-    );
-  };
-
-  const originalTournaments = tournamentsApi();
-  const hasChanges = normalizeForComparison(tournaments) !== normalizeForComparison(originalTournaments);
+  const hasChanges = hasAdminUnsavedChanges(tournaments);
 
   const handleRestoreAll = () => {
-    // Deep clone to avoid reference issues
-    const freshData = JSON.parse(JSON.stringify(tournamentsApi()));
+    // Restore from the baseline fetched from GitHub
+    const baselineData = getAdminBaselineData();
+    const freshData = baselineData || JSON.parse(JSON.stringify(tournamentsApi()));
     setGlobalState((prev) => ({ ...prev, tournaments: freshData }));
     setShowRestoreModal(false);
     showMessage("✅ Всі дані відновлено");

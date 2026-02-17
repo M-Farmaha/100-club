@@ -1,7 +1,7 @@
 import { useState, useMemo, useEffect, useRef } from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import { useStateContext } from "../../state/stateContext";
-import { tournamentsApi } from "../../Api/ApiRequest";
+import { getAdminBaselineData } from "./adminHelpers";
 import { AdminStageEditor } from "./AdminStageEditor";
 import {
   AdminContainer,
@@ -58,9 +58,9 @@ export const AdminStagePage = () => {
       if (savedOriginalDate) {
         originalDateRef.current = savedOriginalDate;
       } else {
-        // Check if current date exists in original JSON
-        const originalTournaments = tournamentsApi();
-        const originalTournament = originalTournaments?.find((t) => t.tournament_id === tournamentId);
+        // Check if current date exists in baseline data
+        const baselineTournaments = getAdminBaselineData();
+        const originalTournament = baselineTournaments?.find((t) => t.tournament_id === tournamentId);
         const originalSeason = originalTournament?.seasons?.find((s) => s.year === yearNum);
         const originalStageFromJson = originalSeason?.stages?.find((st) => st.date === stageDate);
         originalDateRef.current = originalStageFromJson?.date || null;
@@ -68,11 +68,11 @@ export const AdminStagePage = () => {
     }
   }
 
-  // Get original published stage from JSON for restore functionality
+  // Get original published stage from baseline for restore functionality
   const originalStage = useMemo(() => {
     if (isNew || !originalDateRef.current) return null;
-    const originalTournaments = tournamentsApi();
-    const originalTournament = originalTournaments?.find((t) => t.tournament_id === tournamentId);
+    const baselineTournaments = getAdminBaselineData();
+    const originalTournament = baselineTournaments?.find((t) => t.tournament_id === tournamentId);
     const originalSeason = originalTournament?.seasons?.find((s) => s.year === yearNum);
     return originalSeason?.stages?.find((st) => st.date === originalDateRef.current) || null;
   }, [tournamentId, yearNum, isNew]);

@@ -1,7 +1,7 @@
 import { useState, useMemo, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useStateContext } from "../../state/stateContext";
-import { tournamentsApi } from "../../Api/ApiRequest";
+import { getAdminBaselineData } from "./adminHelpers";
 import { getUkrLocaleDate } from "../../helpers/getUkrLocaleDate";
 import { ConfirmModal } from "./ConfirmModal";
 import {
@@ -80,9 +80,9 @@ export const AdminTournamentEditor = () => {
   const activeSeason = seasons.find((s) => s.year === activeYear);
   const stages = activeSeason?.stages || [];
 
-  // Get original published season from JSON for restore functionality
-  const originalTournaments = tournamentsApi();
-  const originalTournament = originalTournaments?.find((t) => t.tournament_id === tournamentId);
+  // Get original published season from baseline (fetched from GitHub)
+  const baselineTournaments = getAdminBaselineData();
+  const originalTournament = baselineTournaments?.find((t) => t.tournament_id === tournamentId);
   const originalSeason = originalTournament?.seasons?.find((s) => s.year === activeYear) || null;
 
   // Check if current season differs from original published data

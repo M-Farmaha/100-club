@@ -1,4 +1,8 @@
-import { Route, Routes, BrowserRouter, Navigate } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Navigate,
+} from "react-router-dom";
 
 import HomePage from "./pages/HomePage/HomePage";
 import MembersPage from "./pages/MembersPage/MembersPage";
@@ -24,48 +28,57 @@ import { AdminTournamentEditor } from "./components/AdminPanel/AdminTournamentEd
 import { AdminStagePage } from "./components/AdminPanel/AdminStagePage";
 import { AdminRouteWrapper } from "./components/AdminPanel/AdminRouteWrapper";
 
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: (
+        <>
+          <ScrollSave />
+          <Layout />
+        </>
+      ),
+      children: [
+        { index: true, element: <HomePage /> },
+        { path: "tournaments", element: <TournamentsPage /> },
+        { path: "tournaments/stats", element: <SuperStatsPage /> },
+        { path: "tournaments/stats/:playerId", element: <SuperStatsItemDetail /> },
+        { path: "tournaments/:tournamentId", element: <TournamentSeasonsPage /> },
+        { path: "tournaments/:tournamentId/stats", element: <AllSeasonsStatsPage /> },
+        { path: "tournaments/:tournamentId/stats/:playerId", element: <AllSeasonsStatsItemDetail /> },
+        { path: "tournaments/:tournamentId/:year", element: <StagesList /> },
+        { path: "tournaments/:tournamentId/:year/stats", element: <StatsPage /> },
+        { path: "tournaments/:tournamentId/:year/stats/:playerId", element: <StatsItemDetail /> },
+        { path: "tournaments/:tournamentId/:year/:stageDate", element: <ParticipantsList /> },
+        { path: "tournaments/:tournamentId/:year/:stageDate/:playerId", element: <ParticipantNestedPage /> },
+        {
+          path: "members",
+          element: <MembersPage />,
+          children: [{ path: "user/:id", element: <MembersModal /> }],
+        },
+        {
+          path: "gallery",
+          element: <GalleryPage />,
+          children: [{ path: "photo/:id", element: <ImageGalleryModal /> }],
+        },
+        {
+          path: "admin",
+          element: <AdminRouteWrapper />,
+          children: [
+            { index: true, element: <AdminPage /> },
+            { path: ":tournamentId", element: <AdminTournamentEditor /> },
+            { path: ":tournamentId/:year/:stageDate", element: <AdminStagePage /> },
+          ],
+        },
+        { path: "*", element: <Navigate to="/" replace /> },
+      ],
+    },
+  ],
+  { basename: "/100-club" }
+);
+
 function App() {
-  return (
-    <>
-      <BrowserRouter basename="/100-club">
-        <ScrollSave />
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<HomePage />} />
-            <Route path="tournaments" element={<TournamentsPage />} />
-            <Route path="tournaments/stats" element={<SuperStatsPage />} />
-            <Route path="tournaments/stats/:playerId" element={<SuperStatsItemDetail />} />
-            <Route path="tournaments/:tournamentId" element={<TournamentSeasonsPage />} />
-            <Route path="tournaments/:tournamentId/stats" element={<AllSeasonsStatsPage />} />
-            <Route path="tournaments/:tournamentId/stats/:playerId" element={<AllSeasonsStatsItemDetail />} />
-            <Route path="tournaments/:tournamentId/:year" element={<StagesList />} />
-            <Route path="tournaments/:tournamentId/:year/stats" element={<StatsPage />} />
-            <Route
-              path="tournaments/:tournamentId/:year/stats/:playerId"
-              element={<StatsItemDetail />}
-            />
-            <Route path="tournaments/:tournamentId/:year/:stageDate" element={<ParticipantsList />} />
-            <Route
-              path="tournaments/:tournamentId/:year/:stageDate/:playerId"
-              element={<ParticipantNestedPage />}
-            />
-            <Route path="members" element={<MembersPage />}>
-              <Route path="user/:id" element={<MembersModal />} />
-            </Route>
-            <Route path="gallery" element={<GalleryPage />}>
-              <Route path="photo/:id" element={<ImageGalleryModal />} />
-            </Route>
-            <Route path="admin" element={<AdminRouteWrapper />}>
-              <Route index element={<AdminPage />} />
-              <Route path=":tournamentId" element={<AdminTournamentEditor />} />
-              <Route path=":tournamentId/:year/:stageDate" element={<AdminStagePage />} />
-            </Route>
-            <Route path="*" element={<Navigate to="/" replace />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

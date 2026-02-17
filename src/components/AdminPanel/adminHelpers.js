@@ -57,6 +57,66 @@ export const getNextMemberId = (members) => {
   return String(maxId + 1);
 };
 
+// --- Normalize tournaments data for deep comparison ---
+
+export const normalizeForComparison = (data) => {
+  const sortArray = (arr, key) => {
+    if (!Array.isArray(arr)) return arr;
+    return [...arr].sort((a, b) => {
+      const aVal = a[key] || '';
+      const bVal = b[key] || '';
+      return String(aVal).localeCompare(String(bVal));
+    });
+  };
+
+  return JSON.stringify(
+    sortArray(data, 'tournament_id').map(t => ({
+      ...t,
+      seasons: sortArray(t.seasons || [], 'year').map(s => ({
+        ...s,
+        stages: sortArray(s.stages || [], 'date').map(st => ({
+          ...st,
+          players: sortArray(st.players || [], 'id')
+        }))
+      }))
+    })),
+    (key, value) => {
+      if (value && typeof value === 'object' && !Array.isArray(value)) {
+        return Object.keys(value).sort().reduce((sorted, k) => {
+          sorted[k] = value[k];
+          return sorted;
+        }, {});
+      }
+      return value;
+    }
+  );
+};
+
+// --- Admin baseline management (module-level) ---
+
+let _adminBaseline = null;
+let _adminBaselineData = null;
+
+export const setAdminBaseline = (tournaments) => {
+  _adminBaselineData = JSON.parse(JSON.stringify(tournaments));
+  _adminBaseline = normalizeForComparison(tournaments);
+};
+
+export const getAdminBaseline = () => _adminBaseline;
+
+export const getAdminBaselineData = () =>
+  _adminBaselineData ? JSON.parse(JSON.stringify(_adminBaselineData)) : null;
+
+export const clearAdminBaseline = () => {
+  _adminBaseline = null;
+  _adminBaselineData = null;
+};
+
+export const hasAdminUnsavedChanges = (currentTournaments) => {
+  if (!_adminBaseline) return false;
+  return normalizeForComparison(currentTournaments) !== _adminBaseline;
+};
+
 // GitHub API integration
 
 const GITHUB_OWNER = "M-Farmaha";
@@ -66,6 +126,15 @@ const GITHUB_BRANCH = "main";
 export const getGitHubToken = () => localStorage.getItem("github_pat") || "";
 export const setGitHubToken = (token) => localStorage.setItem("github_pat", token);
 export const removeGitHubToken = () => localStorage.removeItem("github_pat");
+
+export const fetchTournamentsFromGitHub = async () => {
+  const res = await fetch(
+    `https://raw.githubusercontent.com/${GITHUB_OWNER}/${GITHUB_REPO}/${GITHUB_BRANCH}/src/Api/tournaments.json`,
+    { cache: "no-store" }
+  );
+  if (!res.ok) throw new Error(`GitHub fetch failed: ${res.status}`);
+  return await res.json();
+};
 
 const getFileSha = async (token, path) => {
   const res = await fetch(
