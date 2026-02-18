@@ -59,32 +59,32 @@ const AdminPage = () => {
     try {
       const now = new Date().toLocaleString("uk-UA");
 
-      // Publish tournaments, members, and pending avatars
+      // Publish sequentially to avoid SHA conflicts
+      // Order: members → avatars → tournaments (tournaments may reference new members)
+      await pushToGitHub(
+        token,
+        members,
+        "src/Api/members.json",
+        `Update members.json — ${now}`
+      );
+
+      // Publish avatars sequentially
       const pendingAvatars = getPendingAvatars();
-      const avatarUploads = Object.entries(pendingAvatars).map(([id, base64]) =>
-        pushImageToGitHub(
+      for (const [id, base64] of Object.entries(pendingAvatars)) {
+        await pushImageToGitHub(
           token,
           base64,
           `public/avatars/${id}.jpg`,
           `Update avatar for ${id} — ${now}`
-        )
-      );
+        );
+      }
 
-      await Promise.all([
-        pushToGitHub(
-          token,
-          tournaments,
-          "src/Api/tournaments.json",
-          `Update tournaments.json — ${now}`
-        ),
-        pushToGitHub(
-          token,
-          members,
-          "src/Api/members.json",
-          `Update members.json — ${now}`
-        ),
-        ...avatarUploads,
-      ]);
+      await pushToGitHub(
+        token,
+        tournaments,
+        "src/Api/tournaments.json",
+        `Update tournaments.json — ${now}`
+      );
 
       clearPendingAvatars();
       showMessage("Опубліковано на GitHub! Сайт оновиться через ~1-2 хвилини");
