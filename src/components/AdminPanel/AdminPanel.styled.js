@@ -404,12 +404,14 @@ export const PlayerNumberFields = styled.div`
 `;
 
 export const DateInput = styled.input`
+  width: 100%;
   height: 40px;
   padding: 0 10px;
   border-radius: 8px;
   border: 1px solid rgba(0, 0, 0, 0.12);
   font-size: 14px;
   font-family: var(--main-font);
+  text-align: left;
   outline: none;
   transition: var(--main-transition);
   background: var(--secondary-white-color);

@@ -558,10 +558,17 @@ export const AdminMemberEditor = () => {
             input.style.left = "-9999px";
             input.style.opacity = "0";
             document.body.appendChild(input);
-            input.onchange = (e) => {
-              const file = e.target.files?.[0];
-              if (!file) {
+
+            const cleanup = () => {
+              if (input.parentNode) {
                 document.body.removeChild(input);
+              }
+            };
+
+            const handleChange = () => {
+              const file = input.files?.[0];
+              if (!file) {
+                cleanup();
                 return;
               }
               const reader = new FileReader();
@@ -572,10 +579,22 @@ export const AdminMemberEditor = () => {
                 setAvatarRemoved(false);
                 setAvatarLoadFailed(false);
                 showMsg("Аватар додано", "add");
-                document.body.removeChild(input);
+                cleanup();
               };
+              reader.onerror = () => cleanup();
               reader.readAsDataURL(file);
             };
+
+            input.addEventListener("change", handleChange);
+            // Fallback cleanup if user cancels file picker
+            const handleFocus = () => {
+              setTimeout(() => {
+                if (!input.files?.length) cleanup();
+                window.removeEventListener("focus", handleFocus);
+              }, 500);
+            };
+            window.addEventListener("focus", handleFocus);
+
             input.click();
           };
 
