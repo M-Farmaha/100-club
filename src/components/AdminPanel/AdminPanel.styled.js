@@ -404,7 +404,8 @@ export const PlayerNumberFields = styled.div`
 `;
 
 export const DateInput = styled.input`
-  padding: 10px 10px;
+  height: 40px;
+  padding: 0 10px;
   border-radius: 8px;
   border: 1px solid rgba(0, 0, 0, 0.12);
   font-size: 14px;
@@ -413,6 +414,21 @@ export const DateInput = styled.input`
   transition: var(--main-transition);
   background: var(--secondary-white-color);
   color: var(--primary-black-color);
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  &::-webkit-date-and-time-value {
+    text-align: left;
+  }
+
+  &::-webkit-calendar-picker-indicator {
+    opacity: 0.6;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+  }
 
   &:focus {
     border-color: var(--accent-color);

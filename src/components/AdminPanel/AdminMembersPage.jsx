@@ -81,7 +81,7 @@ export const AdminMembersPage = () => {
 
   const sortedMembers = useMemo(() => {
     const sorted = [...(members || [])].sort((a, b) =>
-      a.name.localeCompare(b.name)
+      parseInt(a.id, 10) - parseInt(b.id, 10)
     );
     if (!search.trim()) return sorted;
     const q = search.toLowerCase();

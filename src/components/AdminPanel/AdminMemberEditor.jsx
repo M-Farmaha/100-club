@@ -22,7 +22,8 @@ import {
 
 const fieldStyle = {
   width: "100%",
-  padding: "10px 10px",
+  height: 40,
+  padding: "0 10px",
   borderRadius: 8,
   border: "1px solid rgba(0,0,0,0.12)",
   fontSize: 14,
@@ -32,6 +33,9 @@ const fieldStyle = {
   background: "var(--secondary-white-color)",
   color: "var(--primary-black-color)",
   transition: "var(--main-transition)",
+  WebkitAppearance: "none",
+  MozAppearance: "none",
+  appearance: "none",
 };
 
 const selectStyles = {
@@ -144,6 +148,7 @@ export const AdminMemberEditor = () => {
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [showRestoreModal, setShowRestoreModal] = useState(false);
   const [showLeaveModal, setShowLeaveModal] = useState(false);
+  const [showInvalidLeaveModal, setShowInvalidLeaveModal] = useState(false);
   const [showAvatarDeleteModal, setShowAvatarDeleteModal] = useState(false);
   const [localAvatarPreview, setLocalAvatarPreview] = useState(() => getPendingAvatar(memberId));
   const [avatarRemoved, setAvatarRemoved] = useState(false);
@@ -161,6 +166,10 @@ export const AdminMemberEditor = () => {
         return;
       }
       removePendingAvatar(memberId);
+    }
+    if (!isNew && !form.name.trim()) {
+      setShowInvalidLeaveModal(true);
+      return;
     }
     navigate("/admin/members");
   };
@@ -180,6 +189,8 @@ export const AdminMemberEditor = () => {
   // Auto-sync form changes to globalState for existing members
   useEffect(() => {
     if (isNew || !form || !memberId) return;
+    // Don't auto-save if name is empty (invalid data)
+    if (!form.name.trim()) return;
     const current = members?.find((m) => m.id === memberId);
     if (current && JSON.stringify(current) !== JSON.stringify(form)) {
       const updatedMembers = members.map((m) =>
@@ -206,11 +217,13 @@ export const AdminMemberEditor = () => {
   const hasFormChanges = originalWithoutAvatar && 
     JSON.stringify(formWithoutAvatar) !== JSON.stringify(originalWithoutAvatar);
   
-  // Avatar is considered changed only if:
+  // Avatar is considered changed if:
   // - there's a new pending avatar, OR
-  // - avatar was explicitly removed AND original avatar was actually loadable
+  // - avatar was explicitly removed AND original avatar was actually loadable, OR
+  // - avatar field differs from original (covers case when returning to editor after avatar deletion)
   const originalHadAvatar = originalAvatarFailedRef.current === false;
-  const hasAvatarChanges = !!localAvatarPreview || (avatarRemoved && originalHadAvatar);
+  const avatarFieldChanged = originalMember && form.avatar !== originalMember.avatar;
+  const hasAvatarChanges = !!localAvatarPreview || (avatarRemoved && originalHadAvatar) || avatarFieldChanged;
   
   const hasChanges = !isNew && originalMember && (hasFormChanges || hasAvatarChanges);
 
@@ -230,7 +243,7 @@ export const AdminMemberEditor = () => {
       return;
     }
     const updatedMembers = [...members, form];
-    updatedMembers.sort((a, b) => a.name.localeCompare(b.name));
+    updatedMembers.sort((a, b) => parseInt(a.id, 10) - parseInt(b.id, 10));
     setGlobalState((prev) => ({ ...prev, members: updatedMembers }));
     savedRef.current = true;
     showMsg("Учасника додано", "add");
@@ -541,9 +554,16 @@ export const AdminMemberEditor = () => {
             const input = document.createElement("input");
             input.type = "file";
             input.accept = "image/jpeg,image/png,image/webp";
+            input.style.position = "fixed";
+            input.style.left = "-9999px";
+            input.style.opacity = "0";
+            document.body.appendChild(input);
             input.onchange = (e) => {
               const file = e.target.files?.[0];
-              if (!file) return;
+              if (!file) {
+                document.body.removeChild(input);
+                return;
+              }
               const reader = new FileReader();
               reader.onload = () => {
                 const base64 = reader.result.split(",")[1];
@@ -552,6 +572,7 @@ export const AdminMemberEditor = () => {
                 setAvatarRemoved(false);
                 setAvatarLoadFailed(false);
                 showMsg("Аватар додано", "add");
+                document.body.removeChild(input);
               };
               reader.readAsDataURL(file);
             };
@@ -633,7 +654,7 @@ export const AdminMemberEditor = () => {
                       title="Змінити аватар"
                     >
                       <svg width="16" height="16" style={{ fill: "#fff" }}>
-                        <use href={`${sprite}#icon-restore`} />
+                        <use href={`${sprite}#icon-camera`} />
                       </svg>
                     </button>
                     <button
@@ -708,6 +729,21 @@ export const AdminMemberEditor = () => {
         onCancel={() => setShowLeaveModal(false)}
         title="Незбережені зміни"
         message="У вас є незбережені дані нового учасника. Якщо ви покинете сторінку, всі зміни будуть втрачені."
+        confirmText="Покинути"
+        cancelText="Залишитись"
+        requirePassword={false}
+        variant="danger"
+      />
+
+      <ConfirmModal
+        isOpen={showInvalidLeaveModal}
+        onConfirm={() => {
+          setShowInvalidLeaveModal(false);
+          navigate("/admin/members");
+        }}
+        onCancel={() => setShowInvalidLeaveModal(false)}
+        title="Невалідні дані"
+        message="Поле «Прізвище та ім’я» порожнє. Якщо ви покинете сторінку, невалідні зміни не будуть збережені."
         confirmText="Покинути"
         cancelText="Залишитись"
         requirePassword={false}

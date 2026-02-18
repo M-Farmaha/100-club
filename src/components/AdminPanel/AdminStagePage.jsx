@@ -1,14 +1,20 @@
-import { useState, useMemo, useEffect, useRef } from "react";
+import { useState, useMemo, useEffect, useRef, useCallback } from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import { useStateContext } from "../../state/stateContext";
 import { getAdminBaselineData } from "./adminHelpers";
 import { AdminStageEditor } from "./AdminStageEditor";
 import {
   AdminContainer,
+  DashboardHeader,
+  DashboardTitle,
+  ActionButton,
+  ButtonText,
+  ButtonGroup,
   BackLink,
   EmptyState,
 } from "./AdminPanel.styled";
 import { useAdminToast } from "./AdminToast";
+import { ConfirmModal } from "./ConfirmModal";
 import sprite from "../../sprite.svg";
 
 export const AdminStagePage = () => {
@@ -22,6 +28,24 @@ export const AdminStagePage = () => {
   const isNew = stageDate === "new";
   const yearNum = parseInt(year, 10);
 
+  const [showLeaveModal, setShowLeaveModal] = useState(false);
+  const [showInvalidLeaveModal, setShowInvalidLeaveModal] = useState(false);
+  const stageChangesRef = useRef(false);
+  const dataValidRef = useRef(true);
+  const editorRef = useRef(null);
+
+  const handleNewStageChanges = useCallback((hasChanges) => {
+    stageChangesRef.current = hasChanges;
+  }, []);
+
+  const handleValidationError = useCallback((msg) => {
+    showMessage(msg, "error");
+  }, [showMessage]);
+
+  const handleValidationStatus = useCallback((isValid) => {
+    dataValidRef.current = isValid;
+  }, []);
+
   const tournament = useMemo(
     () => tournaments?.find((t) => t.tournament_id === tournamentId),
     [tournaments, tournamentId]
@@ -32,9 +56,19 @@ export const AdminStagePage = () => {
     [tournament, yearNum]
   );
 
+  const MIN_PLAYERS = 4;
+
   const stage = useMemo(() => {
     if (isNew) {
-      return { date: new Date().toISOString().split("T")[0], players: [] };
+      return {
+        date: new Date().toISOString().split("T")[0],
+        players: Array.from({ length: MIN_PLAYERS }, (_, i) => ({
+          member_id: [],
+          win: 0,
+          defeat: 0,
+          position: i + 1,
+        })),
+      };
     }
     return season?.stages?.find((st) => st.date === stageDate);
   }, [season, stageDate, isNew]);
@@ -97,7 +131,7 @@ export const AdminStagePage = () => {
   if (!stage && !isNew) {
     return (
       <AdminContainer>
-        <EmptyState>Етап не знайдено</EmptyState>
+        <EmptyState>Турнір не знайдено</EmptyState>
       </AdminContainer>
     );
   }
@@ -131,7 +165,7 @@ export const AdminStagePage = () => {
     // For new stages - show message and navigate back
     // For existing stages - if date changed, update URL
     if (isNew) {
-      showMessage("Новий етап додано", "add");
+      showMessage("Новий турнір додано", "add");
       setTimeout(() => {
         navigate(`/admin/tournaments/${tournamentId}`);
       }, 1000);
@@ -172,28 +206,97 @@ export const AdminStagePage = () => {
   };
 
   const handleCancel = () => {
+    if (isNew && stageChangesRef.current) {
+      setShowLeaveModal(true);
+      return;
+    }
+    if (!isNew && !dataValidRef.current) {
+      setShowInvalidLeaveModal(true);
+      return;
+    }
+    navigate(`/admin/tournaments/${tournamentId}`);
+  };
+
+  const handleConfirmLeave = () => {
+    setShowLeaveModal(false);
+    navigate(`/admin/tournaments/${tournamentId}`);
+  };
+
+  const handleConfirmInvalidLeave = () => {
+    setShowInvalidLeaveModal(false);
     navigate(`/admin/tournaments/${tournamentId}`);
   };
 
   return (
     <AdminContainer>
-      <BackLink onClick={() => navigate(`/admin/tournaments/${tournamentId}`)}>
+      <BackLink onClick={handleCancel}>
         <svg>
           <use href={`${sprite}#icon-undo`} />
         </svg>
         Назад
       </BackLink>
 
+      {isNew && (
+        <DashboardHeader>
+          <DashboardTitle>
+            <svg width="20" height="20" style={{ fill: "currentColor" }}>
+              <use href={`${sprite}#icon-plus`} />
+            </svg>
+            Новий турнір
+          </DashboardTitle>
+          <ButtonGroup>
+            <ActionButton onClick={() => editorRef.current?.save()}>
+              <svg width="12" height="12" style={{ fill: "currentColor" }}>
+                <use href={`${sprite}#icon-save`} />
+              </svg>
+              <ButtonText>Зберегти</ButtonText>
+            </ActionButton>
+          </ButtonGroup>
+        </DashboardHeader>
+      )}
+
       <AdminStageEditor
+        ref={editorRef}
         stage={stage}
         members={members || []}
         tournamentId={tournamentId}
+        tournamentName={tournament?.name || ""}
         onSave={handleSaveStage}
-        onCancel={handleCancel}
         onDelete={!isNew ? handleDeleteStage : null}
         isNew={isNew}
         originalStage={originalStage}
+        onHasChanges={isNew ? handleNewStageChanges : undefined}
+        onValidationError={handleValidationError}
+        onValidationStatus={handleValidationStatus}
       />
+
+      {isNew && (
+        <ConfirmModal
+          isOpen={showLeaveModal}
+          onConfirm={handleConfirmLeave}
+          onCancel={() => setShowLeaveModal(false)}
+          title="Незбережені зміни"
+          message="У вас є незбережені дані нового турніру. Якщо ви покинете сторінку, всі зміни будуть втрачені."
+          confirmText="Покинути"
+          cancelText="Залишитись"
+          requirePassword={false}
+          variant="danger"
+        />
+      )}
+
+      {!isNew && (
+        <ConfirmModal
+          isOpen={showInvalidLeaveModal}
+          onConfirm={handleConfirmInvalidLeave}
+          onCancel={() => setShowInvalidLeaveModal(false)}
+          title="Невалідні дані"
+          message="Дані турніру містять помилки (не всі гравці вибрані або сума перемог не дорівнює сумі поразок). Якщо ви покинете сторінку, невалідні зміни не будуть збережені."
+          confirmText="Покинути"
+          cancelText="Залишитись"
+          requirePassword={false}
+          variant="danger"
+        />
+      )}
     </AdminContainer>
   );
 };

@@ -1,4 +1,4 @@
-import { useState, useMemo, useRef, useEffect, useCallback } from "react";
+import { useState, useMemo, useRef, useEffect, useCallback, useImperativeHandle, forwardRef } from "react";
 import Select from "react-select";
 import { ConfirmModal } from "./ConfirmModal";
 import { getUkrLocaleDate } from "../../helpers/getUkrLocaleDate";
@@ -129,7 +129,9 @@ const selectStyles = {
   }),
 };
 
-export const AdminStageEditor = ({ stage, members, tournamentId, onSave, onCancel, onDelete, isNew, originalStage }) => {
+const MIN_PLAYERS = 4;
+
+export const AdminStageEditor = forwardRef(({ stage, members, tournamentId, tournamentName, onSave, onDelete, isNew, originalStage, onHasChanges, onValidationError, onValidationStatus }, ref) => {
   // Check if this is a team tournament (multiple players allowed)
   const isTeamTournament = tournamentId === "mad-mix";
   const maxTeamSize = 2; // Maximum players per team for mad-mix
@@ -155,6 +157,19 @@ export const AdminStageEditor = ({ stage, members, tournamentId, onSave, onCance
   const [showRestoreModal, setShowRestoreModal] = useState(false);
   const [showDeleteStageModal, setShowDeleteStageModal] = useState(false);
   const isFirstRender = useRef(true);
+
+  // Track whether new stage has unsaved changes
+  const hasNewStageChanges = useMemo(() => {
+    if (!isNew) return false;
+    const initial = initialDataRef.current;
+    if (date !== initial.date) return true;
+    if (JSON.stringify(players) !== JSON.stringify(initial.players)) return true;
+    return false;
+  }, [date, players, isNew]);
+
+  useEffect(() => {
+    if (onHasChanges) onHasChanges(hasNewStageChanges);
+  }, [hasNewStageChanges, onHasChanges]);
 
   // Check if current data differs from original published data
   const hasChangesFromPublished = useMemo(() => {
@@ -196,16 +211,20 @@ export const AdminStageEditor = ({ stage, members, tournamentId, onSave, onCance
       }));
   }, [members]);
 
-  // Auto-save when date or players change (only for existing stages)
+  // Auto-save when date or players change (only for existing stages, only if valid)
   const autoSave = useCallback(() => {
     if (isNew || !date) return;
     
-    const validPlayers = players.filter((p) => p.member_id.length > 0);
-    if (validPlayers.length === 0) return;
+    // Don't auto-save invalid data
+    const emptyPlayers = players.some((p) => p.member_id.length === 0);
+    if (emptyPlayers) return;
+    const totalWins = players.reduce((sum, p) => sum + (parseInt(p.win, 10) || 0), 0);
+    const totalDefeats = players.reduce((sum, p) => sum + (parseInt(p.defeat, 10) || 0), 0);
+    if (totalWins !== totalDefeats) return;
 
     onSave({
       date,
-      players: validPlayers.map((p) => ({
+      players: players.map((p) => ({
         member_id: p.member_id,
         win: parseInt(p.win, 10) || 0,
         defeat: parseInt(p.defeat, 10) || 0,
@@ -253,11 +272,19 @@ export const AdminStageEditor = ({ stage, members, tournamentId, onSave, onCance
   };
 
   const removePlayer = (index) => {
+    if (players.length <= MIN_PLAYERS) {
+      if (onValidationError) onValidationError(`Мінімальна кількість гравців для турніру — ${MIN_PLAYERS}`);
+      return;
+    }
     setDeletePlayerIndex(index);
   };
 
   const confirmRemovePlayer = () => {
     if (deletePlayerIndex !== null) {
+      if (players.length <= MIN_PLAYERS) {
+        setDeletePlayerIndex(null);
+        return;
+      }
       setPlayers(players.filter((_, i) => i !== deletePlayerIndex));
       setDeletePlayerIndex(null);
     }
@@ -303,33 +330,59 @@ export const AdminStageEditor = ({ stage, members, tournamentId, onSave, onCance
     }
   };
 
-  const handleSave = () => {
-    if (!date) {
-      alert("Вкажіть дату етапу");
+  // Validation: check if data is valid
+  const getValidationErrors = useCallback(() => {
+    const errors = [];
+    if (!date) errors.push("Вкажіть дату турніру");
+    const emptyPlayers = players.some((p) => p.member_id.length === 0);
+    if (emptyPlayers) errors.push("Всі гравці мають бути вибрані");
+    const totalWins = players.reduce((sum, p) => sum + (parseInt(p.win, 10) || 0), 0);
+    const totalDefeats = players.reduce((sum, p) => sum + (parseInt(p.defeat, 10) || 0), 0);
+    if (totalWins !== totalDefeats) errors.push(`Сума перемог (${totalWins}) не дорівнює сумі поразок (${totalDefeats})`);
+    return errors;
+  }, [date, players]);
+
+  const isDataValid = useMemo(() => getValidationErrors().length === 0, [getValidationErrors]);
+
+  // Report validation status to parent
+  useEffect(() => {
+    if (onValidationStatus) onValidationStatus(isDataValid);
+  }, [isDataValid, onValidationStatus]);
+
+  const handleSave = useCallback(() => {
+    const errors = getValidationErrors();
+    if (errors.length > 0) {
+      if (onValidationError) {
+        errors.forEach((err) => onValidationError(err));
+      }
       return;
     }
 
-    const validPlayers = players.filter((p) => p.member_id.length > 0);
-
     onSave({
       date,
-      players: validPlayers.map((p) => ({
+      players: players.map((p) => ({
         member_id: p.member_id,
         win: parseInt(p.win, 10) || 0,
         defeat: parseInt(p.defeat, 10) || 0,
         position: parseInt(p.position, 10) || 1,
       })),
     });
-  };
+  }, [date, players, onSave, getValidationErrors, onValidationError]);
+
+  useImperativeHandle(ref, () => ({
+    save: handleSave,
+  }), [handleSave]);
 
   return (
     <EditorSection>
-      <EditorSectionTitle>
-        {isNew ? "Створити новий етап" : `✏️ Редагування: ${stage.date}`}
-      </EditorSectionTitle>
+      {!isNew && (
+        <EditorSectionTitle>
+          {`${tournamentName}${getUkrLocaleDate(stage.date)}`}
+        </EditorSectionTitle>
+      )}
 
       <PlayerField style={{ marginBottom: 16 }}>
-        <label>Дата етапу</label>
+        <label>Дата турніру</label>
         <DateInput
           type="date"
           value={date}
@@ -368,18 +421,12 @@ export const AdminStageEditor = ({ stage, members, tournamentId, onSave, onCance
               <ButtonText>Відновити</ButtonText>
             </ActionButton>
           )}
-          <ActionButton onClick={addPlayer}>
-            <svg width="16" height="16" style={{ fill: 'currentColor' }}>
-              <use href={`${sprite}#icon-plus`} />
-            </svg>
-            <ButtonText>{isTeamTournament ? "Додати пару" : "Додати гравця"}</ButtonText>
-          </ActionButton>
           {onDelete && (
             <ActionButton $variant="danger" onClick={() => setShowDeleteStageModal(true)}>
               <svg width="16" height="16" style={{ fill: 'currentColor' }}>
                 <use href={`${sprite}#icon-trash`} />
               </svg>
-              <ButtonText>Видалити етап</ButtonText>
+              <ButtonText>Видалити турнір</ButtonText>
             </ActionButton>
           )}
         </ButtonGroup>
@@ -466,29 +513,15 @@ export const AdminStageEditor = ({ stage, members, tournamentId, onSave, onCance
         </p>
       )}
 
-      {isNew && (
-        <>
-          <Divider />
-          <ButtonGroup style={{ justifyContent: "flex-end" }}>
-            <ActionButton $variant="secondary" onClick={onCancel}>
-              Скасувати
-            </ActionButton>
-            <ActionButton
-              onClick={handleSave}
-              disabled={players.length === 0 || players.every((p) => p.member_id.length === 0)}
-              style={{
-                opacity: players.length === 0 || players.every((p) => p.member_id.length === 0) ? 0.5 : 1,
-                cursor: players.length === 0 || players.every((p) => p.member_id.length === 0) ? 'not-allowed' : 'pointer',
-              }}
-            >
-              <svg width="16" height="16" style={{ fill: 'currentColor' }}>
-                <use href={`${sprite}#icon-plus`} />
-              </svg>
-              <ButtonText>Створити етап</ButtonText>
-            </ActionButton>
-          </ButtonGroup>
-        </>
-      )}
+      <Divider />
+      <ButtonGroup style={{ justifyContent: "flex-end" }}>
+        <ActionButton onClick={addPlayer}>
+          <svg width="16" height="16" style={{ fill: 'currentColor' }}>
+            <use href={`${sprite}#icon-plus`} />
+          </svg>
+          <ButtonText>{isTeamTournament ? "Додати пару" : "Додати гравця"}</ButtonText>
+        </ActionButton>
+      </ButtonGroup>
 
       <ConfirmModal
         isOpen={deletePlayerIndex !== null}
@@ -505,8 +538,8 @@ export const AdminStageEditor = ({ stage, members, tournamentId, onSave, onCance
         isOpen={showRestoreModal}
         onConfirm={handleRestore}
         onCancel={() => setShowRestoreModal(false)}
-        title="Відновити етап?"
-        message="Ця дія поверне етап до останнього опублікованого стану. Всі поточні зміни будуть втрачені."
+        title="Відновити турнір?"
+        message="Ця дія поверне турнір до останнього опублікованого стану. Всі поточні зміни будуть втрачені."
         confirmText="Відновити"
         cancelText="Скасувати"
         requirePassword={false}
@@ -521,8 +554,8 @@ export const AdminStageEditor = ({ stage, members, tournamentId, onSave, onCance
             onDelete();
           }}
           onCancel={() => setShowDeleteStageModal(false)}
-          title="Видалити етап?"
-          message={`Ви збираєтесь видалити етап${getUkrLocaleDate(stage.date)} з усіма учасниками.`}
+          title="Видалити турнір?"
+          message={`Ви збираєтесь видалити турнір ${getUkrLocaleDate(stage.date)} з усіма учасниками.`}
           confirmText="Видалити"
           cancelText="Скасувати"
           requirePassword={false}
@@ -530,4 +563,4 @@ export const AdminStageEditor = ({ stage, members, tournamentId, onSave, onCance
       )}
     </EditorSection>
   );
-};
+});

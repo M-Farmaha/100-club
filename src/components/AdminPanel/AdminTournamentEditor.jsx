@@ -124,7 +124,7 @@ export const AdminTournamentEditor = () => {
     setConfirmModal({
       isOpen: true,
       title: "Видалити сезон?",
-      message: `Ви збираєтесь видалити сезон ${activeYear} з усіма етапами.`,
+      message: `Ви збираєтесь видалити сезон ${activeYear} з усіма турнірами.`,
       requirePassword: false,
       onConfirm: () => {
         const updatedTournaments = tournaments.map((t) => {
@@ -199,7 +199,7 @@ export const AdminTournamentEditor = () => {
         <EditorSection>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16, gap: 10 }}>
             <EditorSectionTitle style={{ margin: 0 }}>
-              Етапи сезону {activeYear}
+              Турніри сезону {activeYear}
             </EditorSectionTitle>
             <ButtonGroup>
               {originalSeason && (
@@ -222,7 +222,7 @@ export const AdminTournamentEditor = () => {
                 <svg width="16" height="16" style={{ fill: 'currentColor' }}>
                   <use href={`${sprite}#icon-plus`} />
                 </svg>
-                <ButtonText>Додати етап</ButtonText>
+                <ButtonText>Додати турнір</ButtonText>
               </ActionButton>
               <ActionButton
                 $variant="danger"
@@ -237,7 +237,7 @@ export const AdminTournamentEditor = () => {
           </div>
 
           {stages.length === 0 && (
-            <EmptyState>Ще немає етапів у цьому сезоні</EmptyState>
+            <EmptyState>Ще немає турнірів у цьому сезоні</EmptyState>
           )}
 
           {stages.map((stage) => (
