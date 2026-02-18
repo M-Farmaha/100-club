@@ -79,14 +79,22 @@ const Layout = () => {
 
   useEffect(() => {
     const storedState = JSON.parse(localStorage.getItem("globalState"));
+    const isAdminMode = sessionStorage.getItem("admin_active") === "true";
 
-    const members = storedState?.members?.length > 0 ? storedState.members : membersApi();
+    // Use localStorage data only in admin mode, otherwise always use fresh data from API
+    const members = isAdminMode && storedState?.members?.length > 0 
+      ? storedState.members 
+      : membersApi();
     members?.sort((a, b) => a.name.localeCompare(b.name));
 
-    const tournaments = storedState?.tournaments?.length > 0 ? storedState.tournaments : tournamentsApi();
+    const tournaments = isAdminMode && storedState?.tournaments?.length > 0 
+      ? storedState.tournaments 
+      : tournamentsApi();
     tournaments?.sort((a, b) => a.name.localeCompare(b.name));
 
-    const photos = storedState?.photos?.length > 0 ? storedState.photos : photosApi();
+    const photos = isAdminMode && storedState?.photos?.length > 0 
+      ? storedState.photos 
+      : photosApi();
     photos?.sort((a, b) => b.date.localeCompare(a.date));
 
     setGlobalState((prev) => ({
