@@ -82,6 +82,11 @@ export const filterOptionsByTournamentType = {
   pairs: { id: "pairs", title: "Парний" },
 };
 
+export const filterOptionsByRating = {
+  total: { id: "total", title: "Сумарний" },
+  topFive: { id: "topFive", title: "5 кращих турнірів" },
+};
+
 export const FILTERS = {
   playersName: { id: "playersName", label: "Знайти гравця за іменем", initialValue: "" },
   playersType: { id: "playersType", label: "Фільтр за категорією", initialValue: filterOptionsByType.all.id },
@@ -94,4 +99,6 @@ export const FILTERS = {
 
   superStatsSex: { id: "superStatsSex", label: "Фільтр за статтю", initialValue: filterOptionsBySex.all.id },
   superStatsTournamentType: { id: "superStatsTournamentType", label: "Фільтр за типом турніру", initialValue: filterOptionsByTournamentType.all.id },
+
+  statsRating: { id: "statsRating", label: "Сортування за рейтингом", initialValue: "total" },
 };

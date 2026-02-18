@@ -5,7 +5,7 @@ import { getPlayerNameById } from "../../helpers/getPlayerNameById";
 import { useStateContext } from "../../state/stateContext";
 import { FILTERS, filterfilterOptionsBySexMix } from "../../constants/constants";
 
-export const TournamentsMixtFilterBar = ({ flattenedArray, members, setFilteredArray }) => {
+export const TournamentsMixtFilterBar = ({ flattenedArray, members, setFilteredArray, children }) => {
   const { globalState } = useStateContext();
   const { filters } = globalState;
   const { mixSex } = filters || {};
@@ -50,6 +50,7 @@ export const TournamentsMixtFilterBar = ({ flattenedArray, members, setFilteredA
   return (
     <Section>
       <Form onSubmit={(e) => e.preventDefault()}>
+        {children}
         <FilterSelect
           id={FILTERS.mixSex.id}
           options={filterfilterOptionsBySexMix}

@@ -7,9 +7,12 @@ import {
 } from "./StatsPage-styled";
 import { useNavigate } from "react-router-dom";
 import { getMedalColor } from "../../helpers/getMedalColor";
+import { useStateContext } from "../../state/stateContext";
 
-export const StatsItem = ({ el, index, isAllSeasons }) => {
+export const StatsItem = ({ el, index }) => {
   const navigate = useNavigate();
+  const { globalState } = useStateContext();
+  const statsRating = globalState.filters?.statsRating || "total";
 
   const { member_id, winCount, topFiveRank, totalRank, name, globalPosition } = el;
 
@@ -19,8 +22,7 @@ export const StatsItem = ({ el, index, isAllSeasons }) => {
     navigate(stringId);
   };
 
-  // Show totalRank for all-seasons stats, topFiveRank for single-season
-  const rankValue = isAllSeasons ? totalRank : topFiveRank;
+  const rankValue = statsRating === "topFive" ? topFiveRank : totalRank;
 
   return (
     <>

@@ -10,11 +10,16 @@ import { defineRank } from "../../helpers/defineRank";
 import { getPlayerNameById } from "../../helpers/getPlayerNameById";
 import { useState, useMemo } from "react";
 import { TournamentsMixtFilterBar } from "../Filters/TournamentsMixtFilterBar";
+import { StatsRatingFilterBar } from "../Filters/StatsRatingFilterBar";
+import { FilterSelect } from "../Filters/FilterSelect";
+import { FILTERS, filterOptionsByRating } from "../../constants/constants";
 
 export const StatsPage = () => {
   const { globalState } = useStateContext();
   const { tournaments, members, filters } = globalState;
   const mixSex = filters?.mixSex;
+  const statsRating = filters?.statsRating || filterOptionsByRating.total.id;
+  const rankKey = statsRating === "topFive" ? "topFiveRank" : "totalRank";
 
   const navigate = useNavigate();
   const { pathname } = useLocation();
@@ -67,26 +72,29 @@ export const StatsPage = () => {
     const topFiveRankArray = topFivePositions.map((pos) => defineRank(pos));
     const topFiveRank = topFiveRankArray.reduce((acc, rank) => acc + rank, 0);
 
+    const rankArray = sortedPositions.map((pos) => defineRank(pos));
+    const totalRank = rankArray.reduce((acc, rank) => acc + rank, 0);
+
     const name = getPlayerNameById(el.member_id, members);
-    return { ...el, winCount, name, topFiveRank };
+    return { ...el, winCount, name, topFiveRank, totalRank };
   });
 
   const sortedPlayersStats = statsWithWins.sort((a, b) => {
-    if (b.topFiveRank === a.topFiveRank) {
+    if (b[rankKey] === a[rankKey]) {
       if (b.winCount === a.winCount) {
         return a.name.localeCompare(b.name);
       }
       return b.winCount - a.winCount;
     }
-    return b.topFiveRank - a.topFiveRank;
+    return b[rankKey] - a[rankKey];
   });
 
   let globalPosition = 1;
   let prevWinCount = sortedPlayersStats[0]?.winCount;
-  let prevTopFiveRank = sortedPlayersStats[0]?.topFiveRank;
+  let prevRank = sortedPlayersStats[0]?.[rankKey];
 
   sortedPlayersStats.forEach((player, index) => {
-    if (player.winCount === prevWinCount && player.topFiveRank === prevTopFiveRank) {
+    if (player.winCount === prevWinCount && player[rankKey] === prevRank) {
       player.globalPosition = globalPosition;
     } else {
       globalPosition = index + 1;
@@ -94,7 +102,7 @@ export const StatsPage = () => {
     }
 
     prevWinCount = player.winCount;
-    prevTopFiveRank = player.topFiveRank;
+    prevRank = player[rankKey];
   });
 
   const handleBack = () => {
@@ -117,12 +125,22 @@ export const StatsPage = () => {
           Турнірів: {currentSeason?.stages?.length || 0} | {isMixt ? (mixSex === 'male' ? 'Чоловіків' : mixSex === 'female' ? 'Жінок' : 'Пар') : 'Учасників'}: {sortedPlayersStats.length}
         </StatsInfoBar>
 
-        {isMixt && (
+        {isMixt ? (
           <TournamentsMixtFilterBar
             flattenedArray={flattenedArray}
             members={members}
             setFilteredArray={setFilteredArray}
-          />
+          >
+            <FilterSelect
+              id={FILTERS.statsRating.id}
+              options={filterOptionsByRating}
+              label={FILTERS.statsRating.label}
+              placeholder={filterOptionsByRating[statsRating]?.title}
+              icon={"#icon-star"}
+            />
+          </TournamentsMixtFilterBar>
+        ) : (
+          <StatsRatingFilterBar />
         )}
 
         <List>

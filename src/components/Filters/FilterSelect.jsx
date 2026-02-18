@@ -31,6 +31,9 @@ export const FilterSelect = ({ id, options, label, placeholder, icon }) => {
       fontSize: "16px",
       cursor: "pointer",
       color: "var(--primary-grey-color)",
+      whiteSpace: "nowrap",
+      overflow: "hidden",
+      textOverflow: "ellipsis",
     }),
 
     input: (styles) => ({

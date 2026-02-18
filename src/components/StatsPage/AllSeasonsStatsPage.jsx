@@ -10,12 +10,17 @@ import { defineRank } from "../../helpers/defineRank";
 import { getPlayerNameById } from "../../helpers/getPlayerNameById";
 import { useState, useMemo } from "react";
 import { TournamentsMixtFilterBar } from "../Filters/TournamentsMixtFilterBar";
+import { StatsRatingFilterBar } from "../Filters/StatsRatingFilterBar";
+import { FilterSelect } from "../Filters/FilterSelect";
+import { FILTERS, filterOptionsByRating } from "../../constants/constants";
 import { NotFound } from "../NotFound/NotFound";
 
 export const AllSeasonsStatsPage = () => {
   const { globalState } = useStateContext();
   const { tournaments, members, filters } = globalState;
   const mixSex = filters?.mixSex;
+  const statsRating = filters?.statsRating || filterOptionsByRating.total.id;
+  const rankKey = statsRating === "topFive" ? "topFiveRank" : "totalRank";
 
   const navigate = useNavigate();
   const { pathname } = useLocation();
@@ -68,26 +73,30 @@ export const AllSeasonsStatsPage = () => {
     const rankArray = sortedPositions.map((pos) => defineRank(pos));
     const totalRank = rankArray.reduce((acc, rank) => acc + rank, 0);
 
+    const topFivePositions = sortedPositions.slice(0, 5);
+    const topFiveRankArray = topFivePositions.map((pos) => defineRank(pos));
+    const topFiveRank = topFiveRankArray.reduce((acc, rank) => acc + rank, 0);
+
     const name = getPlayerNameById(el.member_id, members);
-    return { ...el, winCount, name, totalRank };
+    return { ...el, winCount, name, totalRank, topFiveRank };
   });
 
   const sortedPlayersStats = statsWithWins.sort((a, b) => {
-    if (b.totalRank === a.totalRank) {
+    if (b[rankKey] === a[rankKey]) {
       if (b.winCount === a.winCount) {
         return a.name.localeCompare(b.name);
       }
       return b.winCount - a.winCount;
     }
-    return b.totalRank - a.totalRank;
+    return b[rankKey] - a[rankKey];
   });
 
   let globalPosition = 1;
   let prevWinCount = sortedPlayersStats[0]?.winCount;
-  let prevTotalRank = sortedPlayersStats[0]?.totalRank;
+  let prevRank = sortedPlayersStats[0]?.[rankKey];
 
   sortedPlayersStats.forEach((player, index) => {
-    if (player.winCount === prevWinCount && player.totalRank === prevTotalRank) {
+    if (player.winCount === prevWinCount && player[rankKey] === prevRank) {
       player.globalPosition = globalPosition;
     } else {
       globalPosition = index + 1;
@@ -95,7 +104,7 @@ export const AllSeasonsStatsPage = () => {
     }
 
     prevWinCount = player.winCount;
-    prevTotalRank = player.totalRank;
+    prevRank = player[rankKey];
   });
 
   const handleBack = () => {
@@ -131,12 +140,24 @@ export const AllSeasonsStatsPage = () => {
           Сезонів: {seasonsCount} | Турнірів: {stagesCount} | {isMixt ? (mixSex === 'male' ? 'Чоловіків' : mixSex === 'female' ? 'Жінок' : 'Пар') : 'Учасників'}: {sortedPlayersStats.length}
         </StatsInfoBar>
 
-        {isMixt && <TournamentsMixtFilterBar flattenedArray={flattenedArray} members={members} setFilteredArray={setFilteredArray} />}
+        {isMixt ? (
+          <TournamentsMixtFilterBar flattenedArray={flattenedArray} members={members} setFilteredArray={setFilteredArray}>
+            <FilterSelect
+              id={FILTERS.statsRating.id}
+              options={filterOptionsByRating}
+              label={FILTERS.statsRating.label}
+              placeholder={filterOptionsByRating[statsRating]?.title}
+              icon={"#icon-star"}
+            />
+          </TournamentsMixtFilterBar>
+        ) : (
+          <StatsRatingFilterBar />
+        )}
 
         <List>
           <StatsPageHeading />
           {sortedPlayersStats?.map((el, index) => (
-            <StatsItem key={index} el={el} index={index} isAllSeasons />
+            <StatsItem key={index} el={el} index={index} />
           ))}
         </List>
       </Section>

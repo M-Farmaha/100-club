@@ -9,7 +9,7 @@ import { useStateContext } from "../../state/stateContext";
 import { defineRank } from "../../helpers/defineRank";
 import { getPlayerNameById } from "../../helpers/getPlayerNameById";
 import { SuperStatsFilterBar } from "../Filters/SuperStatsFilterBar";
-import { filterOptionsBySex, filterOptionsByTournamentType } from "../../constants/constants";
+import { filterOptionsBySex, filterOptionsByTournamentType, filterOptionsByRating } from "../../constants/constants";
 
 export const SuperStatsPage = () => {
   const { globalState } = useStateContext();
@@ -18,6 +18,8 @@ export const SuperStatsPage = () => {
   // Use fallback values if filters not initialized in localStorage
   const superStatsSex = filters?.superStatsSex || filterOptionsBySex.all.id;
   const superStatsTournamentType = filters?.superStatsTournamentType || filterOptionsByTournamentType.all.id;
+  const statsRating = filters?.statsRating || filterOptionsByRating.total.id;
+  const rankKey = statsRating === "topFive" ? "topFiveRank" : "totalRank";
 
   const navigate = useNavigate();
 
@@ -92,27 +94,31 @@ export const SuperStatsPage = () => {
     const rankArray = sortedPositions.map((pos) => defineRank(pos));
     const totalRank = rankArray.reduce((acc, rank) => acc + rank, 0);
 
+    const topFivePositions = sortedPositions.slice(0, 5);
+    const topFiveRankArray = topFivePositions.map((pos) => defineRank(pos));
+    const topFiveRank = topFiveRankArray.reduce((acc, rank) => acc + rank, 0);
+
     const name = getPlayerNameById(el.member_id, members);
-    return { ...el, winCount, name, totalRank };
+    return { ...el, winCount, name, totalRank, topFiveRank };
   });
 
-  // Sort by totalRank (highest first)
+  // Sort by selected rank (highest first)
   const sortedPlayersStats = statsWithWins.sort((a, b) => {
-    if (b.totalRank === a.totalRank) {
+    if (b[rankKey] === a[rankKey]) {
       if (b.winCount === a.winCount) {
         return a.name.localeCompare(b.name);
       }
       return b.winCount - a.winCount;
     }
-    return b.totalRank - a.totalRank;
+    return b[rankKey] - a[rankKey];
   });
 
   let globalPosition = 1;
   let prevWinCount = sortedPlayersStats[0]?.winCount;
-  let prevTotalRank = sortedPlayersStats[0]?.totalRank;
+  let prevRank = sortedPlayersStats[0]?.[rankKey];
 
   sortedPlayersStats.forEach((player, index) => {
-    if (player.winCount === prevWinCount && player.totalRank === prevTotalRank) {
+    if (player.winCount === prevWinCount && player[rankKey] === prevRank) {
       player.globalPosition = globalPosition;
     } else {
       globalPosition = index + 1;
@@ -120,7 +126,7 @@ export const SuperStatsPage = () => {
     }
 
     prevWinCount = player.winCount;
-    prevTotalRank = player.totalRank;
+    prevRank = player[rankKey];
   });
 
   const handleBack = () => {
@@ -163,7 +169,7 @@ export const SuperStatsPage = () => {
         <List>
           <StatsPageHeading />
           {sortedPlayersStats?.map((el, index) => (
-            <StatsItem key={index} el={el} index={index} isAllSeasons />
+            <StatsItem key={index} el={el} index={index} />
           ))}
         </List>
       </Section>
