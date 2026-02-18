@@ -234,6 +234,19 @@
     "joinTennisYear": 2022
   },
   {
+    "id": "176",
+    "name": "Гнєвек Х.",
+    "birthDate": "",
+    "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/refs/heads/main/public/avatars/176.jpg",
+    "sex": "female",
+    "hometown": "",
+    "type": "amateur",
+    "category": null,
+    "forhand": "null",
+    "backhand": "null",
+    "joinTennisYear": ""
+  },
+  {
     "id": "84",
     "name": "Гойда Юрій",
     "birthDate": "2007-05-03",
@@ -1245,6 +1258,19 @@
     "forhand": "right",
     "backhand": "twohand",
     "joinTennisYear": 2016
+  },
+  {
+    "id": "177",
+    "name": "Москва І.",
+    "birthDate": "",
+    "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/refs/heads/main/public/avatars/177.jpg",
+    "sex": "female",
+    "hometown": "",
+    "type": "amateur",
+    "category": null,
+    "forhand": "null",
+    "backhand": "null",
+    "joinTennisYear": ""
   },
   {
     "id": "129",
