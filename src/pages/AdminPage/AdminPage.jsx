@@ -1,21 +1,22 @@
 import { useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import { AdminAuth } from "../../components/AdminPanel/AdminAuth";
 import { ConfirmModal } from "../../components/AdminPanel/ConfirmModal";
 import { useStateContext } from "../../state/stateContext";
-import { tournamentsApi } from "../../Api/ApiRequest";
+import { tournamentsApi, membersApi } from "../../Api/ApiRequest";
 import {
   exportToJsonFile,
   importJsonFile,
   pushToGitHub,
+  pushImageToGitHub,
   getGitHubToken,
   setGitHubToken,
   removeGitHubToken,
   hasAdminUnsavedChanges,
   setAdminBaseline,
   getAdminBaselineData,
+  getPendingAvatars,
+  clearPendingAvatars,
 } from "../../components/AdminPanel/adminHelpers";
-import { TournamentLogo } from "../../components/Logo/Logo";
 import sprite from "../../sprite.svg";
 import {
   AdminContainer,
@@ -28,73 +29,68 @@ import {
   TournamentCardInfo,
   TournamentCardName,
   TournamentCardMeta,
-  SuccessMessage,
   EditorSection,
   EditorSectionTitle,
   Divider,
 } from "../../components/AdminPanel/AdminPanel.styled";
+import { useAdminToast } from "../../components/AdminPanel/AdminToast";
 
 const AdminPage = () => {
-  const [authenticated, setAuthenticated] = useState(
-    () => sessionStorage.getItem("admin_authenticated") === "true"
-  );
-  const [message, setMessage] = useState("");
-  const [messageType, setMessageType] = useState("success");
   const [publishing, setPublishing] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
   const [showRestoreModal, setShowRestoreModal] = useState(false);
+  const [showPublishModal, setShowPublishModal] = useState(false);
   const [tokenInput, setTokenInput] = useState(() => getGitHubToken());
   const { globalState, setGlobalState } = useStateContext();
-  const { tournaments } = globalState;
+  const { tournaments, members } = globalState;
   const navigate = useNavigate();
 
-  const showMessage = useCallback((text, type = "success") => {
-    setMessage(text);
-    setMessageType(type);
-    setTimeout(() => setMessage(""), 4000);
-  }, []);
-
-  const handleExport = () => {
-    exportToJsonFile(tournaments, "tournaments.json");
-    showMessage("✅ Файл tournaments.json завантажено");
-  };
-
-  const handleImport = async () => {
-    try {
-      const data = await importJsonFile();
-      if (Array.isArray(data)) {
-        setGlobalState((prev) => ({ ...prev, tournaments: data }));
-        showMessage("✅ Дані турнірів успішно імпортовано");
-      } else {
-        showMessage("❌ Невірний формат файлу — очікується масив турнірів", "error");
-      }
-    } catch (err) {
-      showMessage(`❌ ${err.message}`, "error");
-    }
-  };
+  const showMessage = useAdminToast();
 
   const handlePublish = async () => {
     const token = getGitHubToken();
     if (!token) {
       setShowSettings(true);
-      showMessage("⚠️ Спочатку вкажіть GitHub токен у налаштуваннях", "error");
+      showMessage("Спочатку вкажіть GitHub токен у налаштуваннях", "error");
       return;
     }
 
     setPublishing(true);
     try {
       const now = new Date().toLocaleString("uk-UA");
-      await pushToGitHub(
-        token,
-        tournaments,
-        "src/Api/tournaments.json",
-        `Update tournaments.json — ${now}`
+
+      // Publish tournaments, members, and pending avatars
+      const pendingAvatars = getPendingAvatars();
+      const avatarUploads = Object.entries(pendingAvatars).map(([id, base64]) =>
+        pushImageToGitHub(
+          token,
+          base64,
+          `public/avatars/${id}.jpg`,
+          `Update avatar for ${id} — ${now}`
+        )
       );
-      showMessage("✅ Опубліковано на GitHub! Сайт оновиться через ~1-2 хвилини");
-      // Update baseline so "unsaved changes" is reset
-      setAdminBaseline(tournaments);
+
+      await Promise.all([
+        pushToGitHub(
+          token,
+          tournaments,
+          "src/Api/tournaments.json",
+          `Update tournaments.json — ${now}`
+        ),
+        pushToGitHub(
+          token,
+          members,
+          "src/Api/members.json",
+          `Update members.json — ${now}`
+        ),
+        ...avatarUploads,
+      ]);
+
+      clearPendingAvatars();
+      showMessage("Опубліковано на GitHub! Сайт оновиться через ~1-2 хвилини");
+      setAdminBaseline(tournaments, members);
     } catch (err) {
-      showMessage(`❌ Помилка публікації: ${err.message}`, "error");
+      showMessage(`Помилка публікації: ${err.message}`, "error");
     } finally {
       setPublishing(false);
     }
@@ -103,47 +99,46 @@ const AdminPage = () => {
   const handleSaveToken = () => {
     if (tokenInput.trim()) {
       setGitHubToken(tokenInput.trim());
-      showMessage("✅ GitHub токен збережено");
+      showMessage("GitHub токен збережено");
     } else {
       removeGitHubToken();
-      showMessage("🗑 GitHub токен видалено");
+      showMessage("GitHub токен видалено", "delete");
     }
   };
 
-  const getTotalStages = (tournament) => {
-    return (
-      tournament.seasons?.reduce(
-        (acc, season) => acc + (season.stages?.length || 0),
-        0
-      ) || 0
-    );
+  const handleRestoreAll = () => {
+    const baselineData = getAdminBaselineData();
+    const freshTournaments = baselineData?.tournaments || JSON.parse(JSON.stringify(tournamentsApi()));
+    const freshMembers = baselineData?.members || JSON.parse(JSON.stringify(membersApi()));
+    setGlobalState((prev) => ({
+      ...prev,
+      tournaments: freshTournaments,
+      members: freshMembers,
+    }));
+    clearPendingAvatars();
+    setShowRestoreModal(false);
+    showMessage("Всі дані відновлено", "restore");
   };
-
-  if (!authenticated) {
-    return <AdminAuth onSuccess={() => setAuthenticated(true)} />;
-  }
-
-  const sortedTournaments = [...(tournaments || [])].sort((a, b) =>
-    a.name.localeCompare(b.name)
-  );
 
   const hasToken = !!getGitHubToken();
+  const hasChanges = hasAdminUnsavedChanges(tournaments, members);
 
-  const hasChanges = hasAdminUnsavedChanges(tournaments);
-
-  const handleRestoreAll = () => {
-    // Restore from the baseline fetched from GitHub
-    const baselineData = getAdminBaselineData();
-    const freshData = baselineData || JSON.parse(JSON.stringify(tournamentsApi()));
-    setGlobalState((prev) => ({ ...prev, tournaments: freshData }));
-    setShowRestoreModal(false);
-    showMessage("✅ Всі дані відновлено");
-  };
+  const totalStages = tournaments?.reduce(
+    (acc, t) =>
+      acc +
+      (t.seasons?.reduce((sAcc, s) => sAcc + (s.stages?.length || 0), 0) || 0),
+    0
+  ) || 0;
 
   return (
     <AdminContainer>
       <DashboardHeader>
-        <DashboardTitle>⚙️ Адмін панель</DashboardTitle>
+        <DashboardTitle>
+            <svg width="22" height="22" style={{ fill: "var(--primary-black-color)" }}>
+              <use href={`${sprite}#icon-gear`} />
+            </svg>
+            Адмін панель
+          </DashboardTitle>
         <ButtonGroup>
           <ActionButton
             $variant="secondary"
@@ -151,59 +146,40 @@ const AdminPage = () => {
             disabled={!hasChanges}
             style={{
               opacity: hasChanges ? 1 : 0.5,
-              cursor: hasChanges ? 'pointer' : 'not-allowed',
+              cursor: hasChanges ? "pointer" : "not-allowed",
             }}
           >
-            <svg width="16" height="16" style={{ fill: 'currentColor' }}>
+            <svg width="16" height="16" style={{ fill: "currentColor" }}>
               <use href={`${sprite}#icon-restore`} />
             </svg>
             <ButtonText>Відновити</ButtonText>
           </ActionButton>
           <ActionButton
-            onClick={handlePublish}
+            onClick={() => setShowPublishModal(true)}
             disabled={publishing || !hasChanges}
+            $variant={hasToken && hasChanges && !publishing ? "danger" : undefined}
             style={{
-              background: hasToken && hasChanges
-                ? "linear-gradient(135deg, #2ea043 0%, #3fb950 100%)"
-                : undefined,
               opacity: hasChanges ? 1 : 0.5,
-              cursor: hasChanges && !publishing ? 'pointer' : 'not-allowed',
+              cursor: hasChanges && !publishing ? "pointer" : "not-allowed",
             }}
           >
-            {publishing ? "⏳" : "🚀"}
-            <ButtonText>{publishing ? "Публікація..." : "Опублікувати"}</ButtonText>
-          </ActionButton>
-          <ActionButton onClick={handleImport} $variant="secondary">
-            📥
-            <ButtonText>Імпорт</ButtonText>
-          </ActionButton>
-          <ActionButton onClick={handleExport} $variant="secondary">
-            📤
-            <ButtonText>Експорт</ButtonText>
+            <svg width="14" height="14" style={{ fill: "currentColor" }}>
+              <use href={`${sprite}#icon-arrow-bold`} />
+            </svg>
+            <ButtonText>
+              {publishing ? "Публікація..." : "Опублікувати"}
+            </ButtonText>
           </ActionButton>
           <ActionButton
             onClick={() => setShowSettings(!showSettings)}
             $variant="secondary"
           >
-            ⚙️
+            <svg width="16" height="16" style={{ fill: "currentColor" }}>
+              <use href={`${sprite}#icon-gear`} />
+            </svg>
           </ActionButton>
         </ButtonGroup>
       </DashboardHeader>
-
-      {message && (
-        <SuccessMessage
-          style={
-            messageType === "error"
-              ? {
-                  background: "rgba(255, 68, 0, 0.1)",
-                  color: "var(--lose-color)",
-                }
-              : undefined
-          }
-        >
-          {message}
-        </SuccessMessage>
-      )}
 
       {showSettings && (
         <EditorSection>
@@ -218,15 +194,20 @@ const AdminPage = () => {
           >
             Для автоматичної публікації потрібен{" "}
             <a
-              href="https://github.com/settings/tokens/new?scopes=repo&description=100-club-admin"
+              href="https://github.com/settings/tokens/new?scopes=public_repo&description=100-club-admin"
               target="_blank"
               rel="noopener noreferrer"
               style={{ color: "var(--accent-color)" }}
             >
               GitHub Personal Access Token
             </a>{" "}
-            з правом <strong>repo</strong>. Токен зберігається лише в localStorage
-            вашого браузера.
+            з правом <strong>public_repo</strong>. Токен зберігається лише в
+            localStorage вашого браузера і не передається на жодні сервери.
+            <br />
+            <span style={{ color: "var(--lose-color)" }}>
+              ⚠️ Нікому не показуйте та не передавайте свій токен — він надає
+              повний доступ до репозиторію.
+            </span>
           </p>
           <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
             <input
@@ -244,7 +225,12 @@ const AdminPage = () => {
                 outline: "none",
               }}
             />
-            <ActionButton onClick={handleSaveToken}>Зберегти</ActionButton>
+            <ActionButton onClick={handleSaveToken}>
+              <svg width="12" height="12" style={{ fill: "currentColor" }}>
+                <use href={`${sprite}#icon-save`} />
+              </svg>
+              <ButtonText>Зберегти</ButtonText>
+            </ActionButton>
           </div>
           {hasToken && (
             <p
@@ -261,25 +247,37 @@ const AdminPage = () => {
         </EditorSection>
       )}
 
+      {/* Navigation cards */}
       <div>
-        {sortedTournaments.map((tournament) => (
-          <TournamentCard
-            key={tournament.tournament_id}
-            onClick={() => navigate(`/admin/${tournament.tournament_id}`)}
-          >
-            <TournamentLogo path={tournament.logo} />
-            <TournamentCardInfo>
-              <TournamentCardName>{tournament.name}</TournamentCardName>
-              <TournamentCardMeta>
-                Сезонів: {tournament.seasons?.length || 0} • Етапів:{" "}
-                {getTotalStages(tournament)}
-              </TournamentCardMeta>
-            </TournamentCardInfo>
-            <span style={{ color: "var(--accent-color)", fontSize: "20px" }}>
-              →
-            </span>
-          </TournamentCard>
-        ))}
+        <TournamentCard onClick={() => navigate("/admin/tournaments")}>
+          <svg width="28" height="28" style={{ fill: "var(--primary-black-color)", flexShrink: 0 }}>
+            <use href={`${sprite}#icon-cup`} />
+          </svg>
+          <TournamentCardInfo>
+            <TournamentCardName>Турніри</TournamentCardName>
+            <TournamentCardMeta>
+              Сезонів: {tournaments?.length || 0} • Турнірів: {totalStages}
+            </TournamentCardMeta>
+          </TournamentCardInfo>
+          <svg width="16" height="16" style={{ fill: "var(--primary-black-color)", flexShrink: 0 }}>
+            <use href={`${sprite}#icon-arrow-right`} />
+          </svg>
+        </TournamentCard>
+
+        <TournamentCard onClick={() => navigate("/admin/members")}>
+          <svg width="28" height="28" style={{ fill: "var(--primary-black-color)", flexShrink: 0 }}>
+            <use href={`${sprite}#icon-users`} />
+          </svg>
+          <TournamentCardInfo>
+            <TournamentCardName>Учасники</TournamentCardName>
+            <TournamentCardMeta>
+              Учасників: {members?.length || 0}
+            </TournamentCardMeta>
+          </TournamentCardInfo>
+          <svg width="16" height="16" style={{ fill: "var(--primary-black-color)", flexShrink: 0 }}>
+            <use href={`${sprite}#icon-arrow-right`} />
+          </svg>
+        </TournamentCard>
       </div>
 
       <ConfirmModal
@@ -287,10 +285,25 @@ const AdminPage = () => {
         onConfirm={handleRestoreAll}
         onCancel={() => setShowRestoreModal(false)}
         title="Відновити все?"
-        message="Ця дія поверне всі турніри до останнього опублікованого стану. Всі поточні зміни будуть втрачені."
+        message="Ця дія поверне всі дані до останнього опублікованого стану. Всі поточні зміни будуть втрачені."
         confirmText="Відновити"
         cancelText="Скасувати"
         requirePassword={false}
+        variant="danger"
+      />
+
+      <ConfirmModal
+        isOpen={showPublishModal}
+        onConfirm={() => {
+          setShowPublishModal(false);
+          handlePublish();
+        }}
+        onCancel={() => setShowPublishModal(false)}
+        title="Опублікувати зміни?"
+        message="Ця дія завантажить всі зміни на GitHub і оновить публічний сайт. Після публікації зміни будуть доступні всім відвідувачам сайту через 1-2 хвилини. Цю дію неможливо скасувати!"
+        confirmText="Опублікувати"
+        cancelText="Скасувати"
+        requirePassword={true}
         variant="danger"
       />
     </AdminContainer>

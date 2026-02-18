@@ -870,5 +870,9 @@
 <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path>
 </symbol>
 
+<symbol id="icon-save" viewBox="0 0 32 32">
+<path d="M28 0h-22l-6 6v22c0 2.2 1.8 4 4 4h24c2.2 0 4-1.8 4-4v-24c0-2.2-1.8-4-4-4zM16 28c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zM22 10h-16v-6h16v6z"></path>
+</symbol>
+
 </defs>
 </svg>

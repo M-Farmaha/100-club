@@ -92,29 +92,105 @@ export const normalizeForComparison = (data) => {
   );
 };
 
+// --- Normalize members data for deep comparison ---
+
+export const normalizeMembersForComparison = (data) => {
+  if (!Array.isArray(data)) return JSON.stringify(data);
+  const sorted = [...data].sort((a, b) => String(a.id).localeCompare(String(b.id)));
+  return JSON.stringify(sorted, (key, value) => {
+    if (value && typeof value === 'object' && !Array.isArray(value)) {
+      return Object.keys(value).sort().reduce((sorted, k) => {
+        sorted[k] = value[k];
+        return sorted;
+      }, {});
+    }
+    return value;
+  });
+};
+
 // --- Admin baseline management (module-level) ---
 
-let _adminBaseline = null;
-let _adminBaselineData = null;
+let _adminBaselineTournaments = null;
+let _adminBaselineMembers = null;
+let _adminBaselineDataTournaments = null;
+let _adminBaselineDataMembers = null;
 
-export const setAdminBaseline = (tournaments) => {
-  _adminBaselineData = JSON.parse(JSON.stringify(tournaments));
-  _adminBaseline = normalizeForComparison(tournaments);
+export const setAdminBaseline = (tournaments, members) => {
+  _adminBaselineDataTournaments = JSON.parse(JSON.stringify(tournaments));
+  _adminBaselineTournaments = normalizeForComparison(tournaments);
+  if (members) {
+    _adminBaselineDataMembers = JSON.parse(JSON.stringify(members));
+    _adminBaselineMembers = normalizeMembersForComparison(members);
+  }
 };
 
-export const getAdminBaseline = () => _adminBaseline;
-
-export const getAdminBaselineData = () =>
-  _adminBaselineData ? JSON.parse(JSON.stringify(_adminBaselineData)) : null;
+export const getAdminBaselineData = () => {
+  if (!_adminBaselineDataTournaments && !_adminBaselineDataMembers) return null;
+  return {
+    tournaments: _adminBaselineDataTournaments
+      ? JSON.parse(JSON.stringify(_adminBaselineDataTournaments))
+      : null,
+    members: _adminBaselineDataMembers
+      ? JSON.parse(JSON.stringify(_adminBaselineDataMembers))
+      : null,
+  };
+};
 
 export const clearAdminBaseline = () => {
-  _adminBaseline = null;
-  _adminBaselineData = null;
+  _adminBaselineTournaments = null;
+  _adminBaselineMembers = null;
+  _adminBaselineDataTournaments = null;
+  _adminBaselineDataMembers = null;
 };
 
-export const hasAdminUnsavedChanges = (currentTournaments) => {
-  if (!_adminBaseline) return false;
-  return normalizeForComparison(currentTournaments) !== _adminBaseline;
+export const hasAdminUnsavedChanges = (currentTournaments, currentMembers) => {
+  if (!_adminBaselineTournaments) return false;
+  if (normalizeForComparison(currentTournaments) !== _adminBaselineTournaments) return true;
+  if (_adminBaselineMembers && currentMembers) {
+    if (normalizeMembersForComparison(currentMembers) !== _adminBaselineMembers) return true;
+  }
+  if (hasPendingAvatars()) return true;
+  return false;
+};
+
+// --- Pending avatars (persisted to sessionStorage) ---
+
+const PENDING_AVATARS_KEY = "admin_pending_avatars";
+
+const _loadPendingAvatars = () => {
+  try {
+    return JSON.parse(sessionStorage.getItem(PENDING_AVATARS_KEY)) || {};
+  } catch {
+    return {};
+  }
+};
+
+const _savePendingAvatars = (data) => {
+  sessionStorage.setItem(PENDING_AVATARS_KEY, JSON.stringify(data));
+};
+
+export const setPendingAvatar = (memberId, base64) => {
+  const avatars = _loadPendingAvatars();
+  avatars[memberId] = base64;
+  _savePendingAvatars(avatars);
+};
+
+export const getPendingAvatar = (memberId) => {
+  return _loadPendingAvatars()[memberId] || null;
+};
+
+export const removePendingAvatar = (memberId) => {
+  const avatars = _loadPendingAvatars();
+  delete avatars[memberId];
+  _savePendingAvatars(avatars);
+};
+
+export const getPendingAvatars = () => ({ ..._loadPendingAvatars() });
+
+export const hasPendingAvatars = () => Object.keys(_loadPendingAvatars()).length > 0;
+
+export const clearPendingAvatars = () => {
+  sessionStorage.removeItem(PENDING_AVATARS_KEY);
 };
 
 // GitHub API integration
@@ -130,6 +206,15 @@ export const removeGitHubToken = () => localStorage.removeItem("github_pat");
 export const fetchTournamentsFromGitHub = async () => {
   const res = await fetch(
     `https://raw.githubusercontent.com/${GITHUB_OWNER}/${GITHUB_REPO}/${GITHUB_BRANCH}/src/Api/tournaments.json`,
+    { cache: "no-store" }
+  );
+  if (!res.ok) throw new Error(`GitHub fetch failed: ${res.status}`);
+  return await res.json();
+};
+
+export const fetchMembersFromGitHub = async () => {
+  const res = await fetch(
+    `https://raw.githubusercontent.com/${GITHUB_OWNER}/${GITHUB_REPO}/${GITHUB_BRANCH}/src/Api/members.json`,
     { cache: "no-store" }
   );
   if (!res.ok) throw new Error(`GitHub fetch failed: ${res.status}`);
@@ -166,6 +251,39 @@ export const pushToGitHub = async (token, data, filePath, commitMessage) => {
   const body = {
     message: commitMessage || `Update ${filePath}`,
     content,
+    branch: GITHUB_BRANCH,
+  };
+  if (sha) body.sha = sha;
+
+  const res = await fetch(
+    `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${filePath}`,
+    {
+      method: "PUT",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        Accept: "application/vnd.github.v3+json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
+    }
+  );
+
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    throw new Error(err.message || `GitHub API помилка: ${res.status}`);
+  }
+
+  return await res.json();
+};
+
+export const pushImageToGitHub = async (token, base64Content, filePath, commitMessage) => {
+  if (!token) throw new Error("GitHub токен не налаштовано");
+
+  const sha = await getFileSha(token, filePath);
+
+  const body = {
+    message: commitMessage || `Update ${filePath}`,
+    content: base64Content,
     branch: GITHUB_BRANCH,
   };
   if (sha) body.sha = sha;

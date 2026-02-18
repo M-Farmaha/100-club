@@ -1,19 +1,22 @@
 import { useEffect, useRef, useState } from "react";
 import { Outlet } from "react-router-dom";
 import { useStateContext } from "../../state/stateContext";
-import { tournamentsApi } from "../../Api/ApiRequest";
+import { tournamentsApi, membersApi } from "../../Api/ApiRequest";
 import {
   fetchTournamentsFromGitHub,
+  fetchMembersFromGitHub,
   setAdminBaseline,
 } from "./adminHelpers";
+import { AdminAuth } from "./AdminAuth";
 import { Loader } from "../Loaders/Loaders";
-import { AdminContainer, SuccessMessage } from "./AdminPanel.styled";
+import { AdminContainer } from "./AdminPanel.styled";
+import { AdminToastProvider, useAdminToast } from "./AdminToast";
 
-export const AdminRouteWrapper = () => {
+const AdminRouteContent = () => {
   const { globalState, setGlobalState } = useStateContext();
   const [loading, setLoading] = useState(true);
-  const [fetchError, setFetchError] = useState("");
   const baselineSetRef = useRef(false);
+  const showToast = useAdminToast();
 
   // Determine if this is a fresh admin entry or a page refresh
   const isReturningSession = sessionStorage.getItem("admin_active") === "true";
@@ -25,23 +28,37 @@ export const AdminRouteWrapper = () => {
 
     const loadFreshData = async () => {
       try {
-        const freshTournaments = await fetchTournamentsFromGitHub();
+        const [freshTournaments, freshMembers] = await Promise.all([
+          fetchTournamentsFromGitHub(),
+          fetchMembersFromGitHub(),
+        ]);
         freshTournaments.sort((a, b) => a.name.localeCompare(b.name));
-        setAdminBaseline(freshTournaments);
+        freshMembers.sort((a, b) => a.name.localeCompare(b.name));
+        setAdminBaseline(freshTournaments, freshMembers);
 
         // Only overwrite working data on first entry, not on refresh
         if (!isReturningSession) {
-          setGlobalState((prev) => ({ ...prev, tournaments: freshTournaments }));
+          setGlobalState((prev) => ({
+            ...prev,
+            tournaments: freshTournaments,
+            members: freshMembers,
+          }));
         }
       } catch (err) {
         console.warn("Failed to fetch from GitHub, using bundled data:", err);
-        setFetchError("⚠️ Не вдалося завантажити дані з GitHub. Використовуються локальні дані.");
+        showToast("Не вдалося завантажити дані з GitHub. Використовуються локальні дані.", "warning", 5000);
         const bundled = JSON.parse(JSON.stringify(tournamentsApi()));
         bundled.sort((a, b) => a.name.localeCompare(b.name));
-        setAdminBaseline(bundled);
+        const bundledMembers = JSON.parse(JSON.stringify(membersApi()));
+        bundledMembers.sort((a, b) => a.name.localeCompare(b.name));
+        setAdminBaseline(bundled, bundledMembers);
 
         if (!isReturningSession) {
-          setGlobalState((prev) => ({ ...prev, tournaments: bundled }));
+          setGlobalState((prev) => ({
+            ...prev,
+            tournaments: bundled,
+            members: bundledMembers,
+          }));
         }
       } finally {
         sessionStorage.setItem("admin_active", "true");
@@ -50,15 +67,7 @@ export const AdminRouteWrapper = () => {
     };
 
     loadFreshData();
-  }, [setGlobalState, isReturningSession]);
-
-  // Clear fetch error after 5 seconds
-  useEffect(() => {
-    if (fetchError) {
-      const timer = setTimeout(() => setFetchError(""), 5000);
-      return () => clearTimeout(timer);
-    }
-  }, [fetchError]);
+  }, [setGlobalState, isReturningSession, showToast]);
 
   if (loading) {
     return (
@@ -68,21 +77,21 @@ export const AdminRouteWrapper = () => {
     );
   }
 
+  return <Outlet />;
+};
+
+export const AdminRouteWrapper = () => {
+  const [authenticated, setAuthenticated] = useState(
+    () => sessionStorage.getItem("admin_authenticated") === "true"
+  );
+
+  if (!authenticated) {
+    return <AdminAuth onSuccess={() => setAuthenticated(true)} />;
+  }
+
   return (
-    <>
-      {fetchError && (
-        <AdminContainer>
-          <SuccessMessage
-            style={{
-              background: "rgba(255, 168, 0, 0.1)",
-              color: "#e6a200",
-            }}
-          >
-            {fetchError}
-          </SuccessMessage>
-        </AdminContainer>
-      )}
-      <Outlet />
-    </>
+    <AdminToastProvider>
+      <AdminRouteContent />
+    </AdminToastProvider>
   );
 };

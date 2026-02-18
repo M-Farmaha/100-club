@@ -10,6 +10,7 @@ import { membersApi, photosApi, tournamentsApi } from "../Api/ApiRequest";
 import {
   hasAdminUnsavedChanges,
   clearAdminBaseline,
+  clearPendingAvatars,
 } from "../components/AdminPanel/adminHelpers";
 import { ConfirmModal } from "../components/AdminPanel/ConfirmModal";
 
@@ -19,6 +20,8 @@ const Layout = () => {
   const prevPathRef = useRef(location.pathname);
   const tournamentsRef = useRef(globalState.tournaments);
   tournamentsRef.current = globalState.tournaments;
+  const membersRef = useRef(globalState.members);
+  membersRef.current = globalState.members;
 
   const cleanupAdminSession = useCallback(() => {
     sessionStorage.removeItem("admin_authenticated");
@@ -28,11 +31,18 @@ const Layout = () => {
       .filter((key) => key.startsWith("admin_stage_original_"))
       .forEach((key) => sessionStorage.removeItem(key));
     clearAdminBaseline();
+    clearPendingAvatars();
 
-    // Reset tournaments to bundled JSON so localStorage no longer holds admin edits
+    // Reset tournaments and members to bundled JSON so localStorage no longer holds admin edits
     const freshTournaments = JSON.parse(JSON.stringify(tournamentsApi()));
     freshTournaments.sort((a, b) => a.name.localeCompare(b.name));
-    setGlobalState((prev) => ({ ...prev, tournaments: freshTournaments }));
+    const freshMembers = JSON.parse(JSON.stringify(membersApi()));
+    freshMembers.sort((a, b) => a.name.localeCompare(b.name));
+    setGlobalState((prev) => ({
+      ...prev,
+      tournaments: freshTournaments,
+      members: freshMembers,
+    }));
   }, [setGlobalState]);
 
   // Block navigation away from /admin when there are unsaved changes
@@ -42,7 +52,7 @@ const Layout = () => {
         currentLocation.pathname.startsWith("/admin") &&
         !nextLocation.pathname.startsWith("/admin");
       if (!leavingAdmin) return false;
-      return hasAdminUnsavedChanges(tournamentsRef.current);
+      return hasAdminUnsavedChanges(tournamentsRef.current, membersRef.current);
     }
   );
 

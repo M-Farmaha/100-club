@@ -21,19 +21,27 @@ import sprite from "../../sprite.svg";
 const selectStyles = {
   control: (base, state) => ({
     ...base,
-    minWidth: 220,
     borderRadius: 8,
-    borderColor: state.isFocused ? "var(--accent-color)" : "rgba(0,0,0,0.12)",
+    borderColor: state.isFocused ? "var(--accent-hover-color)" : "rgba(0,0,0,0.12)",
     boxShadow: state.isFocused ? "0 0 0 3px rgba(105, 150, 0, 0.1)" : "none",
     fontFamily: "var(--main-font)",
     fontSize: 14,
-    "&:hover": { borderColor: "var(--accent-color)" },
+    minHeight: 40,
+    backgroundColor: state.isFocused ? "var(--primary-white-color)" : "var(--secondary-white-color)",
+    cursor: "pointer",
+    "&:hover": { borderColor: "var(--accent-hover-color)" },
+  }),
+  singleValue: (base) => ({
+    ...base,
+    color: "var(--primary-black-color)",
+    fontFamily: "var(--main-font)",
+    fontSize: 14,
   }),
   valueContainer: (base, state) => ({
     ...base,
     flexWrap: "wrap",
     gap: 4,
-    padding: "4px 8px",
+    padding: "4px 10px",
     // Hide the input row when 2 values selected
     ...(state.hasValue && state.selectProps.isMulti && state.selectProps.value?.length >= 2 
       ? { 
@@ -87,18 +95,37 @@ const selectStyles = {
     ...base,
     fontFamily: "var(--main-font)",
     fontSize: 14,
-    backgroundColor: state.isSelected
-      ? "var(--accent-color)"
-      : state.isFocused
-      ? "rgba(105, 150, 0, 0.08)"
-      : "transparent",
-    color: state.isSelected ? "#fff" : "var(--primary-black-color)",
+    cursor: "pointer",
+    padding: "8px 10px",
+    backgroundColor: "var(--primary-white-color)",
+    color: state.isFocused
+      ? "var(--accent-hover-color)"
+      : state.isSelected
+      ? "var(--primary-black-color)"
+      : "var(--primary-grey-color)",
   }),
   menu: (base) => ({
     ...base,
-    borderRadius: 8,
+    border: "1px solid var(--accent-hover-color)",
+    boxShadow: "rgba(0, 0, 0, 0.1) 0px 0px 10px",
+    borderRadius: 12,
     overflow: "hidden",
+    padding: "4px 0",
     zIndex: 100,
+  }),
+  menuList: (base) => ({
+    ...base,
+    padding: 0,
+    scrollbarWidth: "none",
+    msOverflowStyle: "none",
+    "::-webkit-scrollbar": { display: "none" },
+  }),
+  indicatorSeparator: () => ({ display: "none" }),
+  dropdownIndicator: (base, state) => ({
+    ...base,
+    color: state.isFocused ? "var(--accent-hover-color)" : "var(--primary-grey-color)",
+    transition: "var(--main-transition)",
+    "&:hover": { color: "var(--accent-hover-color)" },
   }),
 };
 
@@ -318,9 +345,10 @@ export const AdminStageEditor = ({ stage, members, tournamentId, onSave, onCance
           justifyContent: "space-between",
           alignItems: "center",
           marginBottom: 12,
+          gap: 10,
         }}
       >
-        <EditorSectionTitle style={{ margin: 0, fontSize: 15 }}>
+        <EditorSectionTitle style={{ margin: 0, fontSize: 15, minWidth: 100 }}>
           {isTeamTournament ? "Пари" : "Гравці"} ({players.length})
         </EditorSectionTitle>
         <ButtonGroup>

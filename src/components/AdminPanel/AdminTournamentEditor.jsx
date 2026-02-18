@@ -2,6 +2,7 @@ import { useState, useMemo, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useStateContext } from "../../state/stateContext";
 import { getAdminBaselineData } from "./adminHelpers";
+import { useAdminToast } from "./AdminToast";
 import { getUkrLocaleDate } from "../../helpers/getUkrLocaleDate";
 import { ConfirmModal } from "./ConfirmModal";
 import {
@@ -21,14 +22,11 @@ import {
   SeasonTab,
   SeasonTabs,
   EmptyState,
-  SuccessMessage,
+  NumberInput,
 } from "./AdminPanel.styled";
 import sprite from "../../sprite.svg";
 
 export const AdminTournamentEditor = () => {
-  const [authenticated] = useState(
-    () => sessionStorage.getItem("admin_authenticated") === "true"
-  );
   const { tournamentId } = useParams();
   const navigate = useNavigate();
   const { globalState, setGlobalState } = useStateContext();
@@ -41,8 +39,8 @@ export const AdminTournamentEditor = () => {
 
   const [selectedYear, setSelectedYear] = useState(null);
   const [isNewSeason, setIsNewSeason] = useState(false);
-  const [newSeasonYear, setNewSeasonYear] = useState("");
-  const [message, setMessage] = useState("");
+  const [newSeasonYear, setNewSeasonYear] = useState(() => String(new Date().getFullYear()));
+  const showMessage = useAdminToast();
   const [confirmModal, setConfirmModal] = useState({
     isOpen: false,
     title: "",
@@ -52,20 +50,7 @@ export const AdminTournamentEditor = () => {
   });
   const [showRestoreModal, setShowRestoreModal] = useState(false);
 
-  const showMessage = (text) => {
-    setMessage(text);
-    setTimeout(() => setMessage(""), 3000);
-  };
 
-  useEffect(() => {
-    if (!authenticated) {
-      navigate("/admin");
-    }
-  }, [authenticated, navigate]);
-
-  if (!authenticated) {
-    return null;
-  }
 
   if (!tournament) {
     return (
@@ -81,7 +66,7 @@ export const AdminTournamentEditor = () => {
   const stages = activeSeason?.stages || [];
 
   // Get original published season from baseline (fetched from GitHub)
-  const baselineTournaments = getAdminBaselineData();
+  const baselineTournaments = getAdminBaselineData()?.tournaments;
   const originalTournament = baselineTournaments?.find((t) => t.tournament_id === tournamentId);
   const originalSeason = originalTournament?.seasons?.find((s) => s.year === activeYear) || null;
 
@@ -104,7 +89,7 @@ export const AdminTournamentEditor = () => {
     });
     setGlobalState((prev) => ({ ...prev, tournaments: updatedTournaments }));
     setShowRestoreModal(false);
-    showMessage(`✅ Сезон ${activeYear} відновлено`);
+    showMessage(`Сезон ${activeYear} відновлено`, "restore");
   };
 
   const handleAddSeason = () => {
@@ -112,7 +97,7 @@ export const AdminTournamentEditor = () => {
 
     const year = parseInt(newSeasonYear);
     if (seasons.find((s) => s.year === year)) {
-      showMessage("❌ Такий сезон вже існує");
+      showMessage("Такий сезон вже існує", "error");
       return;
     }
 
@@ -129,8 +114,8 @@ export const AdminTournamentEditor = () => {
     setGlobalState((prev) => ({ ...prev, tournaments: updatedTournaments }));
     setSelectedYear(year);
     setIsNewSeason(false);
-    setNewSeasonYear("");
-    showMessage(`✅ Сезон ${year} додано`);
+    setNewSeasonYear(String(new Date().getFullYear()));
+    showMessage(`Сезон ${year} додано`, "add");
   };
 
   const handleDeleteSeason = () => {
@@ -151,7 +136,7 @@ export const AdminTournamentEditor = () => {
         });
         setGlobalState((prev) => ({ ...prev, tournaments: updatedTournaments }));
         setSelectedYear(null);
-        showMessage(`✅ Сезон ${activeYear} видалено`);
+        showMessage(`Сезон ${activeYear} видалено`, "delete");
         setConfirmModal((prev) => ({ ...prev, isOpen: false }));
       },
     });
@@ -159,7 +144,7 @@ export const AdminTournamentEditor = () => {
 
   return (
     <AdminContainer>
-      <BackLink onClick={() => navigate("/admin")}>
+      <BackLink onClick={() => navigate("/admin/tournaments")}>
         <svg>
           <use href={`${sprite}#icon-undo`} />
         </svg>
@@ -171,8 +156,6 @@ export const AdminTournamentEditor = () => {
           {tournament.name}
         </DashboardTitle>
       </DashboardHeader>
-
-      {message && <SuccessMessage>{message}</SuccessMessage>}
 
       {/* Season tabs */}
       <SeasonTabs>
@@ -187,19 +170,12 @@ export const AdminTournamentEditor = () => {
         ))}
         {isNewSeason ? (
           <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
-            <input
+            <NumberInput
               type="number"
               placeholder="Рік"
               value={newSeasonYear}
               onChange={(e) => setNewSeasonYear(e.target.value)}
-              style={{
-                width: 80,
-                padding: "8px 12px",
-                borderRadius: 8,
-                border: "1px solid rgba(0,0,0,0.12)",
-                fontSize: 14,
-                fontFamily: "var(--main-font)",
-              }}
+              style={{ width: 80 }}
               autoFocus
             />
             <ActionButton onClick={handleAddSeason}>✓</ActionButton>
@@ -207,7 +183,7 @@ export const AdminTournamentEditor = () => {
               $variant="secondary"
               onClick={() => {
                 setIsNewSeason(false);
-                setNewSeasonYear("");
+                setNewSeasonYear(String(new Date().getFullYear()));
               }}
             >
               ✕
@@ -221,7 +197,7 @@ export const AdminTournamentEditor = () => {
       {/* Stages list */}
       {activeYear && (
         <EditorSection>
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16, gap: 10 }}>
             <EditorSectionTitle style={{ margin: 0 }}>
               Етапи сезону {activeYear}
             </EditorSectionTitle>
@@ -242,7 +218,7 @@ export const AdminTournamentEditor = () => {
                   <ButtonText>Відновити</ButtonText>
                 </ActionButton>
               )}
-              <ActionButton onClick={() => navigate(`/admin/${tournamentId}/${activeYear}/new`)}>
+              <ActionButton onClick={() => navigate(`/admin/tournaments/${tournamentId}/${activeYear}/new`)}>
                 <svg width="16" height="16" style={{ fill: 'currentColor' }}>
                   <use href={`${sprite}#icon-plus`} />
                 </svg>
@@ -267,14 +243,14 @@ export const AdminTournamentEditor = () => {
           {stages.map((stage) => (
             <StageRow
               key={stage.date}
-              onClick={() => navigate(`/admin/${tournamentId}/${activeYear}/${stage.date}`)}
+              onClick={() => navigate(`/admin/tournaments/${tournamentId}/${activeYear}/${stage.date}`)}
             >
               <StageDate>{getUkrLocaleDate(stage.date)}</StageDate>
               <StageRowRight>
                 <StagePlayers>Гравців: {stage.players?.length || 0}</StagePlayers>
-                <span style={{ color: "var(--accent-color)", fontSize: "20px" }}>
-                  →
-                </span>
+                <svg width="16" height="16" style={{ fill: "var(--primary-black-color)", flexShrink: 0 }}>
+                  <use href={`${sprite}#icon-arrow-right`} />
+                </svg>
               </StageRowRight>
             </StageRow>
           ))}

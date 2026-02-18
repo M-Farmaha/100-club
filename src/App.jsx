@@ -24,8 +24,11 @@ import { AllSeasonsStatsItemDetail } from "./components/StatsPage/AllSeasonsStat
 import { SuperStatsPage } from "./components/StatsPage/SuperStatsPage";
 import { SuperStatsItemDetail } from "./components/StatsPage/SuperStatsItemDetail";
 import AdminPage from "./pages/AdminPage/AdminPage";
+import { AdminTournamentsList } from "./components/AdminPanel/AdminTournamentsList";
 import { AdminTournamentEditor } from "./components/AdminPanel/AdminTournamentEditor";
 import { AdminStagePage } from "./components/AdminPanel/AdminStagePage";
+import { AdminMembersPage } from "./components/AdminPanel/AdminMembersPage";
+import { AdminMemberEditor } from "./components/AdminPanel/AdminMemberEditor";
 import { AdminRouteWrapper } from "./components/AdminPanel/AdminRouteWrapper";
 
 const router = createBrowserRouter(
@@ -66,8 +69,11 @@ const router = createBrowserRouter(
           element: <AdminRouteWrapper />,
           children: [
             { index: true, element: <AdminPage /> },
-            { path: ":tournamentId", element: <AdminTournamentEditor /> },
-            { path: ":tournamentId/:year/:stageDate", element: <AdminStagePage /> },
+            { path: "tournaments", element: <AdminTournamentsList /> },
+            { path: "tournaments/:tournamentId", element: <AdminTournamentEditor /> },
+            { path: "tournaments/:tournamentId/:year/:stageDate", element: <AdminStagePage /> },
+            { path: "members", element: <AdminMembersPage /> },
+            { path: "members/:memberId", element: <AdminMemberEditor /> },
           ],
         },
         { path: "*", element: <Navigate to="/" replace /> },

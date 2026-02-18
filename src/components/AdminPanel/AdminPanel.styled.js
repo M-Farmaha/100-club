@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const AdminContainer = styled.div`
   max-width: 900px;
   margin: 0 auto;
-  padding: 20px 16px 40px;
+  padding: 72px 24px;
   min-height: calc(100vh - 200px);
 `;
 
@@ -162,18 +162,19 @@ export const ActionButton = styled.button`
   transition: var(--main-transition);
   color: #fff;
   background: ${(props) => props.$variant === "danger"
-    ? "linear-gradient(135deg, #ff4400 0%, #ff6644 100%)"
-    : props.$variant === "secondary"
-    ? "linear-gradient(135deg, #4a5568 0%, #718096 100%)"
-    : "linear-gradient(135deg, var(--accent-color) 0%, var(--accent-hover-color) 100%)"};
+    ? "var(--lose-color)"
+    : "var(--primary-black-color)"};
 
   @media screen and (max-width: 576px) {
     padding: 10px 12px;
+    min-width: 40px;
+    min-height: 40px;
   }
 
   &:hover {
-    opacity: 0.9;
-    filter: brightness(1.1);
+    background: ${(props) => props.$variant === "danger"
+      ? "#e63d00"
+      : "#3a4563"};
   }
 
   &:disabled {
@@ -202,27 +203,26 @@ export const IconButton = styled.button`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   border-radius: 10px;
   border: none;
   cursor: pointer;
   transition: var(--main-transition);
   color: #fff;
   background: ${(props) => props.$variant === "danger"
-    ? "linear-gradient(135deg, #ff4400 0%, #ff6644 100%)"
-    : props.$variant === "secondary"
-    ? "linear-gradient(135deg, #4a5568 0%, #718096 100%)"
-    : "linear-gradient(135deg, var(--accent-color) 0%, var(--accent-hover-color) 100%)"};
+    ? "var(--lose-color)"
+    : "var(--primary-black-color)"};
 
   &:hover {
-    opacity: 0.9;
-    filter: brightness(1.1);
+    background: ${(props) => props.$variant === "danger"
+      ? "#e63d00"
+      : "#3a4563"};
   }
 
   svg {
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
     fill: currentColor;
   }
 `;
@@ -240,8 +240,8 @@ export const TournamentCard = styled.div`
   gap: 14px;
 
   &:hover {
-    border-color: var(--accent-color);
-    background: rgba(105, 150, 0, 0.02);
+    border-color: var(--primary-black-color);
+    background: rgba(34, 44, 68, 0.03);
   }
 `;
 
@@ -264,11 +264,7 @@ export const TournamentCardMeta = styled.p`
 // Editor styles
 
 export const EditorSection = styled.div`
-  background: #fff;
-  border-radius: 12px;
-  padding: 20px;
   margin-bottom: 16px;
-  border: 1px solid rgba(0, 0, 0, 0.06);
 `;
 
 export const EditorSectionTitle = styled.h3`
@@ -288,15 +284,15 @@ export const StageRow = styled.div`
   gap: 20px;
   padding: 12px 16px;
   border-radius: 8px;
-  background: ${(props) => props.$active ? "rgba(105, 150, 0, 0.08)" : "var(--secondary-white-color)"};
+  background: ${(props) => props.$active ? "rgba(34, 44, 68, 0.06)" : "#fff"};
   margin-bottom: 8px;
   transition: var(--main-transition);
   cursor: pointer;
-  border: 1px solid ${(props) => props.$active ? "var(--accent-color)" : "rgba(0, 0, 0, 0.06)"};
+  border: 1px solid ${(props) => props.$active ? "var(--primary-black-color)" : "rgba(0, 0, 0, 0.06)"};
 
   &:hover {
-    border-color: var(--accent-color);
-    background: rgba(105, 150, 0, 0.02);
+    border-color: var(--primary-black-color);
+    background: rgba(34, 44, 68, 0.03);
   }
 `;
 
@@ -326,25 +322,20 @@ export const PlayerRow = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 12px 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 12px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 12px;
+  margin-bottom: 8px;
   flex-wrap: wrap;
 
   &:last-child {
-    border-bottom: none;
+    margin-bottom: 0;
   }
 
   @media screen and (max-width: 768px) {
-    background: var(--secondary-white-color);
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    border-radius: 12px;
     padding: 16px;
-    margin-bottom: 12px;
-
-    &:last-child {
-      margin-bottom: 0;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-    }
+    margin-bottom: 16px;
   }
 `;
 
@@ -357,14 +348,17 @@ export const PlayerField = styled.div`
     font-size: 11px;
     font-weight: 600;
     color: var(--secondary-grey-color);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.3px;
+    padding-left: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 `;
 
 export const NumberInput = styled.input`
   width: 70px;
-  height: 36px;
+  height: 40px;
   padding: 0 10px;
   border-radius: 8px;
   border: 1px solid rgba(0, 0, 0, 0.12);
@@ -376,7 +370,7 @@ export const NumberInput = styled.input`
   background: var(--secondary-white-color);
 
   &:focus {
-    border-color: var(--accent-color);
+    border-color: var(--accent-hover-color);
     box-shadow: 0 0 0 3px rgba(105, 150, 0, 0.1);
   }
 
@@ -387,7 +381,6 @@ export const NumberInput = styled.input`
 
   @media screen and (max-width: 768px) {
     width: 100%;
-    background: var(--primary-white-color);
   }
 `;
 
@@ -411,7 +404,7 @@ export const PlayerNumberFields = styled.div`
 `;
 
 export const DateInput = styled.input`
-  padding: 10px 14px;
+  padding: 10px 10px;
   border-radius: 8px;
   border: 1px solid rgba(0, 0, 0, 0.12);
   font-size: 14px;
@@ -438,8 +431,8 @@ export const BackLink = styled.button`
 
   border-radius: 50px;
   background-color: transparent;
-  border: 2px solid var(--accent-color);
-  color: var(--accent-color);
+  border: 2px solid var(--primary-black-color);
+  color: var(--primary-black-color);
 
   font-size: 14px;
   font-weight: 600;
@@ -450,8 +443,8 @@ export const BackLink = styled.button`
   margin-bottom: 20px;
 
   &:hover {
-    border-color: var(--accent-hover-color);
-    color: var(--accent-hover-color);
+    border-color: #3a4563;
+    color: #3a4563;
   }
 
   svg {
@@ -471,8 +464,8 @@ export const EmptyState = styled.div`
 export const SeasonTab = styled.button`
   padding: 10px 20px;
   border-radius: 8px;
-  border: 1px solid ${(props) => props.$active ? "var(--accent-color)" : "rgba(0, 0, 0, 0.1)"};
-  background: ${(props) => props.$active ? "var(--accent-color)" : "transparent"};
+  border: 1px solid ${(props) => props.$active ? "var(--primary-black-color)" : "rgba(0, 0, 0, 0.1)"};
+  background: ${(props) => props.$active ? "var(--primary-black-color)" : "transparent"};
   color: ${(props) => props.$active ? "#fff" : "var(--primary-black-color)"};
   font-size: 14px;
   font-weight: 600;
@@ -481,8 +474,8 @@ export const SeasonTab = styled.button`
   transition: var(--main-transition);
 
   &:hover {
-    border-color: var(--accent-color);
-    background: ${(props) => props.$active ? "var(--accent-color)" : "rgba(105, 150, 0, 0.08)"};
+    border-color: var(--primary-black-color);
+    background: ${(props) => props.$active ? "var(--primary-black-color)" : "rgba(34, 44, 68, 0.06)"};
   }
 `;
 
@@ -501,8 +494,8 @@ export const Divider = styled.hr`
 `;
 
 export const SuccessMessage = styled.div`
-  background: rgba(105, 150, 0, 0.1);
-  color: var(--accent-color);
+  background: rgba(34, 44, 68, 0.08);
+  color: var(--primary-black-color);
   padding: 12px 16px;
   border-radius: 8px;
   font-size: 14px;
@@ -559,7 +552,7 @@ export const ConfirmTitle = styled.h3`
   font-size: 20px;
   font-weight: 700;
   text-align: center;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 `;
 
 export const ConfirmMessage = styled.p`
@@ -594,8 +587,8 @@ export const ConfirmButton = styled.button`
 
   background: ${(props) =>
     props.$variant === "danger"
-      ? "linear-gradient(135deg, #ff4400 0%, #ff6644 100%)"
-      : "linear-gradient(135deg, #4a5568 0%, #718096 100%)"};
+      ? "var(--lose-color)"
+      : "var(--primary-black-color)"};
   color: #fff;
 
   &:hover {
@@ -640,5 +633,5 @@ export const ConfirmError = styled.p`
   color: var(--primary-red-color);
   font-size: 13px;
   text-align: center;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 `;
