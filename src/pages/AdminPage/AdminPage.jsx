@@ -12,6 +12,9 @@ import {
   setGitHubToken,
   removeGitHubToken,
   hasAdminUnsavedChanges,
+  hasTournamentsChanged,
+  hasMembersChanged,
+  hasPendingAvatars,
   setAdminBaseline,
   getAdminBaselineData,
   getPendingAvatars,
@@ -55,39 +58,59 @@ const AdminPage = () => {
       return;
     }
 
+    const membersChanged = hasMembersChanged(members);
+    const tournamentsChanged = hasTournamentsChanged(tournaments);
+    const avatarsChanged = hasPendingAvatars();
+
+    if (!membersChanged && !tournamentsChanged && !avatarsChanged) {
+      showMessage("Немає змін для публікації", "error");
+      return;
+    }
+
     setPublishing(true);
     try {
       const now = new Date().toLocaleString("uk-UA");
+      const published = [];
 
       // Publish sequentially to avoid SHA conflicts
       // Order: members → avatars → tournaments (tournaments may reference new members)
-      await pushToGitHub(
-        token,
-        members,
-        "src/Api/members.json",
-        `Update members.json — ${now}`
-      );
-
-      // Publish avatars sequentially
-      const pendingAvatars = getPendingAvatars();
-      for (const [id, base64] of Object.entries(pendingAvatars)) {
-        await pushImageToGitHub(
+      
+      if (membersChanged) {
+        await pushToGitHub(
           token,
-          base64,
-          `public/avatars/${id}.jpg`,
-          `Update avatar for ${id} — ${now}`
+          members,
+          "src/Api/members.json",
+          `Update members.json — ${now}`
         );
+        published.push("members");
       }
 
-      await pushToGitHub(
-        token,
-        tournaments,
-        "src/Api/tournaments.json",
-        `Update tournaments.json — ${now}`
-      );
+      // Publish avatars sequentially
+      if (avatarsChanged) {
+        const pendingAvatars = getPendingAvatars();
+        for (const [id, base64] of Object.entries(pendingAvatars)) {
+          await pushImageToGitHub(
+            token,
+            base64,
+            `public/avatars/${id}.jpg`,
+            `Update avatar for ${id} — ${now}`
+          );
+        }
+        published.push("avatars");
+      }
+
+      if (tournamentsChanged) {
+        await pushToGitHub(
+          token,
+          tournaments,
+          "src/Api/tournaments.json",
+          `Update tournaments.json — ${now}`
+        );
+        published.push("tournaments");
+      }
 
       clearPendingAvatars();
-      showMessage("Опубліковано на GitHub! Сайт оновиться через ~1-2 хвилини");
+      showMessage(`Опубліковано: ${published.join(", ")}. Сайт оновиться через ~1-2 хвилини`);
       setAdminBaseline(tournaments, members);
     } catch (err) {
       showMessage(`Помилка публікації: ${err.message}`, "error");

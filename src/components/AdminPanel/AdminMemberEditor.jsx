@@ -116,9 +116,9 @@ const emptyMember = {
   hometown: "",
   type: "amateur",
   category: null,
-  forhand: "right",
-  backhand: "twohand",
-  joinTennisYear: new Date().getFullYear(),
+  forhand: "null",
+  backhand: "null",
+  joinTennisYear: "",
 };
 
 export const AdminMemberEditor = () => {

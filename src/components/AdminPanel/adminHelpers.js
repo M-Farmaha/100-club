@@ -143,12 +143,20 @@ export const clearAdminBaseline = () => {
   _adminBaselineDataMembers = null;
 };
 
+export const hasTournamentsChanged = (currentTournaments) => {
+  if (!_adminBaselineTournaments) return false;
+  return normalizeForComparison(currentTournaments) !== _adminBaselineTournaments;
+};
+
+export const hasMembersChanged = (currentMembers) => {
+  if (!_adminBaselineMembers || !currentMembers) return false;
+  return normalizeMembersForComparison(currentMembers) !== _adminBaselineMembers;
+};
+
 export const hasAdminUnsavedChanges = (currentTournaments, currentMembers) => {
   if (!_adminBaselineTournaments) return false;
-  if (normalizeForComparison(currentTournaments) !== _adminBaselineTournaments) return true;
-  if (_adminBaselineMembers && currentMembers) {
-    if (normalizeMembersForComparison(currentMembers) !== _adminBaselineMembers) return true;
-  }
+  if (hasTournamentsChanged(currentTournaments)) return true;
+  if (hasMembersChanged(currentMembers)) return true;
   if (hasPendingAvatars()) return true;
   return false;
 };
