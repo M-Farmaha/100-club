@@ -1441,43 +1441,6 @@
             "players": [
               {
                 "member_id": [
-                  "4"
-                ],
-                "win": 3,
-                "defeat": 0,
-                "position": 1
-              },
-              {
-                "member_id": [
-                  "22"
-                ],
-                "win": 2,
-                "defeat": 1,
-                "position": 2
-              },
-              {
-                "member_id": [
-                  "14"
-                ],
-                "win": 1,
-                "defeat": 2,
-                "position": 3
-              },
-              {
-                "member_id": [
-                  "47"
-                ],
-                "win": 0,
-                "defeat": 3,
-                "position": 4
-              }
-            ]
-          },
-          {
-            "date": "2026-03-15",
-            "players": [
-              {
-                "member_id": [
                   "94"
                 ],
                 "win": 2,
@@ -1523,6 +1486,43 @@
                 "win": 0,
                 "defeat": 3,
                 "position": 6
+              }
+            ]
+          },
+          {
+            "date": "2026-03-15",
+            "players": [
+              {
+                "member_id": [
+                  "4"
+                ],
+                "win": 3,
+                "defeat": 0,
+                "position": 1
+              },
+              {
+                "member_id": [
+                  "22"
+                ],
+                "win": 2,
+                "defeat": 1,
+                "position": 2
+              },
+              {
+                "member_id": [
+                  "14"
+                ],
+                "win": 1,
+                "defeat": 2,
+                "position": 3
+              },
+              {
+                "member_id": [
+                  "47"
+                ],
+                "win": 0,
+                "defeat": 3,
+                "position": 4
               }
             ]
           }
