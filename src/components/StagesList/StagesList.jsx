@@ -6,6 +6,7 @@ import { StagesListHeading } from "./StagesListHeading";
 import sprite from "../../sprite.svg";
 import { useStateContext } from "../../state/stateContext";
 import { NotFound } from "../NotFound/NotFound";
+import { getStageSlug } from "../../helpers/stageSlug";
 
 export const StagesList = () => {
   const { globalState } = useStateContext();
@@ -67,9 +68,12 @@ export const StagesList = () => {
         </TitleSection>
         <List>
           <StagesListHeading />
-          {currentSeason?.stages?.map((el, index) => (
-            <StagesItem key={el.date} el={el} index={index} />
-          ))}
+          {currentSeason?.stages?.map((el, index) => {
+            const slug = getStageSlug(currentSeason.stages, index);
+            return (
+              <StagesItem key={slug} el={el} index={index} slug={slug} />
+            );
+          })}
         </List>
       </Section>
     </>

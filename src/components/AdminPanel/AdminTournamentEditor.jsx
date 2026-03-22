@@ -4,6 +4,7 @@ import { useStateContext } from "../../state/stateContext";
 import { getAdminBaselineData } from "./adminHelpers";
 import { useAdminToast } from "./AdminToast";
 import { getUkrLocaleDate } from "../../helpers/getUkrLocaleDate";
+import { getStageSlug } from "../../helpers/stageSlug";
 import { ConfirmModal } from "./ConfirmModal";
 import {
   AdminContainer,
@@ -240,20 +241,23 @@ export const AdminTournamentEditor = () => {
             <EmptyState>Ще немає турнірів у цьому сезоні</EmptyState>
           )}
 
-          {stages.map((stage) => (
-            <StageRow
-              key={stage.date}
-              onClick={() => navigate(`/admin/tournaments/${tournamentId}/${activeYear}/${stage.date}`)}
-            >
-              <StageDate>{getUkrLocaleDate(stage.date)}</StageDate>
-              <StageRowRight>
-                <StagePlayers>Гравців: {stage.players?.length || 0}</StagePlayers>
-                <svg width="16" height="16" style={{ fill: "var(--primary-black-color)", flexShrink: 0 }}>
-                  <use href={`${sprite}#icon-arrow-right`} />
-                </svg>
-              </StageRowRight>
-            </StageRow>
-          ))}
+          {stages.map((stage, index) => {
+            const slug = getStageSlug(stages, index);
+            return (
+              <StageRow
+                key={slug}
+                onClick={() => navigate(`/admin/tournaments/${tournamentId}/${activeYear}/${slug}`)}
+              >
+                <StageDate>{getUkrLocaleDate(stage.date)}</StageDate>
+                <StageRowRight>
+                  <StagePlayers>Гравців: {stage.players?.length || 0}</StagePlayers>
+                  <svg width="16" height="16" style={{ fill: "var(--primary-black-color)", flexShrink: 0 }}>
+                    <use href={`${sprite}#icon-arrow-right`} />
+                  </svg>
+                </StageRowRight>
+              </StageRow>
+            );
+          })}
         </EditorSection>
       )}
 

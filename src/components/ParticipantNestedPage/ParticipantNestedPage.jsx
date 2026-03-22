@@ -1,4 +1,5 @@
 import { useLocation, useNavigate } from "react-router-dom";
+import { findStageBySlug } from "../../helpers/stageSlug";
 import { useStateContext } from "../../state/stateContext";
 import { defineRank } from "../../helpers/defineRank";
 import {
@@ -34,8 +35,10 @@ export const ParticipantNestedPage = () => {
   const currentTournament = tournaments?.find((t) => t.tournament_id === tournamentId);
   // Find season by year
   const currentSeason = currentTournament?.seasons?.find((s) => s.year === parseInt(year));
-  // Find stage by date
-  const currentStage = currentSeason?.stages?.find((s) => s.date === stageId);
+  // Find stage by slug (supports duplicate dates with -1, -2 suffix)
+  const { stage: currentStage } = currentSeason
+    ? findStageBySlug(currentSeason.stages, stageId)
+    : { stage: null };
   const players = currentStage?.players || [];
 
   const currentPlayer = players?.find((player) => {

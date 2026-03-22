@@ -4,7 +4,7 @@ import { useStateContext } from "../../state/stateContext";
 import { getUkrLocaleDate } from "../../helpers/getUkrLocaleDate";
 import { getPlayerNameById } from "../../helpers/getPlayerNameById";
 
-export const StagesItem = ({ el, index }) => {
+export const StagesItem = ({ el, index, slug }) => {
   const { globalState } = useStateContext();
   const { members } = globalState;
 
@@ -16,7 +16,7 @@ export const StagesItem = ({ el, index }) => {
   const name = getPlayerNameById(winner.member_id, members);
 
   const handleItemClick = () => {
-    navigate(date);
+    navigate(slug);
   };
 
   return (
