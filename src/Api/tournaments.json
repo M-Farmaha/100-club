@@ -1570,6 +1570,75 @@
                 "position": 5
               }
             ]
+          },
+          {
+            "date": "2026-03-29",
+            "players": [
+              {
+                "member_id": [
+                  "61"
+                ],
+                "win": 3,
+                "defeat": 0,
+                "position": 1
+              },
+              {
+                "member_id": [
+                  "29"
+                ],
+                "win": 2,
+                "defeat": 1,
+                "position": 2
+              },
+              {
+                "member_id": [
+                  "41"
+                ],
+                "win": 2,
+                "defeat": 1,
+                "position": 3
+              },
+              {
+                "member_id": [
+                  "60"
+                ],
+                "win": 1,
+                "defeat": 2,
+                "position": 4
+              },
+              {
+                "member_id": [
+                  "179"
+                ],
+                "win": 2,
+                "defeat": 1,
+                "position": 5
+              },
+              {
+                "member_id": [
+                  "40"
+                ],
+                "win": 1,
+                "defeat": 2,
+                "position": 6
+              },
+              {
+                "member_id": [
+                  "68"
+                ],
+                "win": 1,
+                "defeat": 2,
+                "position": 7
+              },
+              {
+                "member_id": [
+                  "172"
+                ],
+                "win": 0,
+                "defeat": 3,
+                "position": 8
+              }
+            ]
           }
         ]
       }
