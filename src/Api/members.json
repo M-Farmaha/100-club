@@ -273,6 +273,19 @@
     "joinTennisYear": 1990
   },
   {
+    "id": "179",
+    "name": "Горак Юлія",
+    "birthDate": "",
+    "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/refs/heads/main/public/avatars/179.jpg",
+    "sex": "female",
+    "hometown": "",
+    "type": "amateur",
+    "category": null,
+    "forhand": "null",
+    "backhand": "null",
+    "joinTennisYear": ""
+  },
+  {
     "id": "156",
     "name": "Горбаченко Мар'яна",
     "birthDate": "1997-09-16",
