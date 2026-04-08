@@ -2183,6 +2183,19 @@
     "joinTennisYear": 2010
   },
   {
+    "id": "180",
+    "name": "Хоростіль Яна",
+    "birthDate": "",
+    "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/refs/heads/main/public/avatars/180.jpg",
+    "sex": "female",
+    "hometown": "",
+    "type": "amateur",
+    "category": null,
+    "forhand": "null",
+    "backhand": "null",
+    "joinTennisYear": ""
+  },
+  {
     "id": "49",
     "name": "Цап Олег",
     "birthDate": "1982-03-17",
