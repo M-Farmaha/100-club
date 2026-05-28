@@ -208,6 +208,19 @@
     "joinTennisYear": 2007
   },
   {
+    "id": "185",
+    "name": "Гайзир В.",
+    "birthDate": "",
+    "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/refs/heads/main/public/avatars/185.jpg",
+    "sex": "male",
+    "hometown": "",
+    "type": "amateur",
+    "category": null,
+    "forhand": "null",
+    "backhand": "null",
+    "joinTennisYear": ""
+  },
+  {
     "id": "161",
     "name": "Гермак Юрій",
     "birthDate": null,
@@ -232,6 +245,19 @@
     "forhand": "right",
     "backhand": "onehand",
     "joinTennisYear": 2022
+  },
+  {
+    "id": "182",
+    "name": "Гнєвек Р.",
+    "birthDate": "",
+    "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/refs/heads/main/public/avatars/182.jpg",
+    "sex": "male",
+    "hometown": "",
+    "type": "amateur",
+    "category": null,
+    "forhand": "null",
+    "backhand": "null",
+    "joinTennisYear": ""
   },
   {
     "id": "176",
@@ -440,6 +466,19 @@
     "forhand": "left",
     "backhand": "onehand",
     "joinTennisYear": 2008
+  },
+  {
+    "id": "184",
+    "name": "Дмитрів І.",
+    "birthDate": "",
+    "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/refs/heads/main/public/avatars/184.jpg",
+    "sex": "male",
+    "hometown": "",
+    "type": "amateur",
+    "category": null,
+    "forhand": "null",
+    "backhand": "null",
+    "joinTennisYear": ""
   },
   {
     "id": "168",
@@ -2129,6 +2168,19 @@
     "forhand": null,
     "backhand": null,
     "joinTennisYear": null
+  },
+  {
+    "id": "183",
+    "name": "Хариш Р.",
+    "birthDate": "",
+    "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/refs/heads/main/public/avatars/183.jpg",
+    "sex": "male",
+    "hometown": "",
+    "type": "amateur",
+    "category": null,
+    "forhand": "null",
+    "backhand": "null",
+    "joinTennisYear": ""
   },
   {
     "id": "122",
