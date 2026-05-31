@@ -1806,7 +1806,7 @@
                 "member_id": [
                   "117"
                 ],
-                "win": 3,
+                "win": 2,
                 "defeat": 1,
                 "position": 5
               },
@@ -1815,14 +1815,14 @@
                   "176"
                 ],
                 "win": 3,
-                "defeat": 2,
+                "defeat": 1,
                 "position": 6
               },
               {
                 "member_id": [
                   "127"
                 ],
-                "win": 2,
+                "win": 1,
                 "defeat": 2,
                 "position": 7
               },
@@ -1831,7 +1831,7 @@
                   "124"
                 ],
                 "win": 2,
-                "defeat": 3,
+                "defeat": 2,
                 "position": 8
               },
               {
