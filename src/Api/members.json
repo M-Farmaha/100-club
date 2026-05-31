@@ -195,6 +195,19 @@
     "joinTennisYear": ""
   },
   {
+    "id": "193",
+    "name": "Васьків Дарина",
+    "birthDate": "",
+    "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/refs/heads/main/public/avatars/193.jpg",
+    "sex": "female",
+    "hometown": "",
+    "type": "amateur",
+    "category": null,
+    "forhand": "right",
+    "backhand": "twohand",
+    "joinTennisYear": ""
+  },
+  {
     "id": "191",
     "name": "Введенський Юрій",
     "birthDate": "",
@@ -1988,6 +2001,19 @@
     "joinTennisYear": null
   },
   {
+    "id": "195",
+    "name": "Сакайлюк Яна",
+    "birthDate": "",
+    "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/refs/heads/main/public/avatars/195.jpg",
+    "sex": "female",
+    "hometown": "",
+    "type": "amateur",
+    "category": null,
+    "forhand": "right",
+    "backhand": "null",
+    "joinTennisYear": ""
+  },
+  {
     "id": "117",
     "name": "Саламаха Ірина",
     "birthDate": "1975-02-14",
@@ -2259,6 +2285,19 @@
     "forhand": null,
     "backhand": null,
     "joinTennisYear": null
+  },
+  {
+    "id": "194",
+    "name": "Фролова Юлія",
+    "birthDate": "",
+    "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/refs/heads/main/public/avatars/194.jpg",
+    "sex": "female",
+    "hometown": "",
+    "type": "amateur",
+    "category": null,
+    "forhand": "right",
+    "backhand": "null",
+    "joinTennisYear": ""
   },
   {
     "id": "183",
