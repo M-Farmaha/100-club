@@ -130,6 +130,19 @@
     "joinTennisYear": 2021
   },
   {
+    "id": "205",
+    "name": "Бойко Василь",
+    "birthDate": "",
+    "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/refs/heads/main/public/avatars/205.jpg",
+    "sex": "male",
+    "hometown": "",
+    "type": "amateur",
+    "category": null,
+    "forhand": "null",
+    "backhand": "null",
+    "joinTennisYear": ""
+  },
+  {
     "id": "71",
     "name": "Бойко Михайло",
     "birthDate": "2017-02-08",
@@ -988,6 +1001,19 @@
     "joinTennisYear": 2014
   },
   {
+    "id": "204",
+    "name": "Кузьма Андрій",
+    "birthDate": "",
+    "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/refs/heads/main/public/avatars/204.jpg",
+    "sex": "male",
+    "hometown": "",
+    "type": "amateur",
+    "category": null,
+    "forhand": "null",
+    "backhand": "null",
+    "joinTennisYear": ""
+  },
+  {
     "id": "22",
     "name": "Кузьо Ангеліна",
     "birthDate": "2007-04-25",
@@ -1336,6 +1362,19 @@
     "forhand": "right",
     "backhand": "twohand",
     "joinTennisYear": 1969
+  },
+  {
+    "id": "206",
+    "name": "Малик Дмитро",
+    "birthDate": "",
+    "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/refs/heads/main/public/avatars/206.jpg",
+    "sex": "male",
+    "hometown": "",
+    "type": "amateur",
+    "category": null,
+    "forhand": "null",
+    "backhand": "null",
+    "joinTennisYear": ""
   },
   {
     "id": "47",
@@ -2214,6 +2253,19 @@
     "birthDate": "",
     "avatar": "",
     "sex": "male",
+    "hometown": "",
+    "type": "amateur",
+    "category": null,
+    "forhand": "null",
+    "backhand": "null",
+    "joinTennisYear": ""
+  },
+  {
+    "id": "207",
+    "name": "Суджук О.",
+    "birthDate": "",
+    "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/refs/heads/main/public/avatars/207.jpg",
+    "sex": "female",
     "hometown": "",
     "type": "amateur",
     "category": null,
