@@ -39,6 +39,19 @@
     "joinTennisYear": 2022
   },
   {
+    "id": "208",
+    "name": "Андрушків М.",
+    "birthDate": "",
+    "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/refs/heads/main/public/avatars/208.jpg",
+    "sex": "female",
+    "hometown": "",
+    "type": "amateur",
+    "category": null,
+    "forhand": "null",
+    "backhand": "null",
+    "joinTennisYear": ""
+  },
+  {
     "id": "4",
     "name": "Бабич Ірина",
     "birthDate": "1978-08-16",
