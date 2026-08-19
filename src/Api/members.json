@@ -429,6 +429,19 @@
     "joinTennisYear": 2023
   },
   {
+    "id": "209",
+    "name": "Грабовський Олексій",
+    "birthDate": "",
+    "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/refs/heads/main/public/avatars/209.jpg",
+    "sex": "male",
+    "hometown": "",
+    "type": "amateur",
+    "category": null,
+    "forhand": "null",
+    "backhand": "null",
+    "joinTennisYear": ""
+  },
+  {
     "id": "74",
     "name": "Грицак Влад",
     "birthDate": "2011-07-03",
@@ -1349,6 +1362,19 @@
     "forhand": "right",
     "backhand": "twohand",
     "joinTennisYear": 2023
+  },
+  {
+    "id": "210",
+    "name": "Магуник Максим",
+    "birthDate": "",
+    "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/refs/heads/main/public/avatars/210.jpg",
+    "sex": "male",
+    "hometown": "",
+    "type": "amateur",
+    "category": null,
+    "forhand": "null",
+    "backhand": "null",
+    "joinTennisYear": ""
   },
   {
     "id": "173",
