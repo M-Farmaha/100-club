@@ -1442,6 +1442,19 @@
     "joinTennisYear": ""
   },
   {
+    "id": "213",
+    "name": "Мартинишин",
+    "birthDate": "",
+    "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/refs/heads/main/public/avatars/213.jpg",
+    "sex": "male",
+    "hometown": "",
+    "type": "amateur",
+    "category": null,
+    "forhand": "null",
+    "backhand": "null",
+    "joinTennisYear": ""
+  },
+  {
     "id": "47",
     "name": "Марчук Анна",
     "birthDate": "1981-12-14",
@@ -2636,6 +2649,19 @@
     "forhand": null,
     "backhand": null,
     "joinTennisYear": null
+  },
+  {
+    "id": "214",
+    "name": "Челебі Д.",
+    "birthDate": "",
+    "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/refs/heads/main/public/avatars/214.jpg",
+    "sex": "male",
+    "hometown": "",
+    "type": "amateur",
+    "category": null,
+    "forhand": "null",
+    "backhand": "null",
+    "joinTennisYear": ""
   },
   {
     "id": "141",
