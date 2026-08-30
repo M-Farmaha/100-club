@@ -3723,6 +3723,51 @@
                 "position": 4
               }
             ]
+          },
+          {
+            "date": "2026-08-23",
+            "players": [
+              {
+                "member_id": [
+                  "22"
+                ],
+                "win": 4,
+                "defeat": 0,
+                "position": 1
+              },
+              {
+                "member_id": [
+                  "60"
+                ],
+                "win": 3,
+                "defeat": 1,
+                "position": 2
+              },
+              {
+                "member_id": [
+                  "68"
+                ],
+                "win": 2,
+                "defeat": 2,
+                "position": 3
+              },
+              {
+                "member_id": [
+                  "50"
+                ],
+                "win": 1,
+                "defeat": 3,
+                "position": 4
+              },
+              {
+                "member_id": [
+                  "172"
+                ],
+                "win": 0,
+                "defeat": 4,
+                "position": 5
+              }
+            ]
           }
         ]
       }
@@ -6075,6 +6120,51 @@
                 "win": 0,
                 "defeat": 3,
                 "position": 4
+              }
+            ]
+          },
+          {
+            "date": "2026-08-23",
+            "players": [
+              {
+                "member_id": [
+                  "157"
+                ],
+                "win": 4,
+                "defeat": 0,
+                "position": 1
+              },
+              {
+                "member_id": [
+                  "70"
+                ],
+                "win": 2,
+                "defeat": 2,
+                "position": 2
+              },
+              {
+                "member_id": [
+                  "210"
+                ],
+                "win": 2,
+                "defeat": 2,
+                "position": 3
+              },
+              {
+                "member_id": [
+                  "75"
+                ],
+                "win": 1,
+                "defeat": 3,
+                "position": 4
+              },
+              {
+                "member_id": [
+                  "161"
+                ],
+                "win": 1,
+                "defeat": 3,
+                "position": 5
               }
             ]
           }
