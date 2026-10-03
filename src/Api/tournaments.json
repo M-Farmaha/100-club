@@ -3874,6 +3874,75 @@
                 "position": 4
               }
             ]
+          },
+          {
+            "date": "2026-09-27",
+            "players": [
+              {
+                "member_id": [
+                  "48"
+                ],
+                "win": 3,
+                "defeat": 0,
+                "position": 1
+              },
+              {
+                "member_id": [
+                  "186"
+                ],
+                "win": 2,
+                "defeat": 1,
+                "position": 2
+              },
+              {
+                "member_id": [
+                  "47"
+                ],
+                "win": 2,
+                "defeat": 1,
+                "position": 3
+              },
+              {
+                "member_id": [
+                  "171"
+                ],
+                "win": 1,
+                "defeat": 2,
+                "position": 4
+              },
+              {
+                "member_id": [
+                  "218"
+                ],
+                "win": 2,
+                "defeat": 1,
+                "position": 5
+              },
+              {
+                "member_id": [
+                  "217"
+                ],
+                "win": 1,
+                "defeat": 2,
+                "position": 6
+              },
+              {
+                "member_id": [
+                  "216"
+                ],
+                "win": 1,
+                "defeat": 2,
+                "position": 7
+              },
+              {
+                "member_id": [
+                  "155"
+                ],
+                "win": 0,
+                "defeat": 3,
+                "position": 8
+              }
+            ]
           }
         ]
       }
@@ -6482,6 +6551,51 @@
               {
                 "member_id": [
                   "206"
+                ],
+                "win": 0,
+                "defeat": 4,
+                "position": 5
+              }
+            ]
+          },
+          {
+            "date": "2026-09-27",
+            "players": [
+              {
+                "member_id": [
+                  "184"
+                ],
+                "win": 4,
+                "defeat": 0,
+                "position": 1
+              },
+              {
+                "member_id": [
+                  "215"
+                ],
+                "win": 3,
+                "defeat": 1,
+                "position": 2
+              },
+              {
+                "member_id": [
+                  "157"
+                ],
+                "win": 2,
+                "defeat": 2,
+                "position": 3
+              },
+              {
+                "member_id": [
+                  "206"
+                ],
+                "win": 1,
+                "defeat": 3,
+                "position": 4
+              },
+              {
+                "member_id": [
+                  "161"
                 ],
                 "win": 0,
                 "defeat": 4,
