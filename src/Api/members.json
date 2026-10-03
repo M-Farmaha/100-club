@@ -78,6 +78,19 @@
     "joinTennisYear": 2015
   },
   {
+    "id": "217",
+    "name": "Березень Й.",
+    "birthDate": "",
+    "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/refs/heads/main/public/avatars/217.jpg",
+    "sex": "female",
+    "hometown": "",
+    "type": "amateur",
+    "category": null,
+    "forhand": "null",
+    "backhand": "null",
+    "joinTennisYear": ""
+  },
+  {
     "id": "164",
     "name": "Бескін Арсен",
     "birthDate": null,
@@ -230,6 +243,19 @@
     "type": "amateur",
     "category": null,
     "forhand": "right",
+    "backhand": "null",
+    "joinTennisYear": ""
+  },
+  {
+    "id": "215",
+    "name": "Бурдяк О.",
+    "birthDate": "",
+    "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/refs/heads/main/public/avatars/215.jpg",
+    "sex": "male",
+    "hometown": "",
+    "type": "amateur",
+    "category": null,
+    "forhand": "null",
     "backhand": "null",
     "joinTennisYear": ""
   },
@@ -1533,6 +1559,19 @@
     "joinTennisYear": 2019
   },
   {
+    "id": "218",
+    "name": "Михальчук А.",
+    "birthDate": "",
+    "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/refs/heads/main/public/avatars/218.jpg",
+    "sex": "female",
+    "hometown": "",
+    "type": "amateur",
+    "category": null,
+    "forhand": "null",
+    "backhand": "null",
+    "joinTennisYear": ""
+  },
+  {
     "id": "147",
     "name": "Мірчук С.",
     "birthDate": null,
@@ -1817,6 +1856,19 @@
     "forhand": "right",
     "backhand": "twohand",
     "joinTennisYear": 2023
+  },
+  {
+    "id": "216",
+    "name": "Петришин У.",
+    "birthDate": "",
+    "avatar": "https://raw.githubusercontent.com/M-Farmaha/100-club/refs/heads/main/public/avatars/216.jpg",
+    "sex": "female",
+    "hometown": "",
+    "type": "amateur",
+    "category": null,
+    "forhand": "null",
+    "backhand": "null",
+    "joinTennisYear": ""
   },
   {
     "id": "51",
