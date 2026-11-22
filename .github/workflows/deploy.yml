@@ -9,14 +9,8 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    permissions:
-      pages: write
-      id-token: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -36,6 +30,18 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./build
+
+  # Separate job: the artifact is fully registered before deploy-pages looks it up.
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      pages: write
+      id-token: write
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
