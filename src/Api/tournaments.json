@@ -7050,6 +7050,51 @@
                 "position": 8
               }
             ]
+          },
+          {
+            "date": "2026-11-27",
+            "players": [
+              {
+                "member_id": [
+                  "1"
+                ],
+                "win": 4,
+                "defeat": 0,
+                "position": 1
+              },
+              {
+                "member_id": [
+                  "173"
+                ],
+                "win": 3,
+                "defeat": 1,
+                "position": 2
+              },
+              {
+                "member_id": [
+                  "48"
+                ],
+                "win": 1,
+                "defeat": 2,
+                "position": 3
+              },
+              {
+                "member_id": [
+                  "112"
+                ],
+                "win": 1,
+                "defeat": 3,
+                "position": 4
+              },
+              {
+                "member_id": [
+                  "111"
+                ],
+                "win": 0,
+                "defeat": 3,
+                "position": 5
+              }
+            ]
           }
         ]
       }
